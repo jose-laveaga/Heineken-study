@@ -116,7 +116,7 @@ const App = () => {
             </Section>
 
             <Section id="study-design" title="Study design" subtitle="Context, research questions, and hypotheses">
-              <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="grid gap-6">
                 <div className="space-y-4">
                   <Accordion items={researchCards} />
                 </div>
