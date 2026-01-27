@@ -1,0 +1,126 @@
+{
+  "thresholds": [50, 75, 90],
+  "metrics": ["mother_brands", "heineken"],
+  "dimensions": [
+    {
+      "key": "gender",
+      "label": "Gender",
+      "groups": [
+        {
+          "key": "female",
+          "label": "Female",
+          "values": {
+            "mother_brands": {"50": 58, "75": 34, "90": 12},
+            "heineken": {"50": 62, "75": 29, "90": 9}
+          }
+        },
+        {
+          "key": "male",
+          "label": "Male",
+          "values": {
+            "mother_brands": {"50": 55, "75": 31, "90": 11},
+            "heineken": {"50": 60, "75": 28, "90": 8}
+          }
+        },
+        {
+          "key": "nonbinary",
+          "label": "Non-binary",
+          "values": {
+            "mother_brands": {"50": 49, "75": 27, "90": 6},
+            "heineken": {"50": 52, "75": 25, "90": 5}
+          }
+        }
+      ]
+    },
+    {
+      "key": "age",
+      "label": "Age",
+      "groups": [
+        {
+          "key": "18_34",
+          "label": "18–34",
+          "values": {
+            "mother_brands": {"50": 52, "75": 29, "90": 10},
+            "heineken": {"50": 56, "75": 27, "90": 8}
+          }
+        },
+        {
+          "key": "35_54",
+          "label": "35–54",
+          "values": {
+            "mother_brands": {"50": 57, "75": 33, "90": 12},
+            "heineken": {"50": 61, "75": 30, "90": 9}
+          }
+        },
+        {
+          "key": "55_plus",
+          "label": "55+",
+          "values": {
+            "mother_brands": {"50": 54, "75": 30, "90": 10},
+            "heineken": {"50": 58, "75": 28, "90": 7}
+          }
+        }
+      ]
+    },
+    {
+      "key": "income",
+      "label": "Income",
+      "groups": [
+        {
+          "key": "under_50k",
+          "label": "< $50K",
+          "values": {
+            "mother_brands": {"50": 51, "75": 28, "90": 9},
+            "heineken": {"50": 55, "75": 26, "90": 7}
+          }
+        },
+        {
+          "key": "50_100k",
+          "label": "$50K–$100K",
+          "values": {
+            "mother_brands": {"50": 56, "75": 32, "90": 11},
+            "heineken": {"50": 60, "75": 29, "90": 8}
+          }
+        },
+        {
+          "key": "100k_plus",
+          "label": "$100K+",
+          "values": {
+            "mother_brands": {"50": 59, "75": 35, "90": 13},
+            "heineken": {"50": 63, "75": 31, "90": 10}
+          }
+        }
+      ]
+    },
+    {
+      "key": "activity",
+      "label": "Activity",
+      "groups": [
+        {
+          "key": "low",
+          "label": "Low",
+          "values": {
+            "mother_brands": {"50": 48, "75": 26, "90": 7},
+            "heineken": {"50": 52, "75": 24, "90": 6}
+          }
+        },
+        {
+          "key": "medium",
+          "label": "Medium",
+          "values": {
+            "mother_brands": {"50": 56, "75": 32, "90": 11},
+            "heineken": {"50": 60, "75": 29, "90": 8}
+          }
+        },
+        {
+          "key": "high",
+          "label": "High",
+          "values": {
+            "mother_brands": {"50": 62, "75": 38, "90": 15},
+            "heineken": {"50": 66, "75": 34, "90": 12}
+          }
+        }
+      ]
+    }
+  ]
+}

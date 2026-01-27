@@ -1,0 +1,22 @@
+{
+  "abstract": "This executive brief summarizes a 2025 experimental study on how sustainable cues, pack formats, and price context influence non-alcoholic beer selection across key shopper segments. The report synthesizes preference shares, sentiment feedback, and discrepancy analysis to guide portfolio and messaging strategy.",
+  "context": [
+    "The study focused on non-alcoholic beer selections in controlled digital shopping tasks.",
+    "Respondents evaluated brand options under varying price and multi-brand scenarios."
+  ],
+  "researchQuestions": [
+    {"id": "RQ1", "text": "How do sustainability signals change selection rates in 1v1 and multi-brand tasks?"},
+    {"id": "RQ2", "text": "Which shopper segments consistently exceed defined pick-rate thresholds?"}
+  ],
+  "hypotheses": [
+    {"id": "H1", "text": "Sustainability cues increase mother-brand pick rates in no-price scenarios."},
+    {"id": "H2", "text": "Price parity reduces the pick-rate gap between mother brands and challengers."},
+    {"id": "H3", "text": "Higher activity shoppers over-index on Heineken pick rate thresholds."}
+  ],
+  "keyTakeaways": [
+    {"id": "KT1", "text": "Preference shifts are largest when sustainability cues are paired with familiar packaging."},
+    {"id": "KT2", "text": "Multi-brand contexts dampen absolute pick rates but improve differentiation."},
+    {"id": "KT3", "text": "A minority of segments cross the 75% threshold, highlighting targeted opportunity."},
+    {"id": "KT4", "text": "Sentiment drivers cluster around taste expectations and availability signals."}
+  ]
+}

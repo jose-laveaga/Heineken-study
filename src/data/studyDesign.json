@@ -1,0 +1,22 @@
+{
+  "stages": [
+    {"id": "stage1", "title": "Design", "description": "Define experimental conditions, sustainability cues, and core metrics."},
+    {"id": "stage2", "title": "Build storefront", "description": "Create digital tasks for 1v1 and multi-brand selection flows."},
+    {"id": "stage3", "title": "Pilot", "description": "Validate comprehension and timing across core audiences."},
+    {"id": "stage4", "title": "Execute", "description": "Field the study across qualified respondents with quota controls."},
+    {"id": "stage5", "title": "Analyze", "description": "Model pick rates, segmentation thresholds, and sentiment themes."}
+  ],
+  "experimentFlow": [
+    {
+      "id": "flow1",
+      "title": "Participant journey",
+      "bullets": [
+        "Welcome + consent",
+        "Screening + demographic capture",
+        "1v1 product tasks",
+        "Multi-brand shelf tasks",
+        "Post-task sentiment + completion"
+      ]
+    }
+  ]
+}

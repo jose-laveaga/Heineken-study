@@ -1,0 +1,136 @@
+{
+  "comparisons": [
+    {
+      "id": "cmp_001",
+      "category": "1v1_nonpriced",
+      "title": "Heineken 0.0 vs Star Brew (Bottle)",
+      "formatTags": ["bottle"],
+      "brandTags": ["heineken", "star_brew"],
+      "scenarioTags": ["no_price"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 63.1},
+        {"label": "Star Brew", "value": 36.9}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "< 0.001"}
+      ],
+      "interpretation": "Heineken leads in the no-price comparison, suggesting familiarity and sustainability cues support selection."
+    },
+    {
+      "id": "cmp_002",
+      "category": "1v1_nonpriced",
+      "title": "Heineken 0.0 vs Green River (Can)",
+      "formatTags": ["can"],
+      "brandTags": ["heineken", "green_river"],
+      "scenarioTags": ["no_price"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 57.4},
+        {"label": "Green River", "value": 42.6}
+      ],
+      "stats": [
+        {"label": "lift", "valueText": "+14.8 pts"}
+      ],
+      "interpretation": "Share gains persist even without price cues, indicating a brand advantage across formats."
+    },
+    {
+      "id": "cmp_003",
+      "category": "1v1_priced",
+      "title": "Heineken 0.0 vs Star Brew (Equal Price)",
+      "formatTags": ["bottle"],
+      "brandTags": ["heineken", "star_brew"],
+      "scenarioTags": ["equal_price"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 54.2},
+        {"label": "Star Brew", "value": 45.8}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.03"}
+      ],
+      "interpretation": "Price parity narrows the gap but Heineken remains ahead in equal-price contexts."
+    },
+    {
+      "id": "cmp_004",
+      "category": "1v1_priced",
+      "title": "Heineken 0.0 vs Green River (Heineken Cheaper)",
+      "formatTags": ["can"],
+      "brandTags": ["heineken", "green_river"],
+      "scenarioTags": ["heineken_cheaper"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 68.9},
+        {"label": "Green River", "value": 31.1}
+      ],
+      "stats": [
+        {"label": "lift", "valueText": "+20.5 pts"}
+      ],
+      "interpretation": "Lower pricing amplifies the preference gap, reinforcing sensitivity to value cues."
+    },
+    {
+      "id": "cmp_005",
+      "category": "multi_brand",
+      "title": "Multi-brand shelf: Bottles",
+      "formatTags": ["bottle"],
+      "brandTags": ["heineken", "star_brew", "green_river", "harbor_zero"],
+      "scenarioTags": ["multi_brand"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 41.2},
+        {"label": "Star Brew", "value": 24.5},
+        {"label": "Green River", "value": 19.1},
+        {"label": "Harbor Zero", "value": 15.2}
+      ],
+      "stats": [
+        {"label": "top-2 share", "valueText": "65.7%"}
+      ],
+      "interpretation": "Heineken leads multi-brand shelves but selection is dispersed across challengers."
+    },
+    {
+      "id": "cmp_006",
+      "category": "multi_brand",
+      "title": "Multi-brand shelf: Cans",
+      "formatTags": ["can"],
+      "brandTags": ["heineken", "star_brew", "green_river", "harbor_zero"],
+      "scenarioTags": ["multi_brand"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 38.5},
+        {"label": "Star Brew", "value": 27.4},
+        {"label": "Green River", "value": 20.8},
+        {"label": "Harbor Zero", "value": 13.3}
+      ],
+      "stats": [
+        {"label": "top-2 share", "valueText": "65.9%"}
+      ],
+      "interpretation": "Cans compress pick rates slightly, but ranking stays consistent with bottle shelves."
+    },
+    {
+      "id": "cmp_007",
+      "category": "1v1_priced",
+      "title": "Heineken 0.0 vs Star Brew (Competitor Cheaper)",
+      "formatTags": ["12-pack"],
+      "brandTags": ["heineken", "star_brew"],
+      "scenarioTags": ["competitor_cheaper"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 49.3},
+        {"label": "Star Brew", "value": 50.7}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.41"}
+      ],
+      "interpretation": "When a competitor is cheaper, the preference advantage disappears, indicating a value-driven tradeoff."
+    },
+    {
+      "id": "cmp_008",
+      "category": "1v1_nonpriced",
+      "title": "Heineken 0.0 vs Harbor Zero (12-pack)",
+      "formatTags": ["12-pack"],
+      "brandTags": ["heineken", "harbor_zero"],
+      "scenarioTags": ["no_price"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 60.6},
+        {"label": "Harbor Zero", "value": 39.4}
+      ],
+      "stats": [
+        {"label": "lift", "valueText": "+11.2 pts"}
+      ],
+      "interpretation": "Packaging familiarity keeps Heineken ahead even before price signals are introduced."
+    }
+  ]
+}
