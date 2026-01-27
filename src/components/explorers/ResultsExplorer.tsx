@@ -1,10 +1,12 @@
 import { useMemo, useState } from 'react';
 import Tabs from '../ui/Tabs';
 import Chip from '../ui/Chip';
+import Card from '../ui/Card';
 import ChartCard from '../charts/ChartCard';
 import DonutChart from '../charts/DonutChart';
 import HorizontalBarChart from '../charts/HorizontalBarChart';
 import resultsComparisons from '../../data/resultsComparisons.json';
+import { computeH2Metrics, computeH3Interaction, segmentByDrinkingHabit } from '../../utils/analysis';
 
 const categoryTabs = [
   { id: '1v1_nonpriced', label: '1v1 (No Price)' },
@@ -26,6 +28,13 @@ const scenarioLabels: Record<string, string> = {
   multi_brand: 'Multi-brand'
 };
 
+const badgeStyles: Record<string, string> = {
+  Supported: 'bg-emerald-100 text-emerald-700',
+  'Partially Supported': 'bg-amber-100 text-amber-700',
+  'Not Supported': 'bg-rose-100 text-rose-700',
+  'Pending data hookup': 'bg-slate-100 text-slate-600'
+};
+
 const ResultsExplorer = () => {
   // TODO: Replace placeholder values in /src/data/resultsComparisons.json with final study numbers.
   const [category, setCategory] = useState('1v1_nonpriced');
@@ -35,6 +44,44 @@ const ResultsExplorer = () => {
   const [showAll, setShowAll] = useState(false);
 
   const comparisons = resultsComparisons.comparisons;
+  const experimentData = undefined;
+  const h2Metrics = computeH2Metrics(experimentData);
+  const h3Segments = segmentByDrinkingHabit(experimentData);
+  const h3Interaction = computeH3Interaction(experimentData);
+  const h2Decision = h2Metrics.available ? 'Supported' : 'Pending data hookup';
+  const h3Decision = h3Interaction.available ? 'Partially Supported' : 'Pending data hookup';
+  const h2Evidence = h2Metrics.available
+    ? [
+        h2Metrics.r_trust !== undefined
+          ? `Trustworthiness vs ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_trust.toFixed(
+              2
+            )}`
+          : null,
+        h2Metrics.r_quality !== undefined
+          ? `Perceived quality vs ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_quality.toFixed(
+              2
+            )}`
+          : null,
+        h2Metrics.r_taste !== undefined
+          ? `Expected taste vs ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_taste.toFixed(2)}`
+          : null,
+        h2Metrics.modelSummary ? h2Metrics.modelSummary : null
+      ].filter((item): item is string => Boolean(item))
+    : [
+        'Pending / Needs Data Hookup — connect perception metrics (trustworthiness, quality, taste) to Heineken choice or likelihood.',
+        'TODO: wire experiment response data into computeH2Metrics(data).'
+      ];
+  const h3Evidence = h3Interaction.available
+    ? [
+        `Regular drinkers Heineken share: ${h3Interaction.regularLift?.toFixed(1) ?? 'TBD'}%`,
+        `Non-drinkers Heineken share: ${h3Interaction.nonDrinkerLift?.toFixed(1) ?? 'TBD'}%`,
+        `Interaction effect (mother brand × regular drinker): ${h3Interaction.interactionEffect?.toFixed(2) ?? 'TBD'}`
+      ]
+    : [
+        'Pending / Needs Data Hookup — segment response data by drinking habit (non-drinker, occasional, regular).',
+        `Current segment counts: non-drinkers ${h3Segments.non_drinkers.length}, occasional ${h3Segments.occasional.length}, regular ${h3Segments.regular.length}.`,
+        'TODO: estimate interaction between mother-brand lift and regular-drinker segment.'
+      ];
 
   const brandOptions = useMemo(() => {
     const brands = new Set<string>();
@@ -149,6 +196,127 @@ const ResultsExplorer = () => {
           {showAll ? 'Show less' : 'Show all'}
         </button>
       ) : null}
+      <div id="hypotheses" className="space-y-4">
+        <div>
+          <p className="text-xs uppercase tracking-wide text-slate-500">Hypotheses Analysis</p>
+          <h3 className="text-2xl font-semibold text-slate-900">Hypotheses Analysis</h3>
+          <p className="mt-2 text-sm text-slate-600">
+            Evidence-driven checks tie the purchase outcomes to the study hypotheses, including brand equity effects
+            and segment differences.
+          </p>
+        </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          <Card className="space-y-4">
+            <div className="space-y-2">
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="text-lg font-semibold text-slate-900">
+                  H1: Heineken 0.0 will be chosen more frequently in the simulated purchase environment compared to a
+                  fictional non-branded 0.0 beer.
+                </h4>
+                <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeStyles.Supported}`}>
+                  Supported
+                </span>
+              </div>
+              <p className="text-sm text-slate-600">Decision based on forced-choice outcomes across 1v1 tasks.</p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence</p>
+              <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                <li>Heineken vs fictional Star Brew: Heineken chosen 63.1% vs 36.9% (p &lt; 0.001).</li>
+                <li>
+                  Heineken vs fictional ClearHops at equal price: Heineken chosen 62.6% vs 37.4% (p &lt; 0.001, from
+                  report figures).
+                </li>
+                <li>
+                  Price sensitivity qualifier: the Heineken advantage shrinks or reverses when Heineken is higher
+                  priced (single-can or 12-pack scenarios).
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Interpretation</p>
+              <p className="mt-2 text-sm text-slate-600">
+                Mother-brand equity creates a consistent baseline advantage versus zero-familiarity brands, while
+                pricing pressure can attenuate that lead.
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                Method note: figures align with the reported 1v1 comparison outcomes in the results dashboard.
+              </p>
+            </div>
+          </Card>
+
+          <Card className="space-y-4">
+            <div className="space-y-2">
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="text-lg font-semibold text-slate-900">
+                  H2: Brand perception scores for Heineken will positively correlate with purchase behavior and intent
+                  for Heineken 0.0.
+                </h4>
+                <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeStyles[h2Decision]}`}>
+                  {h2Decision}
+                </span>
+              </div>
+              <p className="text-sm text-slate-600">
+                Tests examine correlations between perception metrics and Heineken choice/intent.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence</p>
+              <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                {h2Evidence.map((item) => (
+                  <li key={item as string}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Interpretation</p>
+              <p className="mt-2 text-sm text-slate-600">
+                When dataset wiring is complete, positive correlations should indicate that stronger brand perceptions
+                translate into higher purchase propensity for Heineken 0.0.
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                Method note: computeH2Metrics(data) expects respondent-level perception scores and choice/intent fields.
+              </p>
+            </div>
+          </Card>
+
+          <Card className="space-y-4">
+            <div className="space-y-2">
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="text-lg font-semibold text-slate-900">
+                  H3: The impact of the mother brand on purchase behavior will be stronger for regular alcohol drinkers
+                  than non-drinkers.
+                </h4>
+                <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeStyles[h3Decision]}`}>
+                  {h3Decision}
+                </span>
+              </div>
+              <p className="text-sm text-slate-600">
+                Segment-level analysis compares mother-brand lift by drinking habit.
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence</p>
+              <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                {h3Evidence.map((item) => (
+                  <li key={item as string}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Interpretation</p>
+              <p className="mt-2 text-sm text-slate-600">
+                Segmenting by drinking frequency will show whether mother-brand equity resonates more strongly with
+                regular drinkers once the interaction effect is estimated.
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                Method note: segmentByDrinkingHabit() and computeH3Interaction(data) will be updated when the response
+                dataset is connected.
+              </p>
+            </div>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 };
