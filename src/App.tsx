@@ -120,7 +120,7 @@ const App = () => {
                 <div className="space-y-4">
                   <Accordion items={researchCards} />
                 </div>
-                <Card>
+                <Card className="w-full">
                   <p className="text-xs uppercase tracking-wide text-slate-500">Five-step timeline</p>
                   <div className="mt-4">
                     <MethodTimeline stages={studyDesign.stages} />
