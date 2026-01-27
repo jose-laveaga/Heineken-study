@@ -10,7 +10,7 @@ import KeyTakeaways from './components/content/KeyTakeaways';
 import MethodTimeline from './components/content/MethodTimeline';
 import ExperimentStepper from './components/content/ExperimentStepper';
 import ResultsExplorer from './components/explorers/ResultsExplorer';
-import SegmentationExplorer from './components/explorers/SegmentationExplorer';
+import DemographicsSection from './components/explorers/DemographicsSection';
 import DataTable from './components/charts/DataTable';
 import ThemeList from './components/content/ThemeList';
 import QuoteCarousel from './components/content/QuoteCarousel';
@@ -30,7 +30,7 @@ const sections = [
   { id: 'study-design', label: 'Study Design' },
   { id: 'experiment-flow', label: 'Experiment Flow' },
   { id: 'results', label: 'Results' },
-  { id: 'segmentation', label: 'Segmentation' },
+  { id: 'demographics', label: 'Demographics' },
   { id: 'sentiment', label: 'Sentiment' },
   { id: 'discrepancies', label: 'Discrepancies' },
   { id: 'methods', label: 'Methods / Appendix' }
@@ -147,11 +147,11 @@ const App = () => {
             </Section>
 
             <Section
-              id="segmentation"
-              title="Segmentation"
-              subtitle="Identify segments exceeding pick-rate thresholds"
+              id="demographics"
+              title="Demographics"
+              subtitle="Participant distribution across key audience characteristics"
             >
-              <SegmentationExplorer />
+              <DemographicsSection />
             </Section>
 
             <Section id="sentiment" title="Sentiment" subtitle="Brand sentiment metrics and qualitative drivers">

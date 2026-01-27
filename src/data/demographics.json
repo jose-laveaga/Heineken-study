@@ -1,0 +1,105 @@
+{
+  "sections": [
+    {
+      "id": "age",
+      "title": "Age group",
+      "items": [
+        {"label": "21–24", "value": 68},
+        {"label": "25–34", "value": 108},
+        {"label": "35–44", "value": 102},
+        {"label": "45–54", "value": 84},
+        {"label": "55–65", "value": 37},
+        {"label": "65+", "value": 14}
+      ]
+    },
+    {
+      "id": "gender",
+      "title": "Gender",
+      "items": [
+        {"label": "Male", "value": 211},
+        {"label": "Female", "value": 195},
+        {"label": "Non-binary", "value": 6},
+        {"label": "Transgender", "value": 1}
+      ]
+    },
+    {
+      "id": "ethnicity",
+      "title": "Ethnicity",
+      "items": [
+        {"label": "White", "value": 249},
+        {"label": "Black / African American", "value": 62},
+        {"label": "Hispanic / Latino", "value": 40},
+        {"label": "Asian", "value": 39},
+        {"label": "Multiracial", "value": 20},
+        {"label": "Pacific Islander", "value": 1},
+        {"label": "Native American", "value": 1},
+        {"label": "Prefer not to say", "value": 1}
+      ]
+    },
+    {
+      "id": "education",
+      "title": "Education",
+      "items": [
+        {"label": "Bachelor’s degree", "value": 151},
+        {"label": "High school", "value": 138},
+        {"label": "Graduate degree", "value": 71},
+        {"label": "Associate’s degree", "value": 53}
+      ]
+    },
+    {
+      "id": "income",
+      "title": "Income",
+      "items": [
+        {"label": "Under $25k", "value": 87},
+        {"label": "$25–49k", "value": 109},
+        {"label": "$50–74k", "value": 89},
+        {"label": "$75–99k", "value": 53},
+        {"label": "$100–149k", "value": 56},
+        {"label": "$150k+", "value": 19}
+      ]
+    },
+    {
+      "id": "activity",
+      "title": "Activity level",
+      "items": [
+        {"label": "Active", "value": 140},
+        {"label": "Moderately active", "value": 126},
+        {"label": "Basic", "value": 86},
+        {"label": "Minimal", "value": 35},
+        {"label": "Highly active", "value": 26}
+      ]
+    },
+    {
+      "id": "alcohol",
+      "title": "Alcohol consumption (frequency scale)",
+      "items": [
+        {"label": "Level 5", "value": 111},
+        {"label": "Level 4", "value": 76},
+        {"label": "Level 3", "value": 103},
+        {"label": "Level 2", "value": 66},
+        {"label": "Level 1", "value": 57}
+      ]
+    },
+    {
+      "id": "beer",
+      "title": "Beer consumption (frequency scale)",
+      "items": [
+        {"label": "Level 5", "value": 92},
+        {"label": "Level 4", "value": 80},
+        {"label": "Level 3", "value": 107},
+        {"label": "Level 2", "value": 63},
+        {"label": "Level 1", "value": 71}
+      ]
+    },
+    {
+      "id": "na-beer",
+      "title": "Non-alcoholic beer consumption",
+      "items": [
+        {"label": "Occasionally", "value": 190},
+        {"label": "Regularly", "value": 125},
+        {"label": "Tried once", "value": 56},
+        {"label": "Never", "value": 42}
+      ]
+    }
+  ]
+}
