@@ -116,11 +116,11 @@ const App = () => {
             </Section>
 
             <Section id="study-design" title="Study design" subtitle="Context, research questions, and hypotheses">
-              <div className="grid gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-4">
                   <Accordion items={researchCards} />
                 </div>
-                <Card className="w-full">
+                <Card className="col-span-full w-full">
                   <p className="text-xs uppercase tracking-wide text-slate-500">Five-step timeline</p>
                   <div className="mt-4">
                     <MethodTimeline stages={studyDesign.stages} />
