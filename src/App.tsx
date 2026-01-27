@@ -5,9 +5,7 @@ import Section from './components/ui/Section';
 import Card from './components/ui/Card';
 import StatCard from './components/ui/StatCard';
 import Callout from './components/ui/Callout';
-import Accordion from './components/ui/Accordion';
 import KeyTakeaways from './components/content/KeyTakeaways';
-import MethodTimeline from './components/content/MethodTimeline';
 import ExperimentStepper from './components/content/ExperimentStepper';
 import ResultsExplorer from './components/explorers/ResultsExplorer';
 import DemographicsSection from './components/explorers/DemographicsSection';
@@ -22,6 +20,7 @@ import narrative from './data/narrative.json';
 import studyDesign from './data/studyDesign.json';
 import sentiment from './data/sentiment.json';
 import discrepancies from './data/discrepancies.json';
+import StudyDesignSection from './sections/StudyDesignSection';
 
 // TODO: Replace placeholder figures in /src/data/*.json with the final report numbers.
 
@@ -37,46 +36,6 @@ const sections = [
 ];
 
 const App = () => {
-  const researchCards = [
-    {
-      id: 'context',
-      title: 'Context',
-      content: (
-        <ul className="space-y-2 text-sm text-slate-600">
-          {narrative.context.map((item) => (
-            <li key={item}>• {item}</li>
-          ))}
-        </ul>
-      )
-    },
-    {
-      id: 'research-questions',
-      title: 'Research questions',
-      content: (
-        <ul className="space-y-2 text-sm text-slate-600">
-          {narrative.researchQuestions.map((question) => (
-            <li key={question.id}>
-              <span className="font-semibold text-slate-700">{question.id}:</span> {question.text}
-            </li>
-          ))}
-        </ul>
-      )
-    },
-    {
-      id: 'hypotheses',
-      title: 'Hypotheses',
-      content: (
-        <ul className="space-y-2 text-sm text-slate-600">
-          {narrative.hypotheses.map((hypothesis) => (
-            <li key={hypothesis.id}>
-              <span className="font-semibold text-slate-700">{hypothesis.id}:</span> {hypothesis.text}
-            </li>
-          ))}
-        </ul>
-      )
-    }
-  ];
-
   return (
     <div className="bg-slate-50 text-slate-900">
       <Header sections={sections} pdfPath={reportMeta.pdfPath} />
@@ -115,19 +74,7 @@ const App = () => {
               </div>
             </Section>
 
-            <Section id="study-design" title="Study design" subtitle="Context, research questions, and hypotheses">
-              <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-                <div className="space-y-4">
-                  <Accordion items={researchCards} />
-                </div>
-                <Card>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">Five-step timeline</p>
-                  <div className="mt-4">
-                    <MethodTimeline stages={studyDesign.stages} />
-                  </div>
-                </Card>
-              </div>
-            </Section>
+            <StudyDesignSection />
 
             <Section id="experiment-flow" title="Experiment flow" subtitle="How participants moved through the study">
               <ExperimentStepper

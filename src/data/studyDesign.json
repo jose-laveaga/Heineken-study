@@ -1,11 +1,65 @@
 {
+  "objective": {
+    "paragraph": "The study measures consumer preference in non-alcoholic beer using simulated shopping choice tasks plus follow-up questions to understand what drives selection.",
+    "bullets": [
+      "Behavioral choice tasks (1v1 comparisons and multi-brand lineups)",
+      "Price scenario variations",
+      "Post-task reasoning (why participants chose what they chose)"
+    ]
+  },
+  "experimentalDesign": {
+    "designType": "Within-subject; participants see multiple scenarios so comparisons are within the same participant.",
+    "rationale": "Compare mother-brand options vs non-mother / fictional options to isolate branding effects.",
+    "environment": "Simulated e-commerce storefront experience; participants browse products and add to cart."
+  },
+  "scenarios": {
+    "brandScenarios": [
+      "Heineken vs fictional non-mother brand",
+      "Heineken vs leading non-mother brand",
+      "Heineken vs lesser-known non-mother brands",
+      "Budweiser (mother brand) vs fictional",
+      "Heineken vs all non-mother brands",
+      "Mother brands vs non-mother brands (aggregate)"
+    ],
+    "priceScenarios": [
+      "Equal price",
+      "Heineken priced higher",
+      "Heineken priced lower"
+    ]
+  },
+  "brandSetRationale": {
+    "paragraph": "The brand set mixes mother brands, established competitors, independent brands, and fictional brands to test reputation transfer, benchmarks vs incumbents, novelty/packaging influence, and a zero-familiarity baseline.",
+    "table": [
+      {"type": "Mother brands", "purpose": "Test reputation transfer"},
+      {"type": "Established competitors", "purpose": "Benchmark market leaders"},
+      {"type": "Independent brand", "purpose": "Test packaging/novelty influence"},
+      {"type": "Fictional brands", "purpose": "Zero-familiarity baseline"}
+    ],
+    "callout": "Fictional brands help remove prior associations and isolate mother-brand equity."
+  },
+  "recruitment": {
+    "kpis": [
+      {"label": "Recruitment", "value": "Prolific"},
+      {"label": "Estimated time", "value": "6–8 min"},
+      {"label": "Eligibility", "value": "US, 21+"}
+    ],
+    "note": "Prolific IDs recorded for tracking and quality control."
+  },
   "stages": [
-    {"id": "stage1", "title": "Design", "description": "Define experimental conditions, sustainability cues, and core metrics."},
-    {"id": "stage2", "title": "Build storefront", "description": "Create digital tasks for 1v1 and multi-brand selection flows."},
-    {"id": "stage3", "title": "Pilot", "description": "Validate comprehension and timing across core audiences."},
-    {"id": "stage4", "title": "Execute", "description": "Field the study across qualified respondents with quota controls."},
-    {"id": "stage5", "title": "Analyze", "description": "Model pick rates, segmentation thresholds, and sentiment themes."}
+    {"id": "stage1", "title": "Design experiment", "description": "Define scenarios, measures, and task structure."},
+    {"id": "stage2", "title": "Build simulated storefront", "description": "Create choice tasks in a browse-and-cart flow."},
+    {"id": "stage3", "title": "Pilot test", "description": "Check timing, clarity, and task comprehension."},
+    {"id": "stage4", "title": "Execute experiment", "description": "Field the study with eligible respondents."},
+    {"id": "stage5", "title": "Data analysis & report", "description": "Analyze outcomes and deliver the final report."}
   ],
+  "participantExperience": {
+    "sentence": "Participants completed demographics/lifestyle/consumption questions and then completed structured choice tasks selecting among 0.0 beers.",
+    "bullets": [
+      "Provide demographics and consumption context",
+      "Complete 1v1 and multi-brand choice tasks",
+      "Answer brief follow-up questions about choice drivers"
+    ]
+  },
   "experimentFlow": [
     {
       "id": "flow1",
