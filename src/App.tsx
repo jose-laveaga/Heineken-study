@@ -81,8 +81,8 @@ const App = () => {
     <div className="bg-slate-50 text-slate-900">
       <Header sections={sections} pdfPath={reportMeta.pdfPath} />
       <AppShell>
-        <div className="flex gap-8">
-          <div className="flex-1">
+        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1fr)_220px]">
+          <div className="grid gap-10">
             <Section
               id="overview"
               title={reportMeta.title}

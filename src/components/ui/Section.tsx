@@ -11,7 +11,13 @@ interface SectionProps {
 }
 
 const Section = ({ id, title, subtitle, actions, children, className }: SectionProps) => (
-  <section id={id} className={clsx('section-anchor space-y-6 py-12', className)}>
+  <section
+    id={id}
+    className={clsx(
+      'section-anchor grid gap-6 rounded-3xl border border-slate-200 bg-white/90 px-6 py-10 shadow-sm sm:px-8',
+      className
+    )}
+  >
     <div className="flex flex-wrap items-center justify-between gap-4">
       <div className="space-y-2">
         <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
