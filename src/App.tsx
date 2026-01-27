@@ -81,8 +81,8 @@ const App = () => {
     <div className="bg-slate-50 text-slate-900">
       <Header sections={sections} pdfPath={reportMeta.pdfPath} />
       <AppShell>
-        <div className="flex gap-8">
-          <div className="flex-1">
+        <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1fr)_220px]">
+          <div className="grid gap-10">
             <Section
               id="overview"
               title={reportMeta.title}
@@ -116,11 +116,11 @@ const App = () => {
             </Section>
 
             <Section id="study-design" title="Study design" subtitle="Context, research questions, and hypotheses">
-              <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-4">
                   <Accordion items={researchCards} />
                 </div>
-                <Card>
+                <Card className="col-span-full w-full">
                   <p className="text-xs uppercase tracking-wide text-slate-500">Five-step timeline</p>
                   <div className="mt-4">
                     <MethodTimeline stages={studyDesign.stages} />
