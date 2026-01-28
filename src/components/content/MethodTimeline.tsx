@@ -63,6 +63,11 @@ const MethodTimeline = ({ stages }: MethodTimelineProps) => {
               </span>
             </div>
             <p className="mt-2 text-xs text-slate-600">{activeStage.description}</p>
+            <ul className="mt-3 space-y-1 text-xs text-slate-600">
+              <li>• Placeholder detail point one for this step.</li>
+              <li>• Placeholder detail point two for this step.</li>
+              <li>• Placeholder detail point three for this step.</li>
+            </ul>
           </div>
         ) : (
           <p className="text-xs text-slate-600">Select a step to see detailed notes.</p>
