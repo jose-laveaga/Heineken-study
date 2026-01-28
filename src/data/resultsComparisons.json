@@ -1,34 +1,35 @@
 {
   "comparisons": [
+
     {
       "id": "np_001",
-      "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs Budweiser Zero",
-      "formatTags": [],
-      "brandTags": ["Heineken 0.0", "Budweiser Zero"],
-      "scenarioTags": [],
-      "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Budweiser Zero", "value": 50}
-      ],
-      "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
-      ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
-    },
-    {
-      "id": "np_002",
       "category": "1v1_nonpriced",
       "title": "Heineken 0.0 vs Star Brew Non-Alcoholic",
       "formatTags": [],
       "brandTags": ["Heineken 0.0", "Star Brew Non-Alcoholic"],
       "scenarioTags": [],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Star Brew Non-Alcoholic", "value": 50}
+        {"label": "Heineken 0.0", "value": 63.1},
+        {"label": "Star Brew Non-Alcoholic", "value": 36.9}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+    },
+    {
+      "id": "np_002",
+      "category": "1v1_nonpriced",
+      "title": "Heineken 0.0 vs O'Doul's No-Alc",
+      "formatTags": [],
+      "brandTags": ["Heineken 0.0", "O'Doul's No-Alc"],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Heineken 0.0", "value": 72.9},
+        {"label": "O'Doul's No-Alc", "value": 27.1}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.01"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
     },
@@ -40,32 +41,16 @@
       "brandTags": ["Heineken 0.0", "Rescue Club Non-Alcoholic"],
       "scenarioTags": [],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Rescue Club Non-Alcoholic", "value": 50}
+        {"label": "Heineken 0.0", "value": 54.7},
+        {"label": "Rescue Club Non-Alcoholic", "value": 45.3}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.05"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
     },
     {
       "id": "np_004",
-      "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs O'Doul's No-Alc",
-      "formatTags": [],
-      "brandTags": ["Heineken 0.0", "O'Doul's No-Alc"],
-      "scenarioTags": [],
-      "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "O'Doul's No-Alc", "value": 50}
-      ],
-      "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
-      ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
-    },
-    {
-      "id": "np_005",
       "category": "1v1_nonpriced",
       "title": "Budweiser Zero vs Star Brew Non-Alcoholic",
       "formatTags": [],
@@ -76,23 +61,39 @@
         {"label": "Star Brew Non-Alcoholic", "value": 50}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.05"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+    },
+    {
+      "id": "np_005",
+      "category": "1v1_nonpriced",
+      "title": "Budweiser Zero vs O'Doul's No-Alc",
+      "formatTags": [],
+      "brandTags": ["Budweiser Zero", "O'Doul's No-Alc"],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Budweiser Zero", "value": 53.2},
+        {"label": "O'Doul's No-Alc", "value": 46.8}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.05"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
     },
     {
       "id": "np_006",
       "category": "1v1_nonpriced",
-      "title": "Rescue Club Non-Alcoholic vs O'Doul's No-Alc",
+      "title": "Budweiser Zero vs Rescue Club Non-Alcoholic",
       "formatTags": [],
-      "brandTags": ["Rescue Club Non-Alcoholic", "O'Doul's No-Alc"],
+      "brandTags": ["Budweiser Zero", "Rescue Club Non-Alcoholic"],
       "scenarioTags": [],
       "options": [
-        {"label": "Rescue Club Non-Alcoholic", "value": 50},
-        {"label": "O'Doul's No-Alc", "value": 50}
+        {"label": "Budweiser Zero", "value": 39.5},
+        {"label": "Rescue Club Non-Alcoholic", "value": 60.5}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
     },
@@ -104,11 +105,11 @@
       "brandTags": [],
       "scenarioTags": ["equal_price"],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Fictional brand", "value": 50}
+        {"label": "Heineken 0.0", "value": 61.6},
+        {"label": "Clear Hops 0.0", "value": 48.4}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
@@ -120,11 +121,11 @@
       "brandTags": [],
       "scenarioTags": ["equal_price"],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Fictional brand", "value": 50}
+        {"label": "Heineken 0.0", "value": 62.6},
+        {"label": "Clear Hops 0.0", "value": 37.4}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
@@ -136,11 +137,11 @@
       "brandTags": [],
       "scenarioTags": ["heineken_cheaper"],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Fictional brand", "value": 50}
+        {"label": "Heineken 0.0", "value": 71.4},
+        {"label": "Clear Hops 0.0", "value": 28.6}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
@@ -152,43 +153,43 @@
       "brandTags": [],
       "scenarioTags": ["heineken_cheaper"],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Fictional brand", "value": 50}
+        {"label": "Heineken 0.0", "value": 71.4},
+        {"label": "Clear Hops 0.0", "value": 28.6}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
     {
       "id": "pr_005",
       "category": "1v1_priced",
-      "title": "Fictional brand cheaper — 12-pack",
+      "title": "Clear Hops 0.0 cheaper — 12-pack",
       "formatTags": ["12-pack"],
       "brandTags": [],
       "scenarioTags": ["fictional_brand_cheaper"],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Fictional brand", "value": 50}
+        {"label": "Heineken 0.0", "value": 43.8},
+        {"label": "Clear Hops 0.0", "value": 56.2}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.05"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
     {
       "id": "pr_006",
       "category": "1v1_priced",
-      "title": "Fictional brand cheaper — Can",
+      "title": "Clear Hops 0.0 cheaper — Can",
       "formatTags": ["can"],
       "brandTags": [],
       "scenarioTags": ["fictional_brand_cheaper"],
       "options": [
-        {"label": "Heineken 0.0", "value": 50},
-        {"label": "Fictional brand", "value": 50}
+        {"label": "Heineken 0.0", "value": 49.5},
+        {"label": "Clear Hops 0.0", "value": 51.5}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.05"}
       ],
       "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
@@ -200,13 +201,15 @@
       "brandTags": [],
       "scenarioTags": [],
       "options": [
-        {"label": "Heineken 0.0", "value": 25},
-        {"label": "Budweiser Zero", "value": 25},
-        {"label": "Star Brew Non-Alcoholic", "value": 25},
-        {"label": "Rescue Club Non-Alcoholic", "value": 25}
+        {"label": "Heineken 0.0", "value": 46.7},
+        {"label": "Rescue Club Non-Alcoholic", "value": 21.8},
+        {"label": "Cobra Zero", "value": 14.5},
+        {"label": "O'Doul's Non-Alc", "value": 7.7},
+        {"label": "Bavaria 0.0", "value": 7.0},
+        {"label": "Penn's Best Non-Alc", "value": 2.2}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
       "interpretation": "Placeholder donut chart for multi-brand comparison."
     },
@@ -218,13 +221,15 @@
       "brandTags": [],
       "scenarioTags": [],
       "options": [
-        {"label": "Heineken 0.0", "value": 25},
-        {"label": "Budweiser Zero", "value": 25},
-        {"label": "Star Brew Non-Alcoholic", "value": 25},
-        {"label": "O'Doul's No-Alc", "value": 25}
+        {"label": "Heineken 0.0", "value": 47.5},
+        {"label": "Budweiser Zero", "value": 16.0},
+        {"label": "Kaliber Non-Alc", "value": 13.3},
+        {"label": "O'Doul's No-Alc", "value": 9.9},
+        {"label": "Beck's Blue", "value": 7.7},
+        {"label": "Clausthaler Non-Alc", "value": 5.6}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
       "interpretation": "Placeholder donut chart for multi-brand comparison."
     },
@@ -236,10 +241,12 @@
       "brandTags": [],
       "scenarioTags": [],
       "options": [
-        {"label": "Heineken 0.0", "value": 25},
-        {"label": "Rescue Club Non-Alcoholic", "value": 25},
-        {"label": "Star Brew Non-Alcoholic", "value": 25},
-        {"label": "O'Doul's No-Alc", "value": 25}
+        {"label": "Rescue Club Non-Alcoholic", "value": 30.2},
+        {"label": "Beck's Blue", "value": 19},
+        {"label": "O'Doul's Non-Alc", "value": 18.5},
+        {"label": "Cobra Zero", "value": 18},
+        {"label": "Bavaria 0.0", "value": 9.3},
+        {"label": "Penn's Best Non-Alc", "value": 4.9}
       ],
       "stats": [
         {"label": "placeholder", "valueText": "TBD"}
@@ -254,10 +261,12 @@
       "brandTags": [],
       "scenarioTags": [],
       "options": [
-        {"label": "Budweiser Zero", "value": 25},
-        {"label": "Star Brew Non-Alcoholic", "value": 25},
-        {"label": "Rescue Club Non-Alcoholic", "value": 25},
-        {"label": "O'Doul's No-Alc", "value": 25}
+        {"label": "Budweiser Zero", "value": 28.3},
+        {"label": "Rescue Club Non-Alcoholic", "value": 24.4},
+        {"label": "O'Doul's Non-Alc", "value": 17.1},
+        {"label": "Cobra Zero", "value": 16.1},
+        {"label": "Bavaria 0.0", "value": 10.2},
+        {"label": "Penn's Best Non-Alc", "value": 3.9}
       ],
       "stats": [
         {"label": "placeholder", "valueText": "TBD"}
