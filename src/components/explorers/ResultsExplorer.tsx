@@ -4,6 +4,9 @@ import Chip from '../ui/Chip';
 import Accordion from '../ui/Accordion';
 import ChartCard from '../charts/ChartCard';
 import DonutChart from '../charts/DonutChart';
+import GroupedBarChart from '../charts/GroupedBarChart';
+import HorizontalBarChart from '../charts/HorizontalBarChart';
+import BoxPlotChart from '../charts/BoxPlotChart';
 import resultsComparisons from '../../data/resultsComparisons.json';
 import { computeH2Metrics, computeH3Interaction, segmentByDrinkingHabit } from '../../utils/analysis';
 
@@ -45,6 +48,23 @@ const categoryFilters = {
 const h1ChartData = [
   { label: 'Heineken 0.0', value: 63.1 },
   { label: 'Star Brew', value: 36.9 }
+];
+
+const h1PriceComparison = [
+  { label: 'Equal price', heineken: 62.6, fictional: 37.4 },
+  { label: 'Heineken higher', heineken: 47.8, fictional: 52.2 }
+];
+
+const h2BoxPlotData = [
+  { label: 'Low perception', min: 12, q1: 24, median: 36, q3: 44, max: 58 },
+  { label: 'Mid perception', min: 22, q1: 35, median: 48, q3: 60, max: 72 },
+  { label: 'High perception', min: 38, q1: 52, median: 66, q3: 78, max: 92 }
+];
+
+const h3SegmentLift = [
+  { label: 'Non-drinkers', value: 41.2 },
+  { label: 'Occasional', value: 52.6 },
+  { label: 'Regular', value: 61.9 }
 ];
 
 const badgeStyles: Record<string, string> = {
@@ -258,19 +278,46 @@ const ResultsExplorer = () => {
                     </div>
                     <div className="space-y-3">
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence chart</p>
-                      <ChartCard title="Heineken vs Star Brew (No Price)" dataTable={(
-                        <table className="w-full text-sm">
-                          <tbody>
-                            {h1ChartData.map((entry) => (
-                              <tr key={entry.label} className="border-b border-slate-200 last:border-0">
-                                <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                                <td className="py-1 text-right text-slate-600">{entry.value}%</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      )}>
-                        <DonutChart data={h1ChartData} ariaLabel="Heineken vs Star Brew share chart" />
+                      <ChartCard
+                        title="Heineken vs Star Brew share"
+                        dataTable={(
+                          <table className="w-full text-sm">
+                            <tbody>
+                              {h1ChartData.map((entry) => (
+                                <tr key={entry.label} className="border-b border-slate-200 last:border-0">
+                                  <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
+                                  <td className="py-1 text-right text-slate-600">{entry.value}%</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        )}
+                      >
+                        <HorizontalBarChart data={h1ChartData} ariaLabel="Heineken vs Star Brew share bar chart" />
+                      </ChartCard>
+                      <ChartCard
+                        title="Price sensitivity (double bar)"
+                        dataTable={(
+                          <table className="w-full text-sm">
+                            <tbody>
+                              {h1PriceComparison.map((entry) => (
+                                <tr key={entry.label} className="border-b border-slate-200 last:border-0">
+                                  <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
+                                  <td className="py-1 text-right text-slate-600">{entry.heineken}% / {entry.fictional}%</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        )}
+                      >
+                        <GroupedBarChart
+                          data={h1PriceComparison}
+                          series={[
+                            { key: 'heineken', label: 'Heineken 0.0' },
+                            { key: 'fictional', label: 'Fictional brand' }
+                          ]}
+                          ariaLabel="Price sensitivity grouped bar chart"
+                        />
                       </ChartCard>
                     </div>
                   </div>
@@ -315,9 +362,25 @@ const ResultsExplorer = () => {
                     </div>
                     <div className="space-y-3">
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence chart</p>
-                      <div className="flex min-h-[180px] items-center justify-center rounded-xl border border-dashed border-slate-200 bg-slate-50 p-4 text-center text-sm text-slate-500">
-                        Visualization pending data hookup.
-                      </div>
+                      <ChartCard
+                        title="Purchase intent by perception tier"
+                        dataTable={(
+                          <table className="w-full text-sm">
+                            <tbody>
+                              {h2BoxPlotData.map((entry) => (
+                                <tr key={entry.label} className="border-b border-slate-200 last:border-0">
+                                  <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
+                                  <td className="py-1 text-right text-slate-600">
+                                    {entry.min}-{entry.max}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        )}
+                      >
+                        <BoxPlotChart data={h2BoxPlotData} ariaLabel="Purchase intent distribution by perception tier" valueSuffix="%" />
+                      </ChartCard>
                     </div>
                   </div>
                 </div>
@@ -360,9 +423,23 @@ const ResultsExplorer = () => {
                     </div>
                     <div className="space-y-3">
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence chart</p>
-                      <div className="flex min-h-[180px] items-center justify-center rounded-xl border border-dashed border-slate-200 bg-slate-50 p-4 text-center text-sm text-slate-500">
-                        Interaction visualization pending data hookup.
-                      </div>
+                      <ChartCard
+                        title="Mother-brand lift by drinking habit"
+                        dataTable={(
+                          <table className="w-full text-sm">
+                            <tbody>
+                              {h3SegmentLift.map((entry) => (
+                                <tr key={entry.label} className="border-b border-slate-200 last:border-0">
+                                  <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
+                                  <td className="py-1 text-right text-slate-600">{entry.value}%</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        )}
+                      >
+                        <HorizontalBarChart data={h3SegmentLift} ariaLabel="Mother-brand lift by drinking habit bar chart" />
+                      </ChartCard>
                     </div>
                   </div>
                 </div>
