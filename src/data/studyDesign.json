@@ -1,10 +1,40 @@
 {
   "stages": [
-    {"id": "stage1", "title": "Design", "description": "Define experimental conditions, sustainability cues, and core metrics."},
-    {"id": "stage2", "title": "Build storefront", "description": "Create digital tasks for 1v1 and multi-brand selection flows."},
-    {"id": "stage3", "title": "Pilot", "description": "Validate comprehension and timing across core audiences."},
-    {"id": "stage4", "title": "Execute", "description": "Field the study across qualified respondents with quota controls."},
-    {"id": "stage5", "title": "Analyze", "description": "Model pick rates, segmentation thresholds, and sentiment themes."}
+    {
+      "id": "stage1",
+      "title": "Design of the Experiment",
+      "bullet_one":  "• The criteria and methodologies for selecting the participant sample were defined, ensuring a stratified approach to achieve representative results.",
+      "bullet_two":  "• Established comparison frameworks to assess mother brands versus non-mother brands.",
+      "bullet_three":  "•  Established the key metrics to be measured and formalized the procedures for collecting the necessary data.",
+      "description": "This foundational stage focused on establishing the methodological framework for the study."},
+    {
+      "id": "stage2",
+      "title": "Building the Simulated Online Storefront",
+      "bullet_one":  "• Design and Develop an interactive, web-based platform that mimics an actual online shopping experience.",
+      "bullet_two":  "• The core deliverable was the creation of a realistic and functional online platform where the experiment could be conducted.",
+      "bullet_three":  null,
+      "description": "This stage was dedicated to creating the experimental environment necessary to simulate the user experience."},
+    {
+      "id": "stage3",
+      "title": "Pilot Testing",
+      "bullet_one":  "• Conducted initial trials to assess the flow, clarity, and effectiveness of the defined experimental steps.",
+      "bullet_two":  "• Documented and analyzed any unforeseen technical, procedural, or participant-related problems.",
+      "bullet_three":  "• Made necessary adjustments based on pilot findings to ensure the final experiment was optimized and free of bias.",
+      "description": "Test experimental procedures. A critical stage for validating the experimental setup and protocols before full deployment"},
+    {
+      "id": "stage4",
+      "title": "Experiment Execution",
+      "bullet_one":  "• Executed the study across defined segments or groups as per the finalized protocol.",
+      "bullet_two":  "• Ensured all necessary data points were gathered accurately and efficiently using the predetermined collection methods.",
+      "bullet_three":  null,
+      "description": "The primary data collection phase focused on the systematic implementation of the finalized design."},
+    {
+      "id": "stage5",
+      "title": "Analyze",
+      "bullet_one":  "• Applied appropriate statistical methods to the collected data to test hypotheses and formulate evidence-based conclusions.",
+      "bullet_two":  "• Modeling of pick rates, segmentation thresholds, and sentiment themes.",
+      "bullet_three":  null,
+      "description": "The final stage, where raw data was translated into actionable insights and presented."}
   ],
   "experimentFlow": [
     {
@@ -13,9 +43,9 @@
       "bullets": [
         "Welcome + consent",
         "Screening + demographic capture",
-        "1v1 product tasks",
-        "Multi-brand shelf tasks",
-        "Post-task sentiment + completion"
+        "1v1 product comparisons",
+        "Multi-brand comparisons",
+        "Post-experiment sentiment + completion"
       ]
     }
   ]

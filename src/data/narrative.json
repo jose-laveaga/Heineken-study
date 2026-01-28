@@ -9,9 +9,9 @@
     {"id": "RQ2", "text": "Which shopper segments consistently exceed defined pick-rate thresholds?"}
   ],
   "hypotheses": [
-    {"id": "H1", "text": "Sustainability cues increase mother-brand pick rates in no-price scenarios."},
-    {"id": "H2", "text": "Price parity reduces the pick-rate gap between mother brands and challengers."},
-    {"id": "H3", "text": "Higher activity shoppers over-index on Heineken pick rate thresholds."}
+    {"id": "H1", "text": "Heineken 0.0 will be chosen more frequently in the simulated purchase environment compared to a fictional non-branded 0.0 beer."},
+    {"id": "H2", "text": "Brand perception scores for Heineken will positively correlate with purchase behavior and intent for Heineken 0.0."},
+    {"id": "H3", "text": "The impact of the mother brand on purchase behavior will be stronger for regular alcohol drinkers than non-drinkers."}
   ],
   "keyTakeaways": [
     {"id": "KT1", "text": "Preference shifts are largest when sustainability cues are paired with familiar packaging."},
