@@ -1,136 +1,277 @@
 {
   "comparisons": [
+
     {
-      "id": "cmp_001",
+      "id": "np_001",
       "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs Star Brew (Bottle)",
-      "formatTags": ["bottle"],
-      "brandTags": ["heineken", "star_brew"],
-      "scenarioTags": ["no_price"],
+      "title": "Heineken 0.0 vs Star Brew Non-Alcoholic",
+      "formatTags": [],
+      "brandTags": ["Heineken 0.0", "Star Brew Non-Alcoholic"],
+      "scenarioTags": [],
       "options": [
         {"label": "Heineken 0.0", "value": 63.1},
-        {"label": "Star Brew", "value": 36.9}
+        {"label": "Star Brew Non-Alcoholic", "value": 36.9}
       ],
       "stats": [
-        {"label": "p-value", "valueText": "< 0.001"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Heineken leads in the no-price comparison, suggesting familiarity and sustainability cues support selection."
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
     },
     {
-      "id": "cmp_002",
+      "id": "np_002",
       "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs Green River (Can)",
-      "formatTags": ["can"],
-      "brandTags": ["heineken", "green_river"],
-      "scenarioTags": ["no_price"],
+      "title": "Heineken 0.0 vs O'Doul's No-Alc",
+      "formatTags": [],
+      "brandTags": ["Heineken 0.0", "O'Doul's No-Alc"],
+      "scenarioTags": [],
       "options": [
-        {"label": "Heineken 0.0", "value": 57.4},
-        {"label": "Green River", "value": 42.6}
+        {"label": "Heineken 0.0", "value": 72.9},
+        {"label": "O'Doul's No-Alc", "value": 27.1}
       ],
       "stats": [
-        {"label": "lift", "valueText": "+14.8 pts"}
+        {"label": "p-value", "valueText": "0.01"}
       ],
-      "interpretation": "Share gains persist even without price cues, indicating a brand advantage across formats."
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
     },
     {
-      "id": "cmp_003",
+      "id": "np_003",
+      "category": "1v1_nonpriced",
+      "title": "Heineken 0.0 vs Rescue Club Non-Alcoholic",
+      "formatTags": [],
+      "brandTags": ["Heineken 0.0", "Rescue Club Non-Alcoholic"],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Heineken 0.0", "value": 54.7},
+        {"label": "Rescue Club Non-Alcoholic", "value": 45.3}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.05"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+    },
+    {
+      "id": "np_004",
+      "category": "1v1_nonpriced",
+      "title": "Budweiser Zero vs Star Brew Non-Alcoholic",
+      "formatTags": [],
+      "brandTags": ["Budweiser Zero", "Star Brew Non-Alcoholic"],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Budweiser Zero", "value": 50},
+        {"label": "Star Brew Non-Alcoholic", "value": 50}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.05"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+    },
+    {
+      "id": "np_005",
+      "category": "1v1_nonpriced",
+      "title": "Budweiser Zero vs O'Doul's No-Alc",
+      "formatTags": [],
+      "brandTags": ["Budweiser Zero", "O'Doul's No-Alc"],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Budweiser Zero", "value": 53.2},
+        {"label": "O'Doul's No-Alc", "value": 46.8}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.05"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+    },
+    {
+      "id": "np_006",
+      "category": "1v1_nonpriced",
+      "title": "Budweiser Zero vs Rescue Club Non-Alcoholic",
+      "formatTags": [],
+      "brandTags": ["Budweiser Zero", "Rescue Club Non-Alcoholic"],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Budweiser Zero", "value": 39.5},
+        {"label": "Rescue Club Non-Alcoholic", "value": 60.5}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.001"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+    },
+    {
+      "id": "pr_001",
       "category": "1v1_priced",
-      "title": "Heineken 0.0 vs Star Brew (Equal Price)",
-      "formatTags": ["bottle"],
-      "brandTags": ["heineken", "star_brew"],
+      "title": "Equal price — 12-pack",
+      "formatTags": ["12-pack"],
+      "brandTags": [],
       "scenarioTags": ["equal_price"],
       "options": [
-        {"label": "Heineken 0.0", "value": 54.2},
-        {"label": "Star Brew", "value": 45.8}
+        {"label": "Heineken 0.0", "value": 61.6},
+        {"label": "Clear Hops 0.0", "value": 48.4}
       ],
       "stats": [
-        {"label": "p-value", "valueText": "0.03"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Price parity narrows the gap but Heineken remains ahead in equal-price contexts."
+      "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
     {
-      "id": "cmp_004",
+      "id": "pr_002",
       "category": "1v1_priced",
-      "title": "Heineken 0.0 vs Green River (Heineken Cheaper)",
+      "title": "Equal price — Can",
       "formatTags": ["can"],
-      "brandTags": ["heineken", "green_river"],
+      "brandTags": [],
+      "scenarioTags": ["equal_price"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 62.6},
+        {"label": "Clear Hops 0.0", "value": 37.4}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.001"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+    },
+    {
+      "id": "pr_003",
+      "category": "1v1_priced",
+      "title": "Heineken cheaper — 12-pack",
+      "formatTags": ["12-pack"],
+      "brandTags": [],
       "scenarioTags": ["heineken_cheaper"],
       "options": [
-        {"label": "Heineken 0.0", "value": 68.9},
-        {"label": "Green River", "value": 31.1}
+        {"label": "Heineken 0.0", "value": 71.4},
+        {"label": "Clear Hops 0.0", "value": 28.6}
       ],
       "stats": [
-        {"label": "lift", "valueText": "+20.5 pts"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Lower pricing amplifies the preference gap, reinforcing sensitivity to value cues."
+      "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
     {
-      "id": "cmp_005",
-      "category": "multi_brand",
-      "title": "Multi-brand shelf: Bottles",
-      "formatTags": ["bottle"],
-      "brandTags": ["heineken", "star_brew", "green_river", "harbor_zero"],
-      "scenarioTags": ["multi_brand"],
-      "options": [
-        {"label": "Heineken 0.0", "value": 41.2},
-        {"label": "Star Brew", "value": 24.5},
-        {"label": "Green River", "value": 19.1},
-        {"label": "Harbor Zero", "value": 15.2}
-      ],
-      "stats": [
-        {"label": "top-2 share", "valueText": "65.7%"}
-      ],
-      "interpretation": "Heineken leads multi-brand shelves but selection is dispersed across challengers."
-    },
-    {
-      "id": "cmp_006",
-      "category": "multi_brand",
-      "title": "Multi-brand shelf: Cans",
-      "formatTags": ["can"],
-      "brandTags": ["heineken", "star_brew", "green_river", "harbor_zero"],
-      "scenarioTags": ["multi_brand"],
-      "options": [
-        {"label": "Heineken 0.0", "value": 38.5},
-        {"label": "Star Brew", "value": 27.4},
-        {"label": "Green River", "value": 20.8},
-        {"label": "Harbor Zero", "value": 13.3}
-      ],
-      "stats": [
-        {"label": "top-2 share", "valueText": "65.9%"}
-      ],
-      "interpretation": "Cans compress pick rates slightly, but ranking stays consistent with bottle shelves."
-    },
-    {
-      "id": "cmp_007",
+      "id": "pr_004",
       "category": "1v1_priced",
-      "title": "Heineken 0.0 vs Star Brew (Competitor Cheaper)",
-      "formatTags": ["12-pack"],
-      "brandTags": ["heineken", "star_brew"],
-      "scenarioTags": ["competitor_cheaper"],
+      "title": "Heineken cheaper — Can",
+      "formatTags": ["can"],
+      "brandTags": [],
+      "scenarioTags": ["heineken_cheaper"],
       "options": [
-        {"label": "Heineken 0.0", "value": 49.3},
-        {"label": "Star Brew", "value": 50.7}
+        {"label": "Heineken 0.0", "value": 71.4},
+        {"label": "Clear Hops 0.0", "value": 28.6}
       ],
       "stats": [
-        {"label": "p-value", "valueText": "0.41"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "When a competitor is cheaper, the preference advantage disappears, indicating a value-driven tradeoff."
+      "interpretation": "Placeholder donut chart for 1v1 price comparison."
     },
     {
-      "id": "cmp_008",
-      "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs Harbor Zero (12-pack)",
+      "id": "pr_005",
+      "category": "1v1_priced",
+      "title": "Clear Hops 0.0 cheaper — 12-pack",
       "formatTags": ["12-pack"],
-      "brandTags": ["heineken", "harbor_zero"],
-      "scenarioTags": ["no_price"],
+      "brandTags": [],
+      "scenarioTags": ["fictional_brand_cheaper"],
       "options": [
-        {"label": "Heineken 0.0", "value": 60.6},
-        {"label": "Harbor Zero", "value": 39.4}
+        {"label": "Heineken 0.0", "value": 43.8},
+        {"label": "Clear Hops 0.0", "value": 56.2}
       ],
       "stats": [
-        {"label": "lift", "valueText": "+11.2 pts"}
+        {"label": "p-value", "valueText": "0.05"}
       ],
-      "interpretation": "Packaging familiarity keeps Heineken ahead even before price signals are introduced."
+      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+    },
+    {
+      "id": "pr_006",
+      "category": "1v1_priced",
+      "title": "Clear Hops 0.0 cheaper — Can",
+      "formatTags": ["can"],
+      "brandTags": [],
+      "scenarioTags": ["fictional_brand_cheaper"],
+      "options": [
+        {"label": "Heineken 0.0", "value": 49.5},
+        {"label": "Clear Hops 0.0", "value": 51.5}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.05"}
+      ],
+      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+    },
+    {
+      "id": "mb_001",
+      "category": "multi_brand",
+      "title": "Multi-brand comparison — set A",
+      "formatTags": [],
+      "brandTags": [],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Heineken 0.0", "value": 46.7},
+        {"label": "Rescue Club Non-Alcoholic", "value": 21.8},
+        {"label": "Cobra Zero", "value": 14.5},
+        {"label": "O'Doul's Non-Alc", "value": 7.7},
+        {"label": "Bavaria 0.0", "value": 7.0},
+        {"label": "Penn's Best Non-Alc", "value": 2.2}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.001"}
+      ],
+      "interpretation": "Placeholder donut chart for multi-brand comparison."
+    },
+    {
+      "id": "mb_002",
+      "category": "multi_brand",
+      "title": "Multi-brand comparison — set B",
+      "formatTags": [],
+      "brandTags": [],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Heineken 0.0", "value": 47.5},
+        {"label": "Budweiser Zero", "value": 16.0},
+        {"label": "Kaliber Non-Alc", "value": 13.3},
+        {"label": "O'Doul's No-Alc", "value": 9.9},
+        {"label": "Beck's Blue", "value": 7.7},
+        {"label": "Clausthaler Non-Alc", "value": 5.6}
+      ],
+      "stats": [
+        {"label": "p-value", "valueText": "0.001"}
+      ],
+      "interpretation": "Placeholder donut chart for multi-brand comparison."
+    },
+    {
+      "id": "mb_003",
+      "category": "multi_brand",
+      "title": "Multi-brand comparison — set C",
+      "formatTags": [],
+      "brandTags": [],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Rescue Club Non-Alcoholic", "value": 30.2},
+        {"label": "Beck's Blue", "value": 19},
+        {"label": "O'Doul's Non-Alc", "value": 18.5},
+        {"label": "Cobra Zero", "value": 18},
+        {"label": "Bavaria 0.0", "value": 9.3},
+        {"label": "Penn's Best Non-Alc", "value": 4.9}
+      ],
+      "stats": [
+        {"label": "placeholder", "valueText": "TBD"}
+      ],
+      "interpretation": "Placeholder donut chart for multi-brand comparison."
+    },
+    {
+      "id": "mb_004",
+      "category": "multi_brand",
+      "title": "Multi-brand comparison — set D",
+      "formatTags": [],
+      "brandTags": [],
+      "scenarioTags": [],
+      "options": [
+        {"label": "Budweiser Zero", "value": 28.3},
+        {"label": "Rescue Club Non-Alcoholic", "value": 24.4},
+        {"label": "O'Doul's Non-Alc", "value": 17.1},
+        {"label": "Cobra Zero", "value": 16.1},
+        {"label": "Bavaria 0.0", "value": 10.2},
+        {"label": "Penn's Best Non-Alc", "value": 3.9}
+      ],
+      "stats": [
+        {"label": "placeholder", "valueText": "TBD"}
+      ],
+      "interpretation": "Placeholder donut chart for multi-brand comparison."
     }
   ]
 }

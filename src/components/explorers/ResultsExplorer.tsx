@@ -4,7 +4,6 @@ import Chip from '../ui/Chip';
 import Accordion from '../ui/Accordion';
 import ChartCard from '../charts/ChartCard';
 import DonutChart from '../charts/DonutChart';
-import HorizontalBarChart from '../charts/HorizontalBarChart';
 import resultsComparisons from '../../data/resultsComparisons.json';
 import { computeH2Metrics, computeH3Interaction, segmentByDrinkingHabit } from '../../utils/analysis';
 
@@ -15,18 +14,33 @@ const categoryTabs = [
 ];
 
 const formatLabels: Record<string, string> = {
-  bottle: 'Bottle',
   can: 'Can',
   '12-pack': '12-pack'
 };
 
 const scenarioLabels: Record<string, string> = {
-  no_price: 'No price',
   equal_price: 'Equal price',
   heineken_cheaper: 'Heineken cheaper',
-  competitor_cheaper: 'Competitor cheaper',
-  multi_brand: 'Multi-brand'
+  fictional_brand_cheaper: 'Fictional brand cheaper'
 };
+
+const categoryFilters = {
+  '1v1_nonpriced': {
+    brands: ['Heineken 0.0', 'Budweiser Zero', 'Star Brew Non-Alcoholic', 'Rescue Club Non-Alcoholic', "O'Doul's No-Alc"],
+    formats: [],
+    scenarios: []
+  },
+  '1v1_priced': {
+    brands: [],
+    formats: ['12-pack', 'can'],
+    scenarios: ['equal_price', 'heineken_cheaper', 'fictional_brand_cheaper']
+  },
+  'multi_brand': {
+    brands: [],
+    formats: [],
+    scenarios: []
+  }
+} as const;
 
 const h1ChartData = [
   { label: 'Heineken 0.0', value: 63.1 },
@@ -88,29 +102,15 @@ const ResultsExplorer = () => {
         'TODO: estimate interaction between mother-brand lift and regular-drinker segment.'
       ];
 
-  const brandOptions = useMemo(() => {
-    const brands = new Set<string>();
-    comparisons.forEach((item) => item.brandTags.forEach((tag) => brands.add(tag)));
-    return ['all', ...Array.from(brands)];
-  }, [comparisons]);
-
-  const formatOptions = useMemo(() => {
-    const formats = new Set<string>();
-    comparisons.forEach((item) => item.formatTags.forEach((tag) => formats.add(tag)));
-    return ['all', ...Array.from(formats)];
-  }, [comparisons]);
-
-  const scenarioOptions = useMemo(() => {
-    const scenarios = new Set<string>();
-    comparisons.forEach((item) => item.scenarioTags.forEach((tag) => scenarios.add(tag)));
-    return ['all', ...Array.from(scenarios)];
-  }, [comparisons]);
+  const brandOptions = useMemo(() => categoryFilters[category].brands, [category]);
+  const formatOptions = useMemo(() => categoryFilters[category].formats, [category]);
+  const scenarioOptions = useMemo(() => categoryFilters[category].scenarios, [category]);
 
   const filtered = comparisons.filter((item) => {
     if (item.category !== category) return false;
-    if (brandFilter !== 'all' && !item.brandTags.includes(brandFilter)) return false;
-    if (formatFilter !== 'all' && !item.formatTags.includes(formatFilter)) return false;
-    if (scenarioFilter !== 'all' && !item.scenarioTags.includes(scenarioFilter)) return false;
+    if (brandOptions.length && brandFilter !== 'all' && !item.brandTags.includes(brandFilter)) return false;
+    if (formatOptions.length && formatFilter !== 'all' && !item.formatTags.includes(formatFilter)) return false;
+    if (scenarioOptions.length && scenarioFilter !== 'all' && !item.scenarioTags.includes(scenarioFilter)) return false;
     return true;
   });
 
@@ -119,47 +119,55 @@ const ResultsExplorer = () => {
   return (
     <div className="space-y-6">
       <Tabs options={categoryTabs} value={category} onChange={setCategory} />
-      <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-4 md:grid-cols-3">
-        <div className="space-y-2">
-          <p className="text-xs uppercase tracking-wide text-slate-500">Brand set</p>
-          <div className="flex flex-wrap gap-2">
-            {brandOptions.map((brand) => (
-              <Chip
-                key={brand}
-                label={brand === 'all' ? 'All' : brand.replace('_', ' ')}
-                selected={brandFilter === brand}
-                onClick={() => setBrandFilter(brand)}
-              />
-            ))}
-          </div>
+      {(brandOptions.length || formatOptions.length || scenarioOptions.length) && (
+        <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-4 md:grid-cols-3">
+          {brandOptions.length ? (
+            <div className="space-y-2">
+              <p className="text-xs uppercase tracking-wide text-slate-500">Brand set</p>
+              <div className="flex flex-wrap gap-2">
+                {['all', ...brandOptions].map((brand) => (
+                  <Chip
+                    key={brand}
+                    label={brand === 'all' ? 'All' : brand}
+                    selected={brandFilter === brand}
+                    onClick={() => setBrandFilter(brand)}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {formatOptions.length ? (
+            <div className="space-y-2">
+              <p className="text-xs uppercase tracking-wide text-slate-500">Package format</p>
+              <div className="flex flex-wrap gap-2">
+                {['all', ...formatOptions].map((format) => (
+                  <Chip
+                    key={format}
+                    label={format === 'all' ? 'All' : formatLabels[format] ?? format}
+                    selected={formatFilter === format}
+                    onClick={() => setFormatFilter(format)}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {scenarioOptions.length ? (
+            <div className="space-y-2">
+              <p className="text-xs uppercase tracking-wide text-slate-500">Scenario</p>
+              <div className="flex flex-wrap gap-2">
+                {['all', ...scenarioOptions].map((scenario) => (
+                  <Chip
+                    key={scenario}
+                    label={scenario === 'all' ? 'All' : scenarioLabels[scenario] ?? scenario}
+                    selected={scenarioFilter === scenario}
+                    onClick={() => setScenarioFilter(scenario)}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
-        <div className="space-y-2">
-          <p className="text-xs uppercase tracking-wide text-slate-500">Package format</p>
-          <div className="flex flex-wrap gap-2">
-            {formatOptions.map((format) => (
-              <Chip
-                key={format}
-                label={format === 'all' ? 'All' : formatLabels[format] ?? format}
-                selected={formatFilter === format}
-                onClick={() => setFormatFilter(format)}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="space-y-2">
-          <p className="text-xs uppercase tracking-wide text-slate-500">Scenario</p>
-          <div className="flex flex-wrap gap-2">
-            {scenarioOptions.map((scenario) => (
-              <Chip
-                key={scenario}
-                label={scenario === 'all' ? 'All' : scenarioLabels[scenario] ?? scenario}
-                selected={scenarioFilter === scenario}
-                onClick={() => setScenarioFilter(scenario)}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      )}
       <div className="grid gap-6 md:grid-cols-2">
         {visible.map((item) => {
           const dataTable = (
@@ -183,11 +191,7 @@ const ResultsExplorer = () => {
               stats={item.stats}
               dataTable={dataTable}
             >
-              {item.options.length <= 2 ? (
-                <DonutChart data={item.options} ariaLabel={`${item.title} comparison chart`} />
-              ) : (
-                <HorizontalBarChart data={item.options} ariaLabel={`${item.title} share chart`} />
-              )}
+              <DonutChart data={item.options} ariaLabel={`${item.title} comparison chart`} />
             </ChartCard>
           );
         })}
