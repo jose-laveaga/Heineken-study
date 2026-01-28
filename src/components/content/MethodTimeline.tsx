@@ -4,6 +4,9 @@ interface Stage {
   id: string;
   title: string;
   description: string;
+  bullet_one: string;
+  bullet_two: string;
+  bullet_three: string;
 }
 
 interface MethodTimelineProps {
@@ -64,9 +67,9 @@ const MethodTimeline = ({ stages }: MethodTimelineProps) => {
             </div>
             <p className="mt-2 text-xs text-slate-600">{activeStage.description}</p>
             <ul className="mt-3 space-y-1 text-xs text-slate-600">
-              <li>• Placeholder detail point one for this step.</li>
-              <li>• Placeholder detail point two for this step.</li>
-              <li>• Placeholder detail point three for this step.</li>
+              <li>{activeStage.bullet_one}</li>
+              <li>{activeStage.bullet_two}</li>
+              <li>{activeStage.bullet_three}</li>
             </ul>
           </div>
         ) : (
