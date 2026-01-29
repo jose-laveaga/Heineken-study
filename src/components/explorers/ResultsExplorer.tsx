@@ -46,8 +46,8 @@ const categoryFilters = {
 } as const;
 
 const h1ChartData = [
-  { label: 'Heineken 0.0', value: 63.1 },
-  { label: 'Star Brew', value: 36.9 }
+  { label: 'Heineken 0.0', value: 2416 },
+  { label: 'Fictional Brands', value: 1357 }
 ];
 
 const h1PriceComparison = [
@@ -286,7 +286,7 @@ const ResultsExplorer = () => {
                               {h1ChartData.map((entry) => (
                                 <tr key={entry.label} className="border-b border-slate-200 last:border-0">
                                   <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                                  <td className="py-1 text-right text-slate-600">{entry.value}%</td>
+                                  <td className="py-1 text-right text-slate-600">{entry.value}</td>
                                 </tr>
                               ))}
                             </tbody>

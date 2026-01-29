@@ -103,7 +103,7 @@ const App = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="grid gap-4">
-                    <StatCard label="Sample size" value="n = 1,200" note="TODO: Update with final sample" />
+                    <StatCard label="Sample size" value="n = 412" note="TODO: Update with final sample" />
                     <StatCard label="Completion time" value="14–16 min" note="Median estimate" />
                     <StatCard label="Geography" value="US only" note="Urban + suburban" />
                     <StatCard label="Main outcome" value="Heineken leads in 1v1" note="TODO: Update with final outcome" />
