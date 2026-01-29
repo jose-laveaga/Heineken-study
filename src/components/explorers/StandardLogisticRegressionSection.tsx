@@ -13,42 +13,42 @@ const chartConfigs = [
     title: 'Predicted margins by activity level (>50% mother brand)',
     xAxisLabel: 'Activity level',
     yAxisLabel: 'Probability of mother brand >50% of the time',
-    xLabels: ['Low', 'Medium', 'High']
+    xLabels: ['minimal', 'basic', 'active', 'moderately active', 'highly active']
   },
   {
     id: 'activity-75',
     title: 'Predicted margins by activity level (>75% mother brand)',
     xAxisLabel: 'Activity level',
     yAxisLabel: 'Probability of mother brand >75% of the time',
-    xLabels: ['Low', 'Medium', 'High']
+    xLabels: ['minimal', 'basic', 'active', 'moderately active', 'highly active']
   },
   {
     id: 'income-50-a',
     title: 'Predicted margins by income (>50% mother brand)',
     xAxisLabel: 'Income',
     yAxisLabel: 'Probability of mother brand >50% of the time',
-    xLabels: ['<$50k', '$50–100k', '$100k+']
+    xLabels: ['<$25k', '$50–74k','$75–99k', '$100–149k', '$150k+']
   },
   {
     id: 'income-75-a',
     title: 'Predicted margins by income (>75% mother brand)',
     xAxisLabel: 'Income',
     yAxisLabel: 'Probability of mother brand >75% of the time',
-    xLabels: ['<$50k', '$50–100k', '$100k+']
+    xLabels: ['<$25k', '$50–74k','$75–99k', '$100–149k', '$150k+']
   },
   {
-    id: 'income-50-b',
+    id: 'agegroup-50-b',
     title: 'Predicted margins by income (>50% mother brand)',
-    xAxisLabel: 'Income',
+    xAxisLabel: 'Age Group',
     yAxisLabel: 'Probability of mother brand >50% of the time',
-    xLabels: ['<$50k', '$50–100k', '$100k+']
+    xLabels: ['21-24', '25-34', '35-44', '45-54', '55-65', '65+']
   },
   {
-    id: 'income-75-b',
+    id: 'agegroup-75-b',
     title: 'Predicted margins by income (>75% mother brand)',
-    xAxisLabel: 'Income',
+    xAxisLabel: 'Age Group',
     yAxisLabel: 'Probability of mother brand >75% of the time',
-    xLabels: ['<$50k', '$50–100k', '$100k+']
+    xLabels: ['21-24', '25-34', '35-44', '45-54', '55-65', '65+']
   }
 ];
 
