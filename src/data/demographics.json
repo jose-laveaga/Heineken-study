@@ -30,10 +30,7 @@
         {"label": "Black / African American", "value": 62},
         {"label": "Hispanic / Latino", "value": 40},
         {"label": "Asian", "value": 39},
-        {"label": "Multiracial", "value": 20},
-        {"label": "Pacific Islander", "value": 1},
-        {"label": "Native American", "value": 1},
-        {"label": "Prefer not to say", "value": 1}
+        {"label": "Multiracial", "value": 20}
       ]
     },
     {

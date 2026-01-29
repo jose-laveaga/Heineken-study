@@ -5,10 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: clamp(16px, 1.2vw + 12px, 20px);
   }
 
   body {
-    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, "sans-serif";
     background-color: #f8fafc;
     color: #0f172a;
   }

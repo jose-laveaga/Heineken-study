@@ -130,8 +130,8 @@ const ResultsExplorer = () => {
     if (item.category !== category) return false;
     if (brandOptions.length && brandFilter !== 'all' && !item.brandTags.includes(brandFilter)) return false;
     if (formatOptions.length && formatFilter !== 'all' && !item.formatTags.includes(formatFilter)) return false;
-    if (scenarioOptions.length && scenarioFilter !== 'all' && !item.scenarioTags.includes(scenarioFilter)) return false;
-    return true;
+    return !(scenarioOptions.length && scenarioFilter !== 'all' && !item.scenarioTags.includes(scenarioFilter));
+
   });
 
   const visible = showAll ? filtered : filtered.slice(0, 6);
@@ -276,12 +276,12 @@ const ResultsExplorer = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-4 min-w-0">
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence chart</p>
                       <ChartCard
                         title="Heineken vs Star Brew share"
                         dataTable={(
-                          <table className="w-full text-sm">
+                          <table className="min-w-0 text-sm ">
                             <tbody>
                               {h1ChartData.map((entry) => (
                                 <tr key={entry.label} className="border-b border-slate-200 last:border-0">
