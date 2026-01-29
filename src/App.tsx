@@ -37,8 +37,7 @@ const sections = [
   { id: 'study-design', label: 'Study Design' },
   { id: 'experiment-flow', label: 'Experiment Flow' },
   { id: 'results', label: 'Results' },
-  { id: 'mother-brand-pick-rate', label: 'Mother Brand Pick Rate' },
-  { id: 'heineken-pick-rate', label: 'Heineken 0.0 Pick Rate' },
+  { id: 'pick-rate-comparison', label: 'Pick Rate Comparison' },
   { id: 'demographics', label: 'Demographics' },
   { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
@@ -165,106 +164,109 @@ const App = () => {
             </Section>
 
             <Section
-              id="mother-brand-pick-rate"
-              title="Mother brand pick rate"
-              subtitle="Threshold-based pick rate across audience segments"
+              id="pick-rate-comparison"
+              title="Pick rate comparison"
+              subtitle="Mother brand vs Heineken 0.0 threshold-based pick rates"
             >
-              <div className="space-y-6">
-                <Tabs options={pickRateTabs} value={motherBrandView} onChange={setMotherBrandView} />
-                {motherBrandView === 'gender' && (
-                  <ChartCard title="Pick rate by gender">
-                    <GroupedBarChart
-                      data={motherBrandPickRate.gender}
-                      series={motherBrandPickRate.thresholds}
-                      ariaLabel="Mother brand pick rate by gender"
-                    />
-                  </ChartCard>
-                )}
-                {motherBrandView === 'age' && (
-                  <ChartCard title="Pick rate by age group">
-                    <ThresholdLineChart
-                      data={motherBrandPickRate.ageGroups}
-                      series={motherBrandPickRate.thresholds}
-                      xAxisLabel="Age group"
-                      yAxisLabel="Pick rate (% of respondents)"
-                      ariaLabel="Mother brand pick rate by age group"
-                    />
-                  </ChartCard>
-                )}
-                {motherBrandView === 'income' && (
-                  <ChartCard title="Pick rate by income group">
-                    <ThresholdLineChart
-                      data={motherBrandPickRate.incomeGroups}
-                      series={motherBrandPickRate.thresholds}
-                      xAxisLabel="Income group"
-                      yAxisLabel="Pick rate (% of respondents)"
-                      ariaLabel="Mother brand pick rate by income group"
-                    />
-                  </ChartCard>
-                )}
-                {motherBrandView === 'activity' && (
-                  <ChartCard title="Pick rate by activity level">
-                    <ThresholdLineChart
-                      data={motherBrandPickRate.activityLevels}
-                      series={motherBrandPickRate.thresholds}
-                      xAxisLabel="Activity level"
-                      yAxisLabel="Pick rate (% of respondents)"
-                      ariaLabel="Mother brand pick rate by activity level"
-                    />
-                  </ChartCard>
-                )}
-              </div>
-            </Section>
-
-            <Section
-              id="heineken-pick-rate"
-              title="Heineken 0.0 pick rate"
-              subtitle="Threshold-based pick rate across audience segments"
-            >
-              <div className="space-y-6">
-                <Tabs options={pickRateTabs} value={heinekenView} onChange={setHeinekenView} />
-                {heinekenView === 'gender' && (
-                  <ChartCard title="Pick rate by gender">
-                    <GroupedBarChart
-                      data={heinekenPickRate.gender}
-                      series={heinekenPickRate.thresholds}
-                      ariaLabel="Heineken 0.0 pick rate by gender"
-                    />
-                  </ChartCard>
-                )}
-                {heinekenView === 'age' && (
-                  <ChartCard title="Pick rate by age group">
-                    <ThresholdLineChart
-                      data={heinekenPickRate.ageGroups}
-                      series={heinekenPickRate.thresholds}
-                      xAxisLabel="Age group"
-                      yAxisLabel="Pick rate (% of respondents)"
-                      ariaLabel="Heineken 0.0 pick rate by age group"
-                    />
-                  </ChartCard>
-                )}
-                {heinekenView === 'income' && (
-                  <ChartCard title="Pick rate by income group">
-                    <ThresholdLineChart
-                      data={heinekenPickRate.incomeGroups}
-                      series={heinekenPickRate.thresholds}
-                      xAxisLabel="Income group"
-                      yAxisLabel="Pick rate (% of respondents)"
-                      ariaLabel="Heineken 0.0 pick rate by income group"
-                    />
-                  </ChartCard>
-                )}
-                {heinekenView === 'activity' && (
-                  <ChartCard title="Pick rate by activity level">
-                    <ThresholdLineChart
-                      data={heinekenPickRate.activityLevels}
-                      series={heinekenPickRate.thresholds}
-                      xAxisLabel="Activity level"
-                      yAxisLabel="Pick rate (% of respondents)"
-                      ariaLabel="Heineken 0.0 pick rate by activity level"
-                    />
-                  </ChartCard>
-                )}
+              <div className="grid gap-8 lg:grid-cols-2">
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mother brand</p>
+                    <h3 className="mt-2 text-lg font-semibold text-slate-900">Pick rate by segment</h3>
+                  </div>
+                  <Tabs options={pickRateTabs} value={motherBrandView} onChange={setMotherBrandView} />
+                  {motherBrandView === 'gender' && (
+                    <ChartCard title="Pick rate by gender">
+                      <GroupedBarChart
+                        data={motherBrandPickRate.gender}
+                        series={motherBrandPickRate.thresholds}
+                        ariaLabel="Mother brand pick rate by gender"
+                      />
+                    </ChartCard>
+                  )}
+                  {motherBrandView === 'age' && (
+                    <ChartCard title="Pick rate by age group">
+                      <ThresholdLineChart
+                        data={motherBrandPickRate.ageGroups}
+                        series={motherBrandPickRate.thresholds}
+                        xAxisLabel="Age group"
+                        yAxisLabel="Pick rate (% of respondents)"
+                        ariaLabel="Mother brand pick rate by age group"
+                      />
+                    </ChartCard>
+                  )}
+                  {motherBrandView === 'income' && (
+                    <ChartCard title="Pick rate by income group">
+                      <ThresholdLineChart
+                        data={motherBrandPickRate.incomeGroups}
+                        series={motherBrandPickRate.thresholds}
+                        xAxisLabel="Income group"
+                        yAxisLabel="Pick rate (% of respondents)"
+                        ariaLabel="Mother brand pick rate by income group"
+                      />
+                    </ChartCard>
+                  )}
+                  {motherBrandView === 'activity' && (
+                    <ChartCard title="Pick rate by activity level">
+                      <ThresholdLineChart
+                        data={motherBrandPickRate.activityLevels}
+                        series={motherBrandPickRate.thresholds}
+                        xAxisLabel="Activity level"
+                        yAxisLabel="Pick rate (% of respondents)"
+                        ariaLabel="Mother brand pick rate by activity level"
+                      />
+                    </ChartCard>
+                  )}
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Heineken 0.0</p>
+                    <h3 className="mt-2 text-lg font-semibold text-slate-900">Pick rate by segment</h3>
+                  </div>
+                  <Tabs options={pickRateTabs} value={heinekenView} onChange={setHeinekenView} />
+                  {heinekenView === 'gender' && (
+                    <ChartCard title="Pick rate by gender">
+                      <GroupedBarChart
+                        data={heinekenPickRate.gender}
+                        series={heinekenPickRate.thresholds}
+                        ariaLabel="Heineken 0.0 pick rate by gender"
+                      />
+                    </ChartCard>
+                  )}
+                  {heinekenView === 'age' && (
+                    <ChartCard title="Pick rate by age group">
+                      <ThresholdLineChart
+                        data={heinekenPickRate.ageGroups}
+                        series={heinekenPickRate.thresholds}
+                        xAxisLabel="Age group"
+                        yAxisLabel="Pick rate (% of respondents)"
+                        ariaLabel="Heineken 0.0 pick rate by age group"
+                      />
+                    </ChartCard>
+                  )}
+                  {heinekenView === 'income' && (
+                    <ChartCard title="Pick rate by income group">
+                      <ThresholdLineChart
+                        data={heinekenPickRate.incomeGroups}
+                        series={heinekenPickRate.thresholds}
+                        xAxisLabel="Income group"
+                        yAxisLabel="Pick rate (% of respondents)"
+                        ariaLabel="Heineken 0.0 pick rate by income group"
+                      />
+                    </ChartCard>
+                  )}
+                  {heinekenView === 'activity' && (
+                    <ChartCard title="Pick rate by activity level">
+                      <ThresholdLineChart
+                        data={heinekenPickRate.activityLevels}
+                        series={heinekenPickRate.thresholds}
+                        xAxisLabel="Activity level"
+                        yAxisLabel="Pick rate (% of respondents)"
+                        ariaLabel="Heineken 0.0 pick rate by activity level"
+                      />
+                    </ChartCard>
+                  )}
+                </div>
               </div>
             </Section>
 
