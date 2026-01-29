@@ -11,6 +11,7 @@ import MethodTimeline from './components/content/MethodTimeline';
 import ExperimentStepper from './components/content/ExperimentStepper';
 import ResultsExplorer from './components/explorers/ResultsExplorer';
 import DemographicsSection from './components/explorers/DemographicsSection';
+import StandardLogisticRegressionSection from './components/explorers/StandardLogisticRegressionSection';
 import DataTable from './components/charts/DataTable';
 import ThemeList from './components/content/ThemeList';
 import QuoteCarousel from './components/content/QuoteCarousel';
@@ -31,6 +32,7 @@ const sections = [
   { id: 'experiment-flow', label: 'Experiment Flow' },
   { id: 'results', label: 'Results' },
   { id: 'demographics', label: 'Demographics' },
+  { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
   { id: 'discrepancies', label: 'Discrepancies' },
   { id: 'methods', label: 'Methods / Appendix' }
@@ -152,6 +154,14 @@ const App = () => {
               subtitle="Participant distribution across key audience characteristics"
             >
               <DemographicsSection />
+            </Section>
+
+            <Section
+              id="standard-logistic-regression"
+              title="Standard Logistic Regression Analysis"
+              subtitle="Predicted margins and coefficients from the standard model"
+            >
+              <StandardLogisticRegressionSection />
             </Section>
 
             <Section id="sentiment" title="Sentiment" subtitle="Brand sentiment metrics and qualitative drivers">
