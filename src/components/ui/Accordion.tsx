@@ -32,7 +32,7 @@ const Accordion = ({ items, defaultOpenId }: AccordionProps) => {
                 {isOpen ? 'Close' : 'Open'}
               </span>
             </button>
-            {isOpen ? <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600">{item.content}</div> : null}
+            {isOpen ? <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 min-w-0">{item.content}</div> : null}
           </div>
         );
       })}
