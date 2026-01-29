@@ -26,6 +26,7 @@ import studyDesign from './data/studyDesign.json';
 import sentiment from './data/sentiment.json';
 import discrepancies from './data/discrepancies.json';
 import motherBrandPickRate from './data/motherBrandPickRate.json';
+import heinekenPickRate from './data/heinekenPickRate.json';
 
 // TODO: Replace placeholder figures in /src/data/*.json with the final report numbers.
 
@@ -35,6 +36,7 @@ const sections = [
   { id: 'experiment-flow', label: 'Experiment Flow' },
   { id: 'results', label: 'Results' },
   { id: 'mother-brand-pick-rate', label: 'Mother Brand Pick Rate' },
+  { id: 'heineken-pick-rate', label: 'Heineken 0.0 Pick Rate' },
   { id: 'demographics', label: 'Demographics' },
   { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
@@ -191,6 +193,51 @@ const App = () => {
                       xAxisLabel="Activity level"
                       yAxisLabel="Pick rate (% of respondents)"
                       ariaLabel="Mother brand pick rate by activity level"
+                    />
+                  </ChartCard>
+                </div>
+              </div>
+            </Section>
+
+            <Section
+              id="heineken-pick-rate"
+              title="Heineken 0.0 pick rate"
+              subtitle="Threshold-based pick rate across audience segments"
+            >
+              <div className="space-y-6">
+                <ChartCard title="Pick rate by gender">
+                  <GroupedBarChart
+                    data={heinekenPickRate.gender}
+                    series={heinekenPickRate.thresholds}
+                    ariaLabel="Heineken 0.0 pick rate by gender"
+                  />
+                </ChartCard>
+                <div className="grid gap-6 lg:grid-cols-3">
+                  <ChartCard title="Pick rate by age group">
+                    <ThresholdLineChart
+                      data={heinekenPickRate.ageGroups}
+                      series={heinekenPickRate.thresholds}
+                      xAxisLabel="Age group"
+                      yAxisLabel="Pick rate (% of respondents)"
+                      ariaLabel="Heineken 0.0 pick rate by age group"
+                    />
+                  </ChartCard>
+                  <ChartCard title="Pick rate by income group">
+                    <ThresholdLineChart
+                      data={heinekenPickRate.incomeGroups}
+                      series={heinekenPickRate.thresholds}
+                      xAxisLabel="Income group"
+                      yAxisLabel="Pick rate (% of respondents)"
+                      ariaLabel="Heineken 0.0 pick rate by income group"
+                    />
+                  </ChartCard>
+                  <ChartCard title="Pick rate by activity level">
+                    <ThresholdLineChart
+                      data={heinekenPickRate.activityLevels}
+                      series={heinekenPickRate.thresholds}
+                      xAxisLabel="Activity level"
+                      yAxisLabel="Pick rate (% of respondents)"
+                      ariaLabel="Heineken 0.0 pick rate by activity level"
                     />
                   </ChartCard>
                 </div>
