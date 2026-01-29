@@ -16,6 +16,8 @@ import DataTable from './components/charts/DataTable';
 import ThemeList from './components/content/ThemeList';
 import QuoteCarousel from './components/content/QuoteCarousel';
 import ChartCard from './components/charts/ChartCard';
+import GroupedBarChart from './components/charts/GroupedBarChart';
+import ThresholdLineChart from './components/charts/ThresholdLineChart';
 import StackedBarChart from './components/charts/StackedBarChart';
 import DonutChart from './components/charts/DonutChart';
 import reportMeta from './data/reportMeta.json';
@@ -23,6 +25,7 @@ import narrative from './data/narrative.json';
 import studyDesign from './data/studyDesign.json';
 import sentiment from './data/sentiment.json';
 import discrepancies from './data/discrepancies.json';
+import motherBrandPickRate from './data/motherBrandPickRate.json';
 
 // TODO: Replace placeholder figures in /src/data/*.json with the final report numbers.
 
@@ -31,6 +34,7 @@ const sections = [
   { id: 'study-design', label: 'Study Design' },
   { id: 'experiment-flow', label: 'Experiment Flow' },
   { id: 'results', label: 'Results' },
+  { id: 'mother-brand-pick-rate', label: 'Mother Brand Pick Rate' },
   { id: 'demographics', label: 'Demographics' },
   { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
@@ -146,6 +150,51 @@ const App = () => {
               subtitle="Explore preference shares across 1v1 and multi-brand tasks"
             >
               <ResultsExplorer />
+            </Section>
+
+            <Section
+              id="mother-brand-pick-rate"
+              title="Mother brand pick rate"
+              subtitle="Threshold-based pick rate across audience segments"
+            >
+              <div className="space-y-6">
+                <ChartCard title="Pick rate by gender">
+                  <GroupedBarChart
+                    data={motherBrandPickRate.gender}
+                    series={motherBrandPickRate.thresholds}
+                    ariaLabel="Mother brand pick rate by gender"
+                  />
+                </ChartCard>
+                <div className="grid gap-6 lg:grid-cols-3">
+                  <ChartCard title="Pick rate by age group">
+                    <ThresholdLineChart
+                      data={motherBrandPickRate.ageGroups}
+                      series={motherBrandPickRate.thresholds}
+                      xAxisLabel="Age group"
+                      yAxisLabel="Pick rate (% of respondents)"
+                      ariaLabel="Mother brand pick rate by age group"
+                    />
+                  </ChartCard>
+                  <ChartCard title="Pick rate by income group">
+                    <ThresholdLineChart
+                      data={motherBrandPickRate.incomeGroups}
+                      series={motherBrandPickRate.thresholds}
+                      xAxisLabel="Income group"
+                      yAxisLabel="Pick rate (% of respondents)"
+                      ariaLabel="Mother brand pick rate by income group"
+                    />
+                  </ChartCard>
+                  <ChartCard title="Pick rate by activity level">
+                    <ThresholdLineChart
+                      data={motherBrandPickRate.activityLevels}
+                      series={motherBrandPickRate.thresholds}
+                      xAxisLabel="Activity level"
+                      yAxisLabel="Pick rate (% of respondents)"
+                      ariaLabel="Mother brand pick rate by activity level"
+                    />
+                  </ChartCard>
+                </div>
+              </div>
             </Section>
 
             <Section
