@@ -1,0 +1,28 @@
+{
+  "thresholds": [
+    { "key": "over50", "label": ">50%" },
+    { "key": "over75", "label": ">75%" },
+    { "key": "over90", "label": ">90%" }
+  ],
+  "gender": [
+    { "label": "Women", "over50": 61, "over75": 38, "over90": 16 },
+    { "label": "Men", "over50": 57, "over75": 34, "over90": 14 },
+    { "label": "Non-binary", "over50": 53, "over75": 30, "over90": 11 }
+  ],
+  "ageGroups": [
+    { "label": "21–29", "over50": 60, "over75": 37, "over90": 15 },
+    { "label": "30–39", "over50": 63, "over75": 41, "over90": 18 },
+    { "label": "40–49", "over50": 56, "over75": 33, "over90": 12 },
+    { "label": "50+", "over50": 52, "over75": 29, "over90": 10 }
+  ],
+  "incomeGroups": [
+    { "label": "<$50k", "over50": 55, "over75": 32, "over90": 12 },
+    { "label": "$50k–$99k", "over50": 61, "over75": 38, "over90": 16 },
+    { "label": "$100k+", "over50": 65, "over75": 42, "over90": 19 }
+  ],
+  "activityLevels": [
+    { "label": "Low", "over50": 53, "over75": 30, "over90": 10 },
+    { "label": "Medium", "over50": 59, "over75": 36, "over90": 14 },
+    { "label": "High", "over50": 64, "over75": 41, "over90": 18 }
+  ]
+}
