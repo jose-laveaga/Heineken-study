@@ -1,5 +1,6 @@
 import Card from '../ui/Card';
 import ChartCard from '../charts/ChartCard';
+import LineChartWithErrorBars from '../charts/LineChartWithErrorBars';
 
 const seriesPalette = [
   { label: 'Segment A', color: '#1d4ed8' },
@@ -52,16 +53,24 @@ const chartConfigs = [
 ];
 
 const placeholderSeries = [
-  [
-    { value: 0.28, error: 0.05 },
-    { value: 0.41, error: 0.04 },
-    { value: 0.52, error: 0.06 }
-  ],
-  [
-    { value: 0.22, error: 0.04 },
-    { value: 0.35, error: 0.05 },
-    { value: 0.46, error: 0.04 }
-  ]
+  {
+    label: seriesPalette[0].label,
+    color: seriesPalette[0].color,
+    points: [
+      { value: 0.28, error: 0.05 },
+      { value: 0.41, error: 0.04 },
+      { value: 0.52, error: 0.06 }
+    ]
+  },
+  {
+    label: seriesPalette[1].label,
+    color: seriesPalette[1].color,
+    points: [
+      { value: 0.22, error: 0.04 },
+      { value: 0.35, error: 0.05 },
+      { value: 0.46, error: 0.04 }
+    ]
+  }
 ];
 
 const coefficientRows = [
@@ -72,135 +81,6 @@ const coefficientRows = [
   { variable: 'Age (35–44)', coefficient: '0.12', pValue: '0.221' },
   { variable: 'Urban residence', coefficient: '0.27', pValue: '0.073' }
 ];
-
-const PlaceholderLineChart = ({
-  xLabels,
-  xAxisLabel,
-  yAxisLabel
-}: {
-  xLabels: string[];
-  xAxisLabel: string;
-  yAxisLabel: string;
-}) => {
-  const width = 420;
-  const height = 200;
-  const padding = { top: 20, right: 20, bottom: 32, left: 38 };
-  const plotWidth = width - padding.left - padding.right;
-  const plotHeight = height - padding.top - padding.bottom;
-
-  const xPositions = xLabels.map((_, index) =>
-    padding.left + (plotWidth / (xLabels.length - 1)) * index
-  );
-
-  const yScale = (value: number) => padding.top + (1 - value) * plotHeight;
-
-  const buildPath = (series: { value: number }[]) =>
-    series
-      .map((point, index) => `${index === 0 ? 'M' : 'L'} ${xPositions[index]} ${yScale(point.value)}`)
-      .join(' ');
-
-  return (
-    <div className="space-y-2">
-      <div className="relative h-44 w-full">
-        <svg
-          className="h-full w-full"
-          viewBox={`0 0 ${width} ${height}`}
-          role="img"
-          aria-label="Predicted margins line chart with 95% confidence intervals"
-        >
-          <line
-            x1={padding.left}
-            y1={padding.top}
-            x2={padding.left}
-            y2={height - padding.bottom}
-            stroke="#cbd5f5"
-            strokeWidth={2}
-          />
-          <line
-            x1={padding.left}
-            y1={height - padding.bottom}
-            x2={width - padding.right}
-            y2={height - padding.bottom}
-            stroke="#cbd5f5"
-            strokeWidth={2}
-          />
-          {placeholderSeries.map((series, seriesIndex) => (
-            <g key={`series-${seriesIndex}`}>
-              <path
-                d={buildPath(series)}
-                fill="none"
-                stroke={seriesPalette[seriesIndex].color}
-                strokeWidth={2.5}
-              />
-              {series.map((point, pointIndex) => {
-                const x = xPositions[pointIndex];
-                const y = yScale(point.value);
-                const errorTop = yScale(Math.min(1, point.value + point.error));
-                const errorBottom = yScale(Math.max(0, point.value - point.error));
-
-                return (
-                  <g key={`point-${seriesIndex}-${pointIndex}`}>
-                    <line
-                      x1={x}
-                      y1={errorTop}
-                      x2={x}
-                      y2={errorBottom}
-                      stroke={seriesPalette[seriesIndex].color}
-                      strokeWidth={1.5}
-                    />
-                    <line
-                      x1={x - 6}
-                      y1={errorTop}
-                      x2={x + 6}
-                      y2={errorTop}
-                      stroke={seriesPalette[seriesIndex].color}
-                      strokeWidth={1.5}
-                    />
-                    <line
-                      x1={x - 6}
-                      y1={errorBottom}
-                      x2={x + 6}
-                      y2={errorBottom}
-                      stroke={seriesPalette[seriesIndex].color}
-                      strokeWidth={1.5}
-                    />
-                    <circle cx={x} cy={y} r={4} fill={seriesPalette[seriesIndex].color} />
-                  </g>
-                );
-              })}
-            </g>
-          ))}
-          {xLabels.map((label, index) => (
-            <text
-              key={label}
-              x={xPositions[index]}
-              y={height - 10}
-              textAnchor="middle"
-              fontSize="10"
-              fill="#64748b"
-            >
-              {label}
-            </text>
-          ))}
-        </svg>
-        <div className="absolute right-3 top-3 rounded-lg border border-slate-200 bg-white/90 px-2 py-1 text-[11px] text-slate-600 shadow-sm">
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-4 rounded-full" style={{ backgroundColor: seriesPalette[0].color }} />
-            <span>{seriesPalette[0].label}</span>
-          </div>
-          <div className="mt-1 flex items-center gap-2">
-            <span className="h-2 w-4 rounded-full" style={{ backgroundColor: seriesPalette[1].color }} />
-            <span>{seriesPalette[1].label}</span>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500">
-        <span className="font-medium text-slate-600">X-axis: {xAxisLabel}</span>
-        <span className="font-medium text-slate-600">Y-axis: {yAxisLabel}</span>
-      </div>
-    </div>
-  );
-};
 
 const StandardLogisticRegressionSection = () => (
   <div className="space-y-8">
@@ -222,10 +102,12 @@ const StandardLogisticRegressionSection = () => (
           title={chart.title}
           caption="Predicted margins (marginal means) with 95% confidence intervals"
         >
-          <PlaceholderLineChart
+          <LineChartWithErrorBars
             xLabels={chart.xLabels}
             xAxisLabel={chart.xAxisLabel}
             yAxisLabel={chart.yAxisLabel}
+            series={placeholderSeries}
+            ariaLabel={`${chart.title} line chart with 95% confidence intervals`}
           />
         </ChartCard>
       ))}
