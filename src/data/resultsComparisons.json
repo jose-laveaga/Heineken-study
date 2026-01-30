@@ -15,7 +15,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+      "interpretation": ""
     },
     {
       "id": "np_002",
@@ -31,7 +31,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.01"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+      "interpretation": ""
     },
     {
       "id": "np_003",
@@ -47,7 +47,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.05"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+      "interpretation": ""
     },
     {
       "id": "np_004",
@@ -63,7 +63,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.05"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+      "interpretation": ""
     },
     {
       "id": "np_005",
@@ -79,7 +79,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.05"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+      "interpretation": ""
     },
     {
       "id": "np_006",
@@ -95,7 +95,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 no-price comparison."
+      "interpretation": ""
     },
     {
       "id": "pr_001",
@@ -111,7 +111,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+      "interpretation": ""
     },
     {
       "id": "pr_002",
@@ -127,7 +127,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+      "interpretation": ""
     },
     {
       "id": "pr_003",
@@ -143,7 +143,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+      "interpretation": ""
     },
     {
       "id": "pr_004",
@@ -159,7 +159,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+      "interpretation": ""
     },
     {
       "id": "pr_005",
@@ -175,7 +175,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.05"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+      "interpretation": ""
     },
     {
       "id": "pr_006",
@@ -191,7 +191,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.05"}
       ],
-      "interpretation": "Placeholder donut chart for 1v1 price comparison."
+      "interpretation": ""
     },
     {
       "id": "mb_001",
@@ -211,7 +211,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for multi-brand comparison."
+      "interpretation": ""
     },
     {
       "id": "mb_002",
@@ -231,7 +231,7 @@
       "stats": [
         {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for multi-brand comparison."
+      "interpretation": ""
     },
     {
       "id": "mb_003",
@@ -249,9 +249,9 @@
         {"label": "Penn's Best Non-Alc", "value": 4.9}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for multi-brand comparison."
+      "interpretation": ""
     },
     {
       "id": "mb_004",
@@ -269,9 +269,9 @@
         {"label": "Penn's Best Non-Alc", "value": 3.9}
       ],
       "stats": [
-        {"label": "placeholder", "valueText": "TBD"}
+        {"label": "p-value", "valueText": "0.001"}
       ],
-      "interpretation": "Placeholder donut chart for multi-brand comparison."
+      "interpretation": ""
     }
   ]
 }
