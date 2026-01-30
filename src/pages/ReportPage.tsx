@@ -11,9 +11,7 @@ import ExperimentStepper from '../components/content/ExperimentStepper';
 import ResultsExplorer from '../components/explorers/ResultsExplorer';
 import DemographicsSection from '../components/explorers/DemographicsSection';
 import StandardLogisticRegressionSection from '../components/explorers/StandardLogisticRegressionSection';
-import DataTable from '../components/charts/DataTable';
-import ThemeList from '../components/content/ThemeList';
-import QuoteCarousel from '../components/content/QuoteCarousel';
+import SentimentSection from '../components/sentiment/SentimentSection';
 import ChartCard from '../components/charts/ChartCard';
 import GroupedBarChart from '../components/charts/GroupedBarChart';
 import ThresholdLineChart from '../components/charts/ThresholdLineChart';
@@ -22,7 +20,6 @@ import DonutChart from '../components/charts/DonutChart';
 import reportMeta from '../data/reportMeta.json';
 import narrative from '../data/narrative.json';
 import studyDesign from '../data/studyDesign.json';
-import sentiment from '../data/sentiment.json';
 import discrepancies from '../data/discrepancies.json';
 import motherBrandPickRate from '../data/motherBrandPickRate.json';
 import heinekenPickRate from '../data/heinekenPickRate.json';
@@ -263,17 +260,12 @@ const ReportPage = () => {
         <StandardLogisticRegressionSection />
       </Section>
 
-      <Section id="sentiment" title="Sentiment" subtitle="Brand sentiment metrics and qualitative drivers">
-        <div className="space-y-8">
-          <DataTable data={sentiment.table} />
-          <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-            <div className="space-y-4">
-              <ThemeList title="Heineken drivers" items={sentiment.themes.drivers} />
-              <ThemeList title="Heineken barriers" items={sentiment.themes.barriers} />
-            </div>
-            <QuoteCarousel quotes={sentiment.quotes} />
-          </div>
-        </div>
+      <Section
+        id="sentiment"
+        title="Sentiment Analysis (Text Responses and Reasoning)"
+        subtitle="Method, metrics, and brand sentiment insights"
+      >
+        <SentimentSection />
       </Section>
 
       <Section id="discrepancies" title="Discrepancies" subtitle="Where intent diverges from forced choice">
