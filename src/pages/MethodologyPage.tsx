@@ -42,7 +42,7 @@ const MethodologyPage = () => (
               stimuli structure and the relationship between the test conditions.
             </p>
             <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-500">
-              Experiment design overview image placeholder
+              <img src="/src/images/Arctic-Fox-1-cropped.jpg" alt="Diagram of experiment layout" />
             </div>
           </div>
           <div className="space-y-4 text-sm text-slate-600">
