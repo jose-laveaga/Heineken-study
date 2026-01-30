@@ -1,9 +1,7 @@
 import Section from '../ui/Section';
-import HypothesisOutcomeChart from './HypothesisOutcomeChart';
 import HypothesisCard from './HypothesisCard';
 import {
   conclusionIntroParagraphs,
-  conclusionKeyTakeaway,
   conclusionClosingParagraph,
   hypotheses
 } from '../../data/conclusion';
@@ -18,7 +16,7 @@ const ConclusionSection = () => (
           </p>
         ))}
       </div>
-      <HypothesisOutcomeChart hypotheses={hypotheses} keyTakeaway={conclusionKeyTakeaway} />
+
       <div className="grid gap-6 lg:grid-cols-3">
         {hypotheses.map((hypothesis) => (
           <HypothesisCard key={hypothesis.id} hypothesis={hypothesis} />

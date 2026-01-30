@@ -2,10 +2,8 @@ import { useState } from 'react';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
 import StatCard from '../components/ui/StatCard';
-import Callout from '../components/ui/Callout';
 import Accordion from '../components/ui/Accordion';
 import Tabs from '../components/ui/Tabs';
-import KeyTakeaways from '../components/content/KeyTakeaways';
 import MethodTimeline from '../components/content/MethodTimeline';
 import ExperimentStepper from '../components/content/ExperimentStepper';
 import ResultsExplorer from '../components/explorers/ResultsExplorer';
@@ -94,12 +92,7 @@ const ReportPage = () => {
           <div className="space-y-6">
             <h1 className="text-3xl font-semibold text-slate-900">Sustainable Sips – MIT x Heineken Report 2025</h1>
             <p className="text-sm text-slate-600">{narrative.abstract}</p>
-            <Card>
-              <p className="text-xs uppercase tracking-wide text-slate-500">Key takeaways</p>
-              <div className="mt-4">
-                <KeyTakeaways items={narrative.keyTakeaways} />
-              </div>
-            </Card>
+
           </div>
           <div className="space-y-4">
             <div className="grid gap-4">
@@ -107,9 +100,7 @@ const ReportPage = () => {
               <StatCard label="Completion time" value="6-8 min" note="Median estimate" />
               <StatCard label="Geography" value="US only" note="" />
             </div>
-            <Callout variant="note" title="At a glance">
-              The study highlights where sustainability cues boost selection and where pricing weakens the advantage.
-            </Callout>
+
           </div>
         </div>
       </Section>
