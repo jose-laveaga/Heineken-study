@@ -234,11 +234,16 @@ const StandardLogisticRegressionSection = () => (
       <p className="text-xs uppercase tracking-wide text-slate-500">Standard logistic regression analysis</p>
       <div className="mt-4 grid gap-4 text-sm text-slate-600">
         <p>
-            Across this table, are the most significant variables in terms of estimating the
-            number of times respondents would choose the mother brand across all comparisons in the study.
-            This table includes only values with the highest statistical significance and with a positive
-            correlation to the target variable (Choice of mother brand). The target variable is a boolean
-            value which states if the respondent selected a mother brand more than 50% of the time.
+            This section presents the predictive margins derived from the regression models used
+            to examine how key demographic factors shape the likelihood of predominantly
+            choosing model-based (MB) strategies. The figures report predicted probabilities
+            with 95% confidence intervals, disaggregated by gender, allowing direct visual
+            comparison across activity level, age group, and income. Together, these results
+            provide a structured view of how decision-making tendencies vary across subpopulations
+            and where gender differences are most pronounced or minimal. The aim is to clarify not
+            only the central tendencies but also the uncertainty around these estimates, enabling a
+            more precise assessment of demographic patterns that may influence strategic choice behavior.
+
         </p>
 
 
