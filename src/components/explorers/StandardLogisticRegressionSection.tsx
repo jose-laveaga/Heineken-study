@@ -3,8 +3,8 @@ import ChartCard from '../charts/ChartCard';
 import LineChartWithErrorBars from '../charts/LineChartWithErrorBars';
 
 const seriesPalette = [
-  { label: 'Segment A', color: '#1d4ed8' },
-  { label: 'Segment B', color: '#0f766e' }
+  { label: 'Male', color: '#1d4ed8' },
+  { label: 'Female', color: '#0f766e' }
 ];
 
 const chartConfigs = [
@@ -52,34 +52,180 @@ const chartConfigs = [
   }
 ];
 
-const placeholderSeries = [
-  {
-    label: seriesPalette[0].label,
-    color: seriesPalette[0].color,
-    points: [
-      { value: 0.28, error: 0.05 },
-      { value: 0.41, error: 0.04 },
-      { value: 0.52, error: 0.06 }
+
+// Point estimates + estimated 95% CI half-widths (error) read from the plots.
+
+export const seriesByChartId: Record<
+    string,
+    Array<{
+        label: string;
+        color: string;
+        points: Array<{ value: number; error: number }>;
+    }>
+> = {
+    'activity-50': [
+        {
+            label: seriesPalette[0].label,
+            color: seriesPalette[0].color,
+            points: [
+                { value: 0.40, error: 0.18 }, // minimal
+                { value: 0.50, error: 0.12 }, // basic
+                { value: 0.61, error: 0.09 }, // active
+                { value: 0.57, error: 0.10 }, // moderately active
+                { value: 0.33, error: 0.20 }  // highly active
+            ]
+        },
+        {
+            label: seriesPalette[1].label,
+            color: seriesPalette[1].color,
+            points: [
+                { value: 0.33, error: 0.18 }, // minimal
+                { value: 0.43, error: 0.12 }, // basic
+                { value: 0.54, error: 0.10 }, // active
+                { value: 0.49, error: 0.11 }, // moderately active
+                { value: 0.27, error: 0.20 }  // highly active
+            ]
+        }
+    ],
+
+    'activity-75': [
+        {
+            label: seriesPalette[0].label,
+            color: seriesPalette[0].color,
+            points: [
+                { value: 0.08, error: 0.14 }, // minimal
+                { value: 0.12, error: 0.06 }, // basic
+                { value: 0.12, error: 0.06 }, // active
+                { value: 0.14, error: 0.08 }, // moderately active
+                { value: 0.11, error: 0.18 }  // highly active
+            ]
+        },
+        {
+            label: seriesPalette[1].label,
+            color: seriesPalette[1].color,
+            points: [
+                { value: 0.10, error: 0.17 }, // minimal
+                { value: 0.15, error: 0.11 }, // basic
+                { value: 0.15, error: 0.09 }, // active
+                { value: 0.18, error: 0.10 }, // moderately active
+                { value: 0.13, error: 0.22 }  // highly active
+            ]
+        }
+    ],
+
+    'income-50-a': [
+        {
+            label: seriesPalette[0].label,
+            color: seriesPalette[0].color,
+            points: [
+                { value: 0.46, error: 0.12 }, // <$25k
+                { value: 0.51, error: 0.13 }, // $50–74k
+                { value: 0.58, error: 0.13 }, // $75–99k
+                { value: 0.53, error: 0.14 }, // $100–149k
+                { value: 0.34, error: 0.22 }  // $150k+
+            ]
+        },
+        {
+            label: seriesPalette[1].label,
+            color: seriesPalette[1].color,
+            points: [
+                { value: 0.39, error: 0.11 }, // <$25k
+                { value: 0.44, error: 0.12 }, // $50–74k
+                { value: 0.50, error: 0.14 }, // $75–99k
+                { value: 0.46, error: 0.15 }, // $100–149k
+                { value: 0.28, error: 0.23 }  // $150k+
+            ]
+        }
+    ],
+
+    'income-75-a': [
+        {
+            label: seriesPalette[0].label,
+            color: seriesPalette[0].color,
+            points: [
+                { value: 0.11, error: 0.09 }, // <$25k
+                { value: 0.09, error: 0.06 }, // $50–74k
+                { value: 0.14, error: 0.12 }, // $75–99k
+                { value: 0.13, error: 0.12 }, // $100–149k
+                { value: 0.10, error: 0.22 }  // $150k+
+            ]
+        },
+        {
+            label: seriesPalette[1].label,
+            color: seriesPalette[1].color,
+            points: [
+                { value: 0.13, error: 0.10 }, // <$25k
+                { value: 0.12, error: 0.09 }, // $50–74k
+                { value: 0.17, error: 0.15 }, // $75–99k
+                { value: 0.16, error: 0.16 }, // $100–149k
+                { value: 0.12, error: 0.27 }  // $150k+
+            ]
+        }
+    ],
+
+    'agegroup-50-b': [
+        {
+            label: seriesPalette[0].label,
+            color: seriesPalette[0].color,
+            points: [
+                { value: 0.48, error: 0.13 }, // 21-24
+                { value: 0.52, error: 0.10 }, // 25-34
+                { value: 0.59, error: 0.10 }, // 35-44
+                { value: 0.48, error: 0.11 }, // 45-54
+                { value: 0.69, error: 0.18 }, // 55-65
+                { value: 0.68, error: 0.27 }  // 65+
+            ]
+        },
+        {
+            label: seriesPalette[1].label,
+            color: seriesPalette[1].color,
+            points: [
+                { value: 0.41, error: 0.13 }, // 21-24
+                { value: 0.44, error: 0.11 }, // 25-34
+                { value: 0.52, error: 0.11 }, // 35-44
+                { value: 0.40, error: 0.13 }, // 45-54
+                { value: 0.62, error: 0.18 }, // 55-65
+                { value: 0.61, error: 0.27 }  // 65+
+            ]
+        }
+    ],
+
+    'agegroup-75-b': [
+        {
+            label: seriesPalette[0].label,
+            color: seriesPalette[0].color,
+            points: [
+                { value: 0.07, error: 0.09 }, // 21-24
+                { value: 0.09, error: 0.07 }, // 25-34
+                { value: 0.13, error: 0.09 }, // 35-44
+                { value: 0.14, error: 0.10 }, // 45-54
+                { value: 0.22, error: 0.17 }, // 55-65
+                { value: 0.26, error: 0.28 }  // 65+
+            ]
+        },
+        {
+            label: seriesPalette[1].label,
+            color: seriesPalette[1].color,
+            points: [
+                { value: 0.09, error: 0.11 }, // 21-24
+                { value: 0.11, error: 0.09 }, // 25-34
+                { value: 0.16, error: 0.10 }, // 35-44
+                { value: 0.17, error: 0.12 }, // 45-54
+                { value: 0.27, error: 0.18 }, // 55-65
+                { value: 0.31, error: 0.29 }  // 65+
+            ]
+        }
     ]
-  },
-  {
-    label: seriesPalette[1].label,
-    color: seriesPalette[1].color,
-    points: [
-      { value: 0.22, error: 0.04 },
-      { value: 0.35, error: 0.05 },
-      { value: 0.46, error: 0.04 }
-    ]
-  }
-];
+};
+
+
 
 const coefficientRows = [
-  { variable: 'Activity level (high)', coefficient: '0.42', pValue: '0.018' },
-  { variable: 'Activity level (medium)', coefficient: '0.21', pValue: '0.091' },
-  { variable: 'Income (mid)', coefficient: '0.35', pValue: '0.044' },
-  { variable: 'Income (high)', coefficient: '0.58', pValue: '0.006' },
-  { variable: 'Age (35–44)', coefficient: '0.12', pValue: '0.221' },
-  { variable: 'Urban residence', coefficient: '0.27', pValue: '0.073' }
+  { variable: 'Brand Importance Rating', coefficient: '0.66', pValue: '1.93' },
+  { variable: 'Importance of Availability', coefficient: '0.58', pValue: '1.78' },
+  { variable: 'Importance of Variety', coefficient: '-0.39', pValue: '0.67' },
+  { variable: "Famliarity with O'Doul's", coefficient: '-0.25', pValue: '0.77' },
+  { variable: 'Familiarity with Budweiser', coefficient: '0.5', pValue: '1.65' },
 ];
 
 const StandardLogisticRegressionSection = () => (
@@ -88,10 +234,14 @@ const StandardLogisticRegressionSection = () => (
       <p className="text-xs uppercase tracking-wide text-slate-500">Standard logistic regression analysis</p>
       <div className="mt-4 grid gap-4 text-sm text-slate-600">
         <p>
-          Placeholder summary: Add interpretation of model fit, key predictors, and directional effects for the mother
-          brand outcome.
+            Across this table, are the most significant variables in terms of estimating the
+            number of times respondents would choose the mother brand across all comparisons in the study.
+            This table includes only values with the highest statistical significance and with a positive
+            correlation to the target variable (Choice of mother brand). The target variable is a boolean
+            value which states if the respondent selected a mother brand more than 50% of the time.
         </p>
-        <p>Placeholder notes: Describe which covariates were controlled, weighting applied, and any robustness checks.</p>
+
+
       </div>
     </Card>
 
@@ -106,7 +256,7 @@ const StandardLogisticRegressionSection = () => (
             xLabels={chart.xLabels}
             xAxisLabel={chart.xAxisLabel}
             yAxisLabel={chart.yAxisLabel}
-            series={placeholderSeries}
+            series={seriesByChartId[chart.id]}
             ariaLabel={`${chart.title} line chart with 95% confidence intervals`}
           />
         </ChartCard>
@@ -116,9 +266,9 @@ const StandardLogisticRegressionSection = () => (
     <Card>
       <div className="flex flex-col gap-3">
         <div>
-          <p className="text-xs uppercase tracking-wide text-slate-500">Model coefficients (placeholder)</p>
+          <p className="text-xs uppercase tracking-wide text-slate-500">Model coefficients</p>
           <p className="mt-1 text-sm text-slate-600">
-            Replace with final coefficient estimates and significance values from the standard logistic regression.
+            Final coefficient estimates and significance values from the standard logistic regression.
           </p>
         </div>
         <div className="overflow-x-auto">
@@ -147,9 +297,17 @@ const StandardLogisticRegressionSection = () => (
     <Card>
       <p className="text-xs uppercase tracking-wide text-slate-500">Explanation and narrative space</p>
       <div className="mt-3 grid gap-2 text-sm text-slate-600">
-        <p>Placeholder: Summarize how the predicted margins align with the segment story.</p>
-        <p>Placeholder: Describe noteworthy confidence interval overlap and where the probabilities diverge.</p>
-        <p>Placeholder: Add any caveats, model diagnostics, and next-step recommendations.</p>
+        <p>
+          <strong>Note:</strong>
+          *** <em>p</em> &lt; 0.01,
+          ** <em>p</em> &lt; 0.05,
+          * <em>p</em> &lt; 0.10
+        </p>
+        <p>Per point increase in each variable category (e.g brand_importance_rating [1] → [2])
+            the odds of any given participant choosing mother brands more than 50% of the
+            time increase by the [odds ratio]%
+        </p>
+
       </div>
     </Card>
   </div>
