@@ -79,7 +79,7 @@ const MethodologyPage = () => (
         <div className="space-y-6">
           <div className="space-y-4 text-sm text-slate-600">
               <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-500">
-                  <img src="/src/images/Arctic-Fox-1-cropped.jpg" alt="Diagram of experiment layout" />
+                  <img src="/src/images/experiment_design.png" alt="Diagram of experiment layout" />
               </div>
 
               <div className="space-y-6 text-sm text-slate-600">

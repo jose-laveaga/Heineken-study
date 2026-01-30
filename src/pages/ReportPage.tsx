@@ -101,9 +101,8 @@ const ReportPage = () => {
           <div className="space-y-4">
             <div className="grid gap-4">
               <StatCard label="Sample size" value="n = 412" note="TODO: Update with final sample" />
-              <StatCard label="Completion time" value="14–16 min" note="Median estimate" />
-              <StatCard label="Geography" value="US only" note="Urban + suburban" />
-              <StatCard label="Main outcome" value="Heineken leads in 1v1" note="TODO: Update with final outcome" />
+              <StatCard label="Completion time" value="6-8 min" note="Median estimate" />
+              <StatCard label="Geography" value="US only" note="" />
             </div>
             <Callout variant="note" title="At a glance">
               The study highlights where sustainability cues boost selection and where pricing weakens the advantage.
