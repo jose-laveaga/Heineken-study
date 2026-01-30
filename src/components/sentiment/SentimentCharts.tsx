@@ -66,7 +66,7 @@ const SentimentCharts = ({ data, categoryAverage }: SentimentChartsProps) => {
                 stroke="#2563eb"
                 strokeDasharray="4 4"
                 label={{
-                  value: `Category avg (${categoryAverage.toFixed(2)})`,
+                  value: `${categoryAverage.toFixed(2)}`,
                   position: 'insideTopRight',
                   fill: '#2563eb',
                   fontSize: 12
