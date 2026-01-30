@@ -5,9 +5,8 @@
     { "key": "over90", "label": ">90%" }
   ],
   "gender": [
-    { "label": "Women", "over50": 61, "over75": 38, "over90": 16 },
-    { "label": "Men", "over50": 57, "over75": 34, "over90": 14 },
-    { "label": "Non-binary", "over50": 53, "over75": 30, "over90": 11 }
+    { "label": "Female", "over50": 49.2, "over75": 15.9, "over90": 10.3 },
+    { "label": "Male", "over50": 54, "over75": 13.3, "over90": 8.5 }
   ],
   "ageGroups": [
     { "label": "21–29", "over50": 60, "over75": 37, "over90": 15 },

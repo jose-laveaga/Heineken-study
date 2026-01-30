@@ -46,7 +46,7 @@ const ThresholdLineChart = ({
           label={{ value: yAxisLabel, angle: -90, position: 'insideLeft', fill: '#94a3b8', fontSize: 11 }}
         />
         <Tooltip formatter={(value) => `${value}%`} />
-        <Legend />
+        <Legend verticalAlign="top" height={36}/>
         {series.map((item, index) => (
           <Line
             key={item.key}
