@@ -12,15 +12,13 @@ import ResultsExplorer from '../components/explorers/ResultsExplorer';
 import DemographicsSection from '../components/explorers/DemographicsSection';
 import StandardLogisticRegressionSection from '../components/explorers/StandardLogisticRegressionSection';
 import SentimentSection from '../components/sentiment/SentimentSection';
-import ChartCard from '../components/charts/ChartCard';
+import DiscrepanciesSection from '../components/results/DiscrepanciesSection';
 import GroupedBarChart from '../components/charts/GroupedBarChart';
 import ThresholdLineChart from '../components/charts/ThresholdLineChart';
-import StackedBarChart from '../components/charts/StackedBarChart';
-import DonutChart from '../components/charts/DonutChart';
+import ChartCard from '../components/charts/ChartCard';
 import reportMeta from '../data/reportMeta.json';
 import narrative from '../data/narrative.json';
 import studyDesign from '../data/studyDesign.json';
-import discrepancies from '../data/discrepancies.json';
 import motherBrandPickRate from '../data/motherBrandPickRate.json';
 import heinekenPickRate from '../data/heinekenPickRate.json';
 
@@ -268,73 +266,7 @@ const ReportPage = () => {
         <SentimentSection />
       </Section>
 
-      <Section id="discrepancies" title="Discrepancies" subtitle="Where intent diverges from forced choice">
-        <div className="space-y-6">
-          {discrepancies.cases.map((item) => {
-            const dataTable = (
-              <table className="w-full text-xs">
-                <thead>
-                  <tr>
-                    <th className="text-left font-semibold text-slate-600">Brand</th>
-                    {item.likelihoodScale.map((value) => (
-                      <th key={value} className="text-right font-semibold text-slate-600">
-                        {value}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {item.likelihoodDistribution.map((entry) => (
-                    <tr key={entry.label}>
-                      <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                      {item.likelihoodScale.map((value) => (
-                        <td key={value} className="py-1 text-right text-slate-600">
-                          {entry.values[String(value)]}%
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            );
-
-            return (
-              <div key={item.id} className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
-                <div className="grid gap-6 lg:grid-cols-2">
-                  <ChartCard title={`${item.title} — purchase likelihood`} dataTable={dataTable}>
-                    <StackedBarChart
-                      data={item.likelihoodDistribution}
-                      keys={item.likelihoodScale.map(String)}
-                      ariaLabel={`${item.title} purchase likelihood distribution`}
-                    />
-                  </ChartCard>
-                  <ChartCard
-                    title="Forced choice outcome"
-                    interpretation={item.explanation}
-                    dataTable={(
-                      <table className="w-full">
-                        <tbody>
-                          {item.forcedChoice.map((choice) => (
-                            <tr key={choice.label} className="border-b border-slate-200 last:border-0">
-                              <td className="py-1 text-left font-medium text-slate-700">{choice.label}</td>
-                              <td className="py-1 text-right text-slate-600">{choice.value}%</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    )}
-                  >
-                    <DonutChart data={item.forcedChoice} ariaLabel={`${item.title} forced choice chart`} />
-                  </ChartCard>
-                </div>
-                <Callout variant="insight" title="Why this matters">
-                  Preference gaps reveal where messaging must close the intent-to-choice gap in real shelf conditions.
-                </Callout>
-              </div>
-            );
-          })}
-        </div>
-      </Section>
+      <DiscrepanciesSection />
 
       <Section id="methods" title="Methods / Appendix" subtitle="Study methodology and definitions">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
