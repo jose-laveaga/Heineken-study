@@ -13,6 +13,8 @@ import DemographicsSection from '../components/explorers/DemographicsSection';
 import StandardLogisticRegressionSection from '../components/explorers/StandardLogisticRegressionSection';
 import SentimentSection from '../components/sentiment/SentimentSection';
 import DiscrepanciesSection from '../components/results/DiscrepanciesSection';
+import ConclusionSection from '../components/results/ConclusionSection';
+import AppendixSection from '../components/results/AppendixSection';
 import GroupedBarChart from '../components/charts/GroupedBarChart';
 import ThresholdLineChart from '../components/charts/ThresholdLineChart';
 import ChartCard from '../components/charts/ChartCard';
@@ -32,7 +34,8 @@ export const reportSections = [
   { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
   { id: 'discrepancies', label: 'Discrepancies' },
-  { id: 'methods', label: 'Methods / Appendix' }
+  { id: 'conclusion', label: 'Conclusion' },
+  { id: 'appendix', label: 'Appendix' }
 ];
 
 const ReportPage = () => {
@@ -266,60 +269,8 @@ const ReportPage = () => {
       </Section>
 
       <DiscrepanciesSection />
-
-      <Section id="methods" title="Methods / Appendix" subtitle="Study methodology and definitions">
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Card>
-            <p className="text-xs uppercase tracking-wide text-slate-500">Methodology</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-600">
-              <li>• Online experiment with randomized task ordering.</li>
-              <li>• Quotas balanced for gender, age, and region.</li>
-              <li>• Analysis includes weighted pick rate averages.</li>
-              <li>• Sentiment collected via open-ended prompts.</li>
-            </ul>
-          </Card>
-          <Card>
-            <p className="text-xs uppercase tracking-wide text-slate-500">Definitions</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-600">
-              <li>• Mother brand: flagship brand evaluated across formats.</li>
-              <li>• Pick rate: share of respondents selecting a brand.</li>
-              <li>• Threshold: minimum pick rate to flag segment strength.</li>
-              <li>• Discrepancy: divergence between intent and forced choice.</li>
-            </ul>
-          </Card>
-        </div>
-        <Card className="mt-6">
-          <p className="text-xs uppercase tracking-wide text-slate-500">Study stages and outputs</p>
-          <div className="mt-4 overflow-x-auto">
-            <table className="min-w-full text-sm">
-              <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
-                <tr>
-                  <th className="px-3 py-2 text-left">Stage</th>
-                  <th className="px-3 py-2 text-left">Output</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-t border-slate-200">
-                  <td className="px-3 py-2">Design</td>
-                  <td className="px-3 py-2">Experiment plan + stimuli</td>
-                </tr>
-                <tr className="border-t border-slate-200">
-                  <td className="px-3 py-2">Pilot</td>
-                  <td className="px-3 py-2">Timing + comprehension validation</td>
-                </tr>
-                <tr className="border-t border-slate-200">
-                  <td className="px-3 py-2">Execution</td>
-                  <td className="px-3 py-2">Field data + respondent metadata</td>
-                </tr>
-                <tr className="border-t border-slate-200">
-                  <td className="px-3 py-2">Analysis</td>
-                  <td className="px-3 py-2">Preference models + segment outputs</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </Card>
-      </Section>
+      <ConclusionSection />
+      <AppendixSection />
     </>
   );
 };
