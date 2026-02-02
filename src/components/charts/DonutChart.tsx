@@ -12,13 +12,43 @@ interface DonutChartProps {
   ariaLabel: string;
 }
 
+const renderOuterLabel = (props: any) => {
+  const {
+    cx,
+    cy,
+    midAngle,
+    outerRadius,
+    value,
+    payload
+  } = props;
+
+  // push label outside the ring
+  const RADIAN = Math.PI / 180;
+  const r = outerRadius + 14;
+  const x = cx + r * Math.cos(-midAngle * RADIAN);
+  const y = cy + r * Math.sin(-midAngle * RADIAN);
+
+  const anchor = x > cx ? 'start' : 'end';
+
+  return (
+    <text
+      x={x}
+      y={y}
+      textAnchor={anchor}
+      dominantBaseline="central"
+      fontSize={11}
+      fill="#475569"
+    >
+      {payload.label} {value}%
+    </text>
+  );
+};
+
 const DonutChart = ({ data, ariaLabel }: DonutChartProps) => (
   <div className="h-52" role="img" aria-label={ariaLabel}>
     <ResponsiveContainer>
       <PieChart>
-        <Tooltip
-          formatter={(value: number) => [`${value}%`, 'Share']}
-        />
+        <Tooltip formatter={(value: number) => [`${value}%`, 'Share']} />
         <Pie
           data={data}
           dataKey="value"
@@ -27,6 +57,8 @@ const DonutChart = ({ data, ariaLabel }: DonutChartProps) => (
           outerRadius={80}
           paddingAngle={2}
           stroke="transparent"
+          labelLine
+          label={renderOuterLabel}
         >
           {data.map((entry, index) => (
             <Cell key={entry.label} fill={chartPalette[index % chartPalette.length]} />
