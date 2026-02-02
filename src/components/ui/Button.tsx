@@ -10,8 +10,8 @@ const Button = ({ variant = 'primary', className, ...props }: ButtonProps) => (
     className={clsx(
       'inline-flex items-center justify-center rounded-b rounded-t px-4 py-2 text-sm font-semibold transition',
       variant === 'primary'
-        ? 'bg-cyan-950 text-white hover:bg-cyan-900'
-        : 'border border-slate-200 bg-white text-slate-600 hover:border-slate-400',
+        ? 'bg-[#8e9e72] text-white hover:bg-[#A3B18A] '
+        : 'border border-slate-200 bg-white text-slate-600 hover:border-[#818f67]',
       className
     )}
     {...props}
