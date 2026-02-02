@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 import clsx from 'clsx';
 
 const variantStyles = {
-  insight: 'border-emerald-200 bg-emerald-50 text-emerald-900',
+  insight: 'border-slate-300 bg-slate-50 text-slate-900',
   method: 'border-slate-200 bg-slate-100 text-slate-700',
-  note: 'border-amber-200 bg-amber-50 text-amber-900'
+  note: 'border-slate-200 bg-slate-50 text-slate-700'
 };
 
 interface CalloutProps {

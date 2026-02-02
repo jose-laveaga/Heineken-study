@@ -25,9 +25,9 @@ const GroupedBarChart = ({ data, series, ariaLabel }: GroupedBarChartProps) => (
   <div className="h-64" role="img" aria-label={ariaLabel}>
     <ResponsiveContainer>
       <BarChart data={data} margin={{ top: 10, right: 16, left: 0, bottom: 0 }}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-        <XAxis dataKey="label" tick={{ fill: '#64748b', fontSize: 12 }} />
-        <YAxis tick={{ fill: '#64748b', fontSize: 12 }} />
+        <CartesianGrid strokeDasharray="3 3" stroke="#d4c6ad" />
+        <XAxis dataKey="label" tick={{ fill: '#5c6f82', fontSize: 12 }} />
+        <YAxis tick={{ fill: '#5c6f82', fontSize: 12 }} />
         <Tooltip />
         <Legend />
         {series.map((item, index) => (

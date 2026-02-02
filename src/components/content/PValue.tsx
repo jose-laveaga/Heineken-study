@@ -62,7 +62,7 @@ function toneClasses(tone: Exclude<PValueTone, "auto">) {
             return "text-amber-800 bg-amber-50 ring-1 ring-amber-200";
         case "none":
         default:
-            return "text-slate-700 bg-slate-50 ring-1 ring-slate-200";
+            return "text-slate-600 bg-slate-50 ring-1 ring-slate-200";
     }
 }
 

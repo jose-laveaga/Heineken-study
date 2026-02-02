@@ -3,8 +3,8 @@ import HorizontalBarChart from '../charts/HorizontalBarChart';
 import { HypothesisOutcome } from '../../data/conclusion';
 
 const outcomeChipStyles: Record<HypothesisOutcome['outcome'], string> = {
-  supported: 'bg-emerald-100 text-emerald-700',
-  not_supported: 'bg-rose-100 text-rose-700'
+  supported: 'bg-slate-100 text-slate-700',
+  not_supported: 'bg-slate-50 text-slate-600'
 };
 
 interface HypothesisOutcomeChartProps {
@@ -48,7 +48,7 @@ const HypothesisOutcomeChart = ({ hypotheses, keyTakeaway }: HypothesisOutcomeCh
       <p className="text-xs text-slate-500">
         Evidence strength is a normalized summary based on reported statistical significance patterns (not raw p-values).
       </p>
-      <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">
         Key takeaway: {keyTakeaway}
       </div>
     </Card>

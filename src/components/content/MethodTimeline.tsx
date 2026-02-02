@@ -31,7 +31,7 @@ const MethodTimeline = ({ stages }: MethodTimelineProps) => {
           <div
             key={stage.id}
             className={`rounded-2xl border bg-white p-4 transition ${
-              isOpen ? 'border-emerald-300 shadow-sm' : 'border-slate-200'
+              isOpen ? 'border-slate-400 shadow-sm' : 'border-slate-200'
             }`}
           >
             <button
@@ -42,7 +42,7 @@ const MethodTimeline = ({ stages }: MethodTimelineProps) => {
             >
               <p className="text-xs uppercase tracking-wide text-slate-500">Step {index + 1}</p>
               <h3 className="mt-2 text-sm font-semibold text-slate-900">{stage.title}</h3>
-              <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-emerald-600">
+              <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-slate-600">
                 {isOpen ? 'Selected' : 'View details'}
                 <span
                   aria-hidden="true"
@@ -55,13 +55,13 @@ const MethodTimeline = ({ stages }: MethodTimelineProps) => {
           </div>
         );
       })}
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 md:col-span-5">
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 md:col-span-5">
         {activeStage ? (
           <div>
-            <p className="text-xs uppercase tracking-wide text-emerald-700">Step details</p>
+            <p className="text-xs uppercase tracking-wide text-slate-700">Step details</p>
             <div className="mt-2 flex flex-wrap items-center gap-2">
               <h4 className="text-sm font-semibold text-slate-900">{activeStage.title}</h4>
-              <span className="text-xs font-semibold text-emerald-700">
+              <span className="text-xs font-semibold text-slate-700">
                 Step {stages.findIndex((stage) => stage.id === activeStage.id) + 1}
               </span>
             </div>

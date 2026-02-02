@@ -1,16 +1,16 @@
 export const chartPalette = [
-  '#0f172a',
-  '#334155',
-  '#64748b',
-  '#94a3b8',
-  '#cbd5f5',
-  '#e2e8f0'
+  '#2f5d62',
+  '#5c6f82',
+  '#7fa99b',
+  '#a3b18a',
+  '#c08457',
+  '#d4c6ad'
 ];
 
 export const neutralSeries = [
-  { key: 'A', color: '#0f172a' },
-  { key: 'B', color: '#334155' },
-  { key: 'C', color: '#64748b' },
-  { key: 'D', color: '#94a3b8' },
-  { key: 'E', color: '#cbd5f5' }
+  { key: 'A', color: '#1f3b3e' },
+  { key: 'B', color: '#2f5d62' },
+  { key: 'C', color: '#5c6f82' },
+  { key: 'D', color: '#7fa99b' },
+  { key: 'E', color: '#a3b18a' }
 ];

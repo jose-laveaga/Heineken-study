@@ -82,7 +82,7 @@ const LineChartWithErrorBars = ({
                                         y1={y}
                                         x2={width - padding.right}
                                         y2={y}
-                                        stroke="#e2e8f0"
+                                        stroke="#d4c6ad"
                                         strokeWidth={1}
                                     />
                                 );
@@ -94,7 +94,7 @@ const LineChartWithErrorBars = ({
                                     y1={padding.top}
                                     x2={x}
                                     y2={height - padding.bottom}
-                                    stroke="#e2e8f0"
+                                    stroke="#d4c6ad"
                                     strokeWidth={1}
                                 />
                             ))}
@@ -107,7 +107,7 @@ const LineChartWithErrorBars = ({
                         y1={padding.top}
                         x2={padding.left}
                         y2={height - padding.bottom}
-                        stroke="#cbd5f5"
+                        stroke="#a3b18a"
                         strokeWidth={2}
                     />
                     <line
@@ -115,7 +115,7 @@ const LineChartWithErrorBars = ({
                         y1={height - padding.bottom}
                         x2={width - padding.right}
                         y2={height - padding.bottom}
-                        stroke="#cbd5f5"
+                        stroke="#a3b18a"
                         strokeWidth={2}
                     />
 
@@ -130,7 +130,7 @@ const LineChartWithErrorBars = ({
                                         y1={y}
                                         x2={padding.left}
                                         y2={y}
-                                        stroke="#94a3b8"
+                                        stroke="#7fa99b"
                                         strokeWidth={1}
                                     />
                                     <text
@@ -138,7 +138,7 @@ const LineChartWithErrorBars = ({
                                         y={y + 3}
                                         textAnchor="end"
                                         fontSize="10"
-                                        fill="#64748b"
+                                        fill="#5c6f82"
                                     >
                                         {formatTick(v)}
                                     </text>
@@ -184,7 +184,7 @@ const LineChartWithErrorBars = ({
                             y={height - 10}
                             textAnchor="middle"
                             fontSize="10"
-                            fill="#64748b"
+                            fill="#5c6f82"
                         >
                             {label}
                         </text>

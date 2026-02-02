@@ -2,8 +2,8 @@ import Card from '../ui/Card';
 import { HypothesisOutcome } from '../../data/conclusion';
 
 const outcomeStyles: Record<HypothesisOutcome['outcome'], string> = {
-  supported: 'bg-emerald-100 text-emerald-700',
-  not_supported: 'bg-rose-100 text-rose-700'
+  supported: 'bg-slate-100 text-slate-700',
+  not_supported: 'bg-slate-50 text-slate-600'
 };
 
 interface HypothesisCardProps {

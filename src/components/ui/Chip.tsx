@@ -12,8 +12,8 @@ const Chip = ({ label, selected = false, onClick }: ChipProps) => (
     className={clsx(
       'rounded-sm border px-3 py-1 text-xs transition',
       selected
-        ? 'border-[#818f67] bg-[#A3B18A] text-white'
-        : 'border-slate-200 bg-white text-slate-600 hover:border-[#818f67]'
+        ? 'border-slate-400 bg-slate-500 text-white'
+        : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-400'
     )}
     onClick={onClick}
   >

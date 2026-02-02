@@ -13,10 +13,10 @@ import ChartCard from '../charts/ChartCard';
 import { SentimentByBrand } from '../../data/sentimentByBrand';
 
 const sentimentColors = {
-  positive: '#16a34a',
-  neutral: '#f59e0b',
-  negative: '#ef4444',
-  avg: '#0f172a'
+  positive: '#7fa99b',
+  neutral: '#c08457',
+  negative: '#5c6f82',
+  avg: '#2f5d62'
 };
 
 interface SentimentChartsProps {
@@ -49,26 +49,26 @@ const SentimentCharts = ({ data, categoryAverage }: SentimentChartsProps) => {
         <div className="h-72" role="img" aria-label="Average sentiment by brand">
           <ResponsiveContainer>
             <BarChart data={avgData} layout="vertical" margin={{ top: 10, right: 16, left: 20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#d4c6ad" />
               <XAxis
                 type="number"
                 domain={[-1, 1]}
                 ticks={[-1, -0.5, 0, 0.5, 1]}
-                tick={{ fill: '#64748b', fontSize: 12 }}
+                tick={{ fill: '#5c6f82', fontSize: 12 }}
               />
-              <YAxis dataKey="brand" type="category" width={110} tick={{ fill: '#64748b', fontSize: 12 }} />
+              <YAxis dataKey="brand" type="category" width={110} tick={{ fill: '#5c6f82', fontSize: 12 }} />
               <Tooltip
                 formatter={(value: number) => [value.toFixed(2), 'Avg sentiment']}
                 labelFormatter={(label) => `Brand: ${label}`}
               />
               <ReferenceLine
                 x={categoryAverage}
-                stroke="#2563eb"
+                stroke="#2f5d62"
                 strokeDasharray="4 4"
                 label={{
                   value: `${categoryAverage.toFixed(2)}`,
                   position: 'insideTopRight',
-                  fill: '#2563eb',
+                  fill: '#2f5d62',
                   fontSize: 12
                 }}
               />
@@ -82,15 +82,15 @@ const SentimentCharts = ({ data, categoryAverage }: SentimentChartsProps) => {
         <div className="h-72" role="img" aria-label="Sentiment distribution by brand">
           <ResponsiveContainer>
             <BarChart data={distributionData} layout="vertical" margin={{ top: 10, right: 16, left: 20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#d4c6ad" />
               <XAxis
                 type="number"
                 domain={[0, 100]}
                 ticks={[0, 25, 50, 75, 100]}
                 tickFormatter={(value) => `${value}%`}
-                tick={{ fill: '#64748b', fontSize: 12 }}
+                tick={{ fill: '#5c6f82', fontSize: 12 }}
               />
-              <YAxis dataKey="brand" type="category" width={110} tick={{ fill: '#64748b', fontSize: 12 }} />
+              <YAxis dataKey="brand" type="category" width={110} tick={{ fill: '#5c6f82', fontSize: 12 }} />
               <Tooltip
                 formatter={(value: number, name, props) => {
                   const totalCount = props.payload.totalCount as number;

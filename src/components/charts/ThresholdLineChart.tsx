@@ -33,17 +33,17 @@ const ThresholdLineChart = ({
   <div className="h-64" role="img" aria-label={ariaLabel}>
     <ResponsiveContainer>
       <LineChart data={data} margin={{ top: 10, right: 16, left: 8, bottom: 12 }}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+        <CartesianGrid strokeDasharray="3 3" stroke="#d4c6ad" />
         <XAxis
           dataKey="label"
-          tick={{ fill: '#64748b', fontSize: 12 }}
-          label={{ value: xAxisLabel, position: 'insideBottom', offset: -6, fill: '#94a3b8', fontSize: 11 }}
+          tick={{ fill: '#5c6f82', fontSize: 12 }}
+          label={{ value: xAxisLabel, position: 'insideBottom', offset: -6, fill: '#7fa99b', fontSize: 11 }}
         />
         <YAxis
           domain={[0, 100]}
           tickFormatter={(value) => `${value}%`}
-          tick={{ fill: '#64748b', fontSize: 12 }}
-          label={{ value: yAxisLabel, angle: -90, position: 'insideLeft', fill: '#94a3b8', fontSize: 11 }}
+          tick={{ fill: '#5c6f82', fontSize: 12 }}
+          label={{ value: yAxisLabel, angle: -90, position: 'insideLeft', fill: '#7fa99b', fontSize: 11 }}
         />
         <Tooltip formatter={(value) => `${value}%`} />
         <Legend verticalAlign="top" height={36}/>
