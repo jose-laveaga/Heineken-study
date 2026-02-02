@@ -330,7 +330,12 @@ const ResultsExplorer = () => {
                           </table>
                         )}
                       >
-                        <HorizontalBarChart data={h1ChartData} ariaLabel="Heineken vs Fictional brands bar chart" />
+                        <HorizontalBarChart
+                          data={h1ChartData}
+                          ariaLabel="Heineken vs Fictional brands bar chart"
+                          valueSuffix=" selections"
+                          valueLabel="Selections"
+                        />
                       </ChartCard>
                       <ChartCard
                         title="Price sensitivity"
@@ -340,7 +345,7 @@ const ResultsExplorer = () => {
                               {h1PriceComparison.map((entry) => (
                                 <tr key={entry.label} className="border-b border-slate-200 last:border-0">
                                   <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                                  <td className="py-1 text-right text-slate-600">{entry.heineken}% / {entry.fictional}%</td>
+                                  <td className="py-1 text-right text-slate-600">{entry.heineken} / {entry.fictional}</td>
                                 </tr>
                               ))}
                             </tbody>
