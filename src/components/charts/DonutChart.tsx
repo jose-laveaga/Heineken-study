@@ -37,7 +37,7 @@ const renderOuterLabel = (props: any) => {
       textAnchor={anchor}
       dominantBaseline="central"
       fontSize={11}
-      fill="#475569"
+      fill="#5c6f82"
     >
       {payload.label} {value}%
     </text>

@@ -95,7 +95,7 @@ const SentimentTable = ({ data }: SentimentTableProps) => {
               return (
                 <tr
                   key={row.brand}
-                  className={clsx('border-t border-slate-200', isHeineken && 'bg-emerald-50/70')}
+                  className={clsx('border-t border-slate-200', isHeineken && 'bg-slate-100/70')}
                 >
                   <td className="px-4 py-3 font-medium text-slate-900">{row.brand}</td>
                   <td className="px-4 py-3 text-right">{row.avgSentiment.toFixed(2)}</td>
@@ -104,7 +104,7 @@ const SentimentTable = ({ data }: SentimentTableProps) => {
                       <span>{row.totalCount}</span>
                       {lowSample ? (
                         <span
-                          className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-700"
+                          className="rounded-full bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700"
                           title="Interpret with caution"
                         >
                           Low n

@@ -78,9 +78,9 @@ const h3SegmentLift = [
 ];
 
 const badgeStyles: Record<string, string> = {
-  Supported: 'bg-emerald-100 text-emerald-700',
-  'Partially Supported': 'bg-amber-100 text-amber-700',
-  'Not Supported': 'bg-rose-100 text-rose-700',
+  Supported: 'bg-slate-100 text-slate-700',
+  'Partially Supported': 'bg-slate-200 text-slate-700',
+  'Not Supported': 'bg-slate-50 text-slate-600',
   'Pending data hookup': 'bg-slate-100 text-slate-600'
 };
 

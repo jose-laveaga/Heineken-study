@@ -155,7 +155,7 @@ const MethodologyPage = () => (
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20">
+                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
                       <img
                           src="/src/images/clearhops_solo.png"
                           alt="Image of ClearHops 0.0"
@@ -163,7 +163,7 @@ const MethodologyPage = () => (
                       />
                   </div>
 
-                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20">
+                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
                       <img
                           src="/src/images/heinekenbottle_solo.png"
                           alt="Image of Heineken 0.0"
@@ -203,7 +203,7 @@ const MethodologyPage = () => (
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20 p-4">
+                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                         <img
                             src="/src/images/welcome_screen.png"
                             alt="Welcome screen"
@@ -223,8 +223,8 @@ const MethodologyPage = () => (
                         ID, and Session ID are automatically captured and displayed in a confirmation box.
                     </p>
 
-                    <div className="rounded-2xl border border-gray-200 bg-slate-50 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Captured fields</p>
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Captured fields</p>
                         <div className="mt-3">
                             <BulletList
                                 items={[
@@ -232,12 +232,12 @@ const MethodologyPage = () => (
                                     "Study ID",
                                     "Session ID"
                                 ]}
-                                className="text-gray-300-800"
+                                className="text-slate-700"
                             />
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20 p-4">
+                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                         <img
                             src="/src/images/questions.png"
                             alt="Pre-experiment questionnaire screening"
@@ -270,7 +270,7 @@ const MethodologyPage = () => (
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20 p-4">
+                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                         <img
                             src="/src/images/demogrpahics_questions.png"
                             alt="Demographics questionnaire"
@@ -320,7 +320,7 @@ const MethodologyPage = () => (
 
 
               <div className="mt-4 grid gap-4 md:grid-cols-2">
-                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20 p-4">
+                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
                           src="/src/images/bottle_v_bottle.png"
@@ -329,7 +329,7 @@ const MethodologyPage = () => (
                       />
                   </div>
 
-                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20 p-4">
+                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
                           src="/src/images/can_v_can_price.png"
@@ -352,7 +352,7 @@ const MethodologyPage = () => (
                 retail and online shopping environments.
             </p>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20 p-4">
+              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
                       src="/src/images/multirand_cans.png"
@@ -360,7 +360,7 @@ const MethodologyPage = () => (
                       className="max-h-[750px] max-w-full object-contain"
                   />
               </div>
-              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-20 p-4">
+              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
                       src="/src/images/multibrand_bottles.png"

@@ -57,12 +57,12 @@ function pValueToneAuto(
 function toneClasses(tone: Exclude<PValueTone, "auto">) {
     switch (tone) {
         case "strong":
-            return "text-emerald-800 bg-emerald-50 ring-1 ring-emerald-200";
+            return "text-slate-900 bg-slate-100 ring-1 ring-slate-300";
         case "moderate":
-            return "text-amber-800 bg-amber-50 ring-1 ring-amber-200";
+            return "text-slate-700 bg-slate-50 ring-1 ring-slate-200";
         case "none":
         default:
-            return "text-slate-700 bg-slate-50 ring-1 ring-slate-200";
+            return "text-slate-600 bg-slate-50 ring-1 ring-slate-200";
     }
 }
 

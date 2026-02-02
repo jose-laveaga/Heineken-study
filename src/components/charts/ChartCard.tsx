@@ -25,13 +25,13 @@ const ChartCard = ({ title, caption, footnote, interpretation, stats, children, 
     <div className="flex max-w-xl flex-col gap-4 overflow-ellipsis rounded-l rounded-r border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-xl font-semibold text-cyan-950">{title}</h3>
+          <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
           {caption ? <p className="mt-1 text-xs text-slate-500">{caption}</p> : null}
         </div>
         {dataTable ? (
           <button
             type="button"
-            className="text-xs font-semibold uppercase tracking-wide text-slate-500 hover:text-cyan-800"
+            className="text-xs font-semibold uppercase tracking-wide text-slate-500 hover:text-slate-700"
             onClick={() => setShowData((prev) => !prev)}
           >
             {showData ? 'Hide data' : 'View data'}
