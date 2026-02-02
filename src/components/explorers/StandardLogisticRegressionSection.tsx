@@ -3,8 +3,8 @@ import ChartCard from '../charts/ChartCard';
 import LineChartWithErrorBars from '../charts/LineChartWithErrorBars';
 
 const seriesPalette = [
-  { label: 'Male', color: '#1d4ed8' },
-  { label: 'Female', color: '#0f766e' }
+  { label: 'Male', color: '#4E647A' },
+  { label: 'Female', color: '#C58B5A' }
 ];
 
 const chartConfigs = [

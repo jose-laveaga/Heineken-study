@@ -81,11 +81,12 @@ export function StatPill({
     return (
         <span
             className={[
-                "inline-flex items-center gap-2 rounded-l rounded-tr-md rounded-br border border-slate-400 px-3 py-1 ",
+                "inline-flex h-9 items-center gap-2 whitespace-nowrap rounded-full border px-3",
+                "leading-none",
                 className,
             ].join(" ")}
         >
-      <span className="text-slate-600">
+      <span className="text-slate-600 leading-none">
         {label} {comparisonOperator}
       </span>
 

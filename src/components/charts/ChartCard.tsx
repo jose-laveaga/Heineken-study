@@ -41,7 +41,7 @@ const ChartCard = ({ title, caption, footnote, interpretation, stats, children, 
       <div className="min-h-[180px] overflow-ellipsis">{children}</div>
       {interpretation ? <p className="text-sm text-slate-600">{interpretation}</p> : null}
       {stats && stats.length > 0 ? (
-        <div className="flex flex-wrap gap-3 text-xs text-slate-500">
+        <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
           {stats.map((stat) => (
             <StatPill
                 key={stat.label}
