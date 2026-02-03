@@ -9,6 +9,7 @@ import HorizontalBarChart from '../charts/HorizontalBarChart';
 import BoxPlotChart from '../charts/BoxPlotChart';
 import resultsComparisons from '../../data/resultsComparisons.json';
 import { computeH2Metrics, computeH3Interaction, segmentByDrinkingHabit } from '../../utils/analysis';
+import { formatPercent, toPercentFromShare, toShareFromPercent, PARTICIPANT_SAMPLE_SIZE } from '../../utils/participantMetrics';
 
 const categoryTabs = [
   { id: '1v1_nonpriced', label: '1v1 (No Price)' },
@@ -45,16 +46,38 @@ const categoryFilters = {
   }
 } as const;
 
-const h1ChartData = [
-  { label: 'Heineken 0.0', value: 2416 },
-  { label: 'Fictional Brands', value: 1357 }
+const h1SelectionShares = [
+  { label: 'Heineken 0.0', share: 2416 },
+  { label: 'Fictional Brands', share: 1357 }
 ];
+const h1SelectionTotal = h1SelectionShares.reduce((sum, entry) => sum + entry.share, 0);
+const h1ChartData = h1SelectionShares.map((entry) => {
+  const percent = toPercentFromShare(entry.share, h1SelectionTotal);
+  return {
+    label: entry.label,
+    share: entry.share,
+    percent,
+    value: percent
+  };
+});
 
 const h1PriceComparison = [
-  { label: 'Equal price', heineken: 511, fictional: 308 },
-  { label: 'Heineken more expensive', heineken: 385, fictional: 440 },
-  { label: 'Clear Hops more expensive', heineken: 590, fictional: 230 }
+  { label: 'Equal price', heinekenShare: 511, fictionalShare: 308 },
+  { label: 'Heineken more expensive', heinekenShare: 385, fictionalShare: 440 },
+  { label: 'Clear Hops more expensive', heinekenShare: 590, fictionalShare: 230 }
 ];
+const h1PriceComparisonChart = h1PriceComparison.map((entry) => {
+  const total = entry.heinekenShare + entry.fictionalShare;
+  const heinekenPercent = toPercentFromShare(entry.heinekenShare, total);
+  const fictionalPercent = toPercentFromShare(entry.fictionalShare, total);
+  return {
+    label: entry.label,
+    heinekenPercent,
+    heinekenShare: entry.heinekenShare,
+    fictionalPercent,
+    fictionalShare: entry.fictionalShare
+  };
+});
 
 const h2BoxPlotData = [
     // (0.999, 2.0] — degenerate box at 1.0
@@ -73,9 +96,18 @@ const h2BoxPlotData = [
 
 
 const h3SegmentLift = [
-  { label: 'Non-drinkers', value: 42.3 },
-  { label: 'Regular', value: 45.4 }
+  { label: 'Non-drinkers', percent: 42.3 },
+  { label: 'Regular', percent: 45.4 }
 ];
+const h3SegmentLiftChart = h3SegmentLift.map((entry) => {
+  const share = toShareFromPercent(entry.percent, PARTICIPANT_SAMPLE_SIZE);
+  return {
+    label: entry.label,
+    share,
+    percent: entry.percent,
+    value: share
+  };
+});
 
 const badgeStyles: Record<string, string> = {
   Supported: 'bg-slate-100 text-slate-700',
@@ -199,13 +231,30 @@ const ResultsExplorer = () => {
       )}
       <div className="grid gap-6 md:grid-cols-2">
         {visible.map((item) => {
+          const chartOptions = item.options.map((option) => {
+            const share = toShareFromPercent(option.value, PARTICIPANT_SAMPLE_SIZE);
+            return {
+              label: option.label,
+              share,
+              percent: option.value,
+              value: share
+            };
+          });
           const dataTable = (
             <table className="w-full">
+              <thead>
+                <tr className="text-left text-[10px] uppercase tracking-wide text-slate-500">
+                  <th className="py-1 font-semibold">Option</th>
+                  <th className="py-1 text-right font-semibold">Share</th>
+                  <th className="py-1 text-right font-semibold">Percent</th>
+                </tr>
+              </thead>
               <tbody>
-                {item.options.map((option) => (
+                {chartOptions.map((option) => (
                   <tr key={option.label} className="border-b border-slate-200 last:border-0">
                     <td className="py-1 text-left font-medium text-slate-700">{option.label}</td>
-                    <td className="py-1 text-right text-slate-600">{option.value}%</td>
+                    <td className="py-1 text-right text-slate-600">{option.share}</td>
+                    <td className="py-1 text-right text-slate-600">{formatPercent(option.percent)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -220,7 +269,7 @@ const ResultsExplorer = () => {
               stats={item.stats}
               dataTable={dataTable}
             >
-              <DonutChart data={item.options} ariaLabel={`${item.title} comparison chart`} />
+              <DonutChart data={chartOptions} ariaLabel={`${item.title} comparison chart`} />
             </ChartCard>
           );
         })}
@@ -318,29 +367,70 @@ const ResultsExplorer = () => {
                       <ChartCard
                         title="Heineken vs Star Brew share"
                         dataTable={(
-                          <table className="min-w-0 text-sm ">
-                            <tbody>
-                              {h1ChartData.map((entry) => (
-                                <tr key={entry.label} className="border-b border-slate-200 last:border-0">
-                                  <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                                  <td className="py-1 text-right text-slate-600">{entry.value}</td>
+                            <table className="w-full table-fixed text-sm">
+                                <thead>
+                                <tr className="text-[10px] uppercase tracking-wide text-slate-500">
+                                    <th className="w-1/2 py-1 pr-6 text-left font-semibold">Option</th>
+                                    <th className="w-1/4 py-1 px-3 text-right font-semibold">Share</th>
+                                    <th className="w-1/4 py-1 pl-6 text-right font-semibold">Percent</th>
                                 </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                                </thead>
+
+                                <tbody>
+                                {h1ChartData.map((entry) => (
+                                    <tr key={entry.label} className="border-b border-slate-200 last:border-0">
+                                        <td className="py-2 pr-6 text-left font-medium text-slate-700">
+                                            {entry.label}
+                                        </td>
+                                        <td className="py-2 px-3 text-right tabular-nums text-slate-600">
+                                            {entry.share}
+                                        </td>
+                                        <td className="py-2 pl-6 text-right tabular-nums text-slate-600">
+                                            {formatPercent(entry.percent)}
+                                        </td>
+                                    </tr>
+                                ))}
+                                </tbody>
+                            </table>
+
                         )}
                       >
-                        <HorizontalBarChart data={h1ChartData} ariaLabel="Heineken vs Fictional brands bar chart" />
+                        <HorizontalBarChart
+                          data={h1ChartData}
+                          ariaLabel="Heineken vs Fictional brands bar chart"
+                          valueLabel="Selections"
+                          xAxisTickFormatter={(value) => `${value}%`}
+                        />
                       </ChartCard>
                       <ChartCard
                         title="Price sensitivity"
                         dataTable={(
                           <table className="w-full text-sm">
+                            <thead>
+                              <tr className="text-left text-[10px] uppercase tracking-wide text-slate-500">
+                                <th className="py-1 font-semibold">Scenario</th>
+                                <th className="py-1 text-right font-semibold">Heineken share</th>
+                                <th className="py-1 text-right font-semibold">Heineken %</th>
+                                <th className="py-1 text-right font-semibold">Fictional share</th>
+                                <th className="py-1 text-right font-semibold">Fictional %</th>
+                              </tr>
+                            </thead>
                             <tbody>
                               {h1PriceComparison.map((entry) => (
                                 <tr key={entry.label} className="border-b border-slate-200 last:border-0">
                                   <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                                  <td className="py-1 text-right text-slate-600">{entry.heineken}% / {entry.fictional}%</td>
+                                  <td className="py-1 text-right text-slate-600">{entry.heinekenShare}</td>
+                                  <td className="py-1 text-right text-slate-600">
+                                    {formatPercent(
+                                      toPercentFromShare(entry.heinekenShare, entry.heinekenShare + entry.fictionalShare)
+                                    )}
+                                  </td>
+                                  <td className="py-1 text-right text-slate-600">{entry.fictionalShare}</td>
+                                  <td className="py-1 text-right text-slate-600">
+                                    {formatPercent(
+                                      toPercentFromShare(entry.fictionalShare, entry.heinekenShare + entry.fictionalShare)
+                                    )}
+                                  </td>
                                 </tr>
                               ))}
                             </tbody>
@@ -348,12 +438,13 @@ const ResultsExplorer = () => {
                         )}
                       >
                         <GroupedBarChart
-                          data={h1PriceComparison}
+                          data={h1PriceComparisonChart}
                           series={[
-                            { key: 'heineken', label: 'Heineken 0.0' },
-                            { key: 'fictional', label: 'Fictional brand' }
+                            { key: 'heinekenPercent', label: 'Heineken 0.0' },
+                            { key: 'fictionalPercent', label: 'Fictional brand' }
                           ]}
                           ariaLabel="Price sensitivity grouped bar chart"
+                          yAxisTickFormatter={(value) => `${value}%`}
                         />
                       </ChartCard>
                     </div>
@@ -379,7 +470,7 @@ const ResultsExplorer = () => {
                   <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
                         <div className="space-y-4">
                           <div>
-                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Hypothesis (H2)</p>
+                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Hypothesis</p>
                               <p className="mt-2 text-sm text-slate-600">
                                   Brand perception scores for Heineken are positively correlated with purchase behavior and purchase intent for
                                   Heineken&nbsp;0.0.
@@ -414,7 +505,7 @@ const ResultsExplorer = () => {
                           <div>
                               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conclusion</p>
                               <p className="mt-2 text-sm text-slate-600">
-                                  H2 is supported. The null hypothesis of no relationship between brand perception and purchase intent is decisively
+                                  The null hypothesis of no relationship between brand perception and purchase intent is decisively
                                   rejected. Higher perceived trust, quality, taste expectations, and familiarity strongly predict increased
                                   likelihood to purchase Heineken&nbsp;0.0.
                               </p>
@@ -514,9 +605,9 @@ const ResultsExplorer = () => {
                           </div>
 
                           <div>
-                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conclusion (H3)</p>
+                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conclusion</p>
                               <p className="mt-2 text-sm text-slate-600">
-                                  Hypothesis&nbsp;3 is rejected. There is no evidence that the influence of the mother brand on purchase behavior
+                                   The null hypothesis&nbsp;is not rejected. There is no evidence that the influence of the mother brand on purchase behavior
                                   is stronger for regular drinkers than for non-regular drinkers. Mother-brand equity operates consistently across
                                   consumption segments, indicating a broad-based brand effect rather than one driven by heavier alcohol users.
                               </p>
@@ -529,18 +620,30 @@ const ResultsExplorer = () => {
                         title="Mother-brand lift by drinking habit"
                         dataTable={(
                           <table className="w-full text-sm">
+                            <thead>
+                              <tr className="text-left text-[10px] uppercase tracking-wide text-slate-500">
+                                <th className="py-1 font-semibold">Segment</th>
+                                <th className="py-1 text-right font-semibold">Share</th>
+                                <th className="py-1 text-right font-semibold">Percent</th>
+                              </tr>
+                            </thead>
                             <tbody>
-                              {h3SegmentLift.map((entry) => (
+                              {h3SegmentLiftChart.map((entry) => (
                                 <tr key={entry.label} className="border-b border-slate-200 last:border-0">
                                   <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                                  <td className="py-1 text-right text-slate-600">{entry.value}%</td>
+                                  <td className="py-1 text-right text-slate-600">{entry.share}</td>
+                                  <td className="py-1 text-right text-slate-600">{formatPercent(entry.percent)}</td>
                                 </tr>
                               ))}
                             </tbody>
                           </table>
                         )}
                       >
-                        <HorizontalBarChart data={h3SegmentLift} ariaLabel="Mother-brand lift by drinking habit bar chart" />
+                        <HorizontalBarChart
+                          data={h3SegmentLiftChart}
+                          ariaLabel="Mother-brand lift by drinking habit bar chart"
+                          valueLabel="Participants"
+                        />
                       </ChartCard>
                     </div>
                   </div>

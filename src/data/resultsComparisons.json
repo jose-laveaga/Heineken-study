@@ -196,7 +196,7 @@
     {
       "id": "mb_001",
       "category": "multi_brand",
-      "title": "Multi-brand comparison — set A",
+      "title": "Multi-brand — set A",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
@@ -216,7 +216,7 @@
     {
       "id": "mb_002",
       "category": "multi_brand",
-      "title": "Multi-brand comparison — set B",
+      "title": "Multi-brand — set B",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
@@ -236,7 +236,7 @@
     {
       "id": "mb_003",
       "category": "multi_brand",
-      "title": "Multi-brand comparison — set C",
+      "title": "Multi-brand — set C",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
@@ -256,7 +256,7 @@
     {
       "id": "mb_004",
       "category": "multi_brand",
-      "title": "Multi-brand comparison — set D",
+      "title": "Multi-brand — set D",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
