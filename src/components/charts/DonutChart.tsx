@@ -8,7 +8,7 @@ import {
 import { chartPalette } from './chartTheme';
 
 interface DonutChartProps {
-  data: { label: string; value: number }[];
+  data: { label: string; value: number; share?: number; percent?: number }[];
   ariaLabel: string;
 }
 
@@ -39,7 +39,8 @@ const renderOuterLabel = (props: any) => {
       fontSize={11}
       fill="#5c6f82"
     >
-      {payload.label} {value}%
+      {payload.label} {payload.share ?? value}
+      {typeof payload.percent === 'number' ? ` (${payload.percent.toFixed(1)}%)` : null}
     </text>
   );
 };
@@ -48,7 +49,15 @@ const DonutChart = ({ data, ariaLabel }: DonutChartProps) => (
   <div className="h-52" role="img" aria-label={ariaLabel}>
     <ResponsiveContainer>
       <PieChart>
-        <Tooltip formatter={(value: number) => [`${value}%`, 'Share']} />
+        <Tooltip
+          formatter={(value: number, _name, props) => {
+            const payload = props.payload as { share?: number; percent?: number } | undefined;
+            if (payload && typeof payload.share === 'number' && typeof payload.percent === 'number') {
+              return [`${payload.share} (${payload.percent.toFixed(1)}%)`, 'Share'];
+            }
+            return [value.toString(), 'Share'];
+          }}
+        />
         <Pie
           data={data}
           dataKey="value"

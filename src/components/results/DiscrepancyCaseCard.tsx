@@ -5,6 +5,7 @@ import GroupedBarChart from '../charts/GroupedBarChart';
 import DonutChart from '../charts/DonutChart';
 import InterpretationCallout from './InterpretationCallout';
 import type { DiscrepancyCase, LikelihoodChart, ChoiceChart } from '../../data/discrepancies';
+import { PARTICIPANT_SAMPLE_SIZE, toShareFromPercent } from '../../utils/participantMetrics';
 
 interface DiscrepancyCaseCardProps {
   caseItem: DiscrepancyCase;
@@ -13,16 +14,25 @@ interface DiscrepancyCaseCardProps {
 const likelihoodFootnote = '1 = Very unlikely, 5 = Very likely';
 
 const getLikelihoodData = (chart: LikelihoodChart) =>
-  chart.distribution.map((entry) => ({
-    label: String(entry.score),
-    pct: entry.pct
-  }));
+  chart.distribution.map((entry) => {
+    const share = toShareFromPercent(entry.pct, PARTICIPANT_SAMPLE_SIZE);
+    return {
+      label: String(entry.score),
+      share,
+      percent: entry.pct
+    };
+  });
 
 const getChoiceData = (chart: ChoiceChart) =>
-  chart.shares.map((entry) => ({
-    label: entry.label,
-    value: entry.pct
-  }));
+  chart.shares.map((entry) => {
+    const share = toShareFromPercent(entry.pct, PARTICIPANT_SAMPLE_SIZE);
+    return {
+      label: entry.label,
+      share,
+      percent: entry.pct,
+      value: share
+    };
+  });
 
 const DiscrepancyCaseCard = ({ caseItem }: DiscrepancyCaseCardProps) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -71,7 +81,7 @@ const DiscrepancyCaseCard = ({ caseItem }: DiscrepancyCaseCardProps) => {
                   >
                     <GroupedBarChart
                       data={getLikelihoodData(chart)}
-                      series={[{ key: 'pct', label: chart.brandLabel }]}
+                      series={[{ key: 'share', label: chart.brandLabel }]}
                       ariaLabel={`${chart.brandLabel} purchase likelihood distribution`}
                     />
                   </ChartCard>
