@@ -166,6 +166,7 @@ const ResultsExplorer = () => {
     const brandOptions = useMemo(() => categoryFilters[category].brands, [category]);
   const formatOptions = useMemo(() => categoryFilters[category].formats, [category]);
   const scenarioOptions = useMemo(() => categoryFilters[category].scenarios, [category]);
+  const hasFilters = brandOptions.length > 0 || formatOptions.length > 0 || scenarioOptions.length > 0;
 
   const filtered = comparisons.filter((item) => {
     if (item.category !== category) return false;
@@ -180,7 +181,7 @@ const ResultsExplorer = () => {
   return (
     <div className="space-y-6">
       <Tabs options={categoryTabs} value={category} onChange={setCategory} />
-      {(brandOptions.length || formatOptions.length || scenarioOptions.length) && (
+      {hasFilters && (
         <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-4 md:grid-cols-3">
           {brandOptions.length ? (
             <div className="space-y-2">
