@@ -367,24 +367,32 @@ const ResultsExplorer = () => {
                       <ChartCard
                         title="Heineken vs Star Brew share"
                         dataTable={(
-                          <table className="min-w-0 text-sm">
-                            <thead>
-                              <tr className="text-left text-[10px] uppercase tracking-wide text-slate-500">
-                                <th className="py-1 font-semibold">Option</th>
-                                <th className="py-1 text-right font-semibold">Share</th>
-                                <th className="py-1 text-right font-semibold">Percent</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {h1ChartData.map((entry) => (
-                                <tr key={entry.label} className="border-b border-slate-200 last:border-0">
-                                  <td className="py-1 text-left font-medium text-slate-700">{entry.label}</td>
-                                  <td className="py-1 text-right text-slate-600">{entry.share}</td>
-                                  <td className="py-1 text-right text-slate-600">{formatPercent(entry.percent)}</td>
+                            <table className="w-full table-fixed text-sm">
+                                <thead>
+                                <tr className="text-[10px] uppercase tracking-wide text-slate-500">
+                                    <th className="w-1/2 py-1 pr-6 text-left font-semibold">Option</th>
+                                    <th className="w-1/4 py-1 px-3 text-right font-semibold">Share</th>
+                                    <th className="w-1/4 py-1 pl-6 text-right font-semibold">Percent</th>
                                 </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                                </thead>
+
+                                <tbody>
+                                {h1ChartData.map((entry) => (
+                                    <tr key={entry.label} className="border-b border-slate-200 last:border-0">
+                                        <td className="py-2 pr-6 text-left font-medium text-slate-700">
+                                            {entry.label}
+                                        </td>
+                                        <td className="py-2 px-3 text-right tabular-nums text-slate-600">
+                                            {entry.share}
+                                        </td>
+                                        <td className="py-2 pl-6 text-right tabular-nums text-slate-600">
+                                            {formatPercent(entry.percent)}
+                                        </td>
+                                    </tr>
+                                ))}
+                                </tbody>
+                            </table>
+
                         )}
                       >
                         <HorizontalBarChart
@@ -462,7 +470,7 @@ const ResultsExplorer = () => {
                   <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
                         <div className="space-y-4">
                           <div>
-                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Hypothesis (H2)</p>
+                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Hypothesis</p>
                               <p className="mt-2 text-sm text-slate-600">
                                   Brand perception scores for Heineken are positively correlated with purchase behavior and purchase intent for
                                   Heineken&nbsp;0.0.
@@ -497,7 +505,7 @@ const ResultsExplorer = () => {
                           <div>
                               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conclusion</p>
                               <p className="mt-2 text-sm text-slate-600">
-                                  H2 is supported. The null hypothesis of no relationship between brand perception and purchase intent is decisively
+                                  The null hypothesis of no relationship between brand perception and purchase intent is decisively
                                   rejected. Higher perceived trust, quality, taste expectations, and familiarity strongly predict increased
                                   likelihood to purchase Heineken&nbsp;0.0.
                               </p>
@@ -597,9 +605,9 @@ const ResultsExplorer = () => {
                           </div>
 
                           <div>
-                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conclusion (H3)</p>
+                              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conclusion</p>
                               <p className="mt-2 text-sm text-slate-600">
-                                  Hypothesis&nbsp;3 is rejected. There is no evidence that the influence of the mother brand on purchase behavior
+                                   The null hypothesis&nbsp;is not rejected. There is no evidence that the influence of the mother brand on purchase behavior
                                   is stronger for regular drinkers than for non-regular drinkers. Mother-brand equity operates consistently across
                                   consumption segments, indicating a broad-based brand effect rather than one driven by heavier alcohol users.
                               </p>
