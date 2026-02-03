@@ -12,6 +12,7 @@
     font-family: "sans-serif", "Inter", "Segoe UI", system-ui, -apple-system, "sans-serif";
     background-color: #f7f4ed;
     color: #1f3b3e;
+    text-align: justify;
   }
 
   h1, h2, h3, h4 {
