@@ -158,7 +158,7 @@ const MethodologyPage = () => (
                   <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
                       <img
                           src="/src/images/clearhops_solo.png"
-                          alt="Image of ClearHops 0.0"
+                          alt="ClearHops 0.0"
                           className="max-h-[400px] max-w-full object-contain"
                       />
                   </div>
@@ -166,7 +166,7 @@ const MethodologyPage = () => (
                   <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
                       <img
                           src="/src/images/heinekenbottle_solo.png"
-                          alt="Image of Heineken 0.0"
+                          alt="Heineken 0.0"
                           className="max-h-[400px] max-w-full object-contain"
                       />
                   </div>
@@ -240,7 +240,7 @@ const MethodologyPage = () => (
                     <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                         <img
                             src="/src/images/questions.png"
-                            alt="Pre-experiment questionnaire screening"
+                            alt="Screening questionnaire"
                             className="max-h-[750px] w-full object-contain"
                         />
                     </div>
@@ -324,7 +324,7 @@ const MethodologyPage = () => (
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
                           src="/src/images/bottle_v_bottle.png"
-                          alt="Sequential brand comparison layout"
+                          alt="brand layout"
                           className="max-h-[500px] max-w-full object-contain"
                       />
                   </div>
@@ -333,7 +333,7 @@ const MethodologyPage = () => (
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
                           src="/src/images/can_v_can_price.png"
-                          alt="Grid brand comparison layout"
+                          alt="comparison layout"
                           className="max-h-[500px] max-w-full object-contain"
                       />
                   </div>
@@ -356,7 +356,7 @@ const MethodologyPage = () => (
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
                       src="/src/images/multirand_cans.png"
-                      alt="Sequential brand comparison layout"
+                      alt="Sequential layout"
                       className="max-h-[750px] max-w-full object-contain"
                   />
               </div>
@@ -364,7 +364,7 @@ const MethodologyPage = () => (
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
                       src="/src/images/multibrand_bottles.png"
-                      alt="Grid brand comparison layout"
+                      alt="comparison layout"
                       className="max-h-[750px] max-w-full object-contain"
                   />
               </div>
