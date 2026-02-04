@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-interface Stage {
+export interface Stage {
   id: string;
   title: string;
   description: string;
   bullet_one: string;
   bullet_two: string;
   bullet_three: string;
+
 }
 
 interface MethodTimelineProps {

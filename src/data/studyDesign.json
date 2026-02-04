@@ -12,7 +12,7 @@
       "title": "Building the Simulated Online Storefront",
       "bullet_one":  "• Design and Develop an interactive, web-based platform that mimics an actual online shopping experience.",
       "bullet_two":  "• The core deliverable was the creation of a realistic and functional online platform where the experiment could be conducted.",
-      "bullet_three":  null,
+      "bullet_three": "",
       "description": "This stage was dedicated to creating the experimental environment necessary to simulate the user experience."},
     {
       "id": "stage3",
@@ -26,14 +26,14 @@
       "title": "Experiment Execution",
       "bullet_one":  "• Executed the study across defined segments or groups as per the finalized protocol.",
       "bullet_two":  "• Ensured all necessary data points were gathered accurately and efficiently using the predetermined collection methods.",
-      "bullet_three":  null,
+      "bullet_three":  "",
       "description": "The primary data collection phase focused on the systematic implementation of the finalized design."},
     {
       "id": "stage5",
       "title": "Analyze",
       "bullet_one":  "• Applied appropriate statistical methods to the collected data to test hypotheses and formulate evidence-based conclusions.",
       "bullet_two":  "• Modeling of pick rates, segmentation thresholds, and sentiment themes.",
-      "bullet_three":  null,
+      "bullet_three":  "",
       "description": "The final stage, where raw data was translated into actionable insights and presented."}
   ],
   "experimentFlow": [
