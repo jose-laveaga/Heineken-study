@@ -31,6 +31,7 @@ module.exports = {
       files: ['**/*.test.ts', '**/*.test.tsx'],
       extends: ['plugin:testing-library/react', 'plugin:jest-dom/recommended'],
       rules: {
+          "react/prop-types": "off",
         'react/react-in-jsx-scope': 'off'
       }
     }
