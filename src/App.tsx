@@ -4,7 +4,6 @@ import Header from './components/layout/Header';
 import Toc from './components/layout/Toc';
 import ReportPage, { reportSections } from './pages/ReportPage';
 import MethodologyPage, { methodologySections } from './pages/MethodologyPage';
-import reportMeta from './data/reportMeta.json';
 
 // TODO: Replace placeholder figures in /src/data/*.json with the final report numbers.
 
@@ -23,7 +22,7 @@ const App = () => {
 
   return (
     <div className="bg-slate-50 text-slate-900">
-      <Header pages={pages} activePage={activePage} onPageChange={handlePageChange} pdfPath={reportMeta.pdfPath} />
+      <Header pages={pages} activePage={activePage} onPageChange={handlePageChange} />
       <AppShell>
         <div className="grid items-start gap-10 xl:grid-cols-[minmax(0,1fr)_220px]">
           <div className="grid gap-10">
