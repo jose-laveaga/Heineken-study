@@ -5,10 +5,9 @@ interface HeaderProps {
   pages: { id: string; label: string }[];
   activePage: string;
   onPageChange: (pageId: string) => void;
-  pdfPath: string;
 }
 
-const Header = ({ pages, activePage, onPageChange, pdfPath }: HeaderProps) => {
+const Header = ({ pages, activePage, onPageChange }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -27,11 +26,7 @@ const Header = ({ pages, activePage, onPageChange, pdfPath }: HeaderProps) => {
             </Button>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <a href={pdfPath} target="_blank" rel="noreferrer">
-            <Button>Download PDF</Button>
-          </a>
-        </div>
+
         <button
           type="button"
           className="rounded-md border border-slate-200 px-3 py-2 text-xs text-slate-600 md:hidden"
@@ -60,11 +55,6 @@ const Header = ({ pages, activePage, onPageChange, pdfPath }: HeaderProps) => {
               </button>
             ))}
           </nav>
-          <div className="mt-4">
-            <a href={pdfPath} target="_blank" rel="noreferrer">
-              <Button className="w-full">Download PDF</Button>
-            </a>
-          </div>
         </div>
       ) : null}
     </header>
