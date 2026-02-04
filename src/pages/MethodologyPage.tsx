@@ -79,7 +79,7 @@ const MethodologyPage = () => (
         <div className="space-y-6">
           <div className="space-y-4 text-sm text-slate-600">
               <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-500">
-                  <img src="/src/images/experiment_design.png" alt="Diagram of experiment layout" />
+                  <img src="/public/images/experiment_design.png" alt="Diagram of experiment layout" />
               </div>
 
               <div className="space-y-6 text-sm text-slate-600">
@@ -157,7 +157,7 @@ const MethodologyPage = () => (
               <div className="grid gap-4 md:grid-cols-2">
                   <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
                       <img
-                          src="/src/images/clearhops_solo.png"
+                          src="/public/images/clearhops_solo.png"
                           alt="Image of ClearHops 0.0"
                           className="max-h-[400px] max-w-full object-contain"
                       />
@@ -165,7 +165,7 @@ const MethodologyPage = () => (
 
                   <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
                       <img
-                          src="/src/images/heinekenbottle_solo.png"
+                          src="/public/images/heinekenbottle_solo.png"
                           alt="Image of Heineken 0.0"
                           className="max-h-[400px] max-w-full object-contain"
                       />
@@ -205,7 +205,7 @@ const MethodologyPage = () => (
 
                     <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                         <img
-                            src="/src/images/welcome_screen.png"
+                            src="/public/images/welcome_screen.png"
                             alt="Welcome screen"
                             className="max-h-[750px] w-full object-contain"
                         />
@@ -239,7 +239,7 @@ const MethodologyPage = () => (
 
                     <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                         <img
-                            src="/src/images/questions.png"
+                            src="/public/images/questions.png"
                             alt="Pre-experiment questionnaire screening"
                             className="max-h-[750px] w-full object-contain"
                         />
@@ -272,7 +272,7 @@ const MethodologyPage = () => (
 
                     <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                         <img
-                            src="/src/images/demogrpahics_questions.png"
+                            src="/public/images/demogrpahics_questions.png"
                             alt="Demographics questionnaire"
                             className="max-h-[750px] w-full object-contain"
                         />
@@ -323,7 +323,7 @@ const MethodologyPage = () => (
                   <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
-                          src="/src/images/bottle_v_bottle.png"
+                          src="/public/images/bottle_v_bottle.png"
                           alt="Sequential brand comparison layout"
                           className="max-h-[500px] max-w-full object-contain"
                       />
@@ -332,7 +332,7 @@ const MethodologyPage = () => (
                   <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
-                          src="/src/images/can_v_can_price.png"
+                          src="/public/images/can_v_can_price.png"
                           alt="Grid brand comparison layout"
                           className="max-h-[500px] max-w-full object-contain"
                       />
@@ -355,7 +355,7 @@ const MethodologyPage = () => (
               <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
-                      src="/src/images/multirand_cans.png"
+                      src="/public/images/multirand_cans.png"
                       alt="Sequential brand comparison layout"
                       className="max-h-[750px] max-w-full object-contain"
                   />
@@ -363,7 +363,7 @@ const MethodologyPage = () => (
               <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
-                      src="/src/images/multibrand_bottles.png"
+                      src="/public/images/multibrand_bottles.png"
                       alt="Grid brand comparison layout"
                       className="max-h-[750px] max-w-full object-contain"
                   />
