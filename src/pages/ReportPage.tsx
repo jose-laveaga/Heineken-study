@@ -96,8 +96,9 @@ const ReportPage = () => {
           </div>
           <div className="space-y-4">
             <div className="grid gap-4">
-              <StatCard label="Completion time" value="6-8 min" note="Median estimate" />
-              <StatCard label="Geography" value="US only" note="" />
+                <StatCard label="Sample Size" value="n = 412" note="" />
+                <StatCard label="Completion time" value="6-8 min" note="Median estimate" />
+                <StatCard label="Geography" value="US only" note="" />
             </div>
 
           </div>
