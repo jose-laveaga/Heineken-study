@@ -123,13 +123,31 @@ const MethodologyPage = () => (
                                   "Brand selection designed in collaboration with Heineken to rigorously test mother-brand equity.",
                                   "Brands evaluated based on market share relevance and role within six predefined comparison scenarios.",
                                   "Major global mother brands included: Heineken, Budweiser, and Beck’s Blue.",
-                                  "Established non-mother competitors included: O’Doul’s and Rescue Club.",
-                                  "Two fictional brands introduced to establish a zero-familiarity baseline and isolate pure brand equity."
+                                  "Established non-mother competitors included: O’Doul’s, Rescue Club, Calusthaler, and Kaliber.",
+                                  "Two fictional brands were introduced to establish a zero-familiarity baseline and isolate pure brand equity.",
+                                  "The figures below show the available beer brand choices for this study. The selections were made with consistency of the study in mind which is why Athletic Brewing was not included in the study."
                               ]}
                           />
                       </div>
                   </div>
 
+                  <div className="space-y-4">
+                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 overflow-hidden">
+                          <img
+                              src="/images/non_mother_brands_sales_volume.png"
+                              alt="Choice of brands visual 1"
+                              className="max-h-[500px] w-full object-contain"
+                          />
+                      </div>
+
+                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 overflow-hidden">
+                          <img
+                              src="/images/mother_brand_sales_volume.png"
+                              alt="Choice of brands visual 2"
+                              className="max-h-[500px] w-full object-contain"
+                          />
+                      </div>
+                  </div>
                   <p>
                       This mixed brand selection ensured the study delivered both competitive intelligence and a robust assessment
                       of trust transfer from established alcoholic brands into the non-alcoholic category.
