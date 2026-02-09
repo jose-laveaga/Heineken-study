@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AppShell from './components/layout/AppShell';
 import Header from './components/layout/Header';
 import Toc from './components/layout/Toc';
+import GlossarySection from './components/content/GlossarySection';
 import ReportPage, { reportSections } from './pages/ReportPage';
 import MethodologyPage, { methodologySections } from './pages/MethodologyPage';
 
@@ -30,6 +31,7 @@ const App = () => {
           </div>
           <Toc sections={sections} />
         </div>
+        <GlossarySection />
       </AppShell>
     </div>
   );
