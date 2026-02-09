@@ -6,6 +6,7 @@ import Accordion from '../components/ui/Accordion';
 import Tabs from '../components/ui/Tabs';
 import MethodTimeline from '../components/content/MethodTimeline';
 import ExperimentStepper from '../components/content/ExperimentStepper';
+import GlossarySection from '../components/content/GlossarySection';
 import ResultsExplorer from '../components/explorers/ResultsExplorer';
 import DemographicsSection from '../components/explorers/DemographicsSection';
 import StandardLogisticRegressionSection from '../components/explorers/StandardLogisticRegressionSection';
@@ -26,14 +27,15 @@ export const reportSections = [
   { id: 'overview', label: 'Overview' },
   { id: 'study-design', label: 'Study Design' },
   { id: 'experiment-flow', label: 'Experiment Flow' },
-    { id: 'demographics', label: 'Demographics' },
+  { id: 'demographics', label: 'Demographics' },
   { id: 'results', label: 'Results' },
   { id: 'pick-rate-comparison', label: 'Pick Rate Comparison' },
   { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
   { id: 'discrepancies', label: 'Discrepancies' },
   { id: 'conclusion', label: 'Conclusion' },
-  { id: 'appendix', label: 'Appendix' }
+  { id: 'appendix', label: 'Appendix' },
+  { id: 'glossary', label: 'Glossary' }
 ];
 
 const ReportPage = () => {
@@ -129,7 +131,7 @@ const ReportPage = () => {
 
       </Section>
 
-    <Section id="demographics" title="Demographics" subtitle="Participant distribution across key audience characteristics">
+      <Section id="demographics" title="Demographics" subtitle="Participant distribution across key audience characteristics">
         <DemographicsSection />
     </Section>
 
@@ -264,6 +266,7 @@ const ReportPage = () => {
       <DiscrepanciesSection />
       <ConclusionSection />
       <AppendixSection />
+      <GlossarySection />
     </>
   );
 };
