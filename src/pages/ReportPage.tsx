@@ -26,9 +26,9 @@ export const reportSections = [
   { id: 'overview', label: 'Overview' },
   { id: 'study-design', label: 'Study Design' },
   { id: 'experiment-flow', label: 'Experiment Flow' },
+    { id: 'demographics', label: 'Demographics' },
   { id: 'results', label: 'Results' },
   { id: 'pick-rate-comparison', label: 'Pick Rate Comparison' },
-  { id: 'demographics', label: 'Demographics' },
   { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
   { id: 'discrepancies', label: 'Discrepancies' },
@@ -126,7 +126,13 @@ const ReportPage = () => {
             bullets: flow.bullets
           }))}
         />
+
       </Section>
+
+    <Section id="demographics" title="Demographics" subtitle="Participant distribution across key audience characteristics">
+        <DemographicsSection />
+    </Section>
+
 
       <Section id="results" title="Results" subtitle="Explore preference shares across 1v1 and multi-brand tasks">
         <ResultsExplorer />
@@ -237,10 +243,6 @@ const ReportPage = () => {
             )}
           </div>
         </div>
-      </Section>
-
-      <Section id="demographics" title="Demographics" subtitle="Participant distribution across key audience characteristics">
-        <DemographicsSection />
       </Section>
 
       <Section
