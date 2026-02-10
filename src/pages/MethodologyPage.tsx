@@ -78,7 +78,7 @@ const MethodologyPage = () => (
           </Card>
         <div className="space-y-6">
           <div className="space-y-4 text-sm text-slate-600">
-              <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-500">
+              <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white text-sm text-slate-500 overflow-hidden">
                   <img src="/images/experiment_design.png" alt="Diagram of experiment layout" />
               </div>
 
@@ -132,17 +132,17 @@ const MethodologyPage = () => (
                   </div>
 
                   <div className="space-y-4">
-                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 overflow-hidden">
+                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
                           <img
-                              src="/images/non_mother_brands_sales_volume.png"
+                              src="/images/mother_brand_sales_volume.png"
                               alt="Choice of brands visual 1"
                               className="max-h-[500px] w-full object-contain"
                           />
                       </div>
 
-                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 overflow-hidden">
+                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
                           <img
-                              src="/images/mother_brand_sales_volume.png"
+                              src="/images/non_mother_brands_sales_volume.png"
                               alt="Choice of brands visual 2"
                               className="max-h-[500px] w-full object-contain"
                           />
@@ -173,7 +173,7 @@ const MethodologyPage = () => (
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
+                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
                       <img
                           src="/images/clearhops_solo.png"
                           alt="Image of ClearHops 0.0"
@@ -181,7 +181,7 @@ const MethodologyPage = () => (
                       />
                   </div>
 
-                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50">
+                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
                       <img
                           src="/images/heinekenbottle_solo.png"
                           alt="Image of Heineken 0.0"
@@ -221,7 +221,7 @@ const MethodologyPage = () => (
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
                         <img
                             src="/images/welcome_screen.png"
                             alt="Welcome screen"
@@ -255,7 +255,7 @@ const MethodologyPage = () => (
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
                         <img
                             src="/images/questions.png"
                             alt="Pre-experiment questionnaire screening"
@@ -288,7 +288,7 @@ const MethodologyPage = () => (
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
                         <img
                             src="/images/demogrpahics_questions.png"
                             alt="Demographics questionnaire"
@@ -338,7 +338,7 @@ const MethodologyPage = () => (
 
 
               <div className="mt-4 grid gap-4 md:grid-cols-2">
-                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
                           src="/images/bottle_v_bottle.png"
@@ -347,7 +347,7 @@ const MethodologyPage = () => (
                       />
                   </div>
 
-                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
                       <div className="mb-3 text-sm text-slate-500"></div>
                       <img
                           src="/images/can_v_can_price.png"
@@ -370,7 +370,7 @@ const MethodologyPage = () => (
                 retail and online shopping environments.
             </p>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
                       src="/images/multirand_cans.png"
@@ -378,7 +378,7 @@ const MethodologyPage = () => (
                       className="max-h-[750px] max-w-full object-contain"
                   />
               </div>
-              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4">
+              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
                   <div className="mb-3 text-sm text-slate-500"></div>
                   <img
                       src="/images/multibrand_bottles.png"
