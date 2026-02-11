@@ -39,19 +39,19 @@ export const discrepancyCases: DiscrepancyCase[] = [
     figures: [
       {
         id: 'figure-37',
-        caption: 'Figure 37: Budweiser Zero purchase likelihood.',
+        caption: 'Budweiser Zero purchase likelihood.',
         kind: 'likelihood',
         brands: ['Budweiser Zero']
       },
       {
         id: 'figure-38',
-        caption: 'Figure 38: Rescue Club Non-Alc purchase likelihood.',
+        caption: 'Rescue Club Non-Alc purchase likelihood.',
         kind: 'likelihood',
         brands: ['Rescue Club Non-Alc']
       },
       {
         id: 'figure-39',
-        caption: 'Figure 39: Budweiser Zero vs Rescue Club Non-Alc.',
+        caption: 'Budweiser Zero vs Rescue Club Non-Alc.',
         kind: 'choice',
         brands: ['Budweiser Zero', 'Rescue Club Non-Alc']
       }
@@ -102,13 +102,13 @@ export const discrepancyCases: DiscrepancyCase[] = [
     figures: [
       {
         id: 'figure-40',
-        caption: "Figure 40: Purchase likelihood O’Doul’s Non-Alc.",
+        caption: "Purchase likelihood O’Doul’s Non-Alc.",
         kind: 'likelihood',
         brands: ["O’Doul’s No-Alc"]
       },
       {
         id: 'figure-41',
-        caption: "Figure 41: Budweiser Zero vs O’Doul’s No-Alc.",
+        caption: "Budweiser Zero vs O’Doul’s No-Alc.",
         kind: 'choice',
         brands: ['Budweiser Zero', "O’Doul’s No-Alc"]
       }
@@ -148,13 +148,13 @@ export const discrepancyCases: DiscrepancyCase[] = [
     figures: [
       {
         id: 'figure-42',
-        caption: "Figure 42: Purchase likelihood Beck’s Blue.",
+        caption: "Purchase likelihood Beck’s Blue.",
         kind: 'likelihood',
         brands: ["Beck’s Blue"]
       },
       {
         id: 'figure-43',
-        caption: 'Figure 43: Multi-brand comparison 4 - All mother brands vs non-mother brands.',
+        caption: 'Multi-brand comparison 4 - All mother brands vs non-mother brands.',
         kind: 'choice',
         brands: [
           'Heineken 0.0',
@@ -203,5 +203,5 @@ export const discrepancyCases: DiscrepancyCase[] = [
 
 export const metaInsights = [
   'Purchase-likelihood ratings cluster mid-scale across brands (muted enthusiasm).',
-  'Forced-choice tasks reveal sharper, more realistic competitive dominance (e.g., Heineken 0.0).'
+  'Choice tasks reveal sharper, more realistic competitive dominance (e.g., Heineken 0.0).'
 ];

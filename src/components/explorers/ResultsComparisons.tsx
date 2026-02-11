@@ -13,7 +13,7 @@ const categoryTabs = [
 ] as const;
 
 const formatLabels: Record<string, string> = {
-  can: 'Can',
+  can: ' Single can',
   '12-pack': '12-pack'
 };
 

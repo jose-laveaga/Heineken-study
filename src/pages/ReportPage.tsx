@@ -46,7 +46,7 @@ const ReportPage = () => {
       content: (
         <ul className="space-y-2 text-sm text-slate-600">
           {narrative.context.map((item) => (
-            <li key={item}>• {item}</li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       )
@@ -117,6 +117,9 @@ const ReportPage = () => {
             <div className="mt-4">
               <MethodTimeline stages={studyDesign.stages} />
             </div>
+              <div className="mt-4">
+                  <p className="text-xs tracking-wide text-slate900">Note: Please refer to the methodology page for more details</p>
+              </div>
           </Card>
         </div>
       </Section>
@@ -131,7 +134,7 @@ const ReportPage = () => {
 
       </Section>
 
-      <Section id="demographics" title="Demographics" subtitle="Participant distribution across key audience characteristics">
+      <Section id="demographics" title="Demographics" subtitle="Participant distribution across key characteristics">
         <DemographicsSection />
     </Section>
 

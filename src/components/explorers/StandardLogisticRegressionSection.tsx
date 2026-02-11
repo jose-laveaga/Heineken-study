@@ -221,11 +221,11 @@ export const seriesByChartId: Record<
 
 
 const coefficientRows = [
-  { variable: 'Brand Importance Rating', coefficient: '0.66', pValue: '1.93' },
-  { variable: 'Importance of Availability', coefficient: '0.58', pValue: '1.78' },
-  { variable: 'Importance of Variety', coefficient: '-0.39', pValue: '0.67' },
-  { variable: "Famliarity with O'Doul's", coefficient: '-0.25', pValue: '0.77' },
-  { variable: 'Familiarity with Budweiser', coefficient: '0.5', pValue: '1.65' },
+  { variable: 'Brand Importance Rating', coefficient: '0.66', oddsRatio: '1.93', pValue: '< 0.001 ***' },
+  { variable: 'Importance of Availability', coefficient: '0.58', oddsRatio: '1.78', pValue: '0.012 **' },
+  { variable: 'Importance of Variety', coefficient: '-0.39', oddsRatio: '0.67', pValue: '0.044 **' },
+  { variable: "Famliarity with O'Doul's", coefficient: '-0.25', oddsRatio: '0.77', pValue: '0.056 *' },
+  { variable: 'Familiarity with Budweiser', coefficient: '0.5', oddsRatio: '1.65', pValue: '0.072 *' },
 ];
 
 const StandardLogisticRegressionSection = () => (
@@ -281,16 +281,18 @@ const StandardLogisticRegressionSection = () => (
             <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
               <tr>
                 <th className="px-3 py-2 text-left">Variable</th>
-                <th className="px-3 py-2 text-right">Coefficient</th>
-                <th className="px-3 py-2 text-right">P-value</th>
+                <th className="px-3 py-2 text-center">Coefficient</th>
+                <th className="px-3 py-2 text-center">Odds Ratio</th>
+                <th className="px-3 py-2 text-center">p-value</th>
               </tr>
             </thead>
             <tbody>
               {coefficientRows.map((row) => (
                 <tr key={row.variable} className="border-t border-slate-200">
                   <td className="px-3 py-2 text-left text-slate-700">{row.variable}</td>
-                  <td className="px-3 py-2 text-right text-slate-600">{row.coefficient}</td>
-                  <td className="px-3 py-2 text-right text-slate-600">{row.pValue}</td>
+                  <td className="px-3 py-2 text-center text-slate-600">{row.coefficient}</td>
+                  <td className="px-3 py-2 text-center text-slate-600">{row.oddsRatio}</td>
+                  <td className="px-3 py-2 text-center text-slate-600">{row.pValue}</td>
                 </tr>
               ))}
             </tbody>

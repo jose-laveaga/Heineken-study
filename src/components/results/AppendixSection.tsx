@@ -62,16 +62,16 @@ const AppendixSection = () => {
       values: [
         'Mother Brands',
         "Heineken 0.0, Budweiser Zero, Beck's Blue",
-        'To evaluate reputation transfer from alcoholic variants.'
+        'To evaluate the weight of mother-brand influence on consumer perceptions and purchase behavior.'
       ]
     },
     {
       key: 'established-competitors',
-      values: ["Established Competitors", "O'Doul's Non Alc", 'To benchmark against existing non-alcoholic market leaders.']
+      values: ["Established Competitors", "O'Doul's Non Alc", 'To benchmark against existing non-alcoholic non mother-brand leaders.']
     },
     {
       key: 'independent-brand',
-      values: ['Independent Brand', 'Rescue Club Non Alc', 'To measure the influence of packaging and novelty from new entrants.']
+      values: ['Independent Brand', 'Rescue Club Non Alc', 'To measure the influence of lesser known non-mother brands.']
     },
     {
       key: 'fictional-brands',

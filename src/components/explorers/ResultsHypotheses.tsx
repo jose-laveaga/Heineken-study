@@ -4,7 +4,7 @@ import GroupedBarChart from '../charts/GroupedBarChart';
 import HorizontalBarChart from '../charts/HorizontalBarChart';
 import BoxPlotChart from '../charts/BoxPlotChart';
 import { computeH2Metrics, computeH3Interaction } from '../../utils/analysis';
-import { formatPercent, toPercentFromShare, toShareFromPercent, PARTICIPANT_SAMPLE_SIZE } from '../../utils/participantMetrics';
+import { formatPercent, toPercentFromShare, toShareFromPercent } from '../../utils/participantMetrics';
 
 const h1SelectionShares = [
   { label: 'Heineken 0.0', share: 2416 },
@@ -56,7 +56,7 @@ const h3SegmentLift = [
   { label: 'Regular', percent: 45.4 }
 ];
 const h3SegmentLiftChart = h3SegmentLift.map((entry) => {
-  const share = toShareFromPercent(entry.percent, PARTICIPANT_SAMPLE_SIZE);
+  const share = toShareFromPercent(entry.percent, 5774);
   return {
     label: entry.label,
     share,
@@ -106,8 +106,8 @@ const ResultsHypotheses = () => {
   return (
     <div id="hypotheses" className="space-y-4">
       <div>
-        <p className="text-xs uppercase tracking-wide text-slate-500">Hypotheses Analysis</p>
-        <h3 className="text-2xl font-semibold text-slate-900">Hypotheses Analysis</h3>
+        <p className="text-xs uppercase tracking-wide text-slate-500">Hypotheses Testing</p>
+        <h3 className="text-2xl font-semibold text-slate-900">Hypotheses Results</h3>
         <p className="mt-2 text-sm text-slate-600">
           Evidence-driven checks covering the research questions and hypotheses of interest.
         </p>
@@ -121,7 +121,7 @@ const ResultsHypotheses = () => {
             content: (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-xs uppercase tracking-wide text-slate-500">Decision</span>
+                  <span className="text-xs uppercase tracking-wide text-slate-500">Result</span>
                   <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeStyles.Supported}`}>
                     Supported
                   </span>
@@ -134,7 +134,7 @@ const ResultsHypotheses = () => {
                       <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-600">
                         <li>
                           <span className="font-medium text-slate-700">Test:</span> One-sided proportion test assessing whether the
-                          probability of choosing Heineken 0.0 exceeds chance (<span className="font-mono">p = 0.5</span>).
+                          probability of choosing Heineken 0.0 exceeds chance (<span className="font-mono">{"p\u0302"}= 0.5</span>).
                         </li>
                         <li>
                           <span className="font-medium text-slate-700">Aggregation:</span> Results aggregated across three price scenarios:
@@ -185,7 +185,7 @@ const ResultsHypotheses = () => {
                   <div className="space-y-4 min-w-0">
                     <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence chart</p>
                     <ChartCard
-                      title="Heineken vs Star Brew share"
+                      title="Heineken vs Fictional Brands share"
                       dataTable={(
                         <table className="w-full table-fixed text-sm">
                           <thead>
@@ -273,7 +273,7 @@ const ResultsHypotheses = () => {
             content: (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-xs uppercase tracking-wide text-slate-500">Decision</span>
+                  <span className="text-xs uppercase tracking-wide text-slate-500">Result</span>
                   <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeStyles[h2Decision]}`}>
                     {h2Decision}
                   </span>
@@ -331,17 +331,17 @@ const ResultsHypotheses = () => {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Figure Note</p>
                       <p className="mt-2 text-sm text-slate-600">
-                        Figure&nbsp;46 presents a box plot of purchase likelihood by average brand perception score. Median values (highlighted
-                        in blue) and quartile distributions show a clear upward trend across perception categories, visually confirming the
+                        The figure above presents a box plot of purchase likelihood by average brand perception score. Median values (highlighted
+                        in dark blue) and quartile distributions show a clear trend across perception categories, visually confirming the
                         positive correlation.
                       </p>
                     </div>
-
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Executive Implication</p>
-                      <p className="mt-2 text-sm text-slate-600">
-                        Brand perception is a primary driver of conversion. Investments that strengthen perceived quality, taste expectations,
-                        and brand trust are likely to translate directly into higher purchase intent and sales performance.
+                      <p>
+                          The chart is organized vertically by perception tiers, shown on the {"y\u2011axis"}as score ranges (e.g., (2.0, 3.0], (3.0, 4.0]),
+                          where each row represents respondents with similar perception levels. Along the {"x\u2011axis"} is purchase intent (in %), and
+                          each box plot shows the distribution within that tier: the line inside the box is the median, the box represents the interquartile
+                          range (Q1 to Q3), and the whiskers indicate the minimum and maximum values.
                       </p>
                     </div>
                   </div>
@@ -385,7 +385,7 @@ const ResultsHypotheses = () => {
             content: (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-xs uppercase tracking-wide text-slate-500">Decision</span>
+                  <span className="text-xs uppercase tracking-wide text-slate-500">Result</span>
                   <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeStyles[h3Decision]}`}>
                     {h3Decision}
                   </span>
@@ -399,9 +399,6 @@ const ResultsHypotheses = () => {
                         <li>
                           Purchase choices analyzed across all experimental scenarios, with respondents segmented into regular and non-regular
                           drinkers based on self-reported alcohol consumption frequency.
-                        </li>
-                        <li>
-                          Mother-brand selection defined as choosing a recognized parent brand within each choice task.
                         </li>
                         <li>
                           Analysis included all eligible observations (5,774 choices from 413 respondents) and applied statistical testing that
@@ -461,7 +458,7 @@ const ResultsHypotheses = () => {
                     >
                       <HorizontalBarChart
                         data={h3SegmentLiftChart}
-                        ariaLabel="Mother-brand lift by drinking habit bar chart"
+                        ariaLabel="Mother-brand choice by drinking habit bar chart"
                         valueLabel="Participants"
                       />
                     </ChartCard>

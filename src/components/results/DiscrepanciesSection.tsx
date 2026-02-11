@@ -7,7 +7,7 @@ const DiscrepanciesSection = () => (
   <Section
     id="discrepancies"
     title="Discrepancies in Participants’ Responses"
-    subtitle="Where intent diverges from forced choice"
+    subtitle="Where intent diverges from choice"
   >
     <div className="space-y-8">
       <p className="max-w-3xl text-sm leading-relaxed text-slate-600">{introCopy}</p>

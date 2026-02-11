@@ -18,31 +18,31 @@ export const conclusionIntroParagraphs = [
 export const hypotheses: HypothesisOutcome[] = [
   {
     id: 'H1',
-    title: 'Validate the Brand Advantage (H1)',
+    title: 'Hypothesis 1',
     intent:
       "To confirm whether Heineken 0.0 is chosen more frequently than non-branded alternatives, establishing a clear measure of the mother brand's unassisted preference advantage.",
     outcome: 'supported',
-    outcomeLabel: 'Supported (retain null)',
+    outcomeLabel: 'Supported',
     evidenceStrength: 95,
     supportingText:
-      'As illustrated in Figures 44 and 45, Heineken 0.0 consistently outperformed two fictional comparator brands across seven distinct scenarios. The magnitude of the observed effects is substantial, resulting in an exceptionally high level of statistical significance and reinforcing the robustness of the conclusion.',
+      'Heineken 0.0 consistently outperformed two fictional comparator brands across seven distinct scenarios. The magnitude of the observed effects is substantial, resulting in an exceptionally high level of statistical significance and reinforcing the robustness of the conclusion.',
     figuresMentioned: ['44', '45']
   },
   {
     id: 'H2',
-    title: 'Measure Trust Transfer (H2)',
+    title: 'Hypothesis 2',
     intent:
       'To determine if favorable brand perception scores for the Heineken alcoholic brand positively correlate with higher purchase likelihood for Heineken 0.0.',
     outcome: 'supported',
     outcomeLabel: 'Supported',
     evidenceStrength: 92,
     supportingText:
-      'Figure 46 demonstrates a consistent and interpretable pattern across the experiment’s results. A clear relationship is observed between expected taste, expected quality, and level of familiarity, and the likelihood of purchasing Heineken 0.0. The strength of these relationships is supported by an exceptionally high level of statistical significance.',
+      'Evidence shows a consistent and interpretable pattern across the experiment’s results. A clear relationship is observed between expected taste, expected quality, and level of familiarity, and the likelihood of purchasing Heineken 0.0. The strength of these relationships is supported by an exceptionally high level of statistical significance.',
     figuresMentioned: ['46']
   },
   {
     id: 'H3',
-    title: 'Segment the Effect (H3)',
+    title: 'Hypothesis 3',
     intent:
       "To reveal if the brand's impact is stronger for regular alcohol drinkers—who may be more responsive to the familiar Heineken signal—compared to non-drinkers, who may rely more on other attributes.",
     outcome: 'not_supported',
@@ -63,5 +63,4 @@ export const hypothesisOutcomeChartData = hypotheses.map((hypothesis) => ({
 export const conclusionKeyTakeaway =
   'Mother-brand signals reliably drive preference and purchase likelihood, but the effect does not materially differ by drinking frequency.';
 
-export const conclusionClosingParagraph =
-  'In sum, the complete report provides the quantitative evidence necessary to assess the effectiveness of the mother brand strategy, offering Heineken actionable insights into marketing, product positioning, and understanding the consumer psychology that drives adoption within the zero-alcohol market.';
+export const conclusionClosingParagraph = '';
