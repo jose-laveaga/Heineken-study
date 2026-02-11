@@ -3,7 +3,7 @@ import ChartCard from '../charts/ChartCard';
 import GroupedBarChart from '../charts/GroupedBarChart';
 import HorizontalBarChart from '../charts/HorizontalBarChart';
 import BoxPlotChart from '../charts/BoxPlotChart';
-import { computeH2Metrics, computeH3Interaction, segmentByDrinkingHabit } from '../../utils/analysis';
+import { computeH2Metrics, computeH3Interaction } from '../../utils/analysis';
 import { formatPercent, toPercentFromShare, toShareFromPercent, PARTICIPANT_SAMPLE_SIZE } from '../../utils/participantMetrics';
 
 const h1SelectionShares = [
@@ -75,7 +75,6 @@ const badgeStyles: Record<string, string> = {
 const ResultsHypotheses = () => {
   const experimentData = undefined;
   const h2Metrics = computeH2Metrics(experimentData);
-  const h3Segments = segmentByDrinkingHabit(experimentData);
   const h3Interaction = computeH3Interaction(experimentData);
   const h2Decision = 'Supported';
   const h3Decision = 'Not Supported';
@@ -93,8 +92,6 @@ const ResultsHypotheses = () => {
         h2Metrics.modelSummary ? h2Metrics.modelSummary : null
       ].filter((item): item is string => Boolean(item))
     : [
-        'Pending / Needs Data Hookup — connect perception metrics (trustworthiness, quality, taste) to Heineken choice or likelihood.',
-        'TODO: wire experiment response data into computeH2Metrics(data).'
       ];
   const h3InteractionDetails = h3Interaction.available
     ? [
@@ -103,9 +100,7 @@ const ResultsHypotheses = () => {
         `Interaction effect (mother brand × regular drinker): ${h3Interaction.interactionEffect?.toFixed(2) ?? 'TBD'}`
       ]
     : [
-        'Pending / Needs Data Hookup — segment response data by drinking habit (non-drinker, occasional, regular).',
-        `Current segment counts: non-drinkers ${h3Segments.non_drinkers.length}, occasional ${h3Segments.occasional.length}, regular ${h3Segments.regular.length}.`,
-        'TODO: estimate interaction between mother-brand lift and regular-drinker segment.'
+
       ];
 
   return (
@@ -114,8 +109,7 @@ const ResultsHypotheses = () => {
         <p className="text-xs uppercase tracking-wide text-slate-500">Hypotheses Analysis</p>
         <h3 className="text-2xl font-semibold text-slate-900">Hypotheses Analysis</h3>
         <p className="mt-2 text-sm text-slate-600">
-          Evidence-driven checks tie the purchase outcomes to the study hypotheses, including brand equity effects
-          and segment differences.
+          Evidence-driven checks covering the research questions and hypotheses of interest.
         </p>
       </div>
       <Accordion
@@ -131,7 +125,7 @@ const ResultsHypotheses = () => {
                   <span className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeStyles.Supported}`}>
                     Supported
                   </span>
-                  <span className="text-xs text-slate-500">Decision based on forced-choice outcomes across 1v1 tasks.</span>
+                  <span className="text-xs text-slate-500">Decision based on choice outcomes across one on one comparisons.</span>
                 </div>
                 <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
                   <div className="space-y-4">

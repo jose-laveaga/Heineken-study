@@ -8,8 +8,8 @@
     "This project uses a mixed-method research design that combines a controlled laboratory experiment, a field experiment, questionnaires, and qualitative interviews. These methods produce primary data that will be supplemented with secondary data from Heineken. Together, the findings are expected to provide actionable insights for marketing strategy, product positioning, and consumer behavior analysis, supporting Heineken’s efforts to expand its presence in the zero-alcohol market and to better understand broader patterns of non-alcoholic beverage adoption."
   ],
   "researchQuestions": [
-    {"id": "RQ1", "text": "How do sustainability signals change selection rates in 1v1 and multi-brand tasks?"},
-    {"id": "RQ2", "text": "Which shopper segments consistently exceed defined pick-rate thresholds?"}
+    {"id": "RQ1", "text": "How does having an established alcohol mother-brand influence consumer choice, purchase intent, and perception of 0.0 beer?"},
+    {"id": "RQ2", "text": "Does the effect differ depending on drinking habits (regular drinkers, occasional drinkers, non-drinkers)?"}
   ],
   "hypotheses": [
     {"id": "H1", "text": "Heineken 0.0 will be chosen more frequently in the simulated purchase environment compared to a fictional non-branded 0.0 beer."},
