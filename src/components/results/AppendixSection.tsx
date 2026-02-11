@@ -67,7 +67,7 @@ const AppendixSection = () => {
     },
     {
       key: 'established-competitors',
-      values: ["Established Competitors", "O'Doul's Non Alc", 'To benchmark against existing non-alcoholic non mother-brand leaders.']
+      values: ["Established Competitors", "O'Doul's Non Alc", 'To benchmark against existing non-alcoholic non-mother brand leaders.']
     },
     {
       key: 'independent-brand',

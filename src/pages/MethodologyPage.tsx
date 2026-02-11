@@ -85,8 +85,7 @@ const MethodologyPage = () => (
               <div className="space-y-6 text-sm text-slate-600">
                   <p>
                       This setup allowed the study to capture behavioral patterns rather than relying solely on self-reported
-                      preferences. Behavioral logs are particularly valuable for understanding how consumers act when they are not
-                      consciously reflecting on their decisions but instead navigating an intuitive shopping interface.
+                      preferences.
                   </p>
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-4">
@@ -125,7 +124,7 @@ const MethodologyPage = () => (
                                   "Major global mother brands included: Heineken, Budweiser, and Beck’s Blue.",
                                   "Established non-mother competitors included: O’Doul’s, Rescue Club, Calusthaler, and Kaliber.",
                                   "Two fictional brands were introduced to establish a zero-familiarity baseline and isolate pure brand equity.",
-                                  "The figures below show the available beer brand choices for this study. The selections were made with consistency of the study in mind which is why Athletic Brewing was not included in the study."
+                                  "To ensure that the products selected were all able to be marketed the same way, so there is a similar perception of the products, Athletic Brewing was not included in the study."
                               ]}
                           />
                       </div>
@@ -358,11 +357,9 @@ const MethodologyPage = () => (
               </div>
           </Card>
           <Card>
-            <p className="text-xs uppercase tracking-wide text-slate-500">Device-specific adjustments</p>
-            <p className="mt-4 text-sm text-slate-600">
-              Multiple Brand Comparisons
-            </p>
-            <p>
+            <p className="text-xs uppercase tracking-wide text-slate-500">Multibrand comparisons</p>
+
+              <p className="mt-4 text-sm text-slate-600">
                 Participants view a set of six non-alcoholic beer products simultaneously and must select their preferred option.
                 The experiment incorporates up to four multiple comparison sets, each featuring comparisons with various
                 established mother brands, including Heineken, Budweiser, and Beck’s Blue.
@@ -386,17 +383,19 @@ const MethodologyPage = () => (
                       className="max-h-[750px] max-w-full object-contain"
                   />
               </div>
-                <p>
-                    Insights
-                    <BulletList items={[
-                        'Choice Overload: Tests decision-making when faced with multiple options (more realistic shelf scenario)',
-                        'Selection Criteria: Written explanations reveal the specific attributes driving choice (packaging, brand recognition, flavor expectations, etc.)',
-                        'Qualitative Data: Open-ended responses provide rich context for quantitative preference data',
-                        'Attribute Importance: Thematic analysis of reasons reveals which product attributes matter most',
-                        'Unaided Recall: Participants articulate their own decision factors without prompting'
-                    ]}
-                    />
-                </p>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 mt-4 col-span-2">
+                    <p>
+                        Insights
+                        <BulletList items={[
+                            'Choice Overload: Tests decision-making when faced with multiple options (more realistic shelf scenario)',
+                            'Selection Criteria: Written explanations reveal the specific attributes driving choice (packaging, brand recognition, flavor expectations, etc.)',
+                            'Qualitative Data: Open-ended responses provide rich context for quantitative preference data',
+                            'Attribute Importance: Thematic analysis of reasons reveals which product attributes matter most',
+                            'Unaided Recall: Participants articulate their own decision factors without prompting'
+                        ]}
+                        />
+                    </p>
+                </div>
             </div>
           </Card>
         </div>
@@ -420,8 +419,8 @@ const MethodologyPage = () => (
                       </div>
 
                       <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Format</p>
-                          <p>Open text area</p>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500"></p>
+                          <p></p>
                       </div>
 
                       <div className="space-y-2">
