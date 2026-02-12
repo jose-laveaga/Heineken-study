@@ -139,8 +139,76 @@ const ReportPage = () => {
     </Section>
 
 
-      <Section id="results" title="Results" subtitle="Explore preference shares across 1v1 and multi-brand tasks">
-        <ResultsExplorer />
+      <Section
+          id="results"
+          title="Results"
+          subtitle="Explore preference shares across 1v1 and multi-brand tasks"
+      >
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-6">
+              <table className="w-full max-w-md text-sm lg:w-auto">
+                  <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+                  <tr>
+                      <th className="px-3 py-2 text-left">p&nbsp;value</th>
+                      <th className="px-3 py-2 text-center">significance</th>
+                      <th className="px-3 py-2 text-left">code</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                  <tr className="border-t border-slate-200">
+                      <td className="px-3 py-2 text-left text-slate-700">&lt;&nbsp;0.001</td>
+                      <td className="px-3 py-2 text-center text-slate-600">Very&nbsp;High</td>
+                      <td className="px-3 py-2 text-center text-slate-600">
+            <span className="inline-flex items-center justify-center">
+              <span className="h-3 w-3 rounded-sm bg-blue-200 ring-1 ring-blue-400" />
+            </span>
+                      </td>
+                  </tr>
+
+                  <tr className="border-t border-slate-200">
+                      <td className="px-3 py-2 text-left text-slate-700">&lt;&nbsp;0.01</td>
+                      <td className="px-3 py-2 text-center text-slate-600">High</td>
+                      <td className="px-3 py-2 text-center text-slate-600">
+            <span className="inline-flex items-center justify-center">
+              <span className="h-3 w-3 rounded-sm bg-blue-50 ring-1 ring-blue-200" />
+            </span>
+                      </td>
+                  </tr>
+
+                  <tr className="border-t border-slate-200">
+                      <td className="px-3 py-2 text-left text-slate-700">&lt;&nbsp;0.1</td>
+                      <td className="px-3 py-2 text-center text-slate-600">Moderate</td>
+                      <td className="px-3 py-2 text-center text-slate-600">
+            <span className="inline-flex items-center justify-center">
+              <span className="h-3 w-3 rounded-sm bg-amber-50 ring-1 ring-amber-200" />
+            </span>
+                      </td>
+                  </tr>
+
+                  <tr className="border-t border-slate-200">
+                      <td className="px-3 py-2 text-left text-slate-700">&gt;&nbsp;0.1</td>
+                      <td className="px-3 py-2 text-center text-slate-600">Low</td>
+                      <td className="px-3 py-2 text-center text-slate-600">
+            <span className="inline-flex items-center justify-center">
+              <span className="h-3 w-3 rounded-sm bg-slate-50 ring-1 ring-slate-200" />
+            </span>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed tracking-wide ">
+                  The charts below show the share of choices for each brand across each scenario performed in the study,
+                  while the p-values indicate how reliable the observed difference is. A very high or high significance
+                  (p&nbsp;&lt;&nbsp;0.001 or p&nbsp;&lt;&nbsp;0.01) means the gap between brands is very unlikely to be due to chance and reflects
+                  a strong, reliable preference. A moderate significance (p&nbsp;&lt;&nbsp;0.1) suggests some evidence of a real difference,
+                  but the result should be interpreted with caution. A low significance (p&nbsp;&gt;&nbsp;0.1) indicates that the observed
+                  gap could easily be random variation, so no clear preference between the brands can be confidently concluded.
+              </p>
+          </div>
+
+
+      <ResultsExplorer />
       </Section>
 
       <Section

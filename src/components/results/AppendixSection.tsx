@@ -62,7 +62,7 @@ const AppendixSection = () => {
       values: [
         'Mother Brands',
         "Heineken 0.0, Budweiser Zero, Beck's Blue",
-        'To evaluate the weight of mother brand influence on consumer perceptions and purchase behavior.'
+        'To evaluate the weight of mother brand influence on consumer perceptions and purchase intent.'
       ]
     },
     {

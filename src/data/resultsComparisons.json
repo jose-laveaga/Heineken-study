@@ -29,7 +29,7 @@
         {"label": "O'Doul's No-Alc", "value": 27.1}
       ],
       "stats": [
-        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.01"}
+        {"label": "p-value", "comparisonOperator": "<", "valueText": "0.01"}
       ],
       "interpretation": ""
     },

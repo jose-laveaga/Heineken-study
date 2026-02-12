@@ -1,66 +1,80 @@
-
-type PValueTone = "auto" | "strong" | "moderate" | "none";
+type PValueTone = "auto" | "vhigh" | "high" | "moderate" | "ns";
 
 type StatPillProps = {
     label: string;
     comparisonOperator?: "=" | ">" | "<" | ">=" | "<=" | string;
-    valueText: string; // e.g. "0.03", "p=0.03", "<0.001", "P < 0.05"
+    valueText: string; // e.g. "0.03", "p=0.03", "<0.001", "P < 0.1"
     className?: string;
 
-    // Thresholds (defaults are standard)
-    alpha?: number;        // 0.05
-    strongAlpha?: number;  // 0.01
+    // Thresholds per your metric
+    veryHighAlpha?: number; // 0.001
+    highAlpha?: number;     // 0.01
+    moderateAlpha?: number; // 0.1
 
-    // Optional: override the tier instead of auto-calculating
     tone?: PValueTone;
-
-    // Optional: format displayed text
     formatValueText?: (valueText: string) => string;
 };
 
-function parsePValue(valueText: string): { p: number | null; hasLessThan: boolean; hasLessOrEqual: boolean } {
-    const hasLessThan = /</.test(valueText);
-    const hasLessOrEqual = /≤/.test(valueText) || /<=/.test(valueText);
-
+function parsePValue(valueText: string): number | null {
     const cleaned = valueText
-        .replace(/p\s*=?/gi, "") // remove "p=" / "P="
-        .replace(/[^0-9.eE+-]/g, " ") // keep numeric-ish tokens
+        .replace(/p\s*=?/gi, "")          // remove "p=" / "P="
+        .replace(/[^0-9.eE+-]/g, " ")     // keep numeric-ish tokens
         .trim();
 
-    // Take the first numeric token found
     const token = cleaned.split(/\s+/).find(Boolean);
-    if (!token) return { p: null, hasLessThan, hasLessOrEqual };
+    if (!token) return null;
 
     const p = Number.parseFloat(token);
-    if (!Number.isFinite(p)) return { p: null, hasLessThan, hasLessOrEqual };
-
-    return { p, hasLessThan, hasLessOrEqual };
+    return Number.isFinite(p) ? p : null;
 }
 
+/**
+ * IMPORTANT: use BOTH:
+ * - the numeric value parsed from valueText
+ * - the explicit comparisonOperator prop (e.g. "<")
+ *
+ * Your example:
+ *   comparisonOperator: "<"
+ *   valueText: "0.01"
+ * means "p < 0.01" (High), even though the number equals 0.01.
+ */
 function pValueToneAuto(
+    comparisonOperator: string | undefined,
     valueText: string,
-    alpha: number,
-    strongAlpha: number
+    veryHighAlpha: number,
+    highAlpha: number,
+    moderateAlpha: number
 ): { tone: Exclude<PValueTone, "auto">; p: number | null } {
-    const { p, hasLessThan, hasLessOrEqual } = parsePValue(valueText);
-    if (p === null) return { tone: "none", p: null };
+    const p = parsePValue(valueText);
+    if (p === null) return { tone: "ns", p: null };
 
-    // If the text explicitly says "< alpha" or "≤ alpha", treat it as significant
-    const isStrictLess = hasLessThan && p <= alpha;
-    const isLessOrEq = hasLessOrEqual && p <= alpha;
+    const op = (comparisonOperator ?? "").trim();
 
-    if (p < strongAlpha) return { tone: "strong", p };
-    if (p < alpha || isStrictLess || isLessOrEq) return { tone: "moderate", p };
-    return { tone: "none", p };
+    // If op is "<" or "<=", treat equality as satisfying the threshold (because the *statement* is "p < X")
+    const leByStatement = op === "<" || op === "<=" || op === "≤";
+
+    const isBelow = (threshold: number) => (leByStatement ? p <= threshold : p < threshold);
+
+    // Metric:
+    // < 0.001 -> Very High
+    // < 0.01  -> High
+    // < 0.1   -> Moderate
+    // > 0.1   -> Not significant
+    if (isBelow(veryHighAlpha)) return { tone: "vhigh", p };
+    if (isBelow(highAlpha)) return { tone: "high", p };
+    if (isBelow(moderateAlpha)) return { tone: "moderate", p };
+    return { tone: "ns", p };
 }
 
 function toneClasses(tone: Exclude<PValueTone, "auto">) {
     switch (tone) {
-        case "strong":
-            return "text-emerald-800 bg-emerald-50 ring-1 ring-emerald-200";
+        case "vhigh":
+            return "text-blue-900 bg-blue-200 ring-1 ring-blue-400";
+        case "high":
+            return "text-blue-500 bg-blue-50 bg- ring-1 ring-blue-200";
         case "moderate":
             return "text-amber-800 bg-amber-50 ring-1 ring-amber-200";
-        case "none":
+        case "ns":
         default:
             return "text-slate-600 bg-slate-50 ring-1 ring-slate-200";
     }
@@ -71,12 +85,16 @@ export function StatPill({
                              comparisonOperator,
                              valueText,
                              className = "",
-                             alpha = 0.05,
-                             strongAlpha = 0.01,
+                             veryHighAlpha = 0.001,
+                             highAlpha = 0.01,
+                             moderateAlpha = 0.1,
                              tone = "auto",
                              formatValueText = (v) => v,
                          }: StatPillProps) {
-    const resolved = tone === "auto" ? pValueToneAuto(valueText, alpha, strongAlpha).tone : tone;
+    const resolved =
+        tone === "auto"
+            ? pValueToneAuto(comparisonOperator, valueText, veryHighAlpha, highAlpha, moderateAlpha).tone
+            : tone;
 
     return (
         <span

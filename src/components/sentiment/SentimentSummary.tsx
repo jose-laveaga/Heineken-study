@@ -6,7 +6,9 @@ const narrativePoints = [
   'Sentiment measured using polarity from -1 (Negative) to +1 (Positive).',
   'Category is viewed favorably (avg ≈ 0.23).',
   'Established brands (e.g., Heineken) rely on “emotional safety”, trust, familiarity; niche competitors can score higher due to novelty.',
-  '“Penn’s Best” has the highest sentiment but smaller sample size; major players cluster closely in the middle.'
+  '“Penn’s Best” has the highest sentiment but smaller sample size; major players cluster closely in the middle.',
+    'Across the analysis, brand names and its derivatives were grouped into a single bucket. Ex. Mentions of “Penn’s Best” and “Penns” ' +
+    'were considered as the same brand.'
 ];
 
 const SentimentSummary = () => (

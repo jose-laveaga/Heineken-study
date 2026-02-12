@@ -5,7 +5,7 @@ const glossaryItems = [
   {
     term: 'Alternative hypothesis',
     definition:
-      'States that a meaningful effect or relationship exists. Evidence that contradicts the null hypothesis supports this.'
+      'States that a meaningful effect or relationship exists between the variables that are being compared. Evidence that contradicts the null hypothesis supports the alternative hypothesis.'
   },
   {
     term: 'Central tendency',
@@ -25,7 +25,7 @@ const glossaryItems = [
   {
     term: 'Correlation',
     definition:
-      'Measures how two variables move together. Strong positive means they rise together; negative means one rises as the other falls.'
+      'Measures how two variables move together. Strong positive correlation means they rise together; negative means one rises as the other falls.'
   },
   {
     term: 'Distribution',
@@ -40,7 +40,7 @@ const glossaryItems = [
   {
     term: 'Logistic regression',
     definition:
-      'A model that estimates the probability of a yes/no outcome. Expected results are probabilities and odds ratios, not averages.'
+      'A model that estimates the probability of a yes/no outcome. Expected results are the probabilities and odds ratios of the outcome happening given the predictor variables.'
   },
   {
     term: 'Marginal means (predicted margins)',
@@ -55,17 +55,17 @@ const glossaryItems = [
   {
     term: 'Null hypothesis',
     definition:
-      'Assumes no effect or relationship. Small p-values suggest the data are unlikely under this assumption.'
+      'Assumes no effect or relationship between the variables being compared. Small p-values suggest the data are unlikely under this assumption.'
   },
   {
     term: 'Odds ratio',
     definition:
-      'Compares odds between groups. A value above 1 means higher odds; below 1 means lower odds.'
+      'An odds ratio is a statistical measure that compares the odds of an event or exposure occurring in one group to the odds of it occurring in another'
   },
   {
     term: 'P-value',
     definition:
-      'Shows how surprising the results are if the null hypothesis is true. Smaller values (e.g., < 0.05) suggest stronger evidence against the null.'
+      'A p-value (probability value) measures the probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true.'
   },
   {
     term: 'Predicted probability',
@@ -90,7 +90,7 @@ const glossaryItems = [
   {
     term: 'Stratified sample',
     definition:
-      'A sampling method that ensures key subgroups are represented by sampling within each subgroup.'
+      'A stratified sample is a probability sampling method where a population is divided into smaller, non-overlapping, homogeneous subgroups (strata) based on shared characteristics like age, income, or gender.'
   },
   {
     term: 'Variance',
