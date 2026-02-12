@@ -12,42 +12,42 @@ const chartConfigs = [
     id: 'activity-50',
     title: 'Predicted margins by activity level (>50% mother brand)',
     xAxisLabel: 'Activity level',
-    yAxisLabel: 'Probability of mother brand >50% of the time',
+    yAxisLabel: 'Probability of choosing mother brands > 50% of the time',
     xLabels: ['minimal', 'basic', 'active', 'moderately active', 'highly active']
   },
   {
     id: 'activity-75',
     title: 'Predicted margins by activity level (>75% mother brand)',
     xAxisLabel: 'Activity level',
-    yAxisLabel: 'Probability of mother brand >75% of the time',
+    yAxisLabel: 'Probability of choosing mother brands > 75% of the time',
     xLabels: ['minimal', 'basic', 'active', 'moderately active', 'highly active']
   },
   {
     id: 'income-50-a',
     title: 'Predicted margins by income (>50% mother brand)',
     xAxisLabel: 'Income',
-    yAxisLabel: 'Probability of mother brand >50% of the time',
+    yAxisLabel: 'Probability of choosing mother brands > 50% of the time',
     xLabels: ['<$25k', '$50–74k','$75–99k', '$100–149k', '$150k+']
   },
   {
     id: 'income-75-a',
     title: 'Predicted margins by income (>75% mother brand)',
     xAxisLabel: 'Income',
-    yAxisLabel: 'Probability of mother brand >75% of the time',
+    yAxisLabel: 'Probability of choosing mother brands > 75% of the time',
     xLabels: ['<$25k', '$50–74k','$75–99k', '$100–149k', '$150k+']
   },
   {
     id: 'agegroup-50-b',
     title: 'Predicted margins by income (>50% mother brand)',
     xAxisLabel: 'Age Group',
-    yAxisLabel: 'Probability of mother brand >50% of the time',
+    yAxisLabel: 'Probability of choosing mother brands > 50% of the time',
     xLabels: ['21-24', '25-34', '35-44', '45-54', '55-65', '65+']
   },
   {
     id: 'agegroup-75-b',
     title: 'Predicted margins by income (>75% mother brand)',
     xAxisLabel: 'Age Group',
-    yAxisLabel: 'Probability of mother brand >75% of the time',
+    yAxisLabel: 'Probability of choosing mother brands > 75% of the time',
     xLabels: ['21-24', '25-34', '35-44', '45-54', '55-65', '65+']
   }
 ];
@@ -221,7 +221,7 @@ export const seriesByChartId: Record<
 
 
 const coefficientRows = [
-  { variable: 'Brand Importance Rating', coefficient: '0.66', oddsRatio: '1.93', pValue: '< 0.001 ***' },
+  { variable: 'Brand Importance Rating', coefficient: '0.66', oddsRatio: '1.93', pValue: '0.000 ***' },
   { variable: 'Importance of Availability', coefficient: '0.58', oddsRatio: '1.78', pValue: '0.012 **' },
   { variable: 'Importance of Variety', coefficient: '-0.39', oddsRatio: '0.67', pValue: '0.044 **' },
   { variable: "Famliarity with O'Doul's", coefficient: '-0.25', oddsRatio: '0.77', pValue: '0.056 *' },
@@ -235,8 +235,9 @@ const StandardLogisticRegressionSection = () => (
       <div className="mt-4 grid gap-4 text-sm text-slate-600">
         <p>
             This section presents the predictive margins derived from the regression models used
-            to examine how key demographic factors shape the likelihood of predominantly
-            choosing model-based (MB) strategies. The figures report predicted probabilities
+            to examine how key demographic factors shape the likelihood of participants
+            choosing mother brands above the two established thresholds (50 & 75%) across the entirety of the study.
+            The figures report predicted probabilities
             with 95% confidence intervals, disaggregated by gender, allowing direct visual
             comparison across activity level, age group, and income. Together, these results
             provide a structured view of how decision-making tendencies vary across subpopulations
@@ -245,9 +246,23 @@ const StandardLogisticRegressionSection = () => (
             more precise assessment of demographic patterns that may influence strategic choice behavior.
 
         </p>
-
-
       </div>
+    </Card>
+    <Card>
+        <div className="flex flex-col gap-3">
+            <p className="text-xs uppercase tracking-wide text-slate-500">Interpretation</p>
+            <p className="mt-1 text-sm text-slate-600">
+                The charts show the predicted probability that a respondent chooses mother brands in more than 50 or 75% of
+                their selections, broken down by activity level, income level, age group, and gender. The x-axis lists the activity categories,
+                and the y-axis shows the probability, from 0 to 1 (or 0% to 100%). Each point represents the estimated
+                probability for that group, while the vertical bars indicate the 95% confidence interval around that estimate.
+                For example, a male with a basic activity level has a predicted probability of approximately 50% of
+                choosing mother brands more than half the time. The lines allow comparison between males and females at
+                each activity level, and larger gaps between the points indicate stronger differences in predicted behavior.
+
+            </p>
+
+        </div>
     </Card>
 
     <div className="grid gap-6 lg:grid-cols-2">
@@ -268,12 +283,82 @@ const StandardLogisticRegressionSection = () => (
       ))}
     </div>
 
+      <Card>
+          <div className="flex flex-col gap-3">
+              <div>
+                  <p className="text-xs uppercase tracking-wide text-slate-500">Variables Selection criteria</p>
+                  <p className="mt-1 text-sm text-slate-600">
+                      The construction of this logistic regression model did not include any independent variables that
+                      did not significantly influence the likelihood of mother brand choices above the 50 and 70% thresholds (the dependent variables).
+                      The independent variables that were gathered throughout the study were demographic characteristics (age, income, activity level),
+                      alcohol consumption frequency, and familiarity with brands.
+                  </p>
+              </div>
+              <div>
+                  <p className="mt-1 text-sm text-slate-600">
+                      Across the study, participants were asked to rate how important it was for them to consume beer produced by a recognized brand on
+                      a scale from 1 (not at all important) to 5 (very important).
+                      This variable was one of the most important predictors of mother brand choice, with a significant p-value of 0.000 *** indicating that
+                      it had a very stong impact.
+                  </p>
+              </div>
+              <div>
+                  <p className="mt-1 text-sm text-slate-600">
+                      On the other hand, the majority of variables were not significant at the 5% level,
+                      indicating that they did not significantly influence paritcipant choice behavior and thus did not enhance
+                      the predictive power of the model. Below are some examples of variables that did not meet the significance criteria (p &gt; 0.1).
+                  </p>
+              </div>
+              <div className="overflow-x-auto">
+                  <table className="min-w-full text-sm">
+                      <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+                      <tr>
+                          <th className="px-3 py-2 text-center">Variable</th>
+                          <th className="px-3 py-2 text-center">p-value</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                          <tr className="border-t border-slate-200">
+                              <td className="px-3 py-2 text-center text-slate-700">Importance of Price</td>
+                              <td className="px-3 py-2 text-center text-slate-600">0.85</td>
+                          </tr>
+                      </tbody>
+                      <tbody>
+                      <tr className="border-t border-slate-200">
+                          <td className="px-3 py-2 text-center text-slate-700">Familiarity with Heineken</td>
+                          <td className="px-3 py-2 text-center text-slate-600">0.85</td>
+                      </tr>
+                      </tbody>
+                      <tbody>
+                      <tr className="border-t border-slate-200">
+                          <td className="px-3 py-2 text-center text-slate-700">Familiarity with Rescue Club</td>
+                          <td className="px-3 py-2 text-center text-slate-600">0.83</td>
+                      </tr>
+                      </tbody>
+                      <tbody>
+                      <tr className="border-t border-slate-200">
+                          <td className="px-3 py-2 text-center text-slate-700">Heineken Percieved Quality</td>
+                          <td className="px-3 py-2 text-center text-slate-600">0.82</td>
+                      </tr>
+                      </tbody>
+                      <tbody>
+                      <tr className="border-t border-slate-200">
+                          <td className="px-3 py-2 text-center text-slate-700">Alcohol Frequency</td>
+                          <td className="px-3 py-2 text-center text-slate-600">0.67</td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </Card>
+
     <Card>
       <div className="flex flex-col gap-3">
         <div>
           <p className="text-xs uppercase tracking-wide text-slate-500">Model coefficients</p>
           <p className="mt-1 text-sm text-slate-600">
-            Final coefficient estimates and significance values from the standard logistic regression.
+            Below are the final coefficient estimates and significance values from the most significant variables used in the
+              standard logistic regression.
           </p>
         </div>
         <div className="overflow-x-auto">
@@ -310,7 +395,8 @@ const StandardLogisticRegressionSection = () => (
           ** <em>p</em> &lt; 0.05,
           * <em>p</em> &lt; 0.10
         </p>
-        <p>Per point increase in each variable category (e.g brand_importance_rating [1] → [2])
+        <p>
+            Per point increase in each variable category (e.g brand_importance_rating [1] → [2])
             the odds of any given participant choosing mother brands more than 50% of the
             time increase by the [odds ratio]%
         </p>

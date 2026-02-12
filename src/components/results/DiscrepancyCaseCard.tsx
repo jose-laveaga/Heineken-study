@@ -3,7 +3,6 @@ import Card from '../ui/Card';
 import ChartCard from '../charts/ChartCard';
 import GroupedBarChart from '../charts/GroupedBarChart';
 import DonutChart from '../charts/DonutChart';
-import InterpretationCallout from './InterpretationCallout';
 import type { DiscrepancyCase, LikelihoodChart, ChoiceChart } from '../../data/discrepancies';
 import { PARTICIPANT_SAMPLE_SIZE, toShareFromPercent } from '../../utils/participantMetrics';
 
@@ -64,7 +63,6 @@ const DiscrepancyCaseCard = ({ caseItem }: DiscrepancyCaseCardProps) => {
                 {paragraph}
               </p>
             ))}
-            <InterpretationCallout takeaway={caseItem.takeaway} />
           </div>
           <div className="grid gap-4">
             {caseItem.figures.map((figure) => {

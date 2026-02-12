@@ -30,7 +30,10 @@ export interface DiscrepancyCase {
 }
 
 export const introCopy =
-  "This section aims to highlight some of the discrepancies between respondents' answers to the study and their actual decisions when choosing their preferred products. Discrepancies can be seen where respondents reported a high purchase likelihood for certain brands but did not follow up with a decision that reflected their preference. Similarly, other respondents reported a low purchase likelihood for some brands that, in fact, outperformed some mother brands in specific scenarios.";
+  "This section aims to highlight some of the discrepancies between respondents' answers to the survey and their actual " +
+    "decisions when choosing their preferred products. Discrepancies can be seen where respondents reported a high purchase " +
+    "likelihood for certain brands but did not follow up with a decision that reflected their preference. Similarly, other " +
+    "respondents reported a low purchase likelihood for some brands that, in fact, outperformed some mother brands in specific scenarios.";
 
 export const discrepancyCases: DiscrepancyCase[] = [
   {
@@ -57,8 +60,8 @@ export const discrepancyCases: DiscrepancyCase[] = [
       }
     ],
     narrative: [
-      'Purchase-likelihood ratings for Budweiser Zero and Rescue Club Non-Alc cluster around the middle of the scale, indicating muted enthusiasm in standalone intent measures.',
-      'When respondents are forced to choose between the two brands, Rescue Club Non-Alc pulls ahead, showing a gap between stated likelihood and actual preference in direct comparison.'
+      'Purchase-likelihood ratings for Budweiser Zero and Rescue Club Non-Alc cluster around the middle of the scale with Budweiser Zero reporting slightly ahead of Rescue Club Non-Alc.',
+      'When respondents are forced to choose between the two brands, Rescue Club Non-Alc pulls ahead, showing a gap between stated likelihood to purchase and actual preference in direct comparison.'
     ],
     likelihoodCharts: [
       {
@@ -94,7 +97,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
         ]
       }
     ],
-    takeaway: 'Ambivalence in standalone intent measures masks Rescue Club’s strength in direct choice.'
+    takeaway: ''
   },
   {
     id: 'discrepancy-2',
@@ -114,9 +117,11 @@ export const discrepancyCases: DiscrepancyCase[] = [
       }
     ],
     narrative: [
-      'O’Doul’s No-Alc shows subdued top-box intent, with responses concentrated between scores of 2 and 4 on the likelihood scale.',
-      'In head-to-head choice, Budweiser Zero only narrowly leads O’Doul’s No-Alc, suggesting a category dynamic where intent measures understate competitive parity.'
-    ],
+        "O’Doul’s No-Alc displays generally low purchase intent, with most responses clustering between scores of 2 and 4 on the" +
+        " likelihood scale. In direct comparison, however, Budweiser Zero only holds a slight advantage over O’Doul’s, despite " +
+        "the large gap in stated purchase intent between the two brands. This indicates that self-reported intent may not fully " +
+        "reflect the choices consumers make when faced with actual alternatives."
+       ],
     likelihoodCharts: [
       {
         figureId: 'figure-40',
@@ -140,7 +145,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
         ]
       }
     ],
-    takeaway: 'Low top-box intent does not preclude competitive parity in head-to-head choice.'
+    takeaway: ''
   },
   {
     id: 'discrepancy-3',
@@ -167,8 +172,9 @@ export const discrepancyCases: DiscrepancyCase[] = [
       }
     ],
     narrative: [
-      'Beck’s Blue registers low purchase-likelihood ratings, with a large share of respondents selecting the lowest two points on the scale.',
-      'In the multi-brand forced-choice task, Heineken 0.0 dominates while Beck’s Blue captures the smallest share, revealing asymmetry that mid-scale likelihood ratings obscure.'
+      'Beck’s Blue registers medium purchase-likelihood ratings, with the largest share of respondents selecting the medium point on the scale (3).',
+      'In the multi-brand forced-choice task, Heineken 0.0 dominates while Beck’s Blue captures the smallest share out of the 6 available brands. ' +
+      'The reported purchase likelihood of Beck’s Blue does not align with participants’ selections'
     ],
     likelihoodCharts: [
       {

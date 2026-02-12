@@ -29,7 +29,7 @@
         {"label": "O'Doul's No-Alc", "value": 27.1}
       ],
       "stats": [
-        {"label": "p-value", "comparisonOperator": "<", "valueText": "0.01"}
+        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.01"}
       ],
       "interpretation": ""
     },
@@ -45,7 +45,7 @@
         {"label": "Rescue Club Non-Alcoholic", "value": 45.3}
       ],
       "stats": [
-        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.05"}
+        {"label": "p-value", "comparisonOperator": "<", "valueText": "0.1"}
       ],
       "interpretation": ""
     },
@@ -61,7 +61,7 @@
         {"label": "Star Brew Non-Alcoholic", "value": 50}
       ],
       "stats": [
-        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.05"}
+        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.1"}
       ],
       "interpretation": ""
     },
@@ -77,7 +77,7 @@
         {"label": "O'Doul's No-Alc", "value": 46.8}
       ],
       "stats": [
-        {"label": "p-value", "comparisonOperator": ">","valueText": "0.05"}
+        {"label": "p-value", "comparisonOperator": "<","valueText": "0.1"}
       ],
       "interpretation": ""
     },
@@ -173,7 +173,7 @@
         {"label": "Clear Hops 0.0", "value": 56.2}
       ],
       "stats": [
-        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.05"}
+        {"label": "p-value", "comparisonOperator": "<", "valueText": "0.01"}
       ],
       "interpretation": ""
     },
@@ -189,7 +189,7 @@
         {"label": "Clear Hops 0.0", "value": 51.5}
       ],
       "stats": [
-        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.05"}
+        {"label": "p-value", "comparisonOperator": ">", "valueText": "0.1"}
       ],
       "interpretation": ""
     },

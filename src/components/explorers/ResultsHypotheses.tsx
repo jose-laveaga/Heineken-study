@@ -28,8 +28,8 @@ const h1PriceComparison = [
 ];
 const h1PriceComparisonChart = h1PriceComparison.map((entry) => {
   const total = entry.heinekenShare + entry.fictionalShare;
-  const heinekenPercent = toPercentFromShare(entry.heinekenShare, total);
-  const fictionalPercent = toPercentFromShare(entry.fictionalShare, total);
+  const heinekenPercent = toPercentFromShare(entry.heinekenShare, total).toFixed(2);
+  const fictionalPercent = toPercentFromShare(entry.fictionalShare, total).toFixed(2);
   return {
     label: entry.label,
     heinekenPercent,
@@ -106,11 +106,8 @@ const ResultsHypotheses = () => {
   return (
     <div id="hypotheses" className="space-y-4">
       <div>
-        <p className="text-xs uppercase tracking-wide text-slate-500">Hypotheses Testing</p>
-        <h3 className="text-2xl font-semibold text-slate-900">Hypotheses Results</h3>
-        <p className="mt-2 text-sm text-slate-600">
-          Evidence-driven checks covering the research questions and hypotheses of interest.
-        </p>
+        <p className="text-xs uppercase tracking-wide text-slate-500"></p>
+        <h3 className="text-2xl font-semibold text-slate-900">Hypotheses Testing</h3>
       </div>
       <Accordion
         items={[
@@ -168,7 +165,7 @@ const ResultsHypotheses = () => {
                           The preference persists even when Heineken 0.0 is priced higher, indicating resilience to price disadvantage.
                         </li>
                         <li>
-                          One-sided significance: <span className="font-mono">p &lt; 10^-40</span>.
+                          One-sided significance: <span>p &lt; 0.001</span>
                         </li>
                       </ul>
                     </div>
@@ -295,7 +292,7 @@ const ResultsHypotheses = () => {
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Perception Index</p>
                       <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-slate-600">
                         <li>
-                          Composite index derived from respondent evaluations of trustworthiness, expected taste, expected quality, and brand
+                          The general index was derived from respondent evaluations of trustworthiness, expected taste, expected quality, and brand
                           familiarity.
                         </li>
                         <li>Scores aggregated and segmented into four ordered perception bands.</li>
@@ -310,11 +307,11 @@ const ResultsHypotheses = () => {
                           across perception bands.
                         </li>
                         <li>
-                          Higher perception categories exhibit both higher central tendency and reduced variance in purchase likelihood.
+                          Higher reported brand perception score categories exhibit both higher central tendency and reduced variance in purchase likelihood.
                         </li>
                         <li>
                           Correlation analysis indicates a strong positive association:
-                          <span className="ml-1 font-mono">r = 0.724</span>, <span className="font-mono">p = 2.29 × 10^-68</span>.
+                          <span> r&nbsp;=&nbsp;0.724</span>, <span>p &lt; 0.001 </span>
                         </li>
                       </ul>
                     </div>

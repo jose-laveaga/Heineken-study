@@ -7,7 +7,6 @@ const DiscrepanciesSection = () => (
   <Section
     id="discrepancies"
     title="Discrepancies in Participants’ Responses"
-    subtitle="Where intent diverges from choice"
   >
     <div className="space-y-8">
       <p className="max-w-3xl text-sm leading-relaxed text-slate-600">{introCopy}</p>
@@ -18,7 +17,7 @@ const DiscrepanciesSection = () => (
       </div>
       <Card>
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Meta-insights</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
           <ul className="space-y-2 text-sm text-slate-600">
             {metaInsights.map((insight) => (
               <li key={insight}>• {insight}</li>
