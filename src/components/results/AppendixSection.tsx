@@ -15,7 +15,7 @@ const AppendixSection = () => {
     },
     {
       key: 'prolific-integration',
-      values: ['Prolific Integration', 'Participant ID, Study ID, Session ID (for payment and tracking)']
+      values: ['Prolific Integration', 'Participant ID, Study ID, Session ID']
     },
     {
       key: 'pre-survey-screening',
@@ -33,7 +33,7 @@ const AppendixSection = () => {
       key: 'price-comparisons',
       values: [
         'Price Comparisons',
-        'Brand pairs, selections, and price-higher indicators (Equal, Higher, Lower)'
+        'Brand pairs, selections, and price-higher indicators (Equal price, Fictional brand priced higher, Fictional brand priced Lower)'
       ]
     },
     {
@@ -52,7 +52,7 @@ const AppendixSection = () => {
 
   const appendixBColumns = [
     { key: 'category', label: 'Category' },
-    { key: 'brands', label: 'Brands (Examples)' },
+    { key: 'brands', label: 'Brands' },
     { key: 'purpose', label: 'Purpose' }
   ];
 
@@ -62,16 +62,16 @@ const AppendixSection = () => {
       values: [
         'Mother Brands',
         "Heineken 0.0, Budweiser Zero, Beck's Blue",
-        'To evaluate the weight of mother-brand influence on consumer perceptions and purchase behavior.'
+        'To evaluate the weight of mother brand influence on consumer perceptions and purchase behavior.'
       ]
     },
     {
       key: 'established-competitors',
-      values: ["Established Competitors", "O'Doul's Non Alc", 'To benchmark against existing non-alcoholic non-mother brand leaders.']
+      values: ["Established Competitors", "O'Doul's Non-Alc", 'To benchmark against existing non-alcoholic non-mother brand leaders.']
     },
     {
       key: 'independent-brand',
-      values: ['Independent Brand', 'Rescue Club Non Alc', 'To measure the influence of lesser known non-mother brands.']
+      values: ['Independent Brand', 'Rescue Club Non-Alc', 'To measure the influence of lesser known non-mother brands.']
     },
     {
       key: 'fictional-brands',
@@ -89,14 +89,14 @@ const AppendixSection = () => {
         <Card className="space-y-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Appendix A</p>
-            <h3 className="mt-2 text-lg font-semibold text-slate-900">Data Export &amp; Analysis</h3>
+            <h3 className="mt-2 text-lg font-semibold text-slate-900">Data Export</h3>
           </div>
           <AppendixTable columns={appendixAColumns} rows={appendixARows} />
         </Card>
         <Card className="space-y-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Appendix B</p>
-            <h3 className="mt-2 text-lg font-semibold text-slate-900">Brands and Scenarios</h3>
+            <h3 className="mt-2 text-lg font-semibold text-slate-900">Brands</h3>
           </div>
           <AppendixTable columns={appendixBColumns} rows={appendixBRows} />
         </Card>

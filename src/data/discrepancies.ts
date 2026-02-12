@@ -208,6 +208,6 @@ export const discrepancyCases: DiscrepancyCase[] = [
 ];
 
 export const metaInsights = [
-  'Purchase-likelihood ratings cluster mid-scale across brands (muted enthusiasm).',
-  'Choice tasks reveal sharper, more realistic competitive dominance (e.g., Heineken 0.0).'
+  'Purchase-likelihood ratings are not a reliable indicator of consumer preference.',
+  'Choice tasks reveal more realistic competitive dominance across brands than likelihood to purchase reports.'
 ];

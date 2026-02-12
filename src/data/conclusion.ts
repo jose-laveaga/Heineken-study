@@ -25,7 +25,7 @@ export const hypotheses: HypothesisOutcome[] = [
     outcomeLabel: 'Supported',
     evidenceStrength: 95,
     supportingText:
-      'Heineken 0.0 consistently outperformed two fictional comparator brands across seven distinct scenarios. The magnitude of the observed effects is substantial, resulting in an exceptionally high level of statistical significance and reinforcing the robustness of the conclusion.',
+      'Overall, Heineken 0.0 consistently outperformed two fictional comparator brands across seven distinct scenarios as well as other leading mother brands and non-mother brands. The magnitude of the observed effects of Heineken 0.0 against fictional brands is substantial, resulting in an exceptionally high level of statistical significance and reinforcing the robustness of the conclusion.',
     figuresMentioned: ['44', '45']
   },
   {
