@@ -386,11 +386,7 @@ const StandardLogisticRegressionSection = () => (
           ** <em>p</em> &lt; 0.05,
           * <em>p</em> &lt; 0.10
         </p>
-        <p>
-            Per point increase in each variable category (e.g. brand_importance_rating [1] → [2])
-            the odds of any given participant choosing mother brands more than 50% of the
-            time increase by the [odds ratio]%
-        </p>
+
 
       </div>
     </Card>
