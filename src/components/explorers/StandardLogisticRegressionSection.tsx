@@ -378,10 +378,10 @@ const StandardLogisticRegressionSection = () => (
     </Card>
 
     <Card>
-      <p className="text-xs uppercase tracking-wide text-slate-500">Explanation and narrative space</p>
+      <p className="text-xs uppercase tracking-wide text-slate-500">Note</p>
       <div className="mt-3 grid gap-2 text-sm text-slate-600">
         <p>
-          <strong>Note:</strong>
+          <p>The lower the p value, the more significant the variable becomes for the predictive capabilities of the model</p>
           *** <em>p</em> &lt; 0.01,
           ** <em>p</em> &lt; 0.05,
           * <em>p</em> &lt; 0.10
