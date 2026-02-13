@@ -37,12 +37,23 @@ const MethodologyPage = () => (
                       <div className="mt-3">
                           <BulletList
                               items={[
-                                  "Heineken vs Fictional non-mother brand",
-                                  "Heineken vs Leading non-mother brand",
-                                  "Heineken vs Lesser-known non-mother brands",
-                                  "Another mother brand (Budweiser) vs Fictional",
-                                  "Heineken vs All non-mother brands",
-                                  "Mother brands vs Non-mother brands (aggregate comparison)"
+                                  "Heineken versus a Fictional non-mother brand",
+                                  "Heineken versus a Leading non-mother brand",
+                                  "Heineken versus a Lesser-known non-mother brand",
+                                  "Another mother brand (Budweiser) versus a Fictional non-mother brand",
+                                  "Another mother brand (Budweiser) versus a Leading non-mother brand",
+                                  "Another mother brand (Budweiser) versus a Lesser-known non-mother brand",
+                                  "Heineken vs. fictional non-mother brand (single cans, both priced at $4.99)",
+                                  "Heineken vs. fictional non-mother brand (single cans: $4.99 vs. $3.99)",
+                                  "Heineken vs. fictional non-mother brand (single cans: $3.99 vs. $4.99)",
+                                  "Heineken vs. fictional non-mother brand (12-packs, both priced at $17.99)",
+                                  "Heineken vs. fictional non-mother brand (12-packs: $17.99 vs. $19.99)",
+                                  "Heineken vs. fictional non-mother brand (12-packs: $17.99 vs. $14.99)",
+
+                                  "Mother brands versus Non-mother brands",
+                                  "Heineken vs. Non-mother brands",
+                                  "Budweiser vs. Non-mother brands",
+                                  "Beck's Blue vs. Non-mother brands"
                               ]}
                           />
                       </div>
@@ -54,7 +65,8 @@ const MethodologyPage = () => (
                       (including Budweiser and Beck’s Blue) were also included to broaden the analysis. Some of the Heineken
                       comparisons were paired with price manipulations that positioned Heineken at equal, higher, or lower prices
                       relative to a fictional option. This structure allowed observation of whether brand equity continues to
-                      influence choice even when price disadvantages are present.
+                      influence choice even when price disadvantages are present. Prices for the 12-packs were kept consistent
+                      for Heineken to observe its behavior against differently priced alternatives.
                   </p>
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-4">
@@ -64,7 +76,8 @@ const MethodologyPage = () => (
                               items={[
                                   "Demographics, lifestyle, and alcohol consumption module.",
                                   "Structured brand choice tasks across multiple 0.0 beer sets.",
-                                  "Observed preferences and sensitivity to brand identity under controlled conditions."
+                                  "Open-ended questions to gather participant input on their choices and preferences.",
+                                  "Purchase likelihood, previous familiarity with brands, and considerations when purchasing beer."
                               ]}
                           />
                       </div>
@@ -92,6 +105,13 @@ const MethodologyPage = () => (
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                           Post-task measurement
                       </p>
+                      <div className="mt-3">
+                          <p>
+                              After participants completed the simulated shopping experience, they were asked to complete a
+                              post-task survey that focused on obtaining insights into their perceptions around specific brands
+                              as well as the key aspects they value when purchasing beer.
+                          </p>
+                      </div>
                       <div className="mt-3">
                           <BulletList
                               items={[
@@ -197,7 +217,7 @@ const MethodologyPage = () => (
     <Section
       id="methodology-online-experiment"
       title="Online experiment"
-      subtitle="This experiment is designed to collect comprehensive data on consumer preferences for non-alcoholic beer brands. The study uses a combination of demographic profiling, simulated shopping tasks (1v1 and multiple brand comparisons), and attitudinal questions to generate actionable consumer insights. The questionnaire is integrated with the Prolific platform for participant recruitment and tracking"
+      subtitle="The online experiment was designed to collect comprehensive data on consumer preferences for non-alcoholic beer brands. The study used a combination of demographic profiling, simulated shopping tasks (one on one and multiple brand comparisons), and attitudinal questions to generate actionable consumer insights. The questionnaire was integrated with the Prolific platform for participant recruitment and tracking"
     >
         <div className="space-y-6">
             {/* Welcome Screen */}
@@ -247,7 +267,9 @@ const MethodologyPage = () => (
                                 items={[
                                     "Prolific Participant ID",
                                     "Study ID",
-                                    "Session ID"
+                                    "Session ID",
+                                    "Location and age filters",
+                                    "Alcohol consumption frequency"
                                 ]}
                                 className="text-slate-700"
                             />
@@ -301,9 +323,9 @@ const MethodologyPage = () => (
         <div className="space-y-6">
           <Card>
             <p className="text-xs uppercase tracking-wide text-slate-500">1v1 Brand Comparison Task</p>
-              <p>
+              <p className="mt-4 text-sm text-slate-600">
                   Participants enter a simulated shopping experience where they see pairs of non-alcoholic beer brands side by side. For each pair:
-                  <BulletList items={[
+                  <BulletList className={'mt-4'} items={[
                       'A prompt asks them to choose their preference (e.g., "Which would you add to your cart?")',
                       'Two beer product images are displayed with brand names.',
                       'Price Tags (when enabled): Some comparisons display price tags on each product to test price sensitivity',
@@ -312,27 +334,14 @@ const MethodologyPage = () => (
                   ]}
                   />
               </p>
-            <p>
+            <p className="mt-4 text-sm text-slate-600">
                 The experiment includes 13 fixed comparison slots organized as:
 
-                  <BulletList items={[
+                  <BulletList className={'mt-4'} items={[
                       'Regular Comparisons: Starndad side by side brand comparisons without price inforation',
                       'Price Comparisons: Comparisons with visible price tags to test price sensitivity',
                   ]}
                   />
-            </p>
-
-            <p>
-              Insights
-              <BulletList items={[
-                  'Relative Brand Preference: Direct head-to-head comparisons reveal true preference hierarchies between competing brands',
-                  'Price Sensitivity Analysis: Price-tagged comparisons quantify willingness to pay and price thresholds',
-                  'Value Perception: Comparing selections with/without price reveals brand equity independent of price',
-                  'Competitive Intelligence: Identifies which brands win or lose against specific competitors',
-                  'Brand Position Mapping: Pattern of wins/losses across comparisons creates competitive positioning data'
-
-                  ]}
-              />
             </p>
 
 
@@ -355,6 +364,18 @@ const MethodologyPage = () => (
                       />
                   </div>
               </div>
+              <p className={'mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 t'}>
+                  <p className="text-xs uppercase tracking-wide text-slate-500">Expected Insights</p>
+                  <BulletList className={'mt-4'} items={[
+                      'Relative Brand Preference: Direct head-to-head comparisons reveal true preference hierarchies between competing brands',
+                      'Price Sensitivity Analysis: Price-tagged comparisons quantify willingness to pay and price thresholds',
+                      'Value Perception: Comparing selections with/without price reveals brand equity independent of price',
+                      'Competitive Intelligence: Identifies which brands win or lose against specific competitors',
+                      'Brand Position Mapping: Pattern of wins/losses across comparisons creates competitive positioning data'
+
+                  ]}
+                  />
+              </p>
           </Card>
           <Card>
             <p className="text-xs uppercase tracking-wide text-slate-500">Multibrand comparisons</p>
@@ -384,9 +405,9 @@ const MethodologyPage = () => (
                   />
               </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 mt-4 col-span-2">
+                    <p className="text-xs uppercase tracking-wide text-slate-500">Expected Insights</p>
                     <p>
-                        Insights
-                        <BulletList items={[
+                        <BulletList className={'mt-4'} items={[
                             'Choice Overload: Tests decision-making when faced with multiple options (more realistic shelf scenario)',
                             'Selection Criteria: Written explanations reveal the specific attributes driving choice (packaging, brand recognition, flavor expectations, etc.)',
                             'Qualitative Data: Open-ended responses provide rich context for quantitative preference data',

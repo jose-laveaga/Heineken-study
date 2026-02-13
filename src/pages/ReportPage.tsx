@@ -118,7 +118,7 @@ const ReportPage = () => {
               <MethodTimeline stages={studyDesign.stages} />
             </div>
               <div className="mt-4">
-                  <p className="text-xs tracking-wide text-slate900">Note: Please refer to the methodology page for more details</p>
+                  <p className="text-xs tracking-wide text-slate900">Note: Please refer to the methodology page for more details on the online experiment platform.</p>
               </div>
           </Card>
         </div>
