@@ -199,13 +199,15 @@ const ReportPage = () => {
 
               <p className="mt-2 text-sm text-slate-600 leading-relaxed tracking-wide ">
                   The charts below show the share of choices for each brand across each scenario performed in the study,
-                  while the p-values indicate how reliable the observed difference is. A very high or high significance
+                  while the p-values indicate how likely it would have been that the results from these comparisons are the product of random
+                  chance and not a real difference between participants' preferences. A very high or high significance
                   (p&nbsp;&lt;&nbsp;0.001 or p&nbsp;&lt;&nbsp;0.01) means the gap between brands is very unlikely to be due to chance and reflects
                   a strong, reliable preference. A moderate significance (p&nbsp;&lt;&nbsp;0.1) suggests some evidence of a real difference,
                   but the result should be interpreted with caution. A low significance (p&nbsp;&gt;&nbsp;0.1) indicates that the observed
                   gap could easily be random variation, so no clear preference between the brands can be confidently concluded.
               </p>
           </div>
+
 
 
       <ResultsExplorer />

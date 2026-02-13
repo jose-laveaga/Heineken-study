@@ -11,8 +11,6 @@ export type HypothesisOutcome = {
 
 export const conclusionIntroParagraphs = [
   "The Sustainable Sips: MIT x Heineken Report 2025 focused on a critical strategic challenge: The trust transfer associated with a mother brand in the emerging non-alcoholic beverage category. The study's foundational premise is that an established brand name helps to reduce consumer uncertainty in a relatively unfamiliar market space, serving as a powerful signal of quality and reliability.",
-  "The research design, which included direct comparisons against completely unknown fictional brands (like Clear Hops 0.0 and Star Brew), was explicitly structured to isolate and measure the premium value consumers place on an established mother brand alone. A core post-experiment question further tested this concept by directly asking participants how important it is that their non-alcoholic choice is produced by a ‘well-known established beer brand.’",
-  'The central case study for this transfer of brand equity was Heineken.'
 ];
 
 export const hypotheses: HypothesisOutcome[] = [

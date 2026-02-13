@@ -1,6 +1,7 @@
 import Card from '../ui/Card';
 import ChartCard from '../charts/ChartCard';
 import LineChartWithErrorBars from '../charts/LineChartWithErrorBars';
+import BulletList from "../content/BulletList";
 
 const seriesPalette = [
   { label: 'Male', color: '#2f5d62' },
@@ -248,40 +249,9 @@ const StandardLogisticRegressionSection = () => (
         </p>
       </div>
     </Card>
-    <Card>
-        <div className="flex flex-col gap-3">
-            <p className="text-xs uppercase tracking-wide text-slate-500">Interpretation</p>
-            <p className="mt-1 text-sm text-slate-600">
-                The charts show the predicted probability that a respondent chooses mother brands in more than 50 or 75% of
-                their selections, broken down by activity level, income level, age group, and gender. The x-axis lists the activity categories,
-                and the y-axis shows the probability, from 0 to 1 (or 0% to 100%). Each point represents the estimated
-                probability for that group, while the vertical bars indicate the 95% confidence interval around that estimate.
-                For example, a male with a basic activity level has a predicted probability of approximately 50% of
-                choosing mother brands more than half the time. The lines allow comparison between males and females at
-                each activity level, and larger gaps between the points indicate stronger differences in predicted behavior.
 
-            </p>
 
-        </div>
-    </Card>
 
-    <div className="grid gap-6 lg:grid-cols-2">
-      {chartConfigs.map((chart) => (
-        <ChartCard
-          key={chart.id}
-          title={chart.title}
-          caption="Predicted margins (marginal means) with 95% confidence intervals"
-        >
-          <LineChartWithErrorBars
-            xLabels={chart.xLabels}
-            xAxisLabel={chart.xAxisLabel}
-            yAxisLabel={chart.yAxisLabel}
-            series={seriesByChartId[chart.id]}
-            ariaLabel={`${chart.title} line chart with 95% confidence intervals`}
-          />
-        </ChartCard>
-      ))}
-    </div>
 
       <Card>
           <div className="flex flex-col gap-3">
@@ -306,82 +276,103 @@ const StandardLogisticRegressionSection = () => (
                   <p className="mt-1 text-sm text-slate-600">
                       On the other hand, the majority of variables were not significant at the 5% level,
                       indicating that they did not significantly influence paritcipant choice behavior and thus did not enhance
-                      the predictive power of the model. Below are some examples of variables that did not meet the significance criteria (p &gt; 0.1).
+                      the predictive power of the model.
+                  </p>
+              </div>
+              <div className="overflow-x-auto">
+                  <p className="text-sm text-slate-700">
+                      The following are the variables included in the logistic regression model:
+                  </p>
+
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      Dependent variables:
+                  </p>
+                  <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-slate-700">
+                      <li>
+                          A binary variable equal to 1 if the consumer chose the mother brand in more than 50% of the
+                          scenarios, and 0 otherwise
+                      </li>
+                      <li>
+                          A binary variable equal to 1 if the consumer chose the mother brand in more than 75% of the
+                          scenarios, and 0 otherwise
+                      </li>
+                  </ol>
+
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      Independent variables:
+                  </p>
+                  <p className="mt-2 text-sm text-slate-700">
+                      We included all the relevant explanatory variables such as:
+                  </p>
+
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
+                      <li>Alcohol Consumption Frequency</li>
+                      <li>Brand Importance Rating</li>
+                      <li>Likelihood to Switch to Non-Alcoholic</li>
+                      <li>Belief that 0.0 Beer Tastes as Good as Regular Beer</li>
+                      <li>Expected Taste of Heineken 0.0</li>
+                      <li>Perceived Trustworthiness of Heineken</li>
+                      <li>Perceived Quality of Heineken</li>
+                      <li>Importance of Availability</li>
+                      <li>Importance of Variety</li>
+                      <li>Importance of Health Consideration</li>
+                      <li>Importance of Taste</li>
+                      <li>Importance of Price</li>
+                      <li>Importance of Purchasing from Trusted Brands</li>
+                      <li>Familiarity with O’Doul’s</li>
+                      <li>Familiarity with Clear Hops</li>
+                      <li>Familiarity with Budweiser</li>
+                      <li>Familiarity with Rescue Club</li>
+                      <li>Familiarity with Heineken</li>
+                  </ul>
+
+              </div>
+          </div>
+      </Card>
+
+      <Card>
+          <div className="flex flex-col gap-3">
+              <div>
+                  <p className="text-xs uppercase tracking-wide text-slate-500">Model coefficients</p>
+                  <p className="mt-1 text-sm text-slate-600">
+                      The table below shows the regression results for those varibales that were statistically significant.
                   </p>
               </div>
               <div className="overflow-x-auto">
                   <table className="min-w-full text-sm">
                       <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
                       <tr>
-                          <th className="px-3 py-2 text-center">Variable</th>
+                          <th className="px-3 py-2 text-left">Variable</th>
+                          <th className="px-3 py-2 text-center">Coefficient</th>
+                          <th className="px-3 py-2 text-center">Odds Ratio</th>
                           <th className="px-3 py-2 text-center">p-value</th>
                       </tr>
                       </thead>
                       <tbody>
-                          <tr className="border-t border-slate-200">
-                              <td className="px-3 py-2 text-center text-slate-700">Importance of Price</td>
-                              <td className="px-3 py-2 text-center text-slate-600">0.85</td>
+                      {coefficientRows.map((row) => (
+                          <tr key={row.variable} className="border-t border-slate-200">
+                              <td className="px-3 py-2 text-left text-slate-700">{row.variable}</td>
+                              <td className="px-3 py-2 text-center text-slate-600">{row.coefficient}</td>
+                              <td className="px-3 py-2 text-center text-slate-600">{row.oddsRatio}</td>
+                              <td className="px-3 py-2 text-center text-slate-600">{row.pValue}</td>
                           </tr>
-                      </tbody>
-                      <tbody>
-                      <tr className="border-t border-slate-200">
-                          <td className="px-3 py-2 text-center text-slate-700">Familiarity with Heineken</td>
-                          <td className="px-3 py-2 text-center text-slate-600">0.85</td>
-                      </tr>
-                      </tbody>
-                      <tbody>
-                      <tr className="border-t border-slate-200">
-                          <td className="px-3 py-2 text-center text-slate-700">Familiarity with Rescue Club</td>
-                          <td className="px-3 py-2 text-center text-slate-600">0.83</td>
-                      </tr>
-                      </tbody>
-                      <tbody>
-                      <tr className="border-t border-slate-200">
-                          <td className="px-3 py-2 text-center text-slate-700">Heineken Percieved Quality</td>
-                          <td className="px-3 py-2 text-center text-slate-600">0.82</td>
-                      </tr>
-                      </tbody>
-                      <tbody>
-                      <tr className="border-t border-slate-200">
-                          <td className="px-3 py-2 text-center text-slate-700">Alcohol Frequency</td>
-                          <td className="px-3 py-2 text-center text-slate-600">0.67</td>
-                      </tr>
+                      ))}
                       </tbody>
                   </table>
-              </div>
-          </div>
-      </Card>
 
-    <Card>
-      <div className="flex flex-col gap-3">
-        <div>
-          <p className="text-xs uppercase tracking-wide text-slate-500">Model coefficients</p>
-          <p className="mt-1 text-sm text-slate-600">
-            Below are the final coefficient estimates and significance values from the most significant variables used in the
-              standard logistic regression.
-          </p>
-        </div>
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-sm">
-            <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
-              <tr>
-                <th className="px-3 py-2 text-left">Variable</th>
-                <th className="px-3 py-2 text-center">Coefficient</th>
-                <th className="px-3 py-2 text-center">Odds Ratio</th>
-                <th className="px-3 py-2 text-center">p-value</th>
-              </tr>
-            </thead>
-            <tbody>
-              {coefficientRows.map((row) => (
-                <tr key={row.variable} className="border-t border-slate-200">
-                  <td className="px-3 py-2 text-left text-slate-700">{row.variable}</td>
-                  <td className="px-3 py-2 text-center text-slate-600">{row.coefficient}</td>
-                  <td className="px-3 py-2 text-center text-slate-600">{row.oddsRatio}</td>
-                  <td className="px-3 py-2 text-center text-slate-600">{row.pValue}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  <div className="mt-2 text-sm text-slate-600">
+                The odds ratio shows how a one-unit increase in a variable changes the likelihood of the outcome:
+                values above 1 indicate higher odds, values below 1 indicate lower odds, and values near 1 indicate little or no effect.
+            </div>
+            <div className="mt-2 text-sm text-slate-600">
+                <BulletList items={
+                    ['For a one-unit increase in the brand importance rating, the odds of a consumer choosing the mother brand are 1.93 times higher.',
+                        'For a one-unit increase in the brand availability importance, the odds of a consumer choosing the mother brand are 1.78 times higher.',
+                        'For a one-unit increase in the brand variety importance, the odds of a consumer choosing the mother brand are 0.67 times lower.',
+                        "For a one-unit increase in the familiarity with O'Doul's rating, the odds of a consumer choosing the mother brand are 0.77 times lower.",
+                        'For a one-unit increase in the familiarity with Budweiser importance rating, the odds of a consumer choosing the mother brand are 1.65 times higher.']
+                }/>
+            </div>
         </div>
       </div>
     </Card>
@@ -396,13 +387,49 @@ const StandardLogisticRegressionSection = () => (
           * <em>p</em> &lt; 0.10
         </p>
         <p>
-            Per point increase in each variable category (e.g brand_importance_rating [1] → [2])
+            Per point increase in each variable category (e.g. brand_importance_rating [1] → [2])
             the odds of any given participant choosing mother brands more than 50% of the
             time increase by the [odds ratio]%
         </p>
 
       </div>
     </Card>
+
+      <Card>
+          <div className="flex flex-col gap-3">
+              <p className="text-xs uppercase tracking-wide text-slate-500">Interpretation</p>
+              <p className="mt-1 text-sm text-slate-600">
+                  The charts below show the predicted probability of the dependant variable being true, this meaning that a respondent
+                  chooses mother brands in more than 50 or 75% of
+                  their selections, broken down by activity level, income level, age group, and gender. The x-axis lists the activity categories,
+                  and the y-axis shows the probability, from 0 to 1 (or 0% to 100%). Each point represents the estimated
+                  probability for that group, while the vertical bars indicate the 95% confidence interval around that estimate.
+                  For example, a male with a basic activity level has a predicted probability of approximately 50% of
+                  choosing mother brands more than half the time. The lines allow comparison between males and females at
+                  each activity level, and larger gaps between the points indicate stronger differences in predicted behavior.
+
+              </p>
+
+          </div>
+      </Card>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+          {chartConfigs.map((chart) => (
+              <ChartCard
+                  key={chart.id}
+                  title={chart.title}
+                  caption="Predicted margins (marginal means) with 95% confidence intervals"
+              >
+                  <LineChartWithErrorBars
+                      xLabels={chart.xLabels}
+                      xAxisLabel={chart.xAxisLabel}
+                      yAxisLabel={chart.yAxisLabel}
+                      series={seriesByChartId[chart.id]}
+                      ariaLabel={`${chart.title} line chart with 95% confidence intervals`}
+                  />
+              </ChartCard>
+          ))}
+      </div>
   </div>
 );
 

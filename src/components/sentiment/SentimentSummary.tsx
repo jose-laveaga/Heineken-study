@@ -7,7 +7,7 @@ const narrativePoints = [
   'Category is viewed favorably (avg ≈ 0.23).',
   'Established brands (e.g., Heineken) rely on “emotional safety”, trust, familiarity; niche competitors can score higher due to novelty.',
   '“Penn’s Best” has the highest sentiment but smaller sample size; major players cluster closely in the middle.',
-    'Across the analysis, brand names and its derivatives were grouped into a single bucket. Ex. Mentions of “Penn’s Best” and “Penns” ' +
+    'Across the analysis, brand names and its derivatives were grouped into a single bucket. e.g. Mentions of “Penn’s Best” and “Penns” ' +
     'were considered as the same brand.'
 ];
 
