@@ -68,6 +68,16 @@ const MethodologyPage = () => (
                       influence choice even when price disadvantages are present. Prices for the 12-packs were kept consistent
                       for Heineken to observe its behavior against differently priced alternatives.
                   </p>
+                  <p>
+                      The order of comparisons and the placement of products were randomized across participants to reduce
+                      potential order and presentation biases. This approach minimizes effects such as fatigue, learning, anchoring,
+                      or positional preferences that could otherwise influence choices independently of the variables under study.
+                      By distributing these effects evenly across conditions, the randomization improves the internal validity of
+                      the experiment and ensures that observed differences in purchase behavior more accurately reflect genuine
+                      consumer preferences.
+
+
+                  </p>
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-4">
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Participant flow</p>

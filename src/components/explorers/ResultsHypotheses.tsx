@@ -114,7 +114,7 @@ const ResultsHypotheses = () => {
           {
             id: 'hypothesis-h1',
             title:
-              'H1: Heineken 0.0 will be chosen more frequently in the simulated purchase environment compared to a fictional non-branded 0.0 beer.',
+                'H1: Heineken 0.0 will be chosen more frequently in the simulated purchase environment compared to a fictional non-branded 0.0 beer.',
             content: (
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
@@ -124,6 +124,21 @@ const ResultsHypotheses = () => {
                   </span>
                   <span className="text-xs text-slate-500">Decision based on choice outcomes across one on one comparisons.</span>
                 </div>
+                <div>
+                  <div>
+                    <strong>
+                      Null Hypothesis (H0):
+                    </strong>{' '}
+                     Heineken 0.0 is not chosen more frequently than the fictional non-branded 0.0 beer in the simulated purchase environment.
+                  </div>
+                  <div style={{ marginLeft: '0px', marginTop: '6px' }}>
+                    <strong>
+                      Alternate Hypothesis (H1):
+                    </strong>{' '}
+                     Heineken 0.0 will be chosen more frequently in the simulated purchase environment compared to a fictional non-branded 0.0 beer.
+                  </div>
+                </div>
+
                 <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
                   <div className="space-y-4">
                     <div>
@@ -278,6 +293,20 @@ const ResultsHypotheses = () => {
                     Tests examine correlations between perception metrics and Heineken choice/intent.
                   </span>
                 </div>
+                <div>
+                  <div>
+                    <strong>
+                      Null Hypothesis (H0):
+                    </strong>{' '}
+                    Brand perception scores for Heineken do not positively correlate with purchase behavior and intent for Heineken 0.0.
+                  </div>
+                  <div style={{ marginLeft: '0px', marginTop: '6px' }}>
+                    <strong>
+                      Alternate Hypothesis (H2):
+                    </strong>{' '}
+                    Brand perception scores for Heineken will positively correlate with purchase behavior and intent for Heineken 0.0.
+                  </div>
+                </div>
                 <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
                   <div className="space-y-4">
                     <div>
@@ -387,6 +416,20 @@ const ResultsHypotheses = () => {
                     {h3Decision}
                   </span>
                   <span className="text-xs text-slate-500">Segment-level analysis compares mother-brand lift by drinking habit.</span>
+                </div>
+                <div>
+                  <div>
+                    <strong>
+                      Null Hypothesis (H0):
+                    </strong>{' '}
+                    The impact of the mother brand on purchase behavior is not stronger for regular alcohol drinkers than for non-drinkers.
+                  </div>
+                  <div style={{ marginLeft: '0px', marginTop: '6px' }}>
+                    <strong>
+                      Alternate Hypothesis (H3):
+                    </strong>{' '}
+                    The impact of the mother brand on purchase behavior will be stronger for regular alcohol drinkers than non-drinkers.
+                  </div>
                 </div>
                 <div className="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
                   <div className="space-y-4">

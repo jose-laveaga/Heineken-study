@@ -157,7 +157,7 @@ const ReportPage = () => {
                   <tbody>
                   <tr className="border-t border-slate-200">
                       <td className="px-3 py-2 text-left text-slate-700">&lt;&nbsp;0.001</td>
-                      <td className="px-3 py-2 text-center text-slate-600">Very&nbsp;High</td>
+                      <td className="px-3 py-2 text-center text-slate-600">Significant</td>
                       <td className="px-3 py-2 text-center text-slate-600">
             <span className="inline-flex items-center justify-center">
               <span className="h-3 w-3 rounded-sm bg-blue-200 ring-1 ring-blue-400" />
@@ -167,7 +167,7 @@ const ReportPage = () => {
 
                   <tr className="border-t border-slate-200">
                       <td className="px-3 py-2 text-left text-slate-700">&lt;&nbsp;0.01</td>
-                      <td className="px-3 py-2 text-center text-slate-600">High</td>
+                      <td className="px-3 py-2 text-center text-slate-600">Significant</td>
                       <td className="px-3 py-2 text-center text-slate-600">
             <span className="inline-flex items-center justify-center">
               <span className="h-3 w-3 rounded-sm bg-blue-50 ring-1 ring-blue-200" />
@@ -177,7 +177,7 @@ const ReportPage = () => {
 
                   <tr className="border-t border-slate-200">
                       <td className="px-3 py-2 text-left text-slate-700">&lt;&nbsp;0.1</td>
-                      <td className="px-3 py-2 text-center text-slate-600">Moderate</td>
+                      <td className="px-3 py-2 text-center text-slate-600">Moderate Significance</td>
                       <td className="px-3 py-2 text-center text-slate-600">
             <span className="inline-flex items-center justify-center">
               <span className="h-3 w-3 rounded-sm bg-amber-50 ring-1 ring-amber-200" />
@@ -187,7 +187,7 @@ const ReportPage = () => {
 
                   <tr className="border-t border-slate-200">
                       <td className="px-3 py-2 text-left text-slate-700">&gt;&nbsp;0.1</td>
-                      <td className="px-3 py-2 text-center text-slate-600">Low</td>
+                      <td className="px-3 py-2 text-center text-slate-600">Not Significant</td>
                       <td className="px-3 py-2 text-center text-slate-600">
             <span className="inline-flex items-center justify-center">
               <span className="h-3 w-3 rounded-sm bg-slate-50 ring-1 ring-slate-200" />
