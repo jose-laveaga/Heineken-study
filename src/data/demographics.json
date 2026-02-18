@@ -2,7 +2,7 @@
   "sections": [
     {
       "id": "age",
-      "title": "Age group",
+      "title": "Age Group",
       "items": [
         {"label": "21–24", "value": 68},
         {"label": "25–34", "value": 108},
@@ -45,7 +45,7 @@
     },
     {
       "id": "income",
-      "title": "Income",
+      "title": "Income Bracket (USD)",
       "items": [
         {"label": "Under $25k", "value": 87},
         {"label": "$25–49k", "value": 109},
@@ -57,7 +57,7 @@
     },
     {
       "id": "activity",
-      "title": "Activity level",
+      "title": "Activity Level",
       "items": [
         {"label": "Active", "value": 140},
         {"label": "Moderately active", "value": 126},
@@ -68,7 +68,7 @@
     },
     {
       "id": "alcohol",
-      "title": "Alcohol consumption (frequency scale)",
+      "title": "Alcohol Consumption (Frequency Scale)",
       "items": [
         {"label": "2-3 times a week", "value": 111},
         {"label": "Once a week", "value": 76},
@@ -79,7 +79,7 @@
     },
     {
       "id": "beer",
-      "title": "Beer consumption (frequency scale)",
+      "title": "Beer Consumption (Frequency Scale)",
       "items": [
         {"label": "2-3 times a week", "value": 92},
         {"label": "Once a week", "value": 80},
@@ -90,7 +90,7 @@
     },
     {
       "id": "na-beer",
-      "title": "Non-alcoholic beer consumption",
+      "title": "Non-Alcoholic Beer Consumption",
       "items": [
         {"label": "Occasionally", "value": 190},
         {"label": "Regularly", "value": 125},

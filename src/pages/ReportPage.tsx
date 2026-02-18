@@ -22,6 +22,7 @@ import narrative from '../data/narrative.json';
 import studyDesign from '../data/studyDesign.json';
 import motherBrandPickRate from '../data/motherBrandPickRate.json';
 import heinekenPickRate from '../data/heinekenPickRate.json';
+import {ExperimentFlowTimeline} from "../components/content/ExperimentFlowTimeLine";
 
 export const reportSections = [
   { id: 'overview', label: 'Overview' },
@@ -29,7 +30,7 @@ export const reportSections = [
   { id: 'experiment-flow', label: 'Experiment Flow' },
   { id: 'demographics', label: 'Demographics' },
   { id: 'results', label: 'Results' },
-  { id: 'pick-rate-comparison', label: 'Pick Rate Comparison' },
+  { id: 'pick-rate-comparison', label: 'Selection Share Comparison' },
   { id: 'standard-logistic-regression', label: 'Standard Logistic Regression Analysis' },
   { id: 'sentiment', label: 'Sentiment' },
   { id: 'discrepancies', label: 'Discrepancies' },
@@ -46,7 +47,7 @@ const ReportPage = () => {
       content: (
         <ul className="space-y-2 text-sm text-slate-600">
           {narrative.context.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item} className={'text-justify'}>{item}</li>
           ))}
         </ul>
       )
@@ -93,7 +94,7 @@ const ReportPage = () => {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
             <h1 className="text-3xl font-semibold text-slate-900">Sustainable Sips – MIT x Heineken Report 2025</h1>
-            <p className="text-sm text-slate-600">{narrative.abstract}</p>
+            <p className="text-sm text-slate-600 text-justify">{narrative.abstract}</p>
 
           </div>
           <div className="space-y-4">
@@ -107,7 +108,7 @@ const ReportPage = () => {
         </div>
       </Section>
 
-      <Section id="study-design" title="Study design" subtitle="Context, research questions, and hypotheses">
+      <Section id="study-design" title="Study Design" subtitle="Context, research questions, and hypotheses">
         <div className="grid grid-cols-1 gap-6">
           <div className="space-y-4">
             <Accordion items={researchCards} />
@@ -124,17 +125,20 @@ const ReportPage = () => {
         </div>
       </Section>
 
-      <Section id="experiment-flow" title="Experiment flow" subtitle="How participants moved through the study">
-        <ExperimentStepper
-          steps={studyDesign.experimentFlow.map((flow) => ({
-            title: flow.title,
-            bullets: flow.bullets
-          }))}
-        />
+        <Section
+            id="experiment-flow"
+            title="Participant Journey"
+            subtitle="A standardized sequence from consent through post-task survey, designed to keep exposure consistent and results comparable."
+        >
+            <ExperimentFlowTimeline
+                title={studyDesign.experimentFlow[0]?.title ?? 'Participant Journey'}
+                bullets={studyDesign.experimentFlow[0]?.bullets ?? []}
+            />
+        </Section>
 
-      </Section>
 
-      <Section id="demographics" title="Demographics" subtitle="Participant distribution across key characteristics">
+
+        <Section id="demographics" title="Demographics" subtitle="Participant distribution across key characteristics">
         <DemographicsSection />
     </Section>
 
@@ -197,15 +201,12 @@ const ReportPage = () => {
                   </tbody>
               </table>
 
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed tracking-wide ">
-                  The charts below show the share of choices for each brand across each scenario performed in the study,
-                  while the p-values indicate how likely it would have been that the results from these comparisons are the product of random
-                  chance and not a real difference between participants' preferences. A very high or high significance
-                  (p&nbsp;&lt;&nbsp;0.001 or p&nbsp;&lt;&nbsp;0.01) means the gap between brands is very unlikely to be due to chance and reflects
-                  a strong, reliable preference. A moderate significance (p&nbsp;&lt;&nbsp;0.1) suggests some evidence of a real difference,
-                  but the result should be interpreted with caution. A low significance (p&nbsp;&gt;&nbsp;0.1) indicates that the observed
-                  gap could easily be random variation, so no clear preference between the brands can be confidently concluded.
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  The charts below report brand selection shares across experimental scenarios.
+                  Reported p-values indicate whether observed differences in choice shares are
+                  statistically significant under the specified test conditions.
               </p>
+
           </div>
 
 
@@ -213,114 +214,159 @@ const ReportPage = () => {
       <ResultsExplorer />
       </Section>
 
-      <Section
-        id="pick-rate-comparison"
-        title="Pick rate comparison"
-        subtitle="Mother brand vs Heineken 0.0 threshold-based pick rates"
-      >
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="space-y-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mother brand</p>
-              <h3 className="mt-2 text-lg font-semibold text-slate-900">Pick rate by segment</h3>
-            </div>
-            <Tabs options={pickRateTabs} value={motherBrandView} onChange={setMotherBrandView} />
-            {motherBrandView === 'gender' && (
-              <ChartCard title="Pick rate by gender">
-                <GroupedBarChart
-                  data={motherBrandPickRate.gender}
-                  series={motherBrandPickRate.thresholds}
-                  ariaLabel="Mother brand pick rate by gender"
-                />
-              </ChartCard>
-            )}
-            {motherBrandView === 'age' && (
-              <ChartCard title="Pick rate by age group">
-                <ThresholdLineChart
-                  data={motherBrandPickRate.ageGroups}
-                  series={motherBrandPickRate.thresholds}
-                  xAxisLabel="Age group"
-                  yAxisLabel="Pick rate (% of respondents)"
-                  ariaLabel="Mother brand pick rate by age group"
-                />
-              </ChartCard>
-            )}
-            {motherBrandView === 'income' && (
-              <ChartCard title="Pick rate by income group">
-                <ThresholdLineChart
-                  data={motherBrandPickRate.incomeGroups}
-                  series={motherBrandPickRate.thresholds}
-                  xAxisLabel="Income group"
-                  yAxisLabel="Pick rate (% of respondents)"
-                  ariaLabel="Mother brand pick rate by income group"
-                />
-              </ChartCard>
-            )}
-            {motherBrandView === 'activity' && (
-              <ChartCard title="Pick rate by activity level">
-                <ThresholdLineChart
-                  data={motherBrandPickRate.activityLevels}
-                  series={motherBrandPickRate.thresholds}
-                  xAxisLabel="Activity level"
-                  yAxisLabel="Pick rate (% of respondents)"
-                  ariaLabel="Mother brand pick rate by activity level"
-                />
-              </ChartCard>
-            )}
-          </div>
-          <div className="space-y-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Heineken 0.0</p>
-              <h3 className="mt-2 text-lg font-semibold text-slate-900">Pick rate by segment</h3>
-            </div>
-            <Tabs options={pickRateTabs} value={heinekenView} onChange={setHeinekenView} />
-            {heinekenView === 'gender' && (
-              <ChartCard title="Pick rate by gender">
-                <GroupedBarChart
-                  data={heinekenPickRate.gender}
-                  series={heinekenPickRate.thresholds}
-                  ariaLabel="Heineken 0.0 pick rate by gender"
-                />
-              </ChartCard>
-            )}
-            {heinekenView === 'age' && (
-              <ChartCard title="Pick rate by age group">
-                <ThresholdLineChart
-                  data={heinekenPickRate.ageGroups}
-                  series={heinekenPickRate.thresholds}
-                  xAxisLabel="Age group"
-                  yAxisLabel="Pick rate (% of respondents)"
-                  ariaLabel="Heineken 0.0 pick rate by age group"
-                />
-              </ChartCard>
-            )}
-            {heinekenView === 'income' && (
-              <ChartCard title="Pick rate by income group">
-                <ThresholdLineChart
-                  data={heinekenPickRate.incomeGroups}
-                  series={heinekenPickRate.thresholds}
-                  xAxisLabel="Income group"
-                  yAxisLabel="Pick rate (% of respondents)"
-                  ariaLabel="Heineken 0.0 pick rate by income group"
-                />
-              </ChartCard>
-            )}
-            {heinekenView === 'activity' && (
-              <ChartCard title="Pick rate by activity level">
-                <ThresholdLineChart
-                  data={heinekenPickRate.activityLevels}
-                  series={heinekenPickRate.thresholds}
-                  xAxisLabel="Activity level"
-                  yAxisLabel="Pick rate (% of respondents)"
-                  ariaLabel="Heineken 0.0 pick rate by activity level"
-                />
-              </ChartCard>
-            )}
-          </div>
-        </div>
-      </Section>
+        <Section
+            id="pick-rate-comparison"
+            title="Brand Selection Share Comparison"
+            subtitle="Threshold-Based Brand Selection Shares: Mother Brand and Heineken 0.0"
+        >
+            <div className="grid gap-8 lg:grid-cols-2">
+                <div className="space-y-6">
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mother Brand</p>
+                        <h3 className="mt-2 text-lg font-semibold text-slate-900">Selection Share by Segment</h3>
+                    </div>
 
-      <Section
+                    <Tabs options={pickRateTabs} value={motherBrandView} onChange={setMotherBrandView} />
+
+                    {motherBrandView === 'gender' && (
+                        <ChartCard title="Selection Share by Gender">
+                            <GroupedBarChart
+                                data={motherBrandPickRate.gender}
+                                series={motherBrandPickRate.thresholds}
+                                ariaLabel="Mother Brand selection share by gender"
+                                yAxisLabel="Selection Share (%)"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                // If your GroupedBarChart supports it, this prevents Y-axis label/ticks from being clipped:
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+
+                    {motherBrandView === 'age' && (
+                        <ChartCard title="Selection Share by Age Group">
+                            <ThresholdLineChart
+                                data={motherBrandPickRate.ageGroups}
+                                series={motherBrandPickRate.thresholds}
+                                xAxisLabel="Age Group"
+                                yAxisLabel="Selection Share (%)"
+                                ariaLabel="Mother Brand selection share by age group"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                yDomain={[0, 100]}
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+
+                    {motherBrandView === 'income' && (
+                        <ChartCard title="Selection Share by Income Bracket">
+                            <ThresholdLineChart
+                                data={motherBrandPickRate.incomeGroups}
+                                series={motherBrandPickRate.thresholds}
+                                xAxisLabel="Income Bracket (USD)"
+                                yAxisLabel="Selection Share (%)"
+                                ariaLabel="Mother Brand selection share by income bracket"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                yDomain={[0, 100]}
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+
+                    {motherBrandView === 'activity' && (
+                        <ChartCard title="Selection Share by Activity Level">
+                            <ThresholdLineChart
+                                data={motherBrandPickRate.activityLevels}
+                                series={motherBrandPickRate.thresholds}
+                                xAxisLabel="Activity Level"
+                                yAxisLabel="Selection Share (%)"
+                                ariaLabel="Mother Brand selection share by activity level"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                yDomain={[0, 100]}
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+                </div>
+
+                <div className="space-y-6">
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Heineken 0.0</p>
+                        <h3 className="mt-2 text-lg font-semibold text-slate-900">Selection Share by Segment</h3>
+                    </div>
+
+                    <Tabs options={pickRateTabs} value={heinekenView} onChange={setHeinekenView} />
+
+                    {heinekenView === 'gender' && (
+                        <ChartCard title="Selection Share by Gender">
+                            <GroupedBarChart
+                                data={heinekenPickRate.gender}
+                                series={heinekenPickRate.thresholds}
+                                ariaLabel="Heineken 0.0 selection share by gender"
+                                yAxisLabel="Selection Share (%)"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+
+                    {heinekenView === 'age' && (
+                        <ChartCard title="Selection Share by Age Group">
+                            <ThresholdLineChart
+                                data={heinekenPickRate.ageGroups}
+                                series={heinekenPickRate.thresholds}
+                                xAxisLabel="Age Group"
+                                yAxisLabel="Selection Share (%)"
+                                ariaLabel="Heineken 0.0 selection share by age group"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                yDomain={[0, 100]}
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+
+                    {heinekenView === 'income' && (
+                        <ChartCard title="Selection Share by Income Bracket">
+                            <ThresholdLineChart
+                                data={heinekenPickRate.incomeGroups}
+                                series={heinekenPickRate.thresholds}
+                                xAxisLabel="Income Bracket (USD)"
+                                yAxisLabel="Selection Share (%)"
+                                ariaLabel="Heineken 0.0 selection share by income bracket"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                yDomain={[0, 100]}
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+
+                    {heinekenView === 'activity' && (
+                        <ChartCard title="Selection Share by Activity Level">
+                            <ThresholdLineChart
+                                data={heinekenPickRate.activityLevels}
+                                series={heinekenPickRate.thresholds}
+                                xAxisLabel="Activity Level"
+                                yAxisLabel="Selection Share (%)"
+                                ariaLabel="Heineken 0.0 selection share by activity level"
+                                yAxisTickFormatter={(value: number) => `${value}%`}
+                                yDomain={[0, 100]}
+                                yAxisWidth={44}
+                                margin={{ left: 56, right: 16, top: 8, bottom: 24 }}
+                            />
+                        </ChartCard>
+                    )}
+                </div>
+            </div>
+        </Section>
+
+
+        <Section
         id="standard-logistic-regression"
         title="Standard Logistic Regression Analysis"
         subtitle="Predicted margins and coefficients from the standard model"

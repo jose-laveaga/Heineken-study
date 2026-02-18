@@ -66,11 +66,16 @@ const MethodTimeline = ({ stages }: MethodTimelineProps) => {
               </span>
             </div>
             <p className="mt-2 text-xs text-slate-600">{activeStage.description}</p>
-            <ul className="mt-3 space-y-1 text-xs text-slate-600">
-              <li>{activeStage.bullet_one}</li>
-              <li>{activeStage.bullet_two}</li>
-              <li>{activeStage.bullet_three}</li>
+            <ul className="mt-3 list-disc pl-5 space-y-1 text-xs text-slate-600">
+              {[activeStage.bullet_one, activeStage.bullet_two, activeStage.bullet_three]
+                  .filter((b): b is string => typeof b === 'string' && b.trim().length > 0)
+                  .map((b, i) => (
+                      <li key={i} className="list-item">
+                        {b}
+                      </li>
+                  ))}
             </ul>
+
           </div>
         ) : (
           <p className="text-xs text-slate-600">Select a step to see detailed notes.</p>

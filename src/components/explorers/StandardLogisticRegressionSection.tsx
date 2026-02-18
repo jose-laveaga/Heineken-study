@@ -234,7 +234,7 @@ const StandardLogisticRegressionSection = () => (
     <Card>
       <p className="text-xs uppercase tracking-wide text-slate-500">Standard logistic regression analysis</p>
       <div className="mt-4 grid gap-4 text-sm text-slate-600">
-        <p>
+        <p className="text-justify">
             This section presents the predictive margins derived from the regression models used
             to examine how key demographic factors shape the likelihood of participants
             choosing mother brands above the two established thresholds (50 & 75%) across the entirety of the study.
@@ -253,59 +253,51 @@ const StandardLogisticRegressionSection = () => (
 
 
 
-      <Card>
+    <Card>
           <div className="flex flex-col gap-3">
               <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">Variables Selection criteria</p>
-                  <p className="mt-1 text-sm text-slate-600">
-                      The construction of this logistic regression model did not include any independent variables that
-                      did not significantly influence the likelihood of mother brand choices above the 50 and 70% thresholds (the dependent variables).
-                      The independent variables that were gathered throughout the study were demographic characteristics (age, income, activity level),
-                      alcohol consumption frequency, and familiarity with brands.
+                  <p className="text-xs uppercase tracking-wide text-slate-500">Variable selection and model specification</p>
+                  <p className="mt-1 text-sm text-slate-600 text-justify">
+                      The logistic regression model was specified using a parsimonious set of explanatory variables. Candidate predictors were drawn
+                      from study measures including demographics (e.g., age, income, activity level), alcohol consumption frequency, brand familiarity,
+                      and attitudinal and preference measures. Variables that did not contribute meaningful explanatory power were excluded to improve
+                      interpretability and reduce overfitting risk.
                   </p>
               </div>
-              <div>
-                  <p className="mt-1 text-sm text-slate-600">
-                      Across the study, participants were asked to rate how important it was for them to consume beer produced by a recognized brand on
-                      a scale from 1 (not at all important) to 5 (very important).
-                      This variable was one of the most important predictors of mother brand choice, with a significant p-value of 0.000 *** indicating that
-                      it had a very stong impact.
-                  </p>
-              </div>
-              <div>
-                  <p className="mt-1 text-sm text-slate-600">
-                      On the other hand, the majority of variables were not significant at the 5% level,
-                      indicating that they did not significantly influence paritcipant choice behavior and thus did not enhance
-                      the predictive power of the model.
-                  </p>
-              </div>
-              <div className="overflow-x-auto">
-                  <p className="text-sm text-slate-700">
-                      The following are the variables included in the logistic regression model:
-                  </p>
 
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                      Dependent variables:
+              <div>
+                  <p className="mt-1 text-sm text-slate-600 text-justify">
+                      A key predictor in the final specification is the respondent’s stated importance of consuming beer produced by a recognized brand
+                      (rated 1 = not important to 5 = very important). This construct is strongly associated with mother-brand choice, with a highly
+                      significant effect (p &lt; 0.001).
                   </p>
-                  <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-slate-700">
+              </div>
+
+              <div>
+                  <p className="mt-1 text-sm text-slate-600 text-justify">
+                      Most remaining candidate variables were not statistically significant at conventional thresholds (α = 0.05) and did not materially
+                      improve model fit; these variables were therefore not emphasized in the final interpretation. The resulting model prioritizes
+                      clarity for decision-making while retaining the strongest observed predictors of mother-brand selection.
+                  </p>
+              </div>
+
+              <div className="overflow-x-auto">
+                  <p className="text-sm text-slate-700">The logistic regression model includes the following variables:</p>
+
+                  <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">Dependent variables</p>
+                  <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-slate-600">
                       <li>
-                          A binary variable equal to 1 if the consumer chose the mother brand in more than 50% of the
-                          scenarios, and 0 otherwise
+                          Binary indicator equal to 1 if the respondent selected the mother brand in more than 50% of scenarios, and 0 otherwise.
                       </li>
                       <li>
-                          A binary variable equal to 1 if the consumer chose the mother brand in more than 75% of the
-                          scenarios, and 0 otherwise
+                          Binary indicator equal to 1 if the respondent selected the mother brand in more than 75% of scenarios, and 0 otherwise.
                       </li>
                   </ol>
 
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                      Independent variables:
-                  </p>
-                  <p className="mt-2 text-sm text-slate-700">
-                      We included all the relevant explanatory variables such as:
-                  </p>
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-slate-500">Independent variables</p>
+                  <p className="mt-2 text-sm text-slate-700">Explanatory variables include:</p>
 
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600">
                       <li>Alcohol Consumption Frequency</li>
                       <li>Brand Importance Rating</li>
                       <li>Likelihood to Switch to Non-Alcoholic</li>
@@ -325,19 +317,21 @@ const StandardLogisticRegressionSection = () => (
                       <li>Familiarity with Rescue Club</li>
                       <li>Familiarity with Heineken</li>
                   </ul>
-
               </div>
           </div>
-      </Card>
+    </Card>
+
 
       <Card>
           <div className="flex flex-col gap-3">
               <div>
                   <p className="text-xs uppercase tracking-wide text-slate-500">Model coefficients</p>
                   <p className="mt-1 text-sm text-slate-600">
-                      The table below shows the regression results for those varibales that were statistically significant.
+                      The table reports coefficient estimates for predictors that are statistically significant in the logistic regression model.
+                      Coefficients are presented alongside odds ratios to support interpretation in decision contexts.
                   </p>
               </div>
+
               <div className="overflow-x-auto">
                   <table className="min-w-full text-sm">
                       <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
@@ -348,6 +342,7 @@ const StandardLogisticRegressionSection = () => (
                           <th className="px-3 py-2 text-center">p-value</th>
                       </tr>
                       </thead>
+
                       <tbody>
                       {coefficientRows.map((row) => (
                           <tr key={row.variable} className="border-t border-slate-200">
@@ -360,54 +355,54 @@ const StandardLogisticRegressionSection = () => (
                       </tbody>
                   </table>
 
-                  <div className="mt-2 text-sm text-slate-600">
-                The odds ratio shows how a one-unit increase in a variable changes the likelihood of the outcome:
-                values above 1 indicate higher odds, values below 1 indicate lower odds, and values near 1 indicate little or no effect.
-            </div>
-            <div className="mt-2 text-sm text-slate-600">
-                <BulletList items={
-                    ['For a one-unit increase in the brand importance rating, the odds of a consumer choosing the mother brand are 1.93 times higher.',
-                        'For a one-unit increase in the brand availability importance, the odds of a consumer choosing the mother brand are 1.78 times higher.',
-                        'For a one-unit increase in the brand variety importance, the odds of a consumer choosing the mother brand are 0.67 times lower.',
-                        "For a one-unit increase in the familiarity with O'Doul's rating, the odds of a consumer choosing the mother brand are 0.77 times lower.",
-                        'For a one-unit increase in the familiarity with Budweiser importance rating, the odds of a consumer choosing the mother brand are 1.65 times higher.']
-                }/>
-            </div>
-        </div>
-      </div>
-    </Card>
+                  <p className="mt-2 text-sm text-slate-600">
+                      Odds ratios (OR) summarize effect size: OR &gt; 1 indicates higher odds of the outcome, OR &lt; 1 indicates lower odds, and OR ≈ 1
+                      indicates limited association, holding other variables constant.
+                  </p>
 
-    <Card>
-      <p className="text-xs uppercase tracking-wide text-slate-500">Note</p>
-      <div className="mt-3 grid gap-2 text-sm text-slate-600">
-        <p>
-          <p>The lower the p value, the more significant the variable becomes for the predictive capabilities of the model</p>
-          *** <em>p</em> &lt; 0.01,
-          ** <em>p</em> &lt; 0.05,
-          * <em>p</em> &lt; 0.10
-        </p>
+                  <div className="mt-2 text-sm text-slate-600 text-justify">
+                      <p>
+                          Brand-related factors show the strongest positive associations with mother-brand selection.
+                          Higher importance placed on brand and product availability is linked to increased likelihood
+                          of choosing a mother-brand option. In contrast, greater emphasis on product variety is
+                          associated with lower mother-brand selection. Familiarity effects are mixed: familiarity
+                          with Budweiser is positively associated with mother-brand choice, while familiarity with
+                          O’Doul’s shows a negative association.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </Card>
 
-
-      </div>
-    </Card>
+      <Card>
+          <p className="text-xs uppercase tracking-wide text-slate-500">Statistical note</p>
+          <div className="mt-3 grid gap-2 text-sm text-slate-600">
+              <p>
+                  Statistical significance is reported using standard thresholds. Smaller p-values indicate stronger evidence that the estimated effect
+                  differs from zero, conditional on the model specification.
+              </p>
+              <p className="text-sm text-slate-600">
+                  *** <em>p</em> &lt; 0.01, ** <em>p</em> &lt; 0.05, * <em>p</em> &lt; 0.10
+              </p>
+          </div>
+      </Card>
 
       <Card>
           <div className="flex flex-col gap-3">
-              <p className="text-xs uppercase tracking-wide text-slate-500">Interpretation</p>
-              <p className="mt-1 text-sm text-slate-600">
-                  The charts below show the predicted probability of the dependant variable being true, this meaning that a respondent
-                  chooses mother brands in more than 50 or 75% of
-                  their selections, broken down by activity level, income level, age group, and gender. The x-axis lists the activity categories,
-                  and the y-axis shows the probability, from 0 to 1 (or 0% to 100%). Each point represents the estimated
-                  probability for that group, while the vertical bars indicate the 95% confidence interval around that estimate.
-                  For example, a male with a basic activity level has a predicted probability of approximately 50% of
-                  choosing mother brands more than half the time. The lines allow comparison between males and females at
-                  each activity level, and larger gaps between the points indicate stronger differences in predicted behavior.
-
+              <p className="text-xs uppercase tracking-wide text-slate-500">Interpretation of predicted probabilities</p>
+              <p className="mt-1 text-sm text-slate-600 text-justify">
+                  The figures below present model-implied predicted probabilities for the two dependent outcomes: selecting the mother brand in more than
+                  50% of scenarios and selecting the mother brand in more than 75% of scenarios. Estimates are stratified by activity level, income,
+                  age group, and gender to summarize variation in model-predicted outcomes across respondent segments.
               </p>
-
+              <p className="mt-1 text-sm text-slate-600 text-justify">
+                  Points denote predicted probabilities (0 to 1), and vertical bars denote 95% confidence intervals. Wider intervals reflect greater
+                  statistical uncertainty. Segment differences should be assessed in conjunction with confidence interval overlap and the underlying
+                  sample sizes, and interpreted as model-based associations rather than causal effects.
+              </p>
           </div>
       </Card>
+
 
       <div className="grid gap-6 lg:grid-cols-2">
           {chartConfigs.map((chart) => (
