@@ -129,6 +129,7 @@ const ReportPage = () => {
             id="experiment-flow"
             title="Participant Journey"
             subtitle="A standardized sequence from consent through post-task survey, designed to keep exposure consistent and results comparable."
+            className="[&_p]:text-left"
         >
             <ExperimentFlowTimeline
                 title={studyDesign.experimentFlow[0]?.title ?? 'Participant Journey'}

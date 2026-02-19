@@ -31,8 +31,8 @@ export interface DiscrepancyCase {
 
 export const introCopy =
   "This section examines cases where respondent stated purchase likelihood does not align with their observed choices in the simulated"+
-    "selection tasks. These discrepancies highlight where attitudinal measures (self-reported likelihood) may diverge from revealed"+
-  "preferences in direct brand comparisons, which is relevant for interpreting demand signals and evaluating policy or portfolio scenarios.";
+    " selection tasks. These discrepancies highlight where attitudinal measures (self-reported likelihood) may diverge from revealed"+
+  " preferences in direct brand comparisons, which is relevant for interpreting demand signals and evaluating policy or portfolio scenarios.";
 
 export const discrepancyCases: DiscrepancyCase[] = [
   {

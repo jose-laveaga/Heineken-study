@@ -115,7 +115,7 @@ const GlossarySection = () => {
     <Section
       id="glossary"
       title="Glossary"
-      subtitle="Statistical terms referenced across the report and methodology."
+      subtitle="Statistical terms referenced across the report and methodology"
       actions={
         <div className="w-full max-w-sm">
           <label className="text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="glossary-search">
