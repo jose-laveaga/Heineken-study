@@ -18,9 +18,9 @@ const formatLabels: Record<string, string> = {
 };
 
 const scenarioLabels: Record<string, string> = {
-  equal_price: 'Equal price',
-  heineken_cheaper: 'Heineken cheaper',
-  fictional_brand_cheaper: 'Fictional brand cheaper'
+  equal_price: 'Priced Equally',
+  heineken_cheaper: 'Heineken Priced Lower',
+  fictional_brand_cheaper: 'Fictional Brand Priced Lower'
 };
 
 const categoryFilters = {

@@ -36,7 +36,7 @@ const chartConfigs = [
         id: 'income-50-a',
         title: 'Probability of Choosing the Mother Brand (>50% of Choices) by Income',
         subtitle: 'Model-predicted probabilities with 95% confidence intervals',
-        xAxisLabel: 'Income Bracket',
+        xAxisLabel: 'Income Bracket (USD)',
         yAxisLabel: 'Predicted Probability',
         xLabels: ['<$25k', '$50–74k', '$75–99k', '$100–149k', '$150k+']
     },
@@ -44,7 +44,7 @@ const chartConfigs = [
         id: 'income-75-a',
         title: 'Probability of Choosing the Mother Brand (>75% of Choices) by Income',
         subtitle: 'Model-predicted probabilities with 95% confidence intervals',
-        xAxisLabel: 'Income Bracket',
+        xAxisLabel: 'Income Bracket (USD)',
         yAxisLabel: 'Predicted Probability',
         xLabels: ['<$25k', '$50–74k', '$75–99k', '$100–149k', '$150k+']
     },
@@ -249,7 +249,7 @@ const StandardLogisticRegressionSection = () => (
         <p className="text-justify">
             This section presents the predictive margins derived from the regression models used
             to examine how key demographic factors shape the likelihood of participants
-            choosing mother brands above the two established thresholds (50 & 75%) across the entirety of the study.
+            choosing mother brands above the two established thresholds (50% and 75%) across the entirety of the study.
             The figures report predicted probabilities
             with 95% confidence intervals, disaggregated by gender, allowing direct visual
             comparison across activity level, age group, and income. Together, these results

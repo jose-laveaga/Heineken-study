@@ -9,7 +9,7 @@
       "description": "The initial stage established the methodological structure of the study."},
     {
       "id": "stage2",
-      "title": "Construction of the Simulated Online Storefront",
+      "title": "Construction of the Storefront",
       "bullet_one":  "An interactive, web-based platform was designed and implemented to simulate a standard online purchasing interface.",
       "bullet_two":  "The primary outcome was a functional, realistic storefront that enabled controlled observation of consumer choices during the experiment.",
       "bullet_three":  null,
