@@ -78,13 +78,13 @@ const ResultsHypotheses = () => {
   const h2MetricsDetails = h2Metrics.available
       ? [
         h2Metrics.r_trust !== undefined
-            ? `Trustworthiness vs ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_trust.toFixed(2)}`
+            ? `Trustworthiness vs. ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_trust.toFixed(2)}`
             : null,
         h2Metrics.r_quality !== undefined
-            ? `Perceived quality vs ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_quality.toFixed(2)}`
+            ? `Perceived quality vs. ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_quality.toFixed(2)}`
             : null,
         h2Metrics.r_taste !== undefined
-            ? `Expected taste vs ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_taste.toFixed(2)}`
+            ? `Expected taste vs. ${h2Metrics.outcomeLabel ?? 'Heineken choice'}: r = ${h2Metrics.r_taste.toFixed(2)}`
             : null,
         h2Metrics.modelSummary ? h2Metrics.modelSummary : null
       ].filter((item): item is string => Boolean(item))
@@ -189,7 +189,7 @@ const ResultsHypotheses = () => {
                           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Evidence</p>
 
                           <ChartCard
-                              title="Selection shares: Heineken 0.0 vs fictional brands"
+                              title="Selection shares: Heineken 0.0 vs. fictional brands"
                               dataTable={(
                                   <table className="w-full table-fixed text-sm">
                                     <thead>
@@ -216,7 +216,7 @@ const ResultsHypotheses = () => {
                           >
                             <HorizontalBarChart
                                 data={h1ChartData}
-                                ariaLabel="Heineken vs fictional brands selection shares"
+                                ariaLabel="Heineken vs. fictional brands selection shares"
                                 valueLabel="Selections"
                                 xAxisTickFormatter={(value) => `${value}%`}
                             />

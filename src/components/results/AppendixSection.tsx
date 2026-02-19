@@ -27,7 +27,7 @@ const AppendixSection = () => {
     },
     {
       key: 'regular-comparisons',
-      values: ['Regular Comparisons', 'Brand pairs and selections for standard 1v1 comparisons']
+      values: ['Regular Comparisons', 'Brand pairs and selections for standard one-on-one comparisons']
     },
     {
       key: 'price-comparisons',
@@ -67,11 +67,11 @@ const AppendixSection = () => {
     },
     {
       key: 'established-competitors',
-      values: ["Established Competitors", "O'Doul's Non-Alc", 'To benchmark against existing non-alcoholic non-mother brand leaders.']
+      values: ["Established Competitors", "O'Doul's Non-Alcoholic", 'To benchmark against existing non-alcoholic non-mother brand leaders.']
     },
     {
       key: 'independent-brand',
-      values: ['Independent Brand', 'Rescue Club Non-Alc', 'To measure the influence of lesser known non-mother brands.']
+      values: ['Independent Brand', 'Rescue Club Non-Alcoholic', 'To measure the influence of lesser known non-mother brands.']
     },
     {
       key: 'fictional-brands',

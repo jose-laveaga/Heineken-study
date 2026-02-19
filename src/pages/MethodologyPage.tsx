@@ -335,7 +335,7 @@ const MethodologyPage = () => (
 
             <div className="space-y-6">
                 <Card>
-                    <p className="text-xs uppercase tracking-wide text-slate-500">1v1 Brand Comparison Task</p>
+                    <p className="text-xs uppercase tracking-wide text-slate-500">One-on-One Brand Comparison Task</p>
 
                     <p className="mt-4 text-sm text-slate-600">
                         Participants completed a paired-comparison shopping task in which two non-alcoholic beer products were displayed
@@ -601,9 +601,9 @@ const MethodologyPage = () => (
                                 items={[
                                     "Heineken 0.0",
                                     "Budweiser Zero",
-                                    "O'Doul's Non Alc",
+                                    "O'Doul's Non-Alcoholic",
                                     "Clear Hops 0.0",
-                                    "Rescue Club Non Alc",
+                                    "Rescue Club Non-Alcoholic",
                                     "Beck's Blue"
                                 ]}
                             />
@@ -768,9 +768,9 @@ const MethodologyPage = () => (
                                 items={[
                                     "Heineken 0.0",
                                     "Budweiser Zero",
-                                    "O'Doul's Non Alc",
+                                    "O'Doul's Non-Alcoholic",
                                     "Clear Hops 0.0",
-                                    "Rescue Club Non Alc",
+                                    "Rescue Club Non-Alcoholic",
                                     "Beck's Blue"
                                 ]}
                             />

@@ -7,8 +7,8 @@ import resultsComparisons from '../../data/resultsComparisons.json';
 import { formatPercent, toShareFromPercent, PARTICIPANT_SAMPLE_SIZE } from '../../utils/participantMetrics';
 
 const categoryTabs = [
-  { id: '1v1_nonpriced', label: '1v1 (No Price)' },
-  { id: '1v1_priced', label: '1v1 (Price)' },
+  { id: '1v1_nonpriced', label: 'One-on-One (No Price)' },
+  { id: '1v1_priced', label: 'One-on-One (Price)' },
   { id: 'multi_brand', label: 'Multi-Brand' }
 ] as const;
 
@@ -25,7 +25,7 @@ const scenarioLabels: Record<string, string> = {
 
 const categoryFilters = {
   '1v1_nonpriced': {
-    brands: ['Heineken 0.0', 'Budweiser Zero', 'Star Brew Non-Alcoholic', 'Rescue Club Non-Alcoholic', "O'Doul's No-Alc"],
+    brands: ['Heineken 0.0', 'Budweiser Zero', 'Star Brew N.A.', 'Rescue Club N.A.', "O'Doul's N.A."],
     formats: [],
     scenarios: []
   },

@@ -37,7 +37,7 @@ export const introCopy =
 export const discrepancyCases: DiscrepancyCase[] = [
   {
     id: 'discrepancy-1',
-    title: 'Discrepancy 1: Budweiser Zero vs. Rescue Club Non-Alcoholic',
+    title: 'Discrepancy 1: Budweiser Zero vs. Rescue Club N.A.',
     figures: [
       {
         id: 'figure-37',
@@ -47,7 +47,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
       },
       {
         id: 'figure-38',
-        caption: 'Stated Purchase Likelihood: Rescue Club N.A',
+        caption: 'Stated Purchase Likelihood: Rescue Club N.A.',
         kind: 'likelihood',
         brands: ['Rescue Club N.A.']
       },
@@ -59,9 +59,9 @@ export const discrepancyCases: DiscrepancyCase[] = [
       }
     ],
     narrative: [
-      'Self-reported purchase likelihood for Budweiser Zero and Rescue Club Non-Alcoholic clusters around the midpoint of the scale, with Budweiser Zero\n' +
+      'Self-reported purchase likelihood for Budweiser Zero and Rescue Club N.A. clusters around the midpoint of the scale, with Budweiser Zero\n' +
       '  rated slightly higher on average.',
-      'However, in forced-choice comparisons, Rescue Club Non-Alcoholic is selected more frequently. This pattern indicates a measurable divergence between\n' +
+      'However, in forced-choice comparisons, Rescue Club N.A. is selected more frequently. This pattern indicates a measurable divergence between\n' +
       '  stated intention and observed preference when respondents evaluate trade-offs in a direct comparison.'
     ],
     likelihoodCharts: [
@@ -93,7 +93,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
         figureId: 'figure-39',
         kind: 'headToHead',
         shares: [
-          { label: 'Rescue Club Non-Alc', pct: 60.5 },
+          { label: 'Rescue Club N.A.', pct: 60.5 },
           { label: 'Budweiser Zero', pct: 39.5 }
         ]
       }
@@ -102,7 +102,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
   },
   {
     id: 'discrepancy-2',
-    title: "Discrepancy 2: Budweiser Zero vs. O’Doul’s Non-Alcoholic.",
+    title: "Discrepancy 2: Budweiser Zero vs. O’Doul’s N.A.",
     figures: [
       {
         id: 'figure-40',
@@ -118,7 +118,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
       }
     ],
     narrative: [
-        "O’Doul’s Non-Alcoholic shows relatively low stated purchase intent, with most responses concentrated between scores of 2 and 4 on the likelihood scale. In direct comparison tasks, however, Budweiser Zero achieves only a modest selection advantage over O’Doul’s Non-Alcoholic, despite the larger gap in reported intent between the two brands. This pattern suggests that self-reported purchase likelihood may not fully translate into observed choice behavior when consumers evaluate concrete alternatives."
+        "O’Doul’s N.A. shows relatively low stated purchase intent, with most responses concentrated between scores of 2 and 4 on the likelihood scale. In direct comparison tasks, however, Budweiser Zero achieves only a modest selection advantage over O’Doul’s N.A., despite the larger gap in reported intent between the two brands. This pattern suggests that self-reported purchase likelihood may not fully translate into observed choice behavior when consumers evaluate concrete alternatives."
        ],
     likelihoodCharts: [
       {
@@ -147,7 +147,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
   },
   {
     id: 'discrepancy-3',
-    title: 'Discrepancy 3: Beck’s Blue — Stated Likelihood vs Multi-Brand Choice Outcome',
+    title: 'Discrepancy 3: Beck’s Blue — Stated Likelihood vs. Multi-Brand Choice Outcome',
     figures: [
       {
         id: 'figure-42',
@@ -157,14 +157,14 @@ export const discrepancyCases: DiscrepancyCase[] = [
       },
       {
         id: 'figure-43',
-        caption: 'Multi-Brand Comparison: Mother Brands vs Non-Mother Brands',
+        caption: 'Multi-Brand Comparison: Mother Brands vs. Non-Mother Brands',
         kind: 'choice',
         brands: [
           'Heineken 0.0',
           'Budweiser Zero',
-          'Kaliber Non-Alcoholic',
-          "O’Doul’s Non-Alcoholic",
-          'Clausthaler Non-Alcoholic',
+          'Kaliber N.A.',
+          "O’Doul’s N.A.",
+          'Clausthaler N.A.',
           "Beck’s Blue"
         ]
       }
@@ -193,9 +193,9 @@ export const discrepancyCases: DiscrepancyCase[] = [
         shares: [
           { label: 'Heineken 0.0', pct: 47.5 },
           { label: 'Budweiser Zero', pct: 16.0 },
-          { label: 'Kaliber Non-Alcoholic', pct: 13.3 },
-          { label: "O’Doul’s Non-Alcoholic", pct: 9.9 },
-          { label: 'Clausthaler Non-Alcoholic', pct: 7.7 },
+          { label: 'Kaliber N.A.', pct: 13.3 },
+          { label: "O’Doul’s N.A.", pct: 9.9 },
+          { label: 'Clausthaler N.A.', pct: 7.7 },
           { label: "Beck’s Blue", pct: 5.6 }
         ]
       }

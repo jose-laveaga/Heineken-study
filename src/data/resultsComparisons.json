@@ -4,13 +4,13 @@
     {
       "id": "np_001",
       "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs Star Brew Non-Alcoholic",
+      "title": "Heineken 0.0 vs. Star Brew N.A.",
       "formatTags": [],
-      "brandTags": ["Heineken 0.0", "Star Brew Non-Alcoholic"],
+      "brandTags": ["Heineken 0.0", "Star Brew N.A."],
       "scenarioTags": [],
       "options": [
         {"label": "Heineken 0.0", "value": 63.1},
-        {"label": "Star Brew Non-Alcoholic", "value": 36.9}
+        {"label": "Star Brew N.A.", "value": 36.9}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<", "valueText": "0.001"}
@@ -20,13 +20,13 @@
     {
       "id": "np_002",
       "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs O'Doul's No-Alc",
+      "title": "Heineken 0.0 vs. O'Doul's N.A.",
       "formatTags": [],
-      "brandTags": ["Heineken 0.0", "O'Doul's No-Alc"],
+      "brandTags": ["Heineken 0.0", "O'Doul's N.A."],
       "scenarioTags": [],
       "options": [
         {"label": "Heineken 0.0", "value": 72.9},
-        {"label": "O'Doul's No-Alc", "value": 27.1}
+        {"label": "O'Doul's N.A.", "value": 27.1}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<", "valueText": "0.01"}
@@ -36,13 +36,13 @@
     {
       "id": "np_003",
       "category": "1v1_nonpriced",
-      "title": "Heineken 0.0 vs Rescue Club Non-Alcoholic",
+      "title": "Heineken 0.0 vs. Rescue Club N.A.",
       "formatTags": [],
-      "brandTags": ["Heineken 0.0", "Rescue Club Non-Alcoholic"],
+      "brandTags": ["Heineken 0.0", "Rescue Club N.A."],
       "scenarioTags": [],
       "options": [
         {"label": "Heineken 0.0", "value": 54.7},
-        {"label": "Rescue Club Non-Alcoholic", "value": 45.3}
+        {"label": "Rescue Club N.A.", "value": 45.3}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<", "valueText": "0.1"}
@@ -52,13 +52,13 @@
     {
       "id": "np_004",
       "category": "1v1_nonpriced",
-      "title": "Budweiser Zero vs Star Brew Non-Alcoholic",
+      "title": "Budweiser Zero vs. Star Brew N.A.",
       "formatTags": [],
-      "brandTags": ["Budweiser Zero", "Star Brew Non-Alcoholic"],
+      "brandTags": ["Budweiser Zero", "Star Brew N.A."],
       "scenarioTags": [],
       "options": [
         {"label": "Budweiser Zero", "value": 50},
-        {"label": "Star Brew Non-Alcoholic", "value": 50}
+        {"label": "Star Brew N.A.", "value": 50}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": ">", "valueText": "0.1"}
@@ -68,13 +68,13 @@
     {
       "id": "np_005",
       "category": "1v1_nonpriced",
-      "title": "Budweiser Zero vs O'Doul's No-Alc",
+      "title": "Budweiser Zero vs. O'Doul's N.A.",
       "formatTags": [],
-      "brandTags": ["Budweiser Zero", "O'Doul's No-Alc"],
+      "brandTags": ["Budweiser Zero", "O'Doul's N.A."],
       "scenarioTags": [],
       "options": [
         {"label": "Budweiser Zero", "value": 53.2},
-        {"label": "O'Doul's No-Alc", "value": 46.8}
+        {"label": "O'Doul's N.A.", "value": 46.8}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<","valueText": "0.1"}
@@ -84,13 +84,13 @@
     {
       "id": "np_006",
       "category": "1v1_nonpriced",
-      "title": "Budweiser Zero vs Rescue Club Non-Alcoholic",
+      "title": "Budweiser Zero vs. Rescue Club N.A.",
       "formatTags": [],
-      "brandTags": ["Budweiser Zero", "Rescue Club Non-Alcoholic"],
+      "brandTags": ["Budweiser Zero", "Rescue Club N.A."],
       "scenarioTags": [],
       "options": [
         {"label": "Budweiser Zero", "value": 39.5},
-        {"label": "Rescue Club Non-Alcoholic", "value": 60.5}
+        {"label": "Rescue Club N.A.", "value": 60.5}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<", "valueText": "0.001"}
@@ -100,7 +100,7 @@
     {
       "id": "pr_001",
       "category": "1v1_priced",
-      "title": "Equal price — 12-pack",
+      "title": "Equal Price — 12-Pack",
       "formatTags": ["12-pack"],
       "brandTags": [],
       "scenarioTags": ["equal_price"],
@@ -116,7 +116,7 @@
     {
       "id": "pr_002",
       "category": "1v1_priced",
-      "title": "Equal price — Can",
+      "title": "Equal Price — Can",
       "formatTags": ["can"],
       "brandTags": [],
       "scenarioTags": ["equal_price"],
@@ -132,7 +132,7 @@
     {
       "id": "pr_003",
       "category": "1v1_priced",
-      "title": "Heineken cheaper — 12-pack",
+      "title": "Heineken Cheaper — 12-Pack",
       "formatTags": ["12-pack"],
       "brandTags": [],
       "scenarioTags": ["heineken_cheaper"],
@@ -148,7 +148,7 @@
     {
       "id": "pr_004",
       "category": "1v1_priced",
-      "title": "Heineken cheaper — Can",
+      "title": "Heineken Cheaper — Can",
       "formatTags": ["can"],
       "brandTags": [],
       "scenarioTags": ["heineken_cheaper"],
@@ -164,7 +164,7 @@
     {
       "id": "pr_005",
       "category": "1v1_priced",
-      "title": "Clear Hops 0.0 cheaper — 12-pack",
+      "title": "Clear Hops 0.0 Cheaper — 12-Pack",
       "formatTags": ["12-pack"],
       "brandTags": [],
       "scenarioTags": ["fictional_brand_cheaper"],
@@ -180,7 +180,7 @@
     {
       "id": "pr_006",
       "category": "1v1_priced",
-      "title": "Clear Hops 0.0 cheaper — Can",
+      "title": "Clear Hops 0.0 Cheaper — Can",
       "formatTags": ["can"],
       "brandTags": [],
       "scenarioTags": ["fictional_brand_cheaper"],
@@ -196,17 +196,17 @@
     {
       "id": "mb_001",
       "category": "multi_brand",
-      "title": "Multi-brand — set A",
+      "title": "Multi-Brand — Set A",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
       "options": [
         {"label": "Heineken 0.0", "value": 46.7},
-        {"label": "Rescue Club Non-Alcoholic", "value": 21.8},
+        {"label": "Rescue Club N.A.", "value": 21.8},
         {"label": "Cobra Zero", "value": 14.5},
-        {"label": "O'Doul's Non-Alc", "value": 7.7},
+        {"label": "O'Doul's N.A.", "value": 7.7},
         {"label": "Bavaria 0.0", "value": 7.0},
-        {"label": "Penn's Best Non-Alc", "value": 2.2}
+        {"label": "Penn's Best N.A.", "value": 2.2}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<", "valueText": "0.001"}
@@ -216,16 +216,16 @@
     {
       "id": "mb_002",
       "category": "multi_brand",
-      "title": "Multi-brand — set B",
+      "title": "Multi-Brand — Set B",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
       "options": [
         {"label": "Heineken 0.0", "value": 47.5},
         {"label": "Budweiser Zero", "value": 16.0},
-        {"label": "Kaliber Non-Alc", "value": 13.3},
-        {"label": "O'Doul's No-Alc", "value": 9.9},
-        {"label": "Clausthaler Non-Alc", "value": 7.7},
+        {"label": "Kaliber N.A.", "value": 13.3},
+        {"label": "O'Doul's N.A.", "value": 9.9},
+        {"label": "Clausthaler N.A.", "value": 7.7},
         {"label": "Beck's Blue", "value": 5.6}
       ],
       "stats": [
@@ -236,17 +236,17 @@
     {
       "id": "mb_003",
       "category": "multi_brand",
-      "title": "Multi-brand — set C",
+      "title": "Multi-Brand — Set C",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
       "options": [
-        {"label": "Rescue Club Non-Alcoholic", "value": 30.2},
+        {"label": "Rescue Club N.A.", "value": 30.2},
         {"label": "Beck's Blue", "value": 19},
-        {"label": "O'Doul's Non-Alc", "value": 18.5},
+        {"label": "O'Doul's N.A.", "value": 18.5},
         {"label": "Cobra Zero", "value": 18},
         {"label": "Bavaria 0.0", "value": 9.3},
-        {"label": "Penn's Best Non-Alc", "value": 4.9}
+        {"label": "Penn's Best N.A.", "value": 4.9}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<", "valueText": "0.001"}
@@ -256,17 +256,17 @@
     {
       "id": "mb_004",
       "category": "multi_brand",
-      "title": "Multi-brand — set D",
+      "title": "Multi-Brand — Set D",
       "formatTags": [],
       "brandTags": [],
       "scenarioTags": [],
       "options": [
         {"label": "Budweiser Zero", "value": 28.3},
-        {"label": "Rescue Club Non-Alcoholic", "value": 24.4},
-        {"label": "O'Doul's Non-Alc", "value": 17.1},
+        {"label": "Rescue Club N.A.", "value": 24.4},
+        {"label": "O'Doul's N.A.", "value": 17.1},
         {"label": "Cobra Zero", "value": 16.1},
         {"label": "Bavaria 0.0", "value": 10.2},
-        {"label": "Penn's Best Non-Alc", "value": 3.9}
+        {"label": "Penn's Best N.A.", "value": 3.9}
       ],
       "stats": [
         {"label": "p-value", "comparisonOperator": "<", "valueText": "0.001"}

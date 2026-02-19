@@ -177,6 +177,6 @@ export const computeH3Interaction = (data?: ExperimentResponse[] | null): H3Inte
     available: false,
     sampleSize: data.length,
     modelSummary:
-      'TODO: estimate interaction between mother-brand effect and drinking habit (regular vs non-drinker).'
+      'TODO: estimate interaction between mother-brand effect and drinking habit (regular vs. non-drinker).'
   };
 };

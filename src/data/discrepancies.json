@@ -2,7 +2,7 @@
   "cases": [
     {
       "id": "disc_001",
-      "title": "Budweiser vs Rescue Club discrepancy",
+      "title": "Budweiser vs. Rescue Club discrepancy",
       "likelihoodScale": [1, 2, 3, 4, 5],
       "likelihoodDistribution": [
         {"label": "Budweiser", "values": {"1": 9, "2": 14, "3": 28, "4": 31, "5": 18}},
@@ -16,7 +16,7 @@
     },
     {
       "id": "disc_002",
-      "title": "Heineken 0.0 vs Green River discrepancy",
+      "title": "Heineken 0.0 vs. Green River discrepancy",
       "likelihoodScale": [1, 2, 3, 4, 5],
       "likelihoodDistribution": [
         {"label": "Heineken 0.0", "values": {"1": 6, "2": 12, "3": 25, "4": 34, "5": 23}},
