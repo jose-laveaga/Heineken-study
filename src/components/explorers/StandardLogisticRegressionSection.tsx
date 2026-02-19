@@ -34,7 +34,7 @@ const chartConfigs = [
     },
     {
         id: 'income-50-a',
-        title: 'Probability of Choosing the Mother Brand (>50% of Choices) by Income (USD)',
+        title: 'Probability of Choosing the Mother Brand (>50% of Choices) by Income',
         subtitle: 'Model-predicted probabilities with 95% confidence intervals',
         xAxisLabel: 'Income Bracket',
         yAxisLabel: 'Predicted Probability',
@@ -42,7 +42,7 @@ const chartConfigs = [
     },
     {
         id: 'income-75-a',
-        title: 'Probability of Choosing the Mother Brand (>75% of Choices) by Income (USD)',
+        title: 'Probability of Choosing the Mother Brand (>75% of Choices) by Income',
         subtitle: 'Model-predicted probabilities with 95% confidence intervals',
         xAxisLabel: 'Income Bracket',
         yAxisLabel: 'Predicted Probability',

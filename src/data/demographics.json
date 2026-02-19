@@ -45,7 +45,7 @@
     },
     {
       "id": "income",
-      "title": "Income Bracket (USD)",
+      "title": "Income Bracket",
       "items": [
         {"label": "Under $25k", "value": 87},
         {"label": "$25–49k", "value": 109},

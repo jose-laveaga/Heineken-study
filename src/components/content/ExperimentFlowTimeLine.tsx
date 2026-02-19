@@ -7,7 +7,7 @@ export function ExperimentFlowTimeline({ title, bullets }: ExperimentFlowTimelin
     const items = (bullets ?? []).filter((b) => typeof b === 'string' && b.trim().length > 0)
 
     return (
-        <div className="w-full min-w-0 rounded-2xl border border-slate-200 bg-white p-4">
+        <div className="w-full min-w-0 rounded-2xl border border-slate-200 bg-white p-4 [&_p]:text-left">
             <div className="flex flex-wrap items-end justify-between gap-2">
                 <div className="min-w-0">
                     <p className="text-xs uppercase tracking-wide text-slate-500">Flow overview</p>
@@ -28,8 +28,7 @@ export function ExperimentFlowTimeline({ title, bullets }: ExperimentFlowTimelin
                                 key={`${label}-${idx}`}
                                 className="relative w-[260px] shrink-0 rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm"
                             >
-                                <div className="absolute left-4 top-2 h-4 w-4 rounded-full border border-slate-300 bg-white" />
-                                <div className="pl-7">
+                                <div>
                                     <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
                                         Step {idx + 1}
                                     </p>
