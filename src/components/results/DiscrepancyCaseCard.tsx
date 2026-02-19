@@ -83,7 +83,7 @@ const DiscrepancyCaseCard = ({ caseItem }: DiscrepancyCaseCardProps) => {
                         {
                           key: 'share',
                           label: chart.brandLabel,
-                          color: chart.brandLabel === 'Rescue Club N.A.' ? '#22d3ee' : undefined
+                          color: chart.brandLabel === 'Rescue Club N.A.' ? '#5c6f82' : undefined
                         }
                       ]}
                       ariaLabel={`${chart.brandLabel} purchase likelihood distribution`}

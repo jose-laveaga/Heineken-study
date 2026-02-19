@@ -16,7 +16,7 @@ export const heinekenDeepDive = {
       chips: ['Familiar', 'Know', 'Taste', 'Like', 'Most']
     },
     barriers: {
-      title: 'Barriers to Adoption (Drivers of Neutral & Negative Sentiment)',
+      title: 'Barriers to Adoption (Drivers of Neutral and Negative Sentiment)',
       bullets: [
 
         ],

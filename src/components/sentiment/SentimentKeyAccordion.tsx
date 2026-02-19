@@ -9,11 +9,11 @@ const SentimentKeyAccordion = () => {
         <div className="space-y-3">
           <div>
             <p className="font-semibold text-slate-700">Brand</p>
-            <p>Brand (merged name variations).</p>
+            <p>Merged brand names and abbreviations.</p>
           </div>
           <div>
             <p className="font-semibold text-slate-700">Avg Sentiment</p>
-            <p>Mean polarity score (−1 to +1); higher values indicate more positive sentiment.</p>
+            <p>Mean polarity score (−1 to +1); 1 being the most positive sentiment and -1 the least positive.</p>
           </div>
           <div>
             <p className="font-semibold text-slate-700">Total Count</p>
