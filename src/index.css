@@ -18,7 +18,11 @@
     letter-spacing: -0.01em;
   }
 
-  p,
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
   li {
     text-align: left;
   }

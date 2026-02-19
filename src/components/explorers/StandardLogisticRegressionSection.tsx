@@ -1,58 +1,70 @@
 import Card from '../ui/Card';
 import ChartCard from '../charts/ChartCard';
 import LineChartWithErrorBars from '../charts/LineChartWithErrorBars';
-import BulletList from "../content/BulletList";
 
 const seriesPalette = [
   { label: 'Male', color: '#2f5d62' },
   { label: 'Female', color: '#c08457' }
 ];
 
-const chartConfigs = [
-  {
-    id: 'activity-50',
-    title: 'Predicted margins by activity level (>50% mother brand)',
-    xAxisLabel: 'Activity level',
-    yAxisLabel: 'Probability of choosing mother brands > 50% of the time',
-    xLabels: ['minimal', 'basic', 'active', 'moderately active', 'highly active']
-  },
-  {
-    id: 'activity-75',
-    title: 'Predicted margins by activity level (>75% mother brand)',
-    xAxisLabel: 'Activity level',
-    yAxisLabel: 'Probability of choosing mother brands > 75% of the time',
-    xLabels: ['minimal', 'basic', 'active', 'moderately active', 'highly active']
-  },
-  {
-    id: 'income-50-a',
-    title: 'Predicted margins by income (>50% mother brand)',
-    xAxisLabel: 'Income',
-    yAxisLabel: 'Probability of choosing mother brands > 50% of the time',
-    xLabels: ['<$25k', '$50–74k','$75–99k', '$100–149k', '$150k+']
-  },
-  {
-    id: 'income-75-a',
-    title: 'Predicted margins by income (>75% mother brand)',
-    xAxisLabel: 'Income',
-    yAxisLabel: 'Probability of choosing mother brands > 75% of the time',
-    xLabels: ['<$25k', '$50–74k','$75–99k', '$100–149k', '$150k+']
-  },
-  {
-    id: 'agegroup-50-b',
-    title: 'Predicted margins by income (>50% mother brand)',
-    xAxisLabel: 'Age Group',
-    yAxisLabel: 'Probability of choosing mother brands > 50% of the time',
-    xLabels: ['21-24', '25-34', '35-44', '45-54', '55-65', '65+']
-  },
-  {
-    id: 'agegroup-75-b',
-    title: 'Predicted margins by income (>75% mother brand)',
-    xAxisLabel: 'Age Group',
-    yAxisLabel: 'Probability of choosing mother brands > 75% of the time',
-    xLabels: ['21-24', '25-34', '35-44', '45-54', '55-65', '65+']
-  }
-];
+const toTitleCase = (labels: string[]) =>
+    labels.map((l) =>
+        l
+            .split(' ')
+            .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
+            .join(' ')
+    )
 
+const chartConfigs = [
+    {
+        id: 'activity-50',
+        title: 'Probability of Choosing the Mother Brand (>50% of Choices) by Activity Level',
+        subtitle: 'Model-predicted probabilities with 95% confidence intervals',
+        xAxisLabel: 'Activity Level',
+        yAxisLabel: 'Predicted Probability',
+        xLabels: toTitleCase(['minimal', 'basic', 'active', 'moderately active', 'highly active'])
+    },
+    {
+        id: 'activity-75',
+        title: 'Probability of Choosing the Mother Brand (>75% of Choices) by Activity Level',
+        subtitle: 'Model-predicted probabilities with 95% confidence intervals',
+        xAxisLabel: 'Activity Level',
+        yAxisLabel: 'Predicted Probability',
+        xLabels: toTitleCase(['minimal', 'basic', 'active', 'moderately active', 'highly active'])
+    },
+    {
+        id: 'income-50-a',
+        title: 'Probability of Choosing the Mother Brand (>50% of Choices) by Income (USD)',
+        subtitle: 'Model-predicted probabilities with 95% confidence intervals',
+        xAxisLabel: 'Income Bracket',
+        yAxisLabel: 'Predicted Probability',
+        xLabels: ['<$25k', '$50–74k', '$75–99k', '$100–149k', '$150k+']
+    },
+    {
+        id: 'income-75-a',
+        title: 'Probability of Choosing the Mother Brand (>75% of Choices) by Income (USD)',
+        subtitle: 'Model-predicted probabilities with 95% confidence intervals',
+        xAxisLabel: 'Income Bracket',
+        yAxisLabel: 'Predicted Probability',
+        xLabels: ['<$25k', '$50–74k', '$75–99k', '$100–149k', '$150k+']
+    },
+    {
+        id: 'agegroup-50-b',
+        title: 'Probability of Choosing the Mother Brand (>50% of Choices) by Age Group',
+        subtitle: 'Model-predicted probabilities with 95% confidence intervals',
+        xAxisLabel: 'Age Group',
+        yAxisLabel: 'Predicted Probability',
+        xLabels: ['21–24', '25–34', '35–44', '45–54', '55–65', '65+']
+    },
+    {
+        id: 'agegroup-75-b',
+        title: 'Probability of Choosing the Mother Brand (>75% of Choices) by Age Group',
+        subtitle: 'Model-predicted probabilities with 95% confidence intervals',
+        xAxisLabel: 'Age Group',
+        yAxisLabel: 'Predicted Probability',
+        xLabels: ['21–24', '25–34', '35–44', '45–54', '55–65', '65+']
+    }
+]
 
 // Point estimates + estimated 95% CI half-widths (error) read from the plots.
 
@@ -409,7 +421,6 @@ const StandardLogisticRegressionSection = () => (
               <ChartCard
                   key={chart.id}
                   title={chart.title}
-                  caption="Predicted margins (marginal means) with 95% confidence intervals"
               >
                   <LineChartWithErrorBars
                       xLabels={chart.xLabels}

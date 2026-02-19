@@ -146,7 +146,7 @@ const ReportPage = () => {
       <Section
           id="results"
           title="Results"
-          subtitle="Explore preference shares across 1v1 and multi-brand tasks"
+          subtitle="Explore Preference Shares Across One-on-One and Multi-Brand Tasks"
       >
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-6">
               <table className="w-full max-w-md text-sm lg:w-auto">

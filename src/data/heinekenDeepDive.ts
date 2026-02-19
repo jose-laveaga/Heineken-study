@@ -2,7 +2,7 @@ export const heinekenDeepDive = {
   performance: {
     avgSentiment: 0.23,
     marketPosition:
-      "Heineken’s sentiment score equals the competitors’ average (0.23). This suggests it is solid/reliable but not differentiating on emotional “delight” vs the category baseline."
+      "Heineken’s sentiment score equals the competitors’ average (0.23). This suggests it is solid/reliable but not differentiating on emotional “delight” vs. the category baseline."
   },
   keywordThemes: {
     positiveDrivers: {
