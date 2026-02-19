@@ -4,7 +4,7 @@ import { SentimentByBrand } from '../../data/sentimentByBrand';
 
 const columns = [
   { key: 'brand', label: 'Brand', sortable: false },
-  { key: 'avgSentiment', label: 'Avg Sentiment', sortable: true },
+  { key: 'avgSentiment', label: 'Average Sentiment', sortable: true },
   { key: 'totalCount', label: 'Total Count', sortable: true },
   { key: 'positivePct', label: 'Positive %', sortable: false },
   { key: 'neutralPct', label: 'Neutral %', sortable: false },

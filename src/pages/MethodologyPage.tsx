@@ -204,7 +204,7 @@ const MethodologyPage = () => (
                         <div className="grid gap-4 md:grid-cols-2">
                             <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
                                 <img
-                                    src="/images/clearhops_solo.png"
+                                    src="/images/ClearHops_0.0_can.jpg"
                                     alt="Image of ClearHops 0.0"
                                     className="max-h-[400px] max-w-full object-contain"
                                 />
@@ -212,7 +212,7 @@ const MethodologyPage = () => (
 
                             <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
                                 <img
-                                    src="/images/heinekenbottle_solo.png"
+                                    src="/images/Starbrew.png"
                                     alt="Image of Heineken 0.0"
                                     className="max-h-[400px] max-w-full object-contain"
                                 />
