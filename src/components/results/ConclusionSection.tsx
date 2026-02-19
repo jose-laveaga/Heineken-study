@@ -11,7 +11,7 @@ const ConclusionSection = () => (
     <div className="space-y-6 text-left">
       <div className="space-y-4">
         {conclusionIntroParagraphs.map((paragraph) => (
-          <p key={paragraph} className="text-sm text-slate-600 text-justify">
+          <p key={paragraph} className="text-sm text-slate-600 text-left">
             {paragraph}
           </p>
         ))}
