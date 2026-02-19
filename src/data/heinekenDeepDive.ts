@@ -8,20 +8,20 @@ export const heinekenDeepDive = {
     positiveDrivers: {
       title: 'Drivers of Positive Sentiment',
       bullets: [
-        '“Familiar” / “Know”: strongest themes; Heineken as a safe bet; trust in logo; predictable expectation.',
-        '“Taste” / “Like”: functional approval; often tied to expecting it to resemble the “real thing”.',
-        '“Most”: phrases like “most recognizable” / “most trusted”.'
+
       ],
       summary:
-        'Consumers choose Heineken primarily as a safe bet—familiar/known choice that guarantees a standard of taste, not novelty/excitement.',
+        'Positive sentiment is dominated by familiarity-related themes (e.g., “familiar,” “know”), suggesting that participants often select Heineken as a low-uncertainty option with predictable outcomes. Taste-related language (e.g., “taste,” “like”) is also prevalent and is commonly linked to expectations of resemblance to the alcoholic counterpart (“the real thing”), indicating functional validation rather than experiential novelty. Additional positive expressions frequently include superlative framing (e.g., “most recognizable,” “most trusted”), reinforcing salience and perceived legitimacy.\n' +
+          'Collectively, these patterns indicate that Heineken is primarily chosen as a risk-minimizing default that assures a baseline taste standard, rather than as a vehicle for novelty or excitement.\n',
       chips: ['Familiar', 'Know', 'Taste', 'Like', 'Most']
     },
     barriers: {
       title: 'Barriers to Adoption (Drivers of Neutral & Negative Sentiment)',
       bullets: [
-        'Habitual Preference & Brand Loyalty: neutral/negative often reflects entrenched habits (“usually”, “other”), defaulting to existing preferences or favoring the alternative in comparisons; barrier is often loyalty to competitors rather than aversion to Heineken itself.',
-        'Polarizing Flavor Profile: taste is polarizing; signature profile drives loyalty for some but rejection for others; negative sentiment often from explicit dislike of that specific taste profile (not low quality).'
-      ],
+
+        ],
+      summary: 'Neutral and negative sentiment is often explained by habitual choice processes and brand loyalty. Responses commonly reference routine behavior (e.g., “usually”) or comparative preference for alternatives, implying that the constraint is frequently competitive attachment rather than direct aversion to Heineken.\n' +
+          'A second barrier is a polarizing flavor profile. Taste-related negativity is frequently attributable to explicit dislike of a specific signature flavor, suggesting heterogeneity in preference rather than perceptions of poor quality. This dynamic can simultaneously generate strong loyalty among aligned consumers while limiting uptake among those whose taste preferences diverge.\n',
       chips: ['Usually', 'Other', 'Polarizing taste']
     }
   },
@@ -55,12 +55,7 @@ export const heinekenDeepDive = {
         "I looked for a classic brand that could come off as making a grounded yet fun choice... O'Douls is a classic brand and checks all the boxes."
       ]
     }
-  ],
-  recommendation: {
-    title: 'Strategic recommendation for Heineken',
-    body:
-      'Since familiarity is the primary driver, Heineken wins on trust but is vulnerable on excitement. Niche brands scoring higher may benefit from “pleasant surprise” / novelty. To increase sentiment, Heineken should emphasize “refreshing” or “surprising” qualities of the 0.0 product—not only legacy status.'
-  }
+  ]
 };
 
 export type HeinekenDeepDive = typeof heinekenDeepDive;

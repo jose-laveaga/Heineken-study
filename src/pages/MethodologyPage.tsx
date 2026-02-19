@@ -3,807 +3,800 @@ import Card from '../components/ui/Card';
 import BulletList from "../components/content/BulletList";
 
 export const methodologySections = [
-  { id: 'methodology-experiment-design', label: 'Experiment design' },
-  { id: 'methodology-online-experiment', label: 'Online experiment' }
+    { id: 'methodology-experiment-design', label: 'Experiment design' },
+    { id: 'methodology-online-experiment', label: 'Online experiment' }
 ];
 
 const MethodologyPage = () => (
-  <>
-    <Section
-      id="methodology-experiment-design"
-      title="Experiment design"
-      subtitle="Design rationale, stimuli structure, and hypothesis framing"
-    >
-      <div className="space-y-6">
-          <Card>
-              <p className="text-xs uppercase tracking-wide text-slate-500">Design narrative</p>
+    <>
+        <Section
+            id="methodology-experiment-design"
+            title="Experiment design"
+            subtitle="Design rationale, stimuli structure, and hypothesis framing"
+        >
+            <div className="space-y-6">
+                <Card>
+                    <p className="text-xs uppercase tracking-wide text-slate-500">Design narrative</p>
 
-              <div className="mt-4 space-y-6 text-sm text-slate-600">
-                  <p>
-                      The study employs a within-subject design, where participants engage in a simulated online purchase
-                      environment featuring Heineken 0.0 and fictional non-branded 0.0 beer, as well as non-fictional 0.0 beers.
-                      This approach enables a direct comparison of consumer choices and perceptions when presented with both
-                      branded and non-branded options simultaneously, thereby isolating the impact of branding on preferences and
-                      purchase decisions. Using a fictional, non-branded 0.0 beer allows for a cleaner comparison with Heineken 0.0,
-                      isolating the impact of the established Heineken brand without introducing confounding variables. It ensures
-                      control over product attributes and avoids pre-existing perceptions associated with real brands. This approach
-                      provides flexibility and enables a focused analysis of the brand effect on consumer choices in the
-                      non-alcoholic beer market. The experimental design includes comparisons across multiple brand scenarios and
-                      price scenarios within a controlled simulated shopping environment.
-                  </p>
+                    <div className="mt-4 space-y-6 text-sm text-slate-600">
+                        <p>
+                            The study uses a within-subject experimental design in which each participant completes a simulated e-commerce
+                            shopping task featuring Heineken 0.0, a fictional non-branded 0.0 beer, and selected real-world 0.0 beer options.
+                            Presenting branded and non-branded alternatives within the same decision environment enables within-person
+                            comparison of choice behavior and perceived value, supporting identification of brand effects under controlled
+                            conditions.
+                        </p>
 
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Brand scenarios</p>
-                      <div className="mt-3">
-                          <BulletList
-                              items={[
-                                  "Heineken versus a Fictional non-mother brand",
-                                  "Heineken versus a Leading non-mother brand",
-                                  "Heineken versus a Lesser-known non-mother brand",
-                                  "Another mother brand (Budweiser) versus a Fictional non-mother brand",
-                                  "Another mother brand (Budweiser) versus a Leading non-mother brand",
-                                  "Another mother brand (Budweiser) versus a Lesser-known non-mother brand",
-                                  "Heineken vs. fictional non-mother brand (single cans, both priced at $4.99)",
-                                  "Heineken vs. fictional non-mother brand (single cans: $4.99 vs. $3.99)",
-                                  "Heineken vs. fictional non-mother brand (single cans: $3.99 vs. $4.99)",
-                                  "Heineken vs. fictional non-mother brand (12-packs, both priced at $17.99)",
-                                  "Heineken vs. fictional non-mother brand (12-packs: $17.99 vs. $19.99)",
-                                  "Heineken vs. fictional non-mother brand (12-packs: $17.99 vs. $14.99)",
+                        <p>
+                            The inclusion of a fictional, non-branded 0.0 beer provides a zero-familiarity baseline and reduces confounding
+                            from pre-existing brand perceptions. This approach enables tighter control over product attributes and isolates
+                            the incremental impact of mother-brand equity on purchase decisions in the non-alcoholic category. The design
+                            incorporates multiple brand and price scenarios to evaluate how brand equity interacts with economic tradeoffs in
+                            a realistic shopping context.
+                        </p>
 
-                                  "Mother brands versus Non-mother brands",
-                                  "Heineken vs. Non-mother brands",
-                                  "Budweiser vs. Non-mother brands",
-                                  "Beck's Blue vs. Non-mother brands"
-                              ]}
-                          />
-                      </div>
-                  </div>
-
-                  <p>
-                      Participants were exposed to several brand scenarios that compared Heineken 0.0 and other mother brands to
-                      fictional, leading, and lesser-known non-mother brand alternatives. In some cases, other major mother brands
-                      (including Budweiser and Beck’s Blue) were also included to broaden the analysis. Some of the Heineken
-                      comparisons were paired with price manipulations that positioned Heineken at equal, higher, or lower prices
-                      relative to a fictional option. This structure allowed observation of whether brand equity continues to
-                      influence choice even when price disadvantages are present. Prices for the 12-packs were kept consistent
-                      for Heineken to observe its behavior against differently priced alternatives.
-                  </p>
-                  <p>
-                      The order of comparisons and the placement of products were randomized across participants to reduce
-                      potential order and presentation biases. This approach minimizes effects such as fatigue, learning, anchoring,
-                      or positional preferences that could otherwise influence choices independently of the variables under study.
-                      By distributing these effects evenly across conditions, the randomization improves the internal validity of
-                      the experiment and ensures that observed differences in purchase behavior more accurately reflect genuine
-                      consumer preferences.
-
-
-                  </p>
-
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Participant flow</p>
-                      <div className="mt-3">
-                          <BulletList
-                              items={[
-                                  "Demographics, lifestyle, and alcohol consumption module.",
-                                  "Structured brand choice tasks across multiple 0.0 beer sets.",
-                                  "Open-ended questions to gather participant input on their choices and preferences.",
-                                  "Purchase likelihood, previous familiarity with brands, and considerations when purchasing beer."
-                              ]}
-                          />
-                      </div>
-                  </div>
-
-                  <p>
-                      The central component of the study was a simulated e-commerce environment modeled after a realistic online
-                      store. Participants could browse products, click on items, and add beers to their shopping carts.
-                  </p>
-              </div>
-          </Card>
-        <div className="space-y-6">
-          <div className="space-y-4 text-sm text-slate-600">
-              <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white text-sm text-slate-500 overflow-hidden">
-                  <img src="/images/experiment_design.png" alt="Diagram of experiment layout" />
-              </div>
-
-              <div className="space-y-6 text-sm text-slate-600">
-                  <p>
-                      This setup allowed the study to capture behavioral patterns rather than relying solely on self-reported
-                      preferences.
-                  </p>
-
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                          Post-task measurement
-                      </p>
-                      <div className="mt-3">
-                          <p>
-                              After participants completed the simulated shopping experience, they were asked to complete a
-                              post-task survey that focused on obtaining insights into their perceptions around specific brands
-                              as well as the key aspects they value when purchasing beer.
-                          </p>
-                      </div>
-                      <div className="mt-3">
-                          <BulletList
-                              items={[
-                                  "Perceived product quality and overall impressions.",
-                                  "Purchase likelihood for interacted brands.",
-                                  "Familiarity with mother brands and non-alcoholic alternatives.",
-                                  "Interpretive responses that contextualize observed behavioral choices."
-                              ]}
-                          />
-                      </div>
-                  </div>
-
-                  <p>
-                      A total of approximately 400+ participants were recruited via Prolific, with eligibility restricted to
-                      individuals residing in the United States. The resulting sample spans a diverse distribution of age, gender,
-                      and drinking patterns, enabling segmented analysis across multiple consumer groups.
-                  </p>
-              </div>
-
-              <div className="mt-6 space-y-6 text-sm text-slate-600">
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                          Choice of brands
-                      </p>
-                      <div className="mt-3">
-                          <BulletList
-                              items={[
-                                  "Brand selection designed in collaboration with Heineken to rigorously test mother-brand equity.",
-                                  "Brands evaluated based on market share relevance and role within six predefined comparison scenarios.",
-                                  "Major global mother brands included: Heineken, Budweiser, and Beck’s Blue.",
-                                  "Established non-mother competitors included: O’Doul’s, Rescue Club, Calusthaler, and Kaliber.",
-                                  "Two fictional brands were introduced to establish a zero-familiarity baseline and isolate pure brand equity.",
-                                  "To ensure that the products selected were all able to be marketed the same way, so there is a similar perception of the products, Athletic Brewing was not included in the study."
-                              ]}
-                          />
-                      </div>
-                  </div>
-
-                  <div className="space-y-4">
-                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
-                          <img
-                              src="/images/mother_brand_sales_volume.png"
-                              alt="Choice of brands visual 1"
-                              className="max-h-[500px] w-full object-contain"
-                          />
-                      </div>
-
-                      <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
-                          <img
-                              src="/images/non_mother_brands_sales_volume.png"
-                              alt="Choice of brands visual 2"
-                              className="max-h-[500px] w-full object-contain"
-                          />
-                      </div>
-                  </div>
-                  <p>
-                      This mixed brand selection ensured the study delivered both competitive intelligence and a robust assessment
-                      of trust transfer from established alcoholic brands into the non-alcoholic category.
-                  </p>
-
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                          Fictional brands
-                      </p>
-                      <div className="mt-3">
-                          <BulletList
-                              items={[
-                                  "Two fictional brands were created to compare can versus bottle formats: ClearHops 0.0 (can) and Star Brew Non-Alcoholic (bottle).",
-                                  "ClearHops 0.0 was designed to be visually credible yet entirely unfamiliar, eliminating prior associations or loyalty.",
-                                  "Serves as a neutral benchmark for evaluating the strength of established mother brands.",
-                                  "Systematic price manipulations isolate the elasticity of Heineken’s mother-brand equity.",
-                                  "Tests whether consumers substitute toward an unknown brand when economic incentives shift.",
-                                  "Enables assessment of how resilient perceived mother-brand value remains under competitive pressure."
-                              ]}
-                          />
-                      </div>
-                  </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
-                      <img
-                          src="/images/clearhops_solo.png"
-                          alt="Image of ClearHops 0.0"
-                          className="max-h-[400px] max-w-full object-contain"
-                      />
-                  </div>
-
-                  <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
-                      <img
-                          src="/images/heinekenbottle_solo.png"
-                          alt="Image of Heineken 0.0"
-                          className="max-h-[400px] max-w-full object-contain"
-                      />
-                  </div>
-              </div>
-
-          </div>
-        </div>
-      </div>
-    </Section>
-
-    <Section
-      id="methodology-online-experiment"
-      title="Online experiment"
-      subtitle="The online experiment was designed to collect comprehensive data on consumer preferences for non-alcoholic beer brands. The study used a combination of demographic profiling, simulated shopping tasks (one on one and multiple brand comparisons), and attitudinal questions to generate actionable consumer insights. The questionnaire was integrated with the Prolific platform for participant recruitment and tracking"
-    >
-        <div className="space-y-6">
-            {/* Welcome Screen */}
-            <Card>
-                <p className="text-xs uppercase tracking-wide text-slate-500">Welcome screen</p>
-
-                <div className="mt-4 space-y-4 text-sm text-slate-600">
-                    <p>The welcome screen is the first screen participants see when they launch the experiment.</p>
-
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Includes</p>
-                        <div className="mt-3">
-                            <BulletList
-                                items={[
-                                    <>A title: <span className="font-medium text-slate-800">“Welcome to the Consumer Preference Study”</span></>,
-                                    "A brief description explaining that participants will answer questions about themselves, complete an online shopping task for non-alcoholic beers, and answer follow-up questions.",
-                                    "A short “what to expect” preview of the experiment flow."
-                                ]}
-                            />
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Brand scenarios</p>
+                            <div className="mt-3">
+                                <BulletList
+                                    items={[
+                                        "Heineken versus a fictional non-mother brand",
+                                        "Heineken versus a leading non-mother brand",
+                                        "Heineken versus a lesser-known non-mother brand",
+                                        "Budweiser (mother brand) versus a fictional non-mother brand",
+                                        "Budweiser (mother brand) versus a leading non-mother brand",
+                                        "Budweiser (mother brand) versus a lesser-known non-mother brand",
+                                        "Heineken vs. fictional non-mother brand (single cans, both priced at $4.99)",
+                                        "Heineken vs. fictional non-mother brand (single cans: $4.99 vs. $3.99)",
+                                        "Heineken vs. fictional non-mother brand (single cans: $3.99 vs. $4.99)",
+                                        "Heineken vs. fictional non-mother brand (12-packs, both priced at $17.99)",
+                                        "Heineken vs. fictional non-mother brand (12-packs: $17.99 vs. $19.99)",
+                                        "Heineken vs. fictional non-mother brand (12-packs: $17.99 vs. $14.99)",
+                                        "Mother brands versus non-mother brands",
+                                        "Heineken vs. non-mother brands",
+                                        "Budweiser vs. non-mother brands",
+                                        "Beck's Blue vs. non-mother brands"
+                                    ]}
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
-                        <img
-                            src="/images/welcome_screen.png"
-                            alt="Welcome screen"
-                            className="max-h-[750px] w-full object-contain"
-                        />
-                    </div>
-                </div>
-            </Card>
+                        <p>
+                            Participants were exposed to repeated brand-choice comparisons that juxtaposed mother brands (e.g., Heineken,
+                            Budweiser, Beck’s Blue) with fictional, leading, and lesser-known non-mother brand alternatives. A subset of
+                            Heineken comparisons included systematic price manipulations (equal, higher, or lower price relative to a fictional
+                            alternative) to test whether brand equity persists under unfavorable price conditions. For 12-pack scenarios,
+                            Heineken’s price was held constant across comparisons to improve interpretability of relative substitution patterns.
+                        </p>
 
-            {/* Pre-experiment Questionnaire (Screening) */}
-            <Card>
-                <p className="text-xs uppercase tracking-wide text-slate-500">Pre-experiment questionnaire</p>
+                        <p>
+                            Comparison order and product placement were randomized to mitigate order effects and position-related bias.
+                            Randomization reduces the likelihood that fatigue, learning, anchoring, or spatial preferences systematically
+                            influence results, strengthening internal validity and improving attribution of observed behavioral differences to
+                            the manipulated factors.
+                        </p>
 
-                <div className="mt-4 space-y-4 text-sm text-slate-600">
-                    <p>
-                        When participants arrive via the Prolific URL with embedded parameters, their Prolific Participant ID, Study
-                        ID, and Session ID are automatically captured and displayed in a confirmation box.
-                    </p>
-
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Captured fields</p>
-                        <div className="mt-3">
-                            <BulletList
-                                items={[
-                                    "Prolific Participant ID",
-                                    "Study ID",
-                                    "Session ID",
-                                    "Location and age filters",
-                                    "Alcohol consumption frequency"
-                                ]}
-                                className="text-slate-700"
-                            />
+                        <div className="rounded-2xl border border-slate-200 bg-white p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Participant flow</p>
+                            <div className="mt-3">
+                                <BulletList
+                                    items={[
+                                        "Demographics, lifestyle, and alcohol consumption module.",
+                                        "Structured brand choice tasks across multiple 0.0 beer sets.",
+                                        "Open-ended responses to capture decision rationale and attribute salience.",
+                                        "Purchase likelihood, brand familiarity, and purchase consideration measures."
+                                    ]}
+                                />
+                            </div>
                         </div>
+
+                        <p>
+                            The primary task was implemented as a simulated online storefront. Participants could browse products, inspect items,
+                            and add selections to a shopping cart, enabling observation of revealed preference behavior rather than relying only
+                            on self-reported attitudes.
+                        </p>
                     </div>
+                </Card>
 
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
-                        <img
-                            src="/images/questions.png"
-                            alt="Pre-experiment questionnaire screening"
-                            className="max-h-[750px] w-full object-contain"
-                        />
-                    </div>
-                </div>
-            </Card>
-
-            {/* Pre-experiment Questionnaire (Demographics) */}
-            <Card>
-                <p className="text-xs uppercase tracking-wide text-slate-500">Demographics module</p>
-
-                <div className="mt-4 space-y-4 text-sm text-slate-600">
-                    <p>Participants then complete a short demographics module used for segmentation and subgroup analysis.</p>
-
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Measures</p>
-                        <div className="mt-3">
-                            <BulletList
-                                items={[
-                                    "Age group",
-                                    "Gender",
-                                    "Ethnicity",
-                                    "Highest completed education level",
-                                    "Personal income (annual)",
-                                    "Activity level (days per week)"
-                                ]}
-                            />
+                <div className="space-y-6">
+                    <div className="space-y-4 text-sm text-slate-600">
+                        <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white text-sm text-slate-500 overflow-hidden">
+                            <img src="/images/experiment_design.png" alt="Diagram of experiment layout" />
                         </div>
+
+                        <div className="space-y-6 text-sm text-slate-600">
+                            <p>
+                                This structure supports measurement of observed choice patterns under controlled exposure conditions, providing
+                                a closer approximation to retail decision-making than survey-only designs.
+                            </p>
+
+                            <div className="rounded-2xl border border-slate-200 bg-white p-4">
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                                    Post-task measurement
+                                </p>
+                                <div className="mt-3">
+                                    <p>
+                                        After completing the shopping task, participants completed a post-task survey to quantify brand perceptions
+                                        and identify the factors most associated with observed choices.
+                                    </p>
+                                </div>
+                                <div className="mt-3">
+                                    <BulletList
+                                        items={[
+                                            "Perceived quality and overall brand impressions.",
+                                            "Purchase likelihood for brands encountered during the task.",
+                                            "Familiarity with mother brands and non-alcoholic alternatives.",
+                                            "Open-ended interpretation to contextualize behavioral outcomes."
+                                        ]}
+                                    />
+                                </div>
+                            </div>
+
+                            <p>
+                                Approximately 400+ participants were recruited via Prolific, with eligibility restricted to U.S.-based
+                                respondents. The sample includes variation in age, gender, and drinking patterns, supporting subgroup and
+                                segmentation analyses relevant to both commercial strategy and public policy considerations.
+                            </p>
+                        </div>
+
+                        <div className="mt-6 space-y-6 text-sm text-slate-600">
+                            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                                    Choice of brands
+                                </p>
+                                <div className="mt-3">
+                                    <BulletList
+                                        items={[
+                                            "Brand set developed in collaboration with Heineken to test mother-brand equity in the 0.0 category.",
+                                            "Brands selected based on market relevance and alignment to predefined comparison scenarios.",
+                                            "Mother brands included: Heineken, Budweiser, and Beck’s Blue.",
+                                            "Non-mother competitors included: O’Doul’s, Rescue Club, Clausthaler, and Kaliber.",
+                                            "Two fictional brands provided a zero-familiarity baseline to isolate brand equity effects.",
+                                            "Athletic Brewing was excluded to reduce category heterogeneity and improve comparability across marketing and product positioning."
+                                        ]}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
+                                    <img
+                                        src="/images/mother_brand_sales_volume.png"
+                                        alt="Choice of brands visual 1"
+                                        className="max-h-[500px] w-full object-contain"
+                                    />
+                                </div>
+
+                                <div className="flex min-h-[240px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
+                                    <img
+                                        src="/images/non_mother_brands_sales_volume.png"
+                                        alt="Choice of brands visual 2"
+                                        className="max-h-[500px] w-full object-contain"
+                                    />
+                                </div>
+                            </div>
+
+                            <p>
+                                The resulting brand set supports both competitive benchmarking for industry stakeholders and assessment of trust
+                                transfer from established alcoholic brands into the non-alcoholic segment, with implications for market dynamics
+                                and consumer protection considerations.
+                            </p>
+
+                            <div className="rounded-2xl border border-slate-200 bg-white p-4">
+                                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                                    Fictional brands
+                                </p>
+                                <div className="mt-3">
+                                    <BulletList
+                                        items={[
+                                            "Two fictional brands were created to support format comparisons: ClearHops 0.0 (can) and Star Brew Non-Alcoholic (bottle).",
+                                            "Both were designed to appear market-credible while remaining unfamiliar to participants, eliminating prior associations.",
+                                            "Fictional brands serve as neutral benchmarks for estimating mother-brand equity effects.",
+                                            "Price manipulations enable estimation of willingness-to-pay and brand equity resilience under competitive pressure.",
+                                            "Design supports analysis of substitution toward unfamiliar brands under economic incentives.",
+                                            "Enables evaluation of whether perceived value of mother brands persists when relative prices shift."
+                                        ]}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-2">
+                            <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
+                                <img
+                                    src="/images/clearhops_solo.png"
+                                    alt="Image of ClearHops 0.0"
+                                    className="max-h-[400px] max-w-full object-contain"
+                                />
+                            </div>
+
+                            <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
+                                <img
+                                    src="/images/heinekenbottle_solo.png"
+                                    alt="Image of Heineken 0.0"
+                                    className="max-h-[400px] max-w-full object-contain"
+                                />
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
-                        <img
-                            src="/images/demogrpahics_questions.png"
-                            alt="Demographics questionnaire"
-                            className="max-h-[750px] w-full object-contain"
-                        />
-                    </div>
-                </div>
-            </Card>
-        </div>
-
-        <div className="space-y-6">
-          <Card>
-            <p className="text-xs uppercase tracking-wide text-slate-500">1v1 Brand Comparison Task</p>
-              <p className="mt-4 text-sm text-slate-600">
-                  Participants enter a simulated shopping experience where they see pairs of non-alcoholic beer brands side by side. For each pair:
-                  <BulletList className={'mt-4'} items={[
-                      'A prompt asks them to choose their preference (e.g., "Which would you add to your cart?")',
-                      'Two beer product images are displayed with brand names.',
-                      'Price Tags (when enabled): Some comparisons display price tags on each product to test price sensitivity',
-                      'A shopping cart interface allows participants to add/remove selections',
-                      'The "Continue" button advances to the next comparison'
-                  ]}
-                  />
-              </p>
-            <p className="mt-4 text-sm text-slate-600">
-                The experiment includes 13 fixed comparison slots organized as:
-
-                  <BulletList className={'mt-4'} items={[
-                      'Regular Comparisons: Starndad side by side brand comparisons without price inforation',
-                      'Price Comparisons: Comparisons with visible price tags to test price sensitivity',
-                  ]}
-                  />
-            </p>
-
-
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
-                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
-                      <div className="mb-3 text-sm text-slate-500"></div>
-                      <img
-                          src="/images/bottle_v_bottle.png"
-                          alt="Sequential brand comparison layout"
-                          className="max-h-[500px] max-w-full object-contain"
-                      />
-                  </div>
-
-                  <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
-                      <div className="mb-3 text-sm text-slate-500"></div>
-                      <img
-                          src="/images/can_v_can_price.png"
-                          alt="Grid brand comparison layout"
-                          className="max-h-[500px] max-w-full object-contain"
-                      />
-                  </div>
-              </div>
-              <p className={'mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 t'}>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">Expected Insights</p>
-                  <BulletList className={'mt-4'} items={[
-                      'Relative Brand Preference: Direct head-to-head comparisons reveal true preference hierarchies between competing brands',
-                      'Price Sensitivity Analysis: Price-tagged comparisons quantify willingness to pay and price thresholds',
-                      'Value Perception: Comparing selections with/without price reveals brand equity independent of price',
-                      'Competitive Intelligence: Identifies which brands win or lose against specific competitors',
-                      'Brand Position Mapping: Pattern of wins/losses across comparisons creates competitive positioning data'
-
-                  ]}
-                  />
-              </p>
-          </Card>
-          <Card>
-            <p className="text-xs uppercase tracking-wide text-slate-500">Multibrand comparisons</p>
-
-              <p className="mt-4 text-sm text-slate-600">
-                Participants view a set of six non-alcoholic beer products simultaneously and must select their preferred option.
-                The experiment incorporates up to four multiple comparison sets, each featuring comparisons with various
-                established mother brands, including Heineken, Budweiser, and Beck’s Blue.
-                This methodology was implemented to accurately simulate real-time purchasing scenarios encountered in
-                retail and online shopping environments.
-            </p>
-            <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
-                  <div className="mb-3 text-sm text-slate-500"></div>
-                  <img
-                      src="/images/multirand_cans.png"
-                      alt="Sequential brand comparison layout"
-                      className="max-h-[750px] max-w-full object-contain"
-                  />
-              </div>
-              <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
-                  <div className="mb-3 text-sm text-slate-500"></div>
-                  <img
-                      src="/images/multibrand_bottles.png"
-                      alt="Grid brand comparison layout"
-                      className="max-h-[750px] max-w-full object-contain"
-                  />
-              </div>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 mt-4 col-span-2">
-                    <p className="text-xs uppercase tracking-wide text-slate-500">Expected Insights</p>
-                    <p>
-                        <BulletList className={'mt-4'} items={[
-                            'Choice Overload: Tests decision-making when faced with multiple options (more realistic shelf scenario)',
-                            'Selection Criteria: Written explanations reveal the specific attributes driving choice (packaging, brand recognition, flavor expectations, etc.)',
-                            'Qualitative Data: Open-ended responses provide rich context for quantitative preference data',
-                            'Attribute Importance: Thematic analysis of reasons reveals which product attributes matter most',
-                            'Unaided Recall: Participants articulate their own decision factors without prompting'
-                        ]}
-                        />
-                    </p>
                 </div>
             </div>
-          </Card>
-        </div>
+        </Section>
 
+        <Section
+            id="methodology-online-experiment"
+            title="Online experiment"
+            subtitle="The online experiment was designed to quantify consumer preferences for non-alcoholic beer brands using demographic profiling, simulated shopping tasks (paired and multi-brand choice), and attitudinal measures. The questionnaire was deployed via Prolific for recruitment, eligibility screening, and participant tracking."
+        >
+            <div className="space-y-6">
+                <Card>
+                    <p className="text-xs uppercase tracking-wide text-slate-500">Welcome screen</p>
 
-          <Card>
-              <p className="text-xs uppercase tracking-wide text-slate-500">
-                  Post-Experiment Questionnaire (Final Questions)
-              </p>
+                    <div className="mt-4 space-y-4 text-sm text-slate-600">
+                        <p>
+                            The welcome screen provides study context and a standardized overview of participant expectations prior to task initiation.
+                        </p>
 
-              <div className="mt-4 space-y-8 text-sm text-slate-600">
-                  {/* 5a */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Decision factor (open-ended)</p>
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Includes</p>
+                            <div className="mt-3">
+                                <BulletList
+                                    items={[
+                                        <>A title: <span className="font-medium text-slate-800">“Welcome to the Consumer Preference Study”</span></>,
+                                        "A brief description of study components (background questions, shopping task, and follow-up survey).",
+                                        "A concise preview of the experiment flow."
+                                    ]}
+                                />
+                            </div>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “What was the biggest factor in your decision when choosing between the non-alcoholic beers?”
-                          </p>
-                      </div>
+                        <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
+                            <img
+                                src="/images/welcome_screen.png"
+                                alt="Welcome screen"
+                                className="max-h-[750px] w-full object-contain"
+                            />
+                        </div>
+                    </div>
+                </Card>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500"></p>
-                          <p></p>
-                      </div>
+                <Card>
+                    <p className="text-xs uppercase tracking-wide text-slate-500">Pre-experiment questionnaire</p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Unaided attribute recall: captures what naturally comes to mind as important.",
-                                  "Decision hierarchy: reveals primary vs. secondary decision factors.",
-                                  "Language analysis: actual consumer language can inform marketing messaging."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                    <div className="mt-4 space-y-4 text-sm text-slate-600">
+                        <p>
+                            Participants entered the study via a Prolific URL with embedded parameters. Prolific Participant ID, Study ID,
+                            and Session ID were automatically captured to support traceability, reproducibility checks, and data integrity
+                            validation.
+                        </p>
 
-                  <div className="border-t border-slate-200" />
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Captured fields</p>
+                            <div className="mt-3">
+                                <BulletList
+                                    items={[
+                                        "Prolific Participant ID",
+                                        "Study ID",
+                                        "Session ID",
+                                        "Location and age filters",
+                                        "Alcohol consumption frequency"
+                                    ]}
+                                    className="text-slate-700"
+                                />
+                            </div>
+                        </div>
 
-                  {/* 5b */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Likelihood to switch / try</p>
+                        <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
+                            <img
+                                src="/images/questions.png"
+                                alt="Pre-experiment questionnaire screening"
+                                className="max-h-[750px] w-full object-contain"
+                            />
+                        </div>
+                    </div>
+                </Card>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “How likely are you to [switch to/try] non-alcoholic beer?”
-                          </p>
-                          <p className="text-slate-500">
-                              Wording adapts based on prior responses (non-drinkers see “try”, current drinkers see “switch to”).
-                          </p>
-                      </div>
+                <Card>
+                    <p className="text-xs uppercase tracking-wide text-slate-500">Demographics module</p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
-                          <BulletList
-                              items={[
-                                  "1 = Very unlikely",
-                                  "2 = Unlikely",
-                                  "3 = Neutral",
-                                  "4 = Likely",
-                                  "5 = Very likely"
-                              ]}
-                          />
-                      </div>
+                    <div className="mt-4 space-y-4 text-sm text-slate-600">
+                        <p>
+                            A standardized demographics module was used for segmentation and subgroup analysis relevant to market and policy
+                            interpretation.
+                        </p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Market potential: measures conversion likelihood for the non-alcoholic category.",
-                                  "Segment comparison: compares switching intent across consumer segments.",
-                                  "Barrier identification: low scores indicate a need to understand adoption barriers."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Measures</p>
+                            <div className="mt-3">
+                                <BulletList
+                                    items={[
+                                        "Age group",
+                                        "Gender",
+                                        "Ethnicity",
+                                        "Highest completed education level",
+                                        "Personal income (annual)",
+                                        "Activity level (days per week)"
+                                    ]}
+                                />
+                            </div>
+                        </div>
 
-                  <div className="border-t border-slate-200" />
+                        <div className="flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
+                            <img
+                                src="/images/demogrpahics_questions.png"
+                                alt="Demographics questionnaire"
+                                className="max-h-[750px] w-full object-contain"
+                            />
+                        </div>
+                    </div>
+                </Card>
+            </div>
 
-                  {/* 5c */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Importance factors</p>
+            <div className="space-y-6">
+                <Card>
+                    <p className="text-xs uppercase tracking-wide text-slate-500">1v1 Brand Comparison Task</p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “How important would each of the following factors be in influencing your decision to [try/switch to]
-                              non-alcoholic beer?”
-                          </p>
-                      </div>
+                    <p className="mt-4 text-sm text-slate-600">
+                        Participants completed a paired-comparison shopping task in which two non-alcoholic beer products were displayed
+                        side-by-side and respondents selected the item they would add to their cart. Each trial included standardized prompts,
+                        product images, and brand identifiers.
+                        <BulletList
+                            className={'mt-4'}
+                            items={[
+                                'Preference prompt (e.g., "Which would you add to your cart?")',
+                                'Two product images with brand names',
+                                'Price tags (in price-enabled trials) to quantify price sensitivity',
+                                'Shopping cart interaction (add/remove)',
+                                'Continue control to advance to the next trial'
+                            ]}
+                        />
+                    </p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Factors rated</p>
-                          <BulletList
-                              items={[
-                                  "Health and wellness considerations",
-                                  "Taste similarity to alcoholic beer",
-                                  "Trusted brand",
-                                  "Price",
-                                  "Variety",
-                                  "Availability"
-                              ]}
-                          />
-                      </div>
+                    <p className="mt-4 text-sm text-slate-600">
+                        The task includes 13 fixed comparison slots organized into:
+                        <BulletList
+                            className={'mt-4'}
+                            items={[
+                                'Regular comparisons: standard paired comparisons without price information',
+                                'Price comparisons: paired comparisons with visible prices to estimate price sensitivity and willingness-to-pay'
+                            ]}
+                        />
+                    </p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
-                          <BulletList items={["1 = Not at all important", "5 = Extremely important"]} />
-                      </div>
+                    <div className="mt-4 grid gap-4 md:grid-cols-2">
+                        <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
+                            <img
+                                src="/images/bottle_v_bottle.png"
+                                alt="Sequential brand comparison layout"
+                                className="max-h-[500px] max-w-full object-contain"
+                            />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Driver prioritization: ranks which factors most influence adoption decisions.",
-                                  "Segment differences: may reveal different priorities for different consumer groups.",
-                                  "Marketing focus: identifies which benefits to emphasize in communications.",
-                                  "Product development: guides R&D priorities (taste vs. price vs. variety)."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                        <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
+                            <img
+                                src="/images/can_v_can_price.png"
+                                alt="Grid brand comparison layout"
+                                className="max-h-[500px] max-w-full object-contain"
+                            />
+                        </div>
+                    </div>
 
-                  <div className="border-t border-slate-200" />
+                    <div className={'mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4'}>
+                        <p className="text-xs uppercase tracking-wide text-slate-500">Expected insights</p>
+                        <BulletList
+                            className={'mt-4'}
+                            items={[
+                                'Relative brand preference: head-to-head trials reveal preference ordering across competitors',
+                                'Price sensitivity: price-tagged trials estimate willingness-to-pay and price thresholds',
+                                'Brand equity net of price: contrast between priced and unpriced trials isolates brand-driven choice',
+                                'Competitive benchmarking: identifies brands that systematically win or lose specific matchups',
+                                'Positioning inference: aggregated win–loss patterns support comparative positioning analyses'
+                            ]}
+                        />
+                    </div>
+                </Card>
 
-                  {/* 5d */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Mother brand importance</p>
+                <Card>
+                    <p className="text-xs uppercase tracking-wide text-slate-500">Multibrand comparisons</p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “When choosing a non-alcoholic beer, how important is it to you that it is produced by a well-known
-                              established beer brand (the mother brand), rather than by a new or unfamiliar brand?”
-                          </p>
-                      </div>
+                    <p className="mt-4 text-sm text-slate-600">
+                        Participants also completed multi-option choice tasks in which six non-alcoholic beers were displayed simultaneously
+                        and respondents selected a single preferred option. Up to four multi-brand sets were used, incorporating established
+                        mother brands (including Heineken, Budweiser, and Beck’s Blue) alongside non-mother competitors. This format was
+                        designed to approximate retail shelf and online assortment conditions, supporting inference on competitive dynamics
+                        under choice complexity.
+                    </p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
-                          <BulletList items={["1 = Not at all important", "5 = Extremely important"]} />
-                      </div>
+                    <div className="mt-4 grid gap-4 md:grid-cols-2">
+                        <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
+                            <img
+                                src="/images/multirand_cans.png"
+                                alt="Multi-brand cans layout"
+                                className="max-h-[750px] max-w-full object-contain"
+                            />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Brand extension strategy: measures the value of established brand names in the non-alcoholic category.",
-                                  "New entrant opportunity: low scores indicate openness to new/unfamiliar brands.",
-                                  "Trust transfer: assesses whether reputation from alcoholic beers transfers to non-alcoholic variants."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                        <div className="flex min-h-[180px] flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-4 overflow-hidden">
+                            <img
+                                src="/images/multibrand_bottles.png"
+                                alt="Multi-brand bottles layout"
+                                className="max-h-[750px] max-w-full object-contain"
+                            />
+                        </div>
 
-                  <div className="border-t border-slate-200" />
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 mt-4 col-span-2">
+                            <p className="text-xs uppercase tracking-wide text-slate-500">Expected insights</p>
+                            <BulletList
+                                className={'mt-4'}
+                                items={[
+                                    'Assortment effects: evaluates choice behavior under multiple simultaneous options',
+                                    'Decision criteria: open-ended rationales identify salient attributes (e.g., brand recognition, packaging, expected taste)',
+                                    'Contextualization: qualitative responses support interpretation of observed preferences',
+                                    'Attribute salience: thematic coding reveals which attributes dominate selection rationales',
+                                    'Unaided articulation: captures consumer decision language without attribute prompting'
+                                ]}
+                            />
+                        </div>
+                    </div>
+                </Card>
+            </div>
 
-                  {/* 5e */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Brand familiarity</p>
+            <Card>
+                <p className="text-xs uppercase tracking-wide text-slate-500">
+                    Post-Experiment Questionnaire (Final Questions)
+                </p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">“Before today, how familiar were you with each brand?”</p>
-                      </div>
+                <div className="mt-4 space-y-8 text-sm text-slate-600">
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Decision factor (open-ended)</p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Brands rated</p>
-                          <BulletList
-                              items={[
-                                  "Heineken 0.0",
-                                  "Budweiser Zero",
-                                  "O'Doul's Non Alc",
-                                  "Clear Hops 0.0",
-                                  "Rescue Club Non Alc",
-                                  "Beck's Blue"
-                              ]}
-                          />
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “What was the biggest factor in your decision when choosing between the non-alcoholic beers?”
+                            </p>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
-                          <BulletList items={["1 = Not at all familiar", "5 = Extremely familiar"]} />
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Unaided attribute salience: captures the factor most top-of-mind in decision-making.",
+                                    "Decision hierarchy: distinguishes primary drivers from secondary considerations.",
+                                    "Messaging relevance: consumer language can inform evidence-based communications."
+                                ]}
+                            />
+                        </div>
+                    </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Brand awareness levels: measures current market awareness for each brand.",
-                                  "Familiarity–preference correlation: tests if familiarity predicts choice in comparisons.",
-                                  "Marketing effectiveness: indicates which brands have achieved awareness.",
-                                  "Competitive benchmarking: compares established brands vs. newer entrants and fictional brands."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                    <div className="border-t border-slate-200" />
 
-                  <div className="border-t border-slate-200" />
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Likelihood to switch / try</p>
 
-                  {/* 5f */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Attention check 1</p>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “How likely are you to [switch to/try] non-alcoholic beer?”
+                            </p>
+                            <p className="text-slate-500">
+                                Wording adapts based on prior responses (non-drinkers: “try”; current drinkers: “switch to”).
+                            </p>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “This question is intended for an attention check. Please select option 4.”
-                          </p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
+                            <BulletList
+                                items={[
+                                    "1 = Very unlikely",
+                                    "2 = Unlikely",
+                                    "3 = Neutral",
+                                    "4 = Likely",
+                                    "5 = Very likely"
+                                ]}
+                            />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Format</p>
-                          <p>1–5 scale (correct answer: 4)</p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Adoption potential: quantifies intent to enter or shift into the non-alcoholic category.",
+                                    "Segment heterogeneity: supports comparison across consumer groups.",
+                                    "Barrier signal: low intent motivates follow-on analysis of constraints and perceived tradeoffs."
+                                ]}
+                            />
+                        </div>
+                    </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Data quality: identifies inattentive participants who may be clicking randomly.",
-                                  "Response filtering: enables exclusion of low-quality responses from analysis."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                    <div className="border-t border-slate-200" />
 
-                  <div className="border-t border-slate-200" />
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Importance factors</p>
 
-                  {/* 5g */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Heineken ratings</p>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “How important would each of the following factors be in influencing your decision to [try/switch to]
+                                non-alcoholic beer?”
+                            </p>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “Please rate Heineken on the following parameters on a scale from 1–5:”
-                          </p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Factors rated</p>
+                            <BulletList
+                                items={[
+                                    "Health and wellness considerations",
+                                    "Taste similarity to alcoholic beer",
+                                    "Trusted brand",
+                                    "Price",
+                                    "Variety",
+                                    "Availability"
+                                ]}
+                            />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Parameters</p>
-                          <BulletList
-                              items={[
-                                  "Trustworthiness (1 = Not trustworthy at all, 5 = Very trustworthy)",
-                                  "Perceived quality (1 = Low quality, 5 = High quality)",
-                                  "Expected taste (1 = Very poor, 5 = Excellent)"
-                              ]}
-                          />
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
+                            <BulletList items={["1 = Not at all important", "5 = Extremely important"]} />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Brand health metrics: tracks key brand equity dimensions for a major player.",
-                                  "Quality perception: tests whether premium positioning transfers to non-alcoholic.",
-                                  "Benchmark comparison: provides a reference point for other brands."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Driver prioritization: ranks perceived determinants of adoption.",
+                                    "Segment differences: identifies heterogeneous preference structures across groups.",
+                                    "Strategy alignment: informs communications and channel emphasis (e.g., price vs. trust vs. availability).",
+                                    "R&D implications: indicates whether taste parity or other attributes should be prioritized."
+                                ]}
+                            />
+                        </div>
+                    </div>
 
-                  <div className="border-t border-slate-200" />
+                    <div className="border-t border-slate-200" />
 
-                  {/* 5h */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">General attitudes (beer drinkers only)</p>
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Mother brand importance</p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Statement</p>
-                          <p className="italic text-slate-700">“Non-alcoholic beers can taste as good as regular beers.”</p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “When choosing a non-alcoholic beer, how important is it to you that it is produced by a well-known
+                                established beer brand (the mother brand), rather than by a new or unfamiliar brand?”
+                            </p>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conditional display</p>
-                          <p>Only shown to participants who indicated they drink beer.</p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
+                            <BulletList items={["1 = Not at all important", "5 = Extremely important"]} />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
-                          <BulletList items={["1 = Strongly disagree", "5 = Strongly agree"]} />
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Brand extension value: estimates reliance on established brands in the 0.0 category.",
+                                    "Entry conditions: low importance suggests greater openness to new brands.",
+                                    "Trust transfer: supports inference on whether alcoholic-brand reputation influences 0.0 choice."
+                                ]}
+                            />
+                        </div>
+                    </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Category belief: measures fundamental belief about non-alcoholic beer quality.",
-                                  "Barrier identification: low agreement suggests taste skepticism as an adoption barrier.",
-                                  "Segment comparison: compares attitudes between regular beer drinkers and others."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                    <div className="border-t border-slate-200" />
 
-                  <div className="border-t border-slate-200" />
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Brand familiarity</p>
 
-                  {/* 5i */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Attention check 2</p>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">“Before today, how familiar were you with each brand?”</p>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “This question is intended for an attention check. Please select option 2.”
-                          </p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Brands rated</p>
+                            <BulletList
+                                items={[
+                                    "Heineken 0.0",
+                                    "Budweiser Zero",
+                                    "O'Doul's Non Alc",
+                                    "Clear Hops 0.0",
+                                    "Rescue Club Non Alc",
+                                    "Beck's Blue"
+                                ]}
+                            />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Format</p>
-                          <p>1–5 scale (correct answer: 2)</p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
+                            <BulletList items={["1 = Not at all familiar", "5 = Extremely familiar"]} />
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Sustained attention: tests whether participants stayed engaged throughout.",
-                                  "Quality control: two checks provide more reliable response filtering."
-                              ]}
-                          />
-                      </div>
-                  </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Awareness benchmarking: quantifies baseline brand knowledge.",
+                                    "Familiarity–choice linkage: supports tests of whether familiarity predicts selection.",
+                                    "Market learning signal: indicates relative reach of incumbent versus newer entrants.",
+                                    "Validity check: helps interpret fictional-brand comparisons as intended (low familiarity expected)."
+                                ]}
+                            />
+                        </div>
+                    </div>
 
-                  <div className="border-t border-slate-200" />
+                    <div className="border-t border-slate-200" />
 
-                  {/* 5j */}
-                  <div className="space-y-3">
-                      <p className="font-semibold text-slate-800">Purchase likelihood</p>
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Attention check 1</p>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
-                          <p className="italic text-slate-700">
-                              “How likely are you to buy each of the following non-alcoholic beers if they were available for purchase?”
-                          </p>
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “This question is intended for an attention check. Please select option 4.”
+                            </p>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Brands rated</p>
-                          <BulletList
-                              items={[
-                                  "Heineken 0.0",
-                                  "Budweiser Zero",
-                                  "O'Doul's Non Alc",
-                                  "Clear Hops 0.0",
-                                  "Rescue Club Non Alc",
-                                  "Beck's Blue"
-                              ]}
-                          />
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Format</p>
+                            <p>1–5 scale (correct answer: 4)</p>
+                        </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
-                          <BulletList items={["1 = Very unlikely", "5 = Very likely"]} />
-                      </div>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Data quality control: flags inattentive responding.",
+                                    "Filtering basis: supports exclusion criteria for robustness checks."
+                                ]}
+                            />
+                        </div>
+                    </div>
 
-                      <div className="space-y-2">
-                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
-                          <BulletList
-                              items={[
-                                  "Purchase intent: direct measure of conversion potential by brand.",
-                                  "Preference validation: tests if comparison choices align with stated purchase intent.",
-                                  "Market share prediction: relative purchase likelihood indicates potential market share.",
-                                  "Brand ranking: creates a preference hierarchy for strategic planning."
-                              ]}
-                          />
-                      </div>
-                  </div>
-              </div>
-          </Card>
+                    <div className="border-t border-slate-200" />
 
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Heineken ratings</p>
 
-    </Section>
-  </>
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “Please rate Heineken on the following parameters on a scale from 1–5:”
+                            </p>
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Parameters</p>
+                            <BulletList
+                                items={[
+                                    "Trustworthiness (1 = Not trustworthy at all, 5 = Very trustworthy)",
+                                    "Perceived quality (1 = Low quality, 5 = High quality)",
+                                    "Expected taste (1 = Very poor, 5 = Excellent)"
+                                ]}
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Brand equity profiling: quantifies trust, quality, and taste expectations.",
+                                    "Transfer assessment: supports inference on whether premium associations carry to 0.0.",
+                                    "Benchmarking anchor: provides reference metrics for interpretation of competing brands."
+                                ]}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="border-t border-slate-200" />
+
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">General attitudes (beer drinkers only)</p>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Statement</p>
+                            <p className="italic text-slate-700">“Non-alcoholic beers can taste as good as regular beers.”</p>
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Conditional display</p>
+                            <p>Only shown to participants who indicated they drink beer.</p>
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
+                            <BulletList items={["1 = Strongly disagree", "5 = Strongly agree"]} />
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Category belief: measures acceptance of taste parity in 0.0 beer.",
+                                    "Barrier signal: low agreement suggests taste skepticism as a constraint to adoption.",
+                                    "Segment comparison: enables analysis among current beer consumers."
+                                ]}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="border-t border-slate-200" />
+
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Attention check 2</p>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “This question is intended for an attention check. Please select option 2.”
+                            </p>
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Format</p>
+                            <p>1–5 scale (correct answer: 2)</p>
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Sustained engagement check: evaluates attention late in the survey.",
+                                    "Robust filtering: two checks improve confidence in retained responses."
+                                ]}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="border-t border-slate-200" />
+
+                    <div className="space-y-3">
+                        <p className="font-semibold text-slate-800">Purchase likelihood</p>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Question</p>
+                            <p className="italic text-slate-700">
+                                “How likely are you to buy each of the following non-alcoholic beers if they were available for purchase?”
+                            </p>
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Brands rated</p>
+                            <BulletList
+                                items={[
+                                    "Heineken 0.0",
+                                    "Budweiser Zero",
+                                    "O'Doul's Non Alc",
+                                    "Clear Hops 0.0",
+                                    "Rescue Club Non Alc",
+                                    "Beck's Blue"
+                                ]}
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Scale (1–5)</p>
+                            <BulletList items={["1 = Very unlikely", "5 = Very likely"]} />
+                        </div>
+
+                        <div className="space-y-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Insights</p>
+                            <BulletList
+                                items={[
+                                    "Conversion proxy: estimates purchase propensity by brand.",
+                                    "Choice validation: tests alignment between revealed preference and stated intent.",
+                                    "Relative demand signal: supports inference on competitive demand under availability.",
+                                    "Strategic ranking: generates a policy- and industry-relevant preference ordering."
+                                ]}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </Card>
+        </Section>
+    </>
 );
 
 export default MethodologyPage;

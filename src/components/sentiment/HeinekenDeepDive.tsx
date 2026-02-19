@@ -2,7 +2,6 @@ import Card from '../ui/Card';
 import HeinekenKpiCards from './HeinekenKpiCards';
 import HeinekenKeywordThemes from './HeinekenKeywordThemes';
 import QuoteGroup from './QuoteGroup';
-import RecommendationCallout from './RecommendationCallout';
 import { HeinekenDeepDive as HeinekenDeepDiveData } from '../../data/heinekenDeepDive';
 
 interface HeinekenDeepDiveProps {
@@ -31,8 +30,6 @@ const HeinekenDeepDive = ({ data }: HeinekenDeepDiveProps) => (
         <QuoteGroup key={group.id} title={group.title} quotes={group.quotes} sources={group.sources} />
       ))}
     </div>
-
-    <RecommendationCallout title={data.recommendation.title} body={data.recommendation.body} />
   </div>
 );
 

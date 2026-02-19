@@ -10,44 +10,41 @@ export type HypothesisOutcome = {
 };
 
 export const conclusionIntroParagraphs = [
-  "The Sustainable Sips: MIT x Heineken Report 2025 focused on a critical strategic challenge: The trust transfer associated with a mother brand in the emerging non-alcoholic beverage category. The study's foundational premise is that an established brand name helps to reduce consumer uncertainty in a relatively unfamiliar market space, serving as a powerful signal of quality and reliability.",
+    'The Sustainable Sips: MIT × Heineken Report 2025 examines the transfer of brand trust in the emerging non-alcoholic beer category. The study is based on the premise that established brand equity can reduce consumer uncertainty in relatively unfamiliar product segments, functioning as a signal of quality, reliability, and expected experience.'
 ];
 
 export const hypotheses: HypothesisOutcome[] = [
   {
     id: 'H1',
     title: 'Hypothesis 1',
-    intent:
-      "To confirm whether Heineken 0.0 is chosen more frequently than non-branded alternatives, establishing a clear measure of the mother brand's unassisted preference advantage.",
+    intent: 'To test whether Heineken 0.0 is selected more frequently than non-branded alternatives, providing a direct measure of the mother-brand preference effect.',
     outcome: 'supported',
     outcomeLabel: 'Supported',
     evidenceStrength: 95,
-    supportingText:
-      'Overall, Heineken 0.0 consistently outperformed two fictional comparator brands across seven distinct scenarios as well as other leading mother brands and non-mother brands. The magnitude of the observed effects of Heineken 0.0 against fictional brands is substantial, resulting in an exceptionally high level of statistical significance and reinforcing the robustness of the conclusion.',
+    supportingText: 'Across all tested scenarios, Heineken 0.0 was selected more frequently than both fictional comparators and other benchmark brands. The magnitude and consistency of these effects produced high statistical significance, indicating a robust mother-brand preference advantage.',
     figuresMentioned: ['44', '45']
   },
   {
     id: 'H2',
     title: 'Hypothesis 2',
-    intent:
-      'To determine if favorable brand perception scores for the Heineken alcoholic brand positively correlate with higher purchase likelihood for Heineken 0.0.',
+    intent: 'To assess whether favorable perceptions of the Heineken parent brand are associated with higher purchase likelihood for Heineken 0.0.',
     outcome: 'supported',
     outcomeLabel: 'Supported',
     evidenceStrength: 92,
     supportingText:
-      'Evidence shows a consistent and interpretable pattern across the experiment’s results. A clear relationship is observed between expected taste, expected quality, and level of familiarity, and the likelihood of purchasing Heineken 0.0. The strength of these relationships is supported by an exceptionally high level of statistical significance.',
+    'Results show a consistent and interpretable relationship between mother-brand perceptions and purchase likelihood for Heineken 0.0. Higher expected taste, perceived quality, trust, and familiarity are all positively associated with increased selection probability, with strong statistical significance across measures.',
     figuresMentioned: ['46']
   },
   {
     id: 'H3',
     title: 'Hypothesis 3',
     intent:
-      "To reveal if the brand's impact is stronger for regular alcohol drinkers—who may be more responsive to the familiar Heineken signal—compared to non-drinkers, who may rely more on other attributes.",
+      "To test whether the mother-brand effect is stronger among regular alcohol drinkers than among non-drinkers.",
     outcome: 'not_supported',
     outcomeLabel: 'Not supported',
     evidenceStrength: 10,
     supportingText:
-      'Comparative analysis between regular drinkers and non- to low-frequency drinkers identified no meaningful differences in brand choice. This consistency was observed across all individual comparisons as well as in the aggregated results. The findings yielded extremely low statistical significance, leading to the rejection of Hypothesis 3.'
+      'Comparative analysis between regular and low- or non-drinking respondents reveals no statistically meaningful differences in mother-brand selection rates. This pattern is consistent across individual scenarios and aggregated results, indicating that the mother-brand effect operates similarly across consumption segments.'
   }
 ];
 

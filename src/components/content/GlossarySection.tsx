@@ -5,99 +5,100 @@ const glossaryItems = [
   {
     term: 'Alternative hypothesis',
     definition:
-      'States that a meaningful effect or relationship exists between the variables that are being compared. Evidence that contradicts the null hypothesis supports the alternative hypothesis.'
+        'Posits that an effect or association exists between the variables under study. Evidence inconsistent with the null hypothesis provides support for the alternative hypothesis.'
   },
   {
     term: 'Central tendency',
     definition:
-      'A summary of the typical value in a distribution, such as the median. It helps compare what is “normal” across groups.'
+        'A summary measure of the typical value of a distribution (e.g., the mean or median), used to compare location across groups.'
   },
   {
     term: 'Coefficient',
     definition:
-      'A model estimate that shows how a predictor shifts the outcome. Positive values increase the outcome; negative values decrease it.'
+        'An estimated parameter in a statistical model representing the direction and magnitude of association between a predictor and the outcome, conditional on other covariates.'
   },
   {
     term: 'Confidence interval (CI)',
     definition:
-      'A range of plausible values for a metric (often 95%). Narrow ranges mean more precise estimates.'
+        'An interval estimate that quantifies uncertainty around a parameter or statistic (commonly 95%). Narrower intervals indicate greater precision.'
   },
   {
     term: 'Correlation',
     definition:
-      'Measures how two variables move together. Strong positive correlation means they rise together; negative means one rises as the other falls.'
+        'A measure of linear association between two variables. Positive values indicate that higher values of one variable tend to be associated with higher values of the other; negative values indicate the opposite.'
   },
   {
     term: 'Distribution',
     definition:
-      'The spread of values across outcomes. Distributions show whether results cluster or vary widely.'
+        'The pattern of values a variable takes, including its spread, shape, and central tendency.'
   },
   {
     term: 'Hypothesis',
     definition:
-      'A testable statement about relationships or differences. Analyses check whether the data support it.'
+        'A testable statement about a relationship or difference between variables that is evaluated using data.'
   },
   {
     term: 'Logistic regression',
     definition:
-      'A model that estimates the probability of a yes/no outcome. Expected results are the probabilities and odds ratios of the outcome happening given the predictor variables.'
+        'A regression model for a binary outcome that estimates the probability of the outcome as a function of predictor variables; results are commonly summarized using coefficients and odds ratios.'
   },
   {
     term: 'Marginal means (predicted margins)',
     definition:
-      'Model-based averages for specific groups. Useful for comparing expected outcomes after accounting for other factors.'
+        'Model-based expected outcomes for specified groups or covariate values, typically averaged over (or standardized to) the distribution of other covariates.'
   },
   {
     term: 'Median',
     definition:
-      'The middle value when results are ordered. Half the values are higher and half are lower.'
+        'The 50th percentile of an ordered set of values; half the observations are above and half are below.'
   },
   {
     term: 'Null hypothesis',
     definition:
-      'Assumes no effect or relationship between the variables being compared. Small p-values suggest the data are unlikely under this assumption.'
+        'Posits no effect or association between variables. The p-value assesses the extent to which the observed data are compatible with this hypothesis.'
   },
   {
     term: 'Odds ratio',
     definition:
-      'An odds ratio is a statistical measure that compares the odds of an event or exposure occurring in one group to the odds of it occurring in another'
+        'A ratio comparing the odds of an outcome under two conditions or groups. In logistic regression, it corresponds to the multiplicative change in odds associated with a one-unit increase in a predictor (or relative to a reference category), holding other variables constant.'
   },
   {
     term: 'P-value',
     definition:
-      'A p-value (probability value) measures the probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true.'
+        'The probability, under the null hypothesis, of observing results at least as extreme as those observed, according to the test statistic.'
   },
   {
     term: 'Predicted probability',
     definition:
-      'The likelihood of an outcome estimated by a model. Higher values mean the outcome is expected more often.'
+        'A model-based estimate of the probability that an outcome occurs for a given set of predictor values.'
   },
   {
     term: 'Quartile',
     definition:
-      'A value that splits ordered data into four equal parts. Quartiles help compare spread and skew.'
+        'Cut points that divide an ordered distribution into four equal parts (25th, 50th, and 75th percentiles).'
   },
   {
     term: 'Sample size',
     definition:
-      'The number of observations or respondents analyzed. Larger samples usually produce more stable estimates.'
+        'The number of observations included in an analysis. Larger samples generally yield more precise estimates, all else equal.'
   },
   {
     term: 'Statistical significance',
     definition:
-      'Indicates an effect is unlikely due to chance given a threshold (like p < 0.05). It does not measure practical importance.'
+        'A decision criterion indicating that an effect is unlikely to be explained by sampling variability alone, given a pre-specified threshold (e.g., α = 0.05). Statistical significance does not imply practical importance.'
   },
   {
     term: 'Stratified sample',
     definition:
-      'A stratified sample is a probability sampling method where a population is divided into smaller, non-overlapping, homogeneous subgroups (strata) based on shared characteristics like age, income, or gender.'
+        'A probability sampling design in which the population is partitioned into non-overlapping strata based on shared characteristics, and samples are drawn within each stratum.'
   },
   {
     term: 'Variance',
     definition:
-      'Measures how spread out values are. Higher variance means outcomes are more dispersed.'
+        'A measure of dispersion equal to the average squared deviation from the mean; larger values indicate greater spread.'
   }
 ];
+
 
 const GlossarySection = () => {
   const [query, setQuery] = useState('');

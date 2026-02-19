@@ -2,13 +2,10 @@ import Card from '../ui/Card';
 import Callout from '../ui/Callout';
 
 const narrativePoints = [
-  'We analyzed open-ended participant responses explaining brand choices and overall decision factors.',
-  'Sentiment measured using polarity from -1 (Negative) to +1 (Positive).',
-  'Category is viewed favorably (avg ≈ 0.23).',
-  'Established brands (e.g., Heineken) rely on “emotional safety”, trust, familiarity; niche competitors can score higher due to novelty.',
-  '“Penn’s Best” has the highest sentiment but smaller sample size; major players cluster closely in the middle.',
-    'Across the analysis, brand names and its derivatives were grouped into a single bucket. e.g. Mentions of “Penn’s Best” and “Penns” ' +
-    'were considered as the same brand.'
+  'We analyzed open-ended participant responses describing brand choice rationales and overall decision criteria. Sentiment was quantified using a polarity score ranging from −1 (negative) to +1 (positive). Overall sentiment toward the non-alcoholic beer category is moderately positive (mean ≈ 0.23).',
+  'Across the corpus, established brands (e.g., Heineken) are frequently associated with constructs consistent with affective reassurance, including trust, familiarity, and perceived reliability. In contrast, smaller or niche brands can attain higher sentiment scores, plausibly reflecting novelty-related value (e.g., perceived distinctiveness or “pleasant surprise”). “Penn’s Best” exhibits the highest observed sentiment; however, interpretability is constrained by a smaller sample size. Sentiment scores among major brands are tightly clustered near the center of the distribution, indicating limited differentiation on affect alone.\n',
+  'For analytic consistency, brand mentions were canonicalized by grouping brand names and their derivatives into a single entity (e.g., “Penn’s Best” and “Penns” were treated as the same brand).',
+
 ];
 
 const SentimentSummary = () => (
@@ -17,13 +14,13 @@ const SentimentSummary = () => (
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sentiment analysis overview</p>
       <ul className="mt-4 space-y-2 text-sm text-slate-600">
         {narrativePoints.map((point) => (
-          <li key={point}>• {point}</li>
+          <li key={point}>{point}</li>
         ))}
       </ul>
     </Card>
     <Callout variant="insight" title="Key takeaway">
-      Heineken matches the category average on sentiment, signaling dependable trust. The opportunity is to
-      elevate “delight” cues that differentiate beyond familiarity.
+        Heineken’s sentiment aligns with the category mean, consistent with a positioning anchored in
+        dependable trust and reduced decision risk. The primary opportunity is to strengthen “delight” cues, that is, signals of enjoyment and differentiation that extend beyond familiarity.
     </Callout>
   </div>
 );

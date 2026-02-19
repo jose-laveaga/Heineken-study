@@ -6,7 +6,7 @@ import { discrepancyCases, introCopy, metaInsights } from '../../data/discrepanc
 const DiscrepanciesSection = () => (
   <Section
     id="discrepancies"
-    title="Discrepancies in Participants’ Responses"
+    title="Discrepancies in Participant Responses"
   >
     <div className="space-y-8">
       <p className="max-w-3xl text-sm leading-relaxed text-slate-600">{introCopy}</p>

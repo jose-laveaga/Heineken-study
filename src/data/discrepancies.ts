@@ -30,38 +30,39 @@ export interface DiscrepancyCase {
 }
 
 export const introCopy =
-  "This section aims to highlight some of the discrepancies between respondents' answers to the survey and their actual " +
-    "decisions when choosing their preferred products. Discrepancies can be seen where respondents reported a high purchase " +
-    "likelihood for certain brands but did not follow up with a decision that reflected their preference. Similarly, other " +
-    "respondents reported a low purchase likelihood for some brands that, in fact, outperformed some mother brands in specific scenarios.";
+  "This section examines cases where respondent stated purchase likelihood does not align with their observed choices in the simulated"+
+    "selection tasks. These discrepancies highlight where attitudinal measures (self-reported likelihood) may diverge from revealed"+
+  "preferences in direct brand comparisons, which is relevant for interpreting demand signals and evaluating policy or portfolio scenarios.";
 
 export const discrepancyCases: DiscrepancyCase[] = [
   {
     id: 'discrepancy-1',
-    title: 'Discrepancy 1: Budweiser vs Rescue Club',
+    title: 'Discrepancy 1: Budweiser Zero vs. Rescue Club Non-Alcoholic',
     figures: [
       {
         id: 'figure-37',
-        caption: 'Budweiser Zero purchase likelihood.',
+        caption: 'Stated Purchase Likelihood: Budweiser Zero',
         kind: 'likelihood',
         brands: ['Budweiser Zero']
       },
       {
         id: 'figure-38',
-        caption: 'Rescue Club Non-Alc purchase likelihood.',
+        caption: 'Stated Purchase Likelihood: Rescue Club N.A',
         kind: 'likelihood',
-        brands: ['Rescue Club Non-Alc']
+        brands: ['Rescue Club N.A.']
       },
       {
         id: 'figure-39',
-        caption: 'Budweiser Zero vs Rescue Club Non-Alc.',
+        caption: 'Budweiser Zero vs. Rescue Club N.A.',
         kind: 'choice',
-        brands: ['Budweiser Zero', 'Rescue Club Non-Alc']
+        brands: ['Budweiser Zero', 'Rescue Club N.A.']
       }
     ],
     narrative: [
-      'Purchase-likelihood ratings for Budweiser Zero and Rescue Club Non-Alc cluster around the middle of the scale with Budweiser Zero reporting slightly ahead of Rescue Club Non-Alc.',
-      'When respondents are forced to choose between the two brands, Rescue Club Non-Alc pulls ahead, showing a gap between stated likelihood to purchase and actual preference in direct comparison.'
+      'Self-reported purchase likelihood for Budweiser Zero and Rescue Club Non-Alcoholic clusters around the midpoint of the scale, with Budweiser Zero\n' +
+      '  rated slightly higher on average.',
+      'However, in forced-choice comparisons, Rescue Club Non-Alcoholic is selected more frequently. This pattern indicates a measurable divergence between\n' +
+      '  stated intention and observed preference when respondents evaluate trade-offs in a direct comparison.'
     ],
     likelihoodCharts: [
       {
@@ -77,7 +78,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
       },
       {
         figureId: 'figure-38',
-        brandLabel: 'Rescue Club Non-Alc',
+        brandLabel: 'Rescue Club N.A.',
         distribution: [
           { score: 1, pct: 25.7 },
           { score: 2, pct: 18.9 },
@@ -101,31 +102,28 @@ export const discrepancyCases: DiscrepancyCase[] = [
   },
   {
     id: 'discrepancy-2',
-    title: "Discrepancy 2: Budweiser vs O’Doul’s",
+    title: "Discrepancy 2: Budweiser Zero vs. O’Doul’s Non-Alcoholic.",
     figures: [
       {
         id: 'figure-40',
-        caption: "Purchase likelihood O’Doul’s Non-Alc.",
+        caption: "Stated Purchase Likelihood: O’Doul’s N.A.",
         kind: 'likelihood',
-        brands: ["O’Doul’s No-Alc"]
+        brands: ["O’Doul’s N.A."]
       },
       {
         id: 'figure-41',
-        caption: "Budweiser Zero vs O’Doul’s No-Alc.",
+        caption: "Budweiser Zero vs. O’Doul’s N.A.",
         kind: 'choice',
-        brands: ['Budweiser Zero', "O’Doul’s No-Alc"]
+        brands: ['Budweiser Zero', "O’Doul’s N.A."]
       }
     ],
     narrative: [
-        "O’Doul’s No-Alc displays generally low purchase intent, with most responses clustering between scores of 2 and 4 on the" +
-        " likelihood scale. In direct comparison, however, Budweiser Zero only holds a slight advantage over O’Doul’s, despite " +
-        "the large gap in stated purchase intent between the two brands. This indicates that self-reported intent may not fully " +
-        "reflect the choices consumers make when faced with actual alternatives."
+        "O’Doul’s Non-Alcoholic shows relatively low stated purchase intent, with most responses concentrated between scores of 2 and 4 on the likelihood scale. In direct comparison tasks, however, Budweiser Zero achieves only a modest selection advantage over O’Doul’s Non-Alcoholic, despite the larger gap in reported intent between the two brands. This pattern suggests that self-reported purchase likelihood may not fully translate into observed choice behavior when consumers evaluate concrete alternatives."
        ],
     likelihoodCharts: [
       {
         figureId: 'figure-40',
-        brandLabel: "O’Doul’s No-Alc",
+        brandLabel: "O’Doul’s N.A.",
         distribution: [
           { score: 1, pct: 26.9 },
           { score: 2, pct: 19.1 },
@@ -141,7 +139,7 @@ export const discrepancyCases: DiscrepancyCase[] = [
         kind: 'headToHead',
         shares: [
           { label: 'Budweiser Zero', pct: 53.2 },
-          { label: "O’Doul’s No-Alc", pct: 46.8 }
+          { label: "O’Doul’s N.A.", pct: 46.8 }
         ]
       }
     ],
@@ -149,32 +147,31 @@ export const discrepancyCases: DiscrepancyCase[] = [
   },
   {
     id: 'discrepancy-3',
-    title: 'Discrepancy 3: Beck’s likelihood vs multi-brand forced choice',
+    title: 'Discrepancy 3: Beck’s Blue — Stated Likelihood vs Multi-Brand Choice Outcome',
     figures: [
       {
         id: 'figure-42',
-        caption: "Purchase likelihood Beck’s Blue.",
+        caption: "Stated Purchase Likelihood: Beck's Blue",
         kind: 'likelihood',
         brands: ["Beck’s Blue"]
       },
       {
         id: 'figure-43',
-        caption: 'Multi-brand comparison 4 - All mother brands vs non-mother brands.',
+        caption: 'Multi-Brand Comparison: Mother Brands vs Non-Mother Brands',
         kind: 'choice',
         brands: [
           'Heineken 0.0',
           'Budweiser Zero',
-          'Kaliber Non Alc',
-          "O’Doul’s No-Alc",
+          'Kaliber Non-Alcoholic',
+          "O’Doul’s Non-Alcoholic",
           'Clausthaler Non-Alcoholic',
           "Beck’s Blue"
         ]
       }
     ],
     narrative: [
-      'Beck’s Blue registers medium purchase-likelihood ratings, with the largest share of respondents selecting the medium point on the scale (3).',
-      'In the multi-brand forced-choice task, Heineken 0.0 dominates while Beck’s Blue captures the smallest share out of the 6 available brands. ' +
-      'The reported purchase likelihood of Beck’s Blue does not align with participants’ selections'
+      'Beck’s Blue receives moderate stated purchase-likelihood ratings, with the highest concentration of responses at the midpoint of the scale.',
+      'In the multi-brand forced-choice task, however, Heineken 0.0 captures the largest share of selections, while Beck’s Blue records the lowest share among the six available brands. This divergence indicates that the stated purchase likelihood for Beck’s Blue does not translate into equivalent selection behavior when respondents evaluate multiple competing alternatives.'
     ],
     likelihoodCharts: [
       {
@@ -196,8 +193,8 @@ export const discrepancyCases: DiscrepancyCase[] = [
         shares: [
           { label: 'Heineken 0.0', pct: 47.5 },
           { label: 'Budweiser Zero', pct: 16.0 },
-          { label: 'Kaliber Non Alc', pct: 13.3 },
-          { label: "O’Doul’s No-Alc", pct: 9.9 },
+          { label: 'Kaliber Non-Alcoholic', pct: 13.3 },
+          { label: "O’Doul’s Non-Alcoholic", pct: 9.9 },
           { label: 'Clausthaler Non-Alcoholic', pct: 7.7 },
           { label: "Beck’s Blue", pct: 5.6 }
         ]
@@ -208,6 +205,6 @@ export const discrepancyCases: DiscrepancyCase[] = [
 ];
 
 export const metaInsights = [
-  'Purchase-likelihood ratings are not a reliable indicator of consumer preference.',
-  'Choice tasks reveal more realistic competitive dominance across brands than likelihood to purchase reports.'
+  'Stated purchase-likelihood ratings do not consistently predict observed brand selection in competitive scenarios.',
+  'Forced-choice tasks provide a more accurate representation of relative brand performance than self-reported purchase-likelihood measures.'
 ];
