@@ -8,10 +8,10 @@ const narrativePoints = [
 ];
 
 const SentimentSummary = () => (
-  <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-    <Card>
+  <div className="w-full">
+    <Card className="w-full max-w-full overflow-hidden">
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sentiment analysis overview</p>
-      <ul className="mt-4 space-y-2 text-sm text-slate-600 leading-relaxed col-span-2">
+      <ul className="mt-4 space-y-2 text-sm text-slate-600 leading-relaxed text-justify">
         {narrativePoints.map((point) => (
           <li key={point}>{point}</li>
         ))}

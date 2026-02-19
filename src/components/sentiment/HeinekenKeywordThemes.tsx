@@ -28,16 +28,16 @@ const ThemeChips = ({ chips }: { chips?: string[] }) => {
 const HeinekenKeywordThemes = ({ positiveDrivers, barriers }: HeinekenKeywordThemesProps) => (
   <div className="grid gap-4 lg:grid-cols-2">
     {[positiveDrivers, barriers].map((theme) => (
-      <Card key={theme.title} className="space-y-3">
+      <Card key={theme.title} className="space-y-3 w-full max-w-full overflow-hidden">
         <div>
-          <p className="text-sm font-semibold text-slate-900">{theme.title}</p>
+          <p className="text-sm font-semibold text-slate-900 text-left">{theme.title}</p>
         </div>
-        <ul className="space-y-2 text-sm text-slate-600">
+        <ul className="space-y-2 text-sm text-slate-600 text-justify">
           {theme.bullets.map((bullet) => (
             <li key={bullet}>• {bullet}</li>
           ))}
         </ul>
-        {theme.summary ? <p className="text-sm text-slate-600 whitespace-pre-line">{theme.summary}</p> : null}
+        {theme.summary ? <p className="text-sm text-slate-600 whitespace-pre-line text-justify">{theme.summary}</p> : null}
         <ThemeChips chips={theme.chips} />
       </Card>
     ))}
