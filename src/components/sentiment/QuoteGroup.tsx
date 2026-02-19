@@ -9,7 +9,7 @@ interface QuoteGroupProps {
 const QuoteGroup = ({ title, quotes, sources }: QuoteGroupProps) => (
   <Card className="space-y-4">
     <div>
-      <p className="text-sm font-semibold text-slate-900">{title}</p>
+      <p className="text-sm font-semibold text-slate-900 text-left">{title}</p>
       {sources && sources.length > 0 ? (
         <p className="mt-1 text-xs text-slate-500">Sources: {sources.join(', ')}</p>
       ) : null}

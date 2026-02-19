@@ -8,7 +8,7 @@ interface HeinekenKpiCardsProps {
 const HeinekenKpiCards = ({ avgSentiment, marketPosition }: HeinekenKpiCardsProps) => (
   <div className="grid gap-4 md:grid-cols-2">
     <StatCard label="Average Sentiment Score" value={avgSentiment.toFixed(2)} note="Polarity scale −1 to +1" />
-    <StatCard label="Market Position" value="Equals category avg" note={marketPosition} />
+    <StatCard label="Market Position" value="Equals Category Average" note={marketPosition} />
   </div>
 );
 

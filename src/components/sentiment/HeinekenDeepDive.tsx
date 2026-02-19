@@ -27,7 +27,12 @@ const HeinekenDeepDive = ({ data }: HeinekenDeepDiveProps) => (
 
     <div className="grid gap-4 lg:grid-cols-3">
       {data.quotes.map((group) => (
-        <QuoteGroup key={group.id} title={group.title} quotes={group.quotes} sources={group.sources} />
+        <QuoteGroup
+            key={group.id}
+            title={group.title}
+            quotes={group.quotes}
+            sources={group.sources}
+        />
       ))}
     </div>
   </div>

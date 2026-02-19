@@ -13,6 +13,7 @@ import { chartPalette } from './chartTheme';
 interface Series {
   key: string;
   label: string;
+  color?: string;
 }
 
 interface GroupedBarChartProps {
@@ -51,7 +52,13 @@ const GroupedBarChart = ({ data, series, ariaLabel, yAxisTickFormatter }: Groupe
         />
         <Legend />
         {series.map((item, index) => (
-          <Bar key={item.key} dataKey={item.key} name={item.label} fill={chartPalette[index % chartPalette.length]} radius={[6, 6, 0, 0]} />
+          <Bar
+            key={item.key}
+            dataKey={item.key}
+            name={item.label}
+            fill={item.color ?? chartPalette[index % chartPalette.length]}
+            radius={[6, 6, 0, 0]}
+          />
         ))}
       </BarChart>
     </ResponsiveContainer>

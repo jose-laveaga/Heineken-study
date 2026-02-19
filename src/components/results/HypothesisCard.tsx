@@ -11,14 +11,14 @@ interface HypothesisCardProps {
 }
 
 const HypothesisCard = ({ hypothesis }: HypothesisCardProps) => (
-  <Card className="flex h-full flex-col gap-4">
+  <Card className="flex h-full flex-col gap-4 text-left">
     <div className="space-y-2">
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{hypothesis.id}</p>
       <h3 className="text-lg font-semibold text-slate-900">{hypothesis.title}</h3>
     </div>
     <div>
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Intent</p>
-      <p className="mt-2 text-sm text-slate-600">{hypothesis.intent}</p>
+      <p className="mt-2 text-left text-sm text-slate-600">{hypothesis.intent}</p>
     </div>
     <div className="mt-auto space-y-3">
       <div className="flex items-center gap-2">
@@ -28,7 +28,7 @@ const HypothesisCard = ({ hypothesis }: HypothesisCardProps) => (
           {hypothesis.outcomeLabel}
         </span>
       </div>
-      <p className="text-sm text-slate-600">{hypothesis.supportingText}</p>
+      <p className="text-left text-sm text-slate-600">{hypothesis.supportingText}</p>
     </div>
   </Card>
 );

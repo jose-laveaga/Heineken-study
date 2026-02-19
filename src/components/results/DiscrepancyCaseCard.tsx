@@ -79,7 +79,13 @@ const DiscrepancyCaseCard = ({ caseItem }: DiscrepancyCaseCardProps) => {
                   >
                     <GroupedBarChart
                       data={getLikelihoodData(chart)}
-                      series={[{ key: 'share', label: chart.brandLabel }]}
+                      series={[
+                        {
+                          key: 'share',
+                          label: chart.brandLabel,
+                          color: chart.brandLabel === 'Rescue Club N.A.' ? '#5c6f82' : undefined
+                        }
+                      ]}
                       ariaLabel={`${chart.brandLabel} purchase likelihood distribution`}
                     />
                   </ChartCard>
