@@ -1,5 +1,4 @@
 import Card from '../ui/Card';
-import Callout from '../ui/Callout';
 
 const narrativePoints = [
   'We analyzed open-ended participant responses describing brand choice rationales and overall decision criteria. Sentiment was quantified using a polarity score ranging from −1 (negative) to +1 (positive). Overall sentiment toward the non-alcoholic beer category is moderately positive (mean ≈ 0.23).',
@@ -12,16 +11,12 @@ const SentimentSummary = () => (
   <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
     <Card>
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sentiment analysis overview</p>
-      <ul className="mt-4 space-y-2 text-sm text-slate-600">
+      <ul className="mt-4 space-y-2 text-sm text-slate-600 leading-relaxed col-span-2">
         {narrativePoints.map((point) => (
           <li key={point}>{point}</li>
         ))}
       </ul>
     </Card>
-    <Callout variant="insight" title="Key takeaway">
-        Heineken’s sentiment aligns with the category mean, consistent with a positioning anchored in
-        dependable trust and reduced decision risk. The primary opportunity is to strengthen “delight” cues, that is, signals of enjoyment and differentiation that extend beyond familiarity.
-    </Callout>
   </div>
 );
 

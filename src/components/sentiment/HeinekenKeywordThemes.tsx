@@ -37,7 +37,7 @@ const HeinekenKeywordThemes = ({ positiveDrivers, barriers }: HeinekenKeywordThe
             <li key={bullet}>• {bullet}</li>
           ))}
         </ul>
-        {theme.summary ? <p className="text-sm text-slate-600">{theme.summary}</p> : null}
+        {theme.summary ? <p className="text-sm text-slate-600 whitespace-pre-line">{theme.summary}</p> : null}
         <ThemeChips chips={theme.chips} />
       </Card>
     ))}

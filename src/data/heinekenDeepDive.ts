@@ -2,7 +2,7 @@ export const heinekenDeepDive = {
   performance: {
     avgSentiment: 0.23,
     marketPosition:
-      "Heineken’s sentiment score equals the competitors’ average (0.23). This suggests it is solid/reliable but not differentiating on emotional “delight” vs. the category baseline."
+      "Heineken’s sentiment score equals the competitors’ average (0.23). This suggests it is solid/reliable but not differentiating on excitement vs. the category baseline."
   },
   keywordThemes: {
     positiveDrivers: {
@@ -11,8 +11,10 @@ export const heinekenDeepDive = {
 
       ],
       summary:
-        'Positive sentiment is dominated by familiarity-related themes (e.g., “familiar,” “know”), suggesting that participants often select Heineken as a low-uncertainty option with predictable outcomes. Taste-related language (e.g., “taste,” “like”) is also prevalent and is commonly linked to expectations of resemblance to the alcoholic counterpart (“the real thing”), indicating functional validation rather than experiential novelty. Additional positive expressions frequently include superlative framing (e.g., “most recognizable,” “most trusted”), reinforcing salience and perceived legitimacy.\n' +
-          'Collectively, these patterns indicate that Heineken is primarily chosen as a risk-minimizing default that assures a baseline taste standard, rather than as a vehicle for novelty or excitement.\n',
+        'Positive sentiment is dominated by familiarity-related themes (e.g., “familiar,” “know”), suggesting that participants often select Heineken as a low-uncertainty option with predictable outcomes.\n\n ' +
+          'Taste-related language (e.g., “taste,” “like”) is also prevalent and is commonly linked to expectations of resemblance to the alcoholic counterpart (“the real thing”), indicating functional validation rather than experiential novelty.\n\n' +
+          'Additional positive expressions frequently include superlative framing (e.g., “most recognizable,” “most trusted”), reinforcing salience and perceived legitimacy.' +
+          'Collectively, these patterns indicate that Heineken is primarily chosen as a risk-minimizing default that assures a baseline taste standard, rather than as a vehicle for novelty or excitement.',
       chips: ['Familiar', 'Know', 'Taste', 'Like', 'Most']
     },
     barriers: {
@@ -20,9 +22,9 @@ export const heinekenDeepDive = {
       bullets: [
 
         ],
-      summary: 'Neutral and negative sentiment is often explained by habitual choice processes and brand loyalty. Responses commonly reference routine behavior (e.g., “usually”) or comparative preference for alternatives, implying that the constraint is frequently competitive attachment rather than direct aversion to Heineken.\n' +
+      summary: 'Neutral and negative sentiment is often explained by habitual choice processes and brand loyalty. Responses commonly reference routine behavior (e.g., “usually”) or comparative preference for alternatives, implying that the constraint is frequently competitive attachment rather than direct aversion to Heineken.\n\n' +
           'A second barrier is a polarizing flavor profile. Taste-related negativity is frequently attributable to explicit dislike of a specific signature flavor, suggesting heterogeneity in preference rather than perceptions of poor quality. This dynamic can simultaneously generate strong loyalty among aligned consumers while limiting uptake among those whose taste preferences diverge.\n',
-      chips: ['Usually', 'Other', 'Polarizing taste']
+      chips: ['Usually', 'Polarizing taste']
     }
   },
   quotes: [

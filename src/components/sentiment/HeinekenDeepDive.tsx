@@ -12,7 +12,6 @@ const HeinekenDeepDive = ({ data }: HeinekenDeepDiveProps) => (
   <div className="space-y-6">
     <div>
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Heineken deep dive</p>
-      <h3 className="mt-2 text-2xl font-semibold text-slate-900">Heineken Deep Dive</h3>
     </div>
 
     <Card className="space-y-4">

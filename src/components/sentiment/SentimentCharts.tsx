@@ -45,7 +45,7 @@ const SentimentCharts = ({ data, categoryAverage }: SentimentChartsProps) => {
 
   return (
     <div className="grid gap-6 lg:grid-cols-2">
-      <ChartCard title="Avg Sentiment by Brand" caption="Polarity scale ranges from -1 to +1.">
+      <ChartCard title="Average Sentiment by Brand" caption="Polarity scale ranges from -1 to +1.">
         <div className="h-72" role="img" aria-label="Average sentiment by brand">
           <ResponsiveContainer>
             <BarChart data={avgData} layout="vertical" margin={{ top: 10, right: 16, left: 20, bottom: 0 }}>
