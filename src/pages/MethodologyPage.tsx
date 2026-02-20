@@ -4,7 +4,7 @@ import BulletList from "../components/content/BulletList";
 
 export const methodologySections = [
     { id: 'methodology-experiment-design', label: 'Experiment design' },
-    { id: 'methodology-online-experiment', label: 'Online experiment' }
+    { id: 'methodology-online-experiment', label: 'Online Experiment' }
 ];
 
 const MethodologyPage = () => (
