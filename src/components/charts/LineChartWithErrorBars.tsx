@@ -61,8 +61,8 @@ const LineChartWithErrorBars = ({
     const plotWidth = width - padding.left - padding.right
     const plotHeight = height - padding.top - padding.bottom
 
-    const xPositions = xLabels.map((_, index) =>
-        padding.left + (plotWidth / Math.max(1, xLabels.length - 1)) * index
+    const xPositions = xLabels.map(
+        (_, index) => padding.left + (plotWidth / Math.max(1, xLabels.length - 1)) * index
     )
 
     const clamp = (v: number) => Math.min(yMax, Math.max(yMin, v))
@@ -190,15 +190,12 @@ const LineChartWithErrorBars = ({
                         })}
                     </g>
 
-                    {/* series: line + subtle neutral error bars + markers */}
                     {/* series: line + differentiated error bars + markers */}
                     {series.map((entry, seriesIndex) => {
                         // small horizontal dodge so error bars don’t sit on top of each other
                         const dodgePx = 6
                         const xDodge =
-                            series.length <= 1
-                                ? 0
-                                : ((seriesIndex - (series.length - 1) / 2) * dodgePx)
+                            series.length <= 1 ? 0 : (seriesIndex - (series.length - 1) / 2) * dodgePx
 
                         // distinguish error bars by series: subtle dash patterns
                         const dashPatterns = ['0', '4 2', '2 2', '6 2'] // extend if you ever add more series
@@ -223,6 +220,20 @@ const LineChartWithErrorBars = ({
                                     const errorTop = yScale(point.value + point.error)
                                     const errorBottom = yScale(point.value - point.error)
 
+                                    // --- FIX: clamp only FIRST point caps so they don't cross the y-axis ---
+                                    const plotLeftX = padding.left
+                                    const plotRightX = width - padding.right
+                                    const capHalfWidth = 5
+
+                                    let capLeft = x - capHalfWidth
+                                    let capRight = x + capHalfWidth
+
+                                    if (pointIndex === 0) {
+                                        capLeft = Math.max(plotLeftX, capLeft)
+                                        capRight = Math.min(plotRightX, capRight)
+                                    }
+                                    // ---------------------------------------------------------------------
+
                                     return (
                                         <g key={`${entry.label}-${pointIndex}`}>
                                             {/* vertical error line */}
@@ -240,9 +251,9 @@ const LineChartWithErrorBars = ({
 
                                             {/* caps */}
                                             <line
-                                                x1={x - 5}
+                                                x1={capLeft}
                                                 y1={errorTop}
-                                                x2={x + 5}
+                                                x2={capRight}
                                                 y2={errorTop}
                                                 stroke={errorStroke}
                                                 strokeOpacity={errorOpacity}
@@ -251,9 +262,9 @@ const LineChartWithErrorBars = ({
                                                 strokeLinecap="round"
                                             />
                                             <line
-                                                x1={x - 5}
+                                                x1={capLeft}
                                                 y1={errorBottom}
-                                                x2={x + 5}
+                                                x2={capRight}
                                                 y2={errorBottom}
                                                 stroke={errorStroke}
                                                 strokeOpacity={errorOpacity}
@@ -276,7 +287,6 @@ const LineChartWithErrorBars = ({
                         )
                     })}
 
-
                     {/* x tick labels */}
                     {xLabels.map((label, index) => (
                         <text
@@ -291,7 +301,7 @@ const LineChartWithErrorBars = ({
                         </text>
                     ))}
 
-                    {/* axis labels (replace the “X-axis: … / Y-axis: …” footer) */}
+                    {/* axis labels */}
                     <text
                         x={padding.left + plotWidth / 2}
                         y={height - 12}
