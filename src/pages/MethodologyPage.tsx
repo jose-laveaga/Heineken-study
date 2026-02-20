@@ -3,7 +3,7 @@ import Card from '../components/ui/Card';
 import BulletList from "../components/content/BulletList";
 
 export const methodologySections = [
-    { id: 'methodology-experiment-design', label: 'Experiment design' },
+    { id: 'methodology-experiment-design', label: 'Experiment Design' },
     { id: 'methodology-online-experiment', label: 'Online Experiment' }
 ];
 
