@@ -11,7 +11,7 @@ const MethodologyPage = () => (
     <>
         <Section
             id="methodology-experiment-design"
-            title="Experiment design"
+            title="Experiment Design"
             subtitle="Design rationale, stimuli structure, and hypothesis framing"
         >
             <div className="space-y-6">
@@ -232,7 +232,7 @@ const MethodologyPage = () => (
 
         <Section
             id="methodology-online-experiment"
-            title="Online experiment"
+            title="Online Experiment"
             subtitle="The online experiment was designed to quantify consumer preferences for non-alcoholic beer brands using demographic profiling, simulated shopping tasks (paired and multi-brand choice), and attitudinal measures. The questionnaire was deployed via Prolific for recruitment, eligibility screening, and participant tracking."
         >
             <div className="space-y-6">
