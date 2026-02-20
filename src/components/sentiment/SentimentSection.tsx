@@ -7,7 +7,7 @@ import { sentimentByBrand, categoryAverageSentiment } from '../../data/sentiment
 import { heinekenDeepDive } from '../../data/heinekenDeepDive';
 
 const SentimentSection = () => (
-  <div className="space-y-10">
+  <div className="space-y-10 w-full max-w-full overflow-hidden">
     <SentimentSummary />
     <SentimentCharts data={sentimentByBrand} categoryAverage={categoryAverageSentiment} />
     <HeinekenDeepDive data={heinekenDeepDive} />

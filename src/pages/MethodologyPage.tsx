@@ -202,20 +202,26 @@ const MethodologyPage = () => (
                         </div>
 
                         <div className="grid gap-4 md:grid-cols-2">
-                            <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
-                                <img
-                                    src="/images/ClearHops_0.0_can.jpg"
-                                    alt="Image of ClearHops 0.0"
-                                    className="max-h-[400px] max-w-full object-contain"
-                                />
+                            <div className="space-y-2">
+                                <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
+                                    <img
+                                        src="/images/ClearHops_0.0_can.jpg"
+                                        alt="Image of ClearHops 0.0"
+                                        className="max-h-[400px] max-w-full object-contain"
+                                    />
+                                </div>
+                                <p className="text-center text-xs text-slate-500">ClearHops 0.0</p>
                             </div>
 
-                            <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
-                                <img
-                                    src="/images/Starbrew.png"
-                                    alt="Image of Heineken 0.0"
-                                    className="max-h-[400px] max-w-full object-contain"
-                                />
+                            <div className="space-y-2">
+                                <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white overflow-hidden">
+                                    <img
+                                        src="/images/Starbrew.png"
+                                        alt="Image of Star Brew Non-Alcoholic"
+                                        className="max-h-[400px] max-w-full object-contain"
+                                    />
+                                </div>
+                                <p className="text-center text-xs text-slate-500">Star Brew Non-Alcoholic</p>
                             </div>
                         </div>
 

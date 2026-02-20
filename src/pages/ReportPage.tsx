@@ -379,6 +379,7 @@ const ReportPage = () => {
         id="sentiment"
         title="Sentiment Analysis (Text Responses and Reasoning)"
         subtitle="Method, metrics, and brand sentiment insights"
+        className="overflow-hidden"
       >
         <SentimentSection />
       </Section>
