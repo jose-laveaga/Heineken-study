@@ -70,6 +70,8 @@ const MethodologyPage = () => (
                         </p>
 
                         <p>
+                            Following each selection, the shopping cart was automatically cleared to ensure that participants faced a
+                            fresh comparison in every scenario, thereby eliminating potential carryover effects across decisions.
                             Comparison order and product placement were randomized to mitigate order effects and position-related bias.
                             Randomization reduces the likelihood that fatigue, learning, anchoring, or spatial preferences systematically
                             influence results, strengthening internal validity and improving attribution of observed behavioral differences to
@@ -393,11 +395,11 @@ const MethodologyPage = () => (
                         <BulletList
                             className={'mt-4'}
                             items={[
-                                'Relative brand preference: head-to-head trials reveal preference ordering across competitors',
-                                'Price sensitivity: price-tagged trials estimate willingness-to-pay and price thresholds',
-                                'Brand equity net of price: contrast between priced and unpriced trials isolates brand-driven choice',
-                                'Competitive benchmarking: identifies brands that systematically win or lose specific matchups',
-                                'Positioning inference: aggregated win–loss patterns support comparative positioning analyses'
+                                'Relative brand preference: Head-to-head trials reveal preference ordering across competitors',
+                                'Price sensitivity: Price-tagged trials estimate willingness-to-pay and price thresholds',
+                                'Brand equity net of price: Contrast between priced and unpriced trials isolates brand-driven choice',
+                                'Competitive benchmarking: Identifies brands that systematically win or lose specific matchups',
+                                'Positioning inference: Aggregated win–loss patterns across all pairings provide an empirical basis for mapping relative competitive positioning within the category.'
                             ]}
                         />
                     </div>
@@ -436,11 +438,11 @@ const MethodologyPage = () => (
                             <BulletList
                                 className={'mt-4'}
                                 items={[
-                                    'Assortment effects: evaluates choice behavior under multiple simultaneous options',
-                                    'Decision criteria: open-ended rationales identify salient attributes (e.g., brand recognition, packaging, expected taste)',
-                                    'Contextualization: qualitative responses support interpretation of observed preferences',
-                                    'Attribute salience: thematic coding reveals which attributes dominate selection rationales',
-                                    'Unaided articulation: captures consumer decision language without attribute prompting'
+                                    'Assortment effects: Evaluates choice behavior under multiple simultaneous options',
+                                    'Decision criteria: Open-ended rationales identify salient attributes (e.g., brand recognition, packaging, expected taste)',
+                                    'Contextualization: Qualitative responses support interpretation of observed preferences',
+                                    'Attribute salience: Thematic coding reveals which attributes dominate selection rationales',
+                                    'Unaided articulation: Captures consumers’ own decision language without structured prompts, reducing attribute priming and revealing organically prioritized considerations.'
                                 ]}
                             />
                         </div>

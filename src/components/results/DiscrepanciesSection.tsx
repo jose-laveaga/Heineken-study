@@ -9,7 +9,7 @@ const DiscrepanciesSection = () => (
     title="Discrepancies in Participant Responses"
   >
     <div className="space-y-8">
-      <p className="max-w-3xl text-sm leading-relaxed text-slate-600">{introCopy}</p>
+      <p className="max-w-3xl text-sm leading-relaxed text-slate-600 whitespace-pre-line">{introCopy}</p>
       <div className="space-y-8">
         {discrepancyCases.map((caseItem) => (
           <DiscrepancyCaseCard key={caseItem.id} caseItem={caseItem} />

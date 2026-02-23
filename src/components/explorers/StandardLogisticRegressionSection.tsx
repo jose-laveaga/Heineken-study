@@ -254,9 +254,10 @@ const StandardLogisticRegressionSection = () => (
             with 95% confidence intervals, disaggregated by gender, allowing direct visual
             comparison across activity level, age group, and income. Together, these results
             provide a structured view of how decision-making tendencies vary across subpopulations
-            and where gender differences are most pronounced or minimal. The aim is to clarify not
-            only the central tendencies but also the uncertainty around these estimates, enabling a
-            more precise assessment of demographic patterns that may influence strategic choice behavior.
+            and where gender differences are most pronounced or minimal. The aim is to clarify not only
+            the central tendencies but also the dispersion of the estimates, as captured by the 95%
+            confidence intervals, allowing for a more precise evaluation of demographic differences in
+            strategic choice behavior.
 
         </p>
       </div>
@@ -408,8 +409,7 @@ const StandardLogisticRegressionSection = () => (
                   age group, and gender to summarize variation in model-predicted outcomes across respondent segments.
               </p>
               <p className="mt-1 text-sm text-slate-600 text-justify">
-                  Points denote predicted probabilities (0 to 1), and vertical bars denote 95% confidence intervals. Wider intervals reflect greater
-                  statistical uncertainty. Segment differences should be assessed in conjunction with confidence interval overlap and the underlying
+                  Points denote predicted probabilities (0 to 1), and vertical bars denote 95% confidence intervals. Wider intervals reflect greater variability in the estimates. Segment differences should be assessed in conjunction with confidence interval overlap and the underlying
                   sample sizes, and interpreted as model-based associations rather than causal effects.
               </p>
           </div>

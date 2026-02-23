@@ -13,7 +13,7 @@ export const heinekenDeepDive = {
       summary:
         'Positive sentiment is dominated by familiarity-related themes (e.g., “familiar,” “know”), suggesting that participants often select Heineken as a low-uncertainty option with predictable outcomes.\n\n ' +
           'Taste-related language (e.g., “taste,” “like”) is also prevalent and is commonly linked to expectations of resemblance to the alcoholic counterpart (“the real thing”), indicating functional validation rather than experiential novelty.\n\n' +
-          'Additional positive expressions frequently include superlative framing (e.g., “most recognizable,” “most trusted”), reinforcing salience and perceived legitimacy.' +
+          'Additional positive expressions frequently include superlative framing (e.g., “most recognizable,” “most trusted”), reinforcing salience and perceived legitimacy. ' +
           'Collectively, these patterns indicate that Heineken is primarily chosen as a risk-minimizing default that assures a baseline taste standard, rather than as a vehicle for novelty or excitement.',
       chips: ['Familiar', 'Know', 'Taste', 'Like', 'Most']
     },

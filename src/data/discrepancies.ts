@@ -29,10 +29,13 @@ export interface DiscrepancyCase {
   takeaway: string;
 }
 
-export const introCopy =
-  "This section examines cases where respondent stated purchase likelihood does not align with their observed choices in the simulated"+
-    " selection tasks. These discrepancies highlight where attitudinal measures (self-reported likelihood) may diverge from revealed"+
-  " preferences in direct brand comparisons, which is relevant for interpreting demand signals and evaluating policy or portfolio scenarios.";
+export const introCopy = `
+This section analyzes instances in which respondents’ stated purchase likelihood does not correspond with their observed selections in the simulated choice tasks. Identifying these discrepancies is analytically important because it distinguishes between attitudinal intent and revealed preference.
+
+Self-reported likelihood captures reflective, stated evaluation, whereas discrete choice behavior reflects decision-making under comparative and contextual constraints. Divergences between the two provide insight into the stability of demand signals, the presence of social desirability or projection bias, and the extent to which expressed intentions translate into competitive behavior.
+
+Including this analysis strengthens the validity of the findings by clarifying where survey-based indicators may overstate or understate actual substitution patterns, thereby improving the interpretation of brand positioning, portfolio strategy, and policy-relevant demand projections.
+`;
 
 export const discrepancyCases: DiscrepancyCase[] = [
   {

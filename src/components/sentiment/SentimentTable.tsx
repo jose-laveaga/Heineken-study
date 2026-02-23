@@ -107,7 +107,7 @@ const SentimentTable = ({ data }: SentimentTableProps) => {
                           className="rounded-full bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700"
                           title="Interpret with caution"
                         >
-                          Low n
+                          ✱
                         </span>
                       ) : null}
                     </div>
@@ -120,6 +120,7 @@ const SentimentTable = ({ data }: SentimentTableProps) => {
             })}
           </tbody>
         </table>
+
       </div>
     </div>
   );

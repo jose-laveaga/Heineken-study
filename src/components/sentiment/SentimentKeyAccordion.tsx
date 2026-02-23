@@ -27,6 +27,12 @@ const SentimentKeyAccordion = () => {
               <li>• Negative (&lt; -0.05)</li>
             </ul>
           </div>
+            <div>
+                <p className="font-semibold text-slate-700">Note</p>
+                <p>
+                    ✱ indicates low number of responses
+                </p>
+            </div>
         </div>
       )
     }

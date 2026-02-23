@@ -32,12 +32,12 @@ const HeinekenKeywordThemes = ({ positiveDrivers, barriers }: HeinekenKeywordThe
         <div>
           <p className="text-sm font-semibold text-slate-900 text-left">{theme.title}</p>
         </div>
-        <ul className="space-y-2 text-sm text-slate-600 text-justify">
+        <ul className="space-y-2 text-sm text-slate-600 text-left leading-relaxed">
           {theme.bullets.map((bullet) => (
             <li key={bullet}>• {bullet}</li>
           ))}
         </ul>
-        {theme.summary ? <p className="text-sm text-slate-600 whitespace-pre-line text-justify">{theme.summary}</p> : null}
+        {theme.summary ? <p className="text-sm text-slate-600 whitespace-pre-line leading-normal">{theme.summary}</p> : null}
         <ThemeChips chips={theme.chips} />
       </Card>
     ))}

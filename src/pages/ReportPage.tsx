@@ -5,7 +5,6 @@ import StatCard from '../components/ui/StatCard';
 import Accordion from '../components/ui/Accordion';
 import Tabs from '../components/ui/Tabs';
 import MethodTimeline from '../components/content/MethodTimeline';
-import ExperimentStepper from '../components/content/ExperimentStepper';
 import GlossarySection from '../components/content/GlossarySection';
 import ResultsExplorer from '../components/explorers/ResultsExplorer';
 import DemographicsSection from '../components/explorers/DemographicsSection';
@@ -128,7 +127,7 @@ const ReportPage = () => {
         <Section
             id="experiment-flow"
             title="Participant Journey"
-            subtitle="A standardized sequence from consent through post-task survey, designed to keep exposure consistent and results comparable."
+            subtitle="Participants were recruited through Prolific, a widely used online research platform known for its high data quality and extensive use in peer-reviewed academic studies involving controlled experiments. The study followed a standardized sequence from informed consent through task completion and post-task survey, ensuring consistent exposure to experimental conditions and enhancing the internal validity and comparability of results."
             className="[&_p]:text-left"
         >
             <ExperimentFlowTimeline

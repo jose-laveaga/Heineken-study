@@ -10,7 +10,7 @@ export type HypothesisOutcome = {
 };
 
 export const conclusionIntroParagraphs = [
-    'The Sustainable Sips: MIT × Heineken Report 2025 examines the transfer of brand trust in the emerging non-alcoholic beer category. The study is based on the premise that established brand equity can reduce consumer uncertainty in relatively unfamiliar product segments, functioning as a signal of quality, reliability, and expected experience.'
+    'The Sustainable Sips: MIT × Heineken Study 1 Report 2025 examines the transfer of brand trust in the emerging non-alcoholic beer category. The study is based on the premise that established brand equity can reduce consumer uncertainty in relatively unfamiliar product segments, functioning as a signal of quality, reliability, and expected experience.'
 ];
 
 export const hypotheses: HypothesisOutcome[] = [
